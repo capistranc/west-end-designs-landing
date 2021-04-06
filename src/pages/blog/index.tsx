@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../../components/Layout"
+import Container from "../../components/Container"
 import Date from "../../components/Date";
 import { getSortedPostsData } from "../../lib/posts";
 import NextLink from "next/link";
@@ -20,9 +20,9 @@ export default function Blog({ allPostsData }) {
   };
 
   return (
-    <Layout home>
+    <Container>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Blog</title>
       </Head>
       <section>
         <h2 >Blog</h2>
@@ -33,7 +33,7 @@ export default function Blog({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-    </Layout>
+    </Container>
   );
 }
 

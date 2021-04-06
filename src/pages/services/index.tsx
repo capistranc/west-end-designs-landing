@@ -1,17 +1,16 @@
 import Head from "next/head";
-import Container from "../components/Container"
+import Container from "../../components/Container"
 import {NextPage} from "next"
 
-export const ContactUs:NextPage = () => {
-  
+export const Services:NextPage = () => {
 
   return (
     <Container>
       <Head>
-        <title>ContactUs</title>
+        <title>Services</title>
       </Head>
       <section>
-        <h2 >ContactUs</h2>
+        <h2 >Services</h2>
       </section>
     </Container>
   );
@@ -24,4 +23,4 @@ export async function getStaticProps() {
   };
 }
 
-export default ContactUs
+export default Services

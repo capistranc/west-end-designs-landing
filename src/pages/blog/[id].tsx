@@ -1,11 +1,11 @@
-import Layout from "../../components/Layout";
+import Container from "../../components/Container";
 import { getPostData, getPostsIds } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/Date";
 
-export default function Post({ postData }) {
+export default function Blog({ postData }) {
   return (
-    <Layout>
+    <Container>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -16,7 +16,7 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </Layout>
+      </Container>
   );
 }
 

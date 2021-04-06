@@ -1,8 +1,9 @@
 import React from "react";
-import NextLink from "next/link"
-import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Link, Box, Flex, Text, Stack } from "@chakra-ui/react";
 
 import Logo from "./Logo";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -12,8 +13,7 @@ const NavBar = (props) => {
   return (
     <NavBarContainer {...props}>
       <Logo
-        w="100px"
-        color={["white", "white", "primary.500", "primary.500"]}
+        // w="100px"
       />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
@@ -54,17 +54,18 @@ const MenuToggle = ({ toggle, isOpen }) => {
 const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
   return (
     <NextLink href={to} passHref>
-    <Link>
-      <Text display="block" {...rest}>
-        {children}
-      </Text>
-    </Link>
+      <Link>
+        <Text display="block" {...rest}>
+          {children}
+        </Text>
+      </Link>
     </NextLink>
   );
 };
 
 const MenuLinks = ({ isOpen }) => {
   return (
+    <>
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
       flexBasis={{ base: "100%", md: "auto" }}
@@ -81,21 +82,12 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/services">Services </MenuItem>
         <MenuItem to="/portfolio">Portfolio</MenuItem>
         <MenuItem to="/blog">Blog</MenuItem>
-        <MenuItem to="/contact" isLast>
-          <Button
-            size="sm"
-            rounded="md"
-            // color={["primary.500", "primary.500", "white", "white"]}
-            // bg={["white", "white", "primary.500", "primary.500"]}
-            _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
-            }}
-          >
-            Contact Us
-          </Button>
-        </MenuItem>
+        <MenuItem to="/contact"> Contact Us </MenuItem>
+        < DarkModeSwitch />
       </Stack>
     </Box>
+    
+    </>
   );
 };
 

@@ -1,14 +1,21 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/Layout";
+import Container from "../components/Container";
 import Date from "../components/Date";
 import { getSortedPostsData } from "../lib/posts";
 import NextLink from "next/link";
+import {
+  useColorMode,
+  Heading,
+  Text,
+  Flex,
+  Stack
+} from '@chakra-ui/react'
 
-export default function Home({ allPostsData }) {
+export default function Index({ allPostsData }) {
   return (
-    <Layout home>
+    <Container>
       <Head>
-        <title>{siteTitle}</title>
+        <title>West End Designs</title>
       </Head>
       <section>
         <h2 >Whats going on</h2>
@@ -17,6 +24,6 @@ export default function Home({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-    </Layout>
+    </Container>
   );
 }
