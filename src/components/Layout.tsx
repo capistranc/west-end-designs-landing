@@ -1,14 +1,14 @@
 import Head from "next/head";
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+import NextLink from "next/link";
+import Header from './Header'
 
 const name = "Chris";
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div>
+      <Header />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,41 +18,39 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header>
         {home ? (
           <>
             <img
               src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1>{name}</h1>
           </>
         ) : (
           <>
-            <Link href="/">
+            <NextLink href="/">
               <a>
                 <img
                   src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                   alt={name}
                 />
               </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
+            </NextLink>
+            <h2>
+              <NextLink href="/">
+                <a >{name}</a>
+              </NextLink>
             </h2>
           </>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
+        <div>
+          <NextLink href="/">
             <a>← Back to home</a>
-          </Link>
+          </NextLink>
         </div>
       )}
     </div>

@@ -1,3 +1,2 @@
-module.exports {
-    basePath: '/src'
+module.exports ={
 }

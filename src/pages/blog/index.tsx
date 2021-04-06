@@ -1,18 +1,17 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
-import Date from "../components/date";
-import { getSortedPostsData } from "../lib/posts";
-import Link from "next/link";
+import Layout, { siteTitle } from "../../components/Layout"
+import Date from "../../components/Date";
+import { getSortedPostsData } from "../../lib/posts";
+import NextLink from "next/link";
 
-export default function Home({ allPostsData }) {
+export default function Blog({ allPostsData }) {
   const renderPostsData = () => {
     return allPostsData.map(({ id, date, title }) => {
       return (
-        <li className={utilStyles.listItem} key={id}>
-          <Link href={`/posts/${id}`}>{title}</Link>
+        <li key={id}>
+          <NextLink href={`/blog/${id}`}>{title}</NextLink>
           <br />
-          <small className={utilStyles.lightText}>
+          <small>
             <Date dateString={date} />
           </small>
         </li>
@@ -25,10 +24,9 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}> </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>{renderPostsData()}</ul>
+      <section>
+        <h2 >Blog</h2>
+        <ul >{renderPostsData()}</ul>
         <p>[Your Self Introduction]</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{" "}
