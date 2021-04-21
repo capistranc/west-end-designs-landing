@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), "data/blogPosts");
 
 export function getPostsIds() {
   const fileNames = fs.readdirSync(postsDirectory);

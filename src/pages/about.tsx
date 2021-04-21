@@ -1,27 +1,24 @@
 import Head from "next/head";
-import Container from "../components/Container"
-import {NextPage} from "next"
+import Container from "../components/Container";
+import { NextPage } from "next";
 
-export const About:NextPage = () => {
-  
-
+export const About: NextPage = () => {
   return (
     <Container>
       <Head>
         <title>About</title>
       </Head>
       <section>
-        <h2 >About</h2>
+        <h2>About</h2>
       </section>
     </Container>
   );
-}
+};
 
 export async function getStaticProps() {
   return {
-    props: {
-    },
+    props: {},
   };
 }
 
-export default About
+export default About;
