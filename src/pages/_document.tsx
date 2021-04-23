@@ -3,7 +3,6 @@ import { GoogleFonts } from "next-google-fonts";
 import { ColorModeScript } from "@chakra-ui/react";
 
 import * as React from "react";
-import NextHead from "next/head";
 
 export default class MyDocument extends NextDocument {
   render() {

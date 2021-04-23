@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import { parseISO, format } from "date-fns";
 import {
   useColorMode,
   Heading,
@@ -8,10 +7,13 @@ import {
   Flex,
   Stack,
   Avatar,
+  Button,
+  Link,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
 import Container from "../components/Container";
+import StickyContactUs from "../components/ContactUsButton";
 
 export default function BlogLayout({ children, frontMatter }) {
   const { colorMode } = useColorMode();
@@ -21,10 +23,11 @@ export default function BlogLayout({ children, frontMatter }) {
   };
   const router = useRouter();
   const slug = router.asPath.replace("/blog", "");
+
   return (
     <Container>
       <Head>
-        <title>${slug} - Blog - Benjamin Carlson</title>
+        <title>${slug} - Blog - West End</title>
       </Head>
       <Stack
         as="article"
@@ -57,14 +60,13 @@ export default function BlogLayout({ children, frontMatter }) {
             <Flex align="center">
               <Avatar
                 size="xs"
-                name="Benjamin Carlson"
+                name="Chris Capistran"
                 src="../images/portrait.jpeg"
                 mr={2}
               />
               <Text fontSize="sm" color={textColor[colorMode]}>
                 {frontMatter.by}
-                {"Benjamin Carlson / "}
-                {/* {format(parseISO(frontMatter.publishedAt), "MMMM dd, yyyy")} */}
+                {"Chris Capistran / "}
               </Text>
             </Flex>
             <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
@@ -73,6 +75,7 @@ export default function BlogLayout({ children, frontMatter }) {
           </Flex>
         </Flex>
         {children}
+        <StickyContactUs />
       </Stack>
     </Container>
   );

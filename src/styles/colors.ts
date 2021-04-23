@@ -1,9 +1,9 @@
 export const bgColor = {
-  light: "white",
-  dark: "#171717",
+  light: "#F6E3D4",
+  dark: "#1D5171",
 };
 
-export const color = {
-  light: "black",
+export const fgColor = {
+  light: "#1D5171",
   dark: "white",
 };

@@ -30,7 +30,7 @@ export default function Blog({ posts }) {
   return (
     <>
       <Head>
-        <title>Blog - Benjamin Carlson</title>
+        <title>Blog - West End Designs</title>
       </Head>
       <Container>
         <Stack

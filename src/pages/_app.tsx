@@ -8,6 +8,7 @@ import customTheme from "../styles/theme";
 import { AppProps } from "next/app";
 import { Global, css } from "@emotion/react";
 import { prismLightTheme, prismDarkTheme } from "../styles/prism";
+import { fgColor, bgColor } from "../styles/colors";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -33,7 +34,7 @@ const GlobalStyle = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === "light" ? "white" : "#171717"};
+            background: ${bgColor[colorMode]};
           }
         `}
       />

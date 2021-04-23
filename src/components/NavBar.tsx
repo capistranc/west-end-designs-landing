@@ -1,7 +1,8 @@
 import React from "react";
 import NextLink from "next/link";
-import { Link, Box, Flex, Text, Stack, useColorMode } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import styled from "@emotion/styled";
 
 import Logo from "./Logo";
 import DarkModeSwitch from "./DarkModeSwitch";
@@ -31,11 +32,11 @@ const MenuToggle = ({ toggle, isOpen }) => {
 const MenuItem = ({ children, to = "/", ...rest }) => {
   return (
     <NextLink href={to} passHref>
-      <Link>
+      <Button as="a" variant="ghost">
         <Text display="block" {...rest}>
           {children}
         </Text>
-      </Link>
+      </Button>
     </NextLink>
   );
 };
@@ -48,7 +49,6 @@ const MenuLinks = ({ isOpen }) => {
         flexBasis={{ base: "100%", md: "auto" }}
       >
         <Stack
-          spacing={8}
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "row", "row", "row"]}

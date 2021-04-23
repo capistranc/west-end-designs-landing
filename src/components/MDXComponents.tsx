@@ -8,14 +8,13 @@ import {
   Divider,
   useColorMode,
 } from "@chakra-ui/react";
-import { jsx } from "@emotion/react";
 import NextLink from "next/link";
 
 const CustomLink = (props) => {
   const { colorMode } = useColorMode();
   const color = {
     light: "blue.500",
-    dark: "blue.500",
+    dark: "blue.200",
   };
 
   const href = props.href;
