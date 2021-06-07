@@ -51,6 +51,7 @@ export default function Blog({ posts }) {
             <Heading letterSpacing="tight" mb={4} as="h1" size="2xl">
               Blog ({posts.length} posts)
             </Heading>
+
             <InputGroup mb={4} mr={4} w="100%">
               <Input
                 aria-label="Search by title"
