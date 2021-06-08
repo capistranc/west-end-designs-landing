@@ -8,9 +8,6 @@ export const About: NextPage = () => {
       <Head>
         <title>About</title>
       </Head>
-      <section>
-        <h2>Aboasdasdfut</h2>
-      </section>
     </Container>
   );
 };

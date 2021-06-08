@@ -16,7 +16,7 @@ const NavBar = (props) => {
     <NavBarContainer {...props}>
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
-      <MenuLinks isOpen={isOpen} />
+      <MenuLinks isOpen={isOpen} {...props} />
     </NavBarContainer>
   );
 };
@@ -29,11 +29,11 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, to = "/", ...rest }) => {
+const MenuItem = ({ children, to = "/", ...props }) => {
   return (
     <NextLink href={to} passHref>
       <Button as="a" variant="ghost">
-        <Text display="block" {...rest}>
+        <Text display="block" {...props}>
           {children}
         </Text>
       </Button>
@@ -41,7 +41,7 @@ const MenuItem = ({ children, to = "/", ...rest }) => {
   );
 };
 
-const MenuLinks = ({ isOpen }) => {
+const MenuLinks = ({ isOpen, ...props }) => {
   return (
     <>
       <Box
@@ -54,12 +54,25 @@ const MenuLinks = ({ isOpen }) => {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="/about">About </MenuItem>
-          <MenuItem to="/services">Services </MenuItem>
-          <MenuItem to="/portfolio">Portfolio</MenuItem>
-          <MenuItem to="/blog">Blog</MenuItem>
-          <MenuItem to="/contact"> Contact Us </MenuItem>
+          <MenuItem to="/" {...props}>
+            Home
+          </MenuItem>
+          <MenuItem to="/about" {...props}>
+            About{" "}
+          </MenuItem>
+          <MenuItem to="/services" {...props}>
+            Services{" "}
+          </MenuItem>
+          <MenuItem to="/portfolio" {...props}>
+            Portfolio
+          </MenuItem>
+          <MenuItem to="/blog" {...props}>
+            Blog
+          </MenuItem>
+          <MenuItem to="/contact" {...props}>
+            {" "}
+            Contact Us{" "}
+          </MenuItem>
           <DarkModeSwitch />
         </Stack>
       </Box>
