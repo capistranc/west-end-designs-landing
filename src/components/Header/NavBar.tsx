@@ -33,8 +33,8 @@ function MenuLinks({ links, isOpen, ...props }) {
   const MenuItem = ({ children, to = "/", ...props }) => {
     return (
       <NextLink href={to} passHref>
-        <Button as="a" variant="ghost">
-          <Text display="block" {...props}>
+        <Button as="a" variant="ghost" {...props}>
+          <Text display="block" >
             {children}
           </Text>
         </Button>
