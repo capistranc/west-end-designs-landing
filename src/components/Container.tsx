@@ -3,6 +3,8 @@ import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
 import { bgColor, fgColor } from "../styles/colors";
 import NavBar from "./NavBar";
 import styled from "@emotion/styled";
+import Footer from "./Footer/index";
+import Header from "./Header";
 
 const Layout = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -16,7 +18,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <StickyNav>
-        <NavBar bg={bgColor[colorMode]} color={fgColor[colorMode]} />
+        <Header bg={bgColor[colorMode]} color={fgColor[colorMode]} />
       </StickyNav>
       <Flex
         as="main"
@@ -29,6 +31,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </Flex>
+      <Footer />
     </>
   );
 };

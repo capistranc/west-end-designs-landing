@@ -18,7 +18,7 @@ const BlogPostPreview = ({ title, publishedAt, author, summary, slug }) => {
             width="100%"
             align="flex-start"
             justifyContent="space-between"
-            flexDirection={["column", "row"]}
+            flexDirection={["row"]}
           >
             <Flex
               flexDirection="column"

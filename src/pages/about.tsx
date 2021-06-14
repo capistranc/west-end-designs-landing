@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Container from "../components/Container";
 import { NextPage } from "next";
+import { AirbnbExample } from "../components/cards/adCard";
 
 export const About: NextPage = () => {
   return (
@@ -8,6 +9,8 @@ export const About: NextPage = () => {
       <Head>
         <title>About</title>
       </Head>
+
+      {AirbnbExample()}
     </Container>
   );
 };

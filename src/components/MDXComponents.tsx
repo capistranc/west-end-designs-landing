@@ -9,6 +9,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 const CustomLink = (props) => {
   const { colorMode } = useColorMode();
@@ -20,9 +21,15 @@ const CustomLink = (props) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
-  if (isInternalLink) {
+  const router = useRouter();
+  if (isInternalLink && router) {
+    const { route, query } = router;
+
+    const slug = query.slug.toString();
+    const path = route.replace("[slug]", slug) + "/" + href;
+
     return (
-      <NextLink href={href} passHref>
+      <NextLink href={path} passHref>
         <Link color={color[colorMode]} {...props} />
       </NextLink>
     );

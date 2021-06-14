@@ -4,10 +4,10 @@ import { Link, Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import styled from "@emotion/styled";
 
-import Logo from "./Logo";
-import DarkModeSwitch from "./DarkModeSwitch";
+import Logo from "../Logo";
+import DarkModeSwitch from "../DarkModeSwitch";
 
-const NavBar = (props) => {
+function NavBar({ links, ...props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -16,10 +16,10 @@ const NavBar = (props) => {
     <NavBarContainer {...props}>
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
-      <MenuLinks isOpen={isOpen} {...props} />
+      <MenuLinks links={links} isOpen={isOpen} {...props} />
     </NavBarContainer>
   );
-};
+}
 
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
@@ -29,19 +29,19 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-const MenuItem = ({ children, to = "/", ...props }) => {
-  return (
-    <NextLink href={to} passHref>
-      <Button as="a" variant="ghost">
-        <Text display="block" {...props}>
-          {children}
-        </Text>
-      </Button>
-    </NextLink>
-  );
-};
+function MenuLinks({ links, isOpen, ...props }) {
+  const MenuItem = ({ children, to = "/", ...props }) => {
+    return (
+      <NextLink href={to} passHref>
+        <Button as="a" variant="ghost">
+          <Text display="block" {...props}>
+            {children}
+          </Text>
+        </Button>
+      </NextLink>
+    );
+  };
 
-const MenuLinks = ({ isOpen, ...props }) => {
   return (
     <>
       <Box
@@ -54,31 +54,20 @@ const MenuLinks = ({ isOpen, ...props }) => {
           direction={["column", "row", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItem to="/" {...props}>
-            Home
-          </MenuItem>
-          <MenuItem to="/about" {...props}>
-            About{" "}
-          </MenuItem>
-          <MenuItem to="/services" {...props}>
-            Services{" "}
-          </MenuItem>
-          <MenuItem to="/portfolio" {...props}>
-            Portfolio
-          </MenuItem>
-          <MenuItem to="/blog" {...props}>
-            Blog
-          </MenuItem>
-          <MenuItem to="/contact" {...props}>
-            {" "}
-            Contact Us{" "}
-          </MenuItem>
+          {links.map((link) => {
+            return (
+              <MenuItem to={link.path} {...props}>
+                {link.label}
+              </MenuItem>
+            );
+          })}
+
           <DarkModeSwitch />
         </Stack>
       </Box>
     </>
   );
-};
+}
 
 const NavBarContainer = ({ children, ...props }) => {
   return (

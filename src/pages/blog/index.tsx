@@ -3,6 +3,7 @@ import Head from "next/head";
 import {
   Heading,
   Flex,
+  Box,
   Stack,
   Input,
   InputGroup,
@@ -39,13 +40,15 @@ export default function Blog({ posts }) {
           justifyContent="center"
           alignItems="flex-start"
           m="0 auto 4rem auto"
-          maxWidth="700px"
+          maxWidth="1000px"
+          minWidth="100px"
         >
           <Flex
             flexDirection="column"
             justifyContent="flex-start"
             alignItems="flex-start"
-            maxWidth="700px"
+            minWidth="100px"
+            flexBasis="100%"
             px={4}
           >
             <Heading letterSpacing="tight" mb={4} as="h1" size="2xl">

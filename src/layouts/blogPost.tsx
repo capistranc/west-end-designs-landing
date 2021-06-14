@@ -35,7 +35,7 @@ export default function BlogLayout({ children, frontMatter }) {
         justifyContent="center"
         alignItems="flex-start"
         m="0 auto 4rem auto"
-        maxWidth="700px"
+        maxWidth="1000px"
         w="100%"
         px={2}
       >
@@ -43,7 +43,7 @@ export default function BlogLayout({ children, frontMatter }) {
           flexDirection="column"
           justifyContent="flex-start"
           alignItems="flex-start"
-          maxWidth="700px"
+          maxWidth="1000px"
           w="100%"
         >
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
@@ -75,7 +75,7 @@ export default function BlogLayout({ children, frontMatter }) {
           </Flex>
         </Flex>
         {children}
-        <StickyContactUs />
+        {/* <StickyContactUs /> */}
       </Stack>
     </Container>
   );
