@@ -10,7 +10,6 @@ const links = [
 ];
 
 const Header = (props) => {
-  console.log(props);
   return <NavBar links={links} {...props}></NavBar>;
 };
 
