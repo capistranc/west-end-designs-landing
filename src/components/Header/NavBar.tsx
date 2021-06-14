@@ -1,6 +1,6 @@
 import React from "react";
 import NextLink from "next/link";
-import { Link, Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import styled from "@emotion/styled";
 
@@ -21,6 +21,23 @@ function NavBar({ links, ...props }) {
   );
 }
 
+const NavBarContainer = ({ children, ...props }) => {
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      w="100%"
+      mb={8}
+      p={8}
+      {...props}
+    >
+      {children}
+    </Flex>
+  );
+};
+
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
@@ -34,9 +51,7 @@ function MenuLinks({ links, isOpen, ...props }) {
     return (
       <NextLink href={to} passHref>
         <Button as="a" variant="ghost" {...props}>
-          <Text display="block" >
-            {children}
-          </Text>
+          <Text display="block">{children}</Text>
         </Button>
       </NextLink>
     );
@@ -68,22 +83,5 @@ function MenuLinks({ links, isOpen, ...props }) {
     </>
   );
 }
-
-const NavBarContainer = ({ children, ...props }) => {
-  return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
-      w="100%"
-      mb={8}
-      p={8}
-      {...props}
-    >
-      {children}
-    </Flex>
-  );
-};
 
 export default NavBar;
