@@ -5,5 +5,5 @@ export const bgColor = {
 
 export const fgColor = {
   light: "#1D5171",
-  dark: "#E6E1C5",
+  dark: "white",
 };

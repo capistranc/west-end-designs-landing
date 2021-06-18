@@ -1,7 +1,6 @@
 import React from "react";
 import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
 import { bgColor, fgColor } from "../styles/colors";
-import NavBar from "./NavBar";
 import styled from "@emotion/styled";
 import Footer from "./Footer/index";
 import Header from "./Header";
@@ -23,6 +22,7 @@ const Layout = ({ children }) => {
       <Flex
         as="main"
         justifyContent="center"
+        align="center"
         flexDirection="column"
         bg={bgColor[colorMode]}
         color={fgColor[colorMode]}
@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </Flex>
-      <Footer />
+      <Footer bg={bgColor[colorMode]} color={fgColor[colorMode]} />
     </>
   );
 };

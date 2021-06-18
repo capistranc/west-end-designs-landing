@@ -1,4 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
+import NextImage from "next/image";
 
 export function AirbnbExample() {
   const property = {
@@ -13,16 +14,24 @@ export function AirbnbExample() {
   };
 
   return (
-    <Box
-      bg="tomato"
-      w="100%"
-      p={4}
-      color="white"
-      borderWidth="10px"
-      borderRadius="lg"
-      overflow="hidden"
-    >
-      This is the Box
-    </Box>
+    // <Box
+    //   bg="tomato"
+    //   w="100%"
+    //   p={4}
+    //   color="white"
+    //   borderWidth="10px"
+    //   borderRadius="lg"
+    //   overflow="hidden"
+    //   bgImage=""
+    // >
+    <div>
+      <Image
+        src="/images/catalina.jpeg"
+        alt="its a pic"
+        width={500}
+        height={500}
+      />
+    </div>
+    /* </Box> */
   );
 }

@@ -67,6 +67,7 @@ function MenuLinks({ links, isOpen, ...props }) {
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "row", "row", "row"]}
+          spacing="10"
           pt={[4, 4, 0, 0]}
         >
           {links.map((link) => {
