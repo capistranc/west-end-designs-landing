@@ -9,6 +9,7 @@ import {
   StackDivider,
   Flex,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 
 import { SocialMediaLinks } from "./SocialMediaLinks";
@@ -16,6 +17,48 @@ import { SocialMediaLinks } from "./SocialMediaLinks";
 import Logo from "../Logo";
 import { FooterHeading } from "./FooterHeading";
 import { Text, TextProps } from "@chakra-ui/layout";
+
+const BackgroundDiv = ({ children }) => {
+  return (
+    <Box>
+      <Image
+        // src="/images/profile.jpg"
+        // as="footer"
+        // role="contentinfo"
+        // mx="auto"
+        // maxW="7xl"
+        // py="12"
+        // height="100%"
+        bgPosition="left"
+        bgSize="cover"
+        bgImage="url('/images/profile.jpg')"
+        width="100%"
+        position="absolute"
+      />
+      <Box position="relative" float="left" top="0px" left="0px">
+        {children}
+      </Box>
+    </Box>
+  );
+};
+
+const BackgroundImage = ({ children, ...props }) => {
+  return (
+    <Box>
+      <Box
+        bgImage="url('/images/profile.jpg')"
+        bgPosition="left"
+        bgSize="cover"
+        height="100%"
+        position="absolute"
+      >
+        <Box position="relative" float="left" top="0px" left="0px">
+          {children}
+        </Box>
+      </Box>
+    </Box>
+  );
+};
 
 const Footer = (props) => {
   const bgImageLight =
@@ -29,10 +72,15 @@ const Footer = (props) => {
   const color = "white";
 
   return (
-    <Box className="bg-box">
+    <Box>
       <Box
-        // {...props}
-        bgImage={bgImage}
+        bgImage="url('/images/profile.jpg')"
+        bgPosition="left"
+        bgSize="cover"
+        height="100%"
+        position="absolute"
+      ></Box>
+      <Box
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"
@@ -43,28 +91,7 @@ const Footer = (props) => {
         py="12"
         w="100%"
         color={color}
-        // sx={{
-        //   ".bg-box:before &": {
-        //     bgImage: { bgImage },
-        //     bgPosition: "center",
-        //     bgRepeat: "no-repeat",
-        //     bgSize: "cover",
-        //   },
-        //   ".bg-box:hover &": {
-        //     color: "green.500",
-        //   },
-        // }}
         px={{ base: "4", md: "8" }}
-        // sx={{ filter: "blur(5px)" }}
-        // sx={{
-        //   ".footerbar::before &": {
-        //     bgImage: { bgImage },
-        //     bgPosition: "center",
-        //     bgRepeat: "no-repeat",
-        //     bgSize: "cover",
-        //   },
-        // }}
-        _before={{ bgImage }}
       >
         <Stack align="center" spacing="10" divider={<StackDivider />}>
           <Stack
