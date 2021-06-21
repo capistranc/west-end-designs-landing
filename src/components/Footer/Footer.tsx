@@ -18,7 +18,6 @@ import Logo from "../Logo";
 import { FooterHeading } from "./FooterHeading";
 import { Text, TextProps } from "@chakra-ui/layout";
 const Footer = (props) => {
-  const image = "url('/images/catalina.jpg')";
   const bgImageLight =
     "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalina.jpg')";
   const bgImageDark =
