@@ -10,7 +10,7 @@ const links = [
 ];
 
 const Footer = (props) => {
-  return <FooterContainer {...props} />;
+  return <FooterContainer links {...props} />;
 };
 
 export default Footer;
