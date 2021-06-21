@@ -17,83 +17,52 @@ import { SocialMediaLinks } from "./SocialMediaLinks";
 import Logo from "../Logo";
 import { FooterHeading } from "./FooterHeading";
 import { Text, TextProps } from "@chakra-ui/layout";
-
-const BackgroundDiv = ({ children }) => {
-  return (
-    <Box>
-      <Image
-        // src="/images/profile.jpg"
-        // as="footer"
-        // role="contentinfo"
-        // mx="auto"
-        // maxW="7xl"
-        // py="12"
-        // height="100%"
-        bgPosition="left"
-        bgSize="cover"
-        bgImage="url('/images/profile.jpg')"
-        width="100%"
-        position="absolute"
-      />
-      <Box position="relative" float="left" top="0px" left="0px">
-        {children}
-      </Box>
-    </Box>
-  );
-};
-
-const BackgroundImage = ({ children, ...props }) => {
-  return (
-    <Box>
-      <Box
-        bgImage="url('/images/profile.jpg')"
-        bgPosition="left"
-        bgSize="cover"
-        height="100%"
-        position="absolute"
-      >
-        <Box position="relative" float="left" top="0px" left="0px">
-          {children}
-        </Box>
-      </Box>
-    </Box>
-  );
-};
-
 const Footer = (props) => {
+  const image = "url('/images/catalina.jpg')";
   const bgImageLight =
-    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)) , url('/images/catalina.jpg')";
+    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalina.jpg')";
   const bgImageDark =
     "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('/images/catalina.jpg')";
 
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
 
-  //   const color = useColorModeValue("gray.200", "white");
   const color = "white";
 
   return (
-    <Box>
+    <Box position="fixed" bottom="0" width="100%">
       <Box
-        bgImage="url('/images/profile.jpg')"
-        bgPosition="left"
-        bgSize="cover"
-        height="100%"
-        position="absolute"
-      ></Box>
-      <Box
+        position="relative"
         bgPosition="center"
-        bgRepeat="no-repeat"
-        bgSize="cover"
         as="footer"
         role="contentinfo"
-        className="my-footer"
         mx="auto"
         py="12"
-        w="100%"
+        height="100%"
+        width="100%"
         color={color}
+        zIndex="0"
         px={{ base: "4", md: "8" }}
+        _before={{
+          position: "absolute",
+          content: '""',
+          bgImage: bgImage,
+          bgPosition: "center",
+          bgSize: "cover",
+          bgRepeat: "no-repeat",
+          zIndex: "-1",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          filter: "blur(8px)",
+        }}
       >
-        <Stack align="center" spacing="10" divider={<StackDivider />}>
+        <Stack
+          zIndex="1"
+          align="center"
+          spacing="10"
+          divider={<StackDivider />}
+        >
           <Stack
             d="flex"
             direction={{ base: "column", lg: "row" }}
