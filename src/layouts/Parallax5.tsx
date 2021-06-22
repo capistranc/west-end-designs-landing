@@ -4,7 +4,6 @@ import { bgColor, fgColor } from "../styles/colors";
 
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { Date, Logo } from "../components/";
 
 export const Layout = ({ children, title }) => {
   const { colorMode } = useColorMode();

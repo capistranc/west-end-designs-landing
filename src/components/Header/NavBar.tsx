@@ -15,6 +15,7 @@ export function NavBar({ links, ...props }) {
   return (
     <NavBarContainer {...props}>
       <Logo />
+      {/* <DarkModeSwitch {...props} /> */}
       <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
       <MenuLinks links={links} isOpen={isOpen} {...props} />
     </NavBarContainer>
@@ -29,8 +30,7 @@ export const NavBarContainer = ({ children, ...props }) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      mb={8}
-      p={4}
+      p={3}
       {...props}
     >
       {children}
@@ -77,8 +77,7 @@ export function MenuLinks({ links, isOpen, ...props }) {
               </MenuItem>
             );
           })}
-
-          <DarkModeSwitch />
+          <DarkModeSwitch {...props} />
         </Stack>
       </Box>
     </>

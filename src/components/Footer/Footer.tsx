@@ -17,22 +17,17 @@ import { BlurryBackground } from "../BlurryBackground";
 
 const Footer = ({ links, ...props }) => {
   const bgImageLight =
-    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalina.jpg')";
+    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalinaLight.jpg')";
   const bgImageDark =
-    "linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.61)) , url('/images/catalina.jpg')";
-
+    "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.51)) , url('/images/catalinaDark.jpg')";
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
+
+  //   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
 
   const color = "white";
 
   return (
-    // <Box
-    //   position="relative"
-    //   bottom="0"
-    //   width="100%"
-    //   as="footer"
-    //   role="contentinfo"
-    // >
+    // <Box position="relative">
     <BlurryBackground
       bgImage={bgImage}
       color={color}
@@ -72,7 +67,6 @@ const Footer = ({ links, ...props }) => {
         </Stack>
       </Stack>
     </BlurryBackground>
-    // </Box>
   );
 };
 

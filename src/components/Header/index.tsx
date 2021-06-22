@@ -29,22 +29,22 @@ const Banner = ({ children, ...props }) => {
   );
 };
 export const Header = ({ title, ...props }) => {
-  const navbarLight = "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30))";
-  const navbarDark = "linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.61))";
-  const navBarBG = useColorModeValue(navbarLight, navbarDark);
-
   return (
     <>
-      <Box position="sticky" top="0" zIndex="10">
-        <BlurryBackground bgImage={navBarBG}>
-          <NavBar links={links}></NavBar>
-        </BlurryBackground>
+      <Box
+        position="sticky"
+        top="0"
+        width="100%"
+        zIndex="10"
+        sx={{ "backdrop-filter": "blur(20px)" }}
+      >
+        <NavBar
+          links={links}
+          mixBlendMode="difference"
+          {...props}
+          bgColor="transparent"
+        ></NavBar>
       </Box>
-      <Banner h="350px">
-        <Heading as="h1">
-          <Text as="h1"> {title}</Text>
-        </Heading>
-      </Banner>
     </>
   );
 };

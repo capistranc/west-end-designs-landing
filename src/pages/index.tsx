@@ -14,12 +14,12 @@ import {
 
 export default function Index({ allPostsData }) {
   return (
-    <Layout>
+    <Layout title="Home">
       <Head>
         <title>West End Designs</title>
       </Head>
       <Flex align="start" justify="start">
-        <Box>
+        <Box bgImage="url('/images/catalinaLight.jpg')" h="100%" w="100%">
           <h2>Whatsas going on</h2>
           <p>
             (This is a sample website - you’ll be building a site like this on{" "}

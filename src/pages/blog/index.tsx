@@ -33,7 +33,7 @@ export default function Blog({ posts }) {
       <Head>
         <title>Blog - West End Designs</title>
       </Head>
-      <Layout>
+      <Layout title="Blog">
         <Stack
           as="main"
           spacing={8}

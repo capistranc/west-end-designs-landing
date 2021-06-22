@@ -13,7 +13,7 @@ import {
 import { useRouter } from "next/router";
 
 import { Layout } from "./Layout";
-import { StickyContactUs } from "../components/ContactUsButton";
+import { StickyContactUs } from "../components/StickyContactUs";
 
 export default function BlogLayout({ children, frontMatter }) {
   const { colorMode } = useColorMode();
@@ -24,10 +24,12 @@ export default function BlogLayout({ children, frontMatter }) {
   const router = useRouter();
   const slug = router.asPath.replace("/blog", "");
 
+  const postTitle = `${slug} - Blog - West End`;
+
   return (
-    <Layout>
+    <Layout title={postTitle}>
       <Head>
-        <title>${slug} - Blog - West End</title>
+        <title>{postTitle}</title>
       </Head>
       <Stack
         as="article"

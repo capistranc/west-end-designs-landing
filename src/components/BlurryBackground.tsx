@@ -16,7 +16,6 @@ export function BlurryBackground({ children, bgImage, ...props }) {
   return (
     <Box
       position="relative"
-      mx="auto"
       height="100%"
       width="100%"
       zIndex="0"
@@ -24,7 +23,7 @@ export function BlurryBackground({ children, bgImage, ...props }) {
         position: "absolute",
         content: '""',
         bgImage: bgImage,
-        bgPosition: "center",
+        bgPosition: "left",
         bgSize: "cover",
         bgRepeat: "no-repeat",
         zIndex: "-1",
@@ -32,9 +31,9 @@ export function BlurryBackground({ children, bgImage, ...props }) {
         left: 0,
         width: "100%",
         height: "100%",
-        filter: "blur(8px)",
+        filter: "blur(4px)",
       }}
-      {...props} //Keep props at bottom for mnual override
+      {...props} //Keep props at bottom for manual override
     >
       {children}
     </Box>
