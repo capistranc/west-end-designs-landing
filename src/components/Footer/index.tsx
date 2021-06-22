@@ -9,8 +9,10 @@ const links = [
   { path: "/contact", label: "Contact Us" },
 ];
 
-const Footer = (props) => {
+export const Footer = (props) => {
   return <FooterContainer links {...props} />;
 };
 
-export default Footer;
+export * from "./FooterHeading";
+export * from "./SocialMediaLinks";
+export * from "./Footer";

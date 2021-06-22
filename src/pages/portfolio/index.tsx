@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Container from "../../components/Container";
-import Date from "../../components/Date";
+import { Layout } from "../../layouts/Layout";
+import { Date } from "../../components/Date";
 import { getSortedPostsData } from "../../lib/blog";
 import NextLink from "next/link";
 import { NextPage } from "next";
@@ -21,11 +21,11 @@ export const Portfolio: NextPage = () => {
 
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
   return (
-    <Container>
+    <Layout title="Portfolio">
       <Head>
         <title>Portfolio</title>
       </Head>
-    </Container>
+    </Layout>
   );
 };
 

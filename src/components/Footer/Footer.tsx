@@ -7,16 +7,13 @@ import {
   SimpleGridProps,
   Stack,
   StackDivider,
-  Flex,
   useColorModeValue,
-  Image,
 } from "@chakra-ui/react";
 
-import { SocialMediaLinks } from "./SocialMediaLinks";
-
-import Logo from "../Logo";
-import { FooterHeading } from "./FooterHeading";
+import { SocialMediaLinks, FooterHeading } from "./index";
+import { Logo } from "../Logo";
 import { Text, TextProps } from "@chakra-ui/layout";
+import { BlurryBackground } from "../BlurryBackground";
 
 const Footer = ({ links, ...props }) => {
   const bgImageLight =
@@ -29,72 +26,53 @@ const Footer = ({ links, ...props }) => {
   const color = "white";
 
   return (
-    <Box position="relative" bottom="0" width="100%">
-      <Box
-        position="relative"
-        bgPosition="center"
-        as="footer"
-        role="contentinfo"
-        mx="auto"
-        py="12"
-        height="100%"
-        width="100%"
-        color={color}
-        zIndex="0"
-        px={{ base: "4", md: "8" }}
-        _before={{
-          position: "absolute",
-          content: '""',
-          bgImage: bgImage,
-          bgPosition: "center",
-          bgSize: "cover",
-          bgRepeat: "no-repeat",
-          zIndex: "-1",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          filter: "blur(8px)",
-        }}
-      >
+    // <Box
+    //   position="relative"
+    //   bottom="0"
+    //   width="100%"
+    //   as="footer"
+    //   role="contentinfo"
+    // >
+    <BlurryBackground
+      bgImage={bgImage}
+      color={color}
+      mx="auto"
+      py="12"
+      px={{ base: "4", md: "8" }}
+    >
+      <Stack zIndex="1" align="center" spacing="10" divider={<StackDivider />}>
         <Stack
-          zIndex="1"
-          align="center"
-          spacing="10"
-          divider={<StackDivider />}
+          d="flex"
+          direction={{ base: "column", lg: "row" }}
+          spacing={{ base: "10", lg: "28" }}
+          justify="center"
         >
+          <Box flex="1">
+            <Logo />
+            <Link href="mailto:capistranc@gmail.com">
+              WestEndDesigns@gmail.com
+            </Link>
+            <Spacer />
+            <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
+          </Box>
           <Stack
-            d="flex"
-            direction={{ base: "column", lg: "row" }}
-            spacing={{ base: "10", lg: "28" }}
-            justify="center"
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "10", md: "20" }}
           >
-            <Box flex="1">
-              <Logo />
-              <Link href="mailto:capistranc@gmail.com">
-                WestEndDesigns@gmail.com
-              </Link>
-              <Spacer />
-              <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
-            </Box>
-            <Stack
-              direction={{ base: "column", md: "row" }}
-              spacing={{ base: "10", md: "20" }}
-            >
-              <LinkGrid spacing={{ base: "10", md: "20", lg: "28" }} flex="1" />
-            </Stack>
-          </Stack>
-          <Stack
-            direction={{ base: "column-reverse", md: "row" }}
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Copyright />
-            <SocialMediaLinks color="white" />
+            <LinkGrid spacing={{ base: "10", md: "20", lg: "28" }} flex="1" />
           </Stack>
         </Stack>
-      </Box>
-    </Box>
+        <Stack
+          direction={{ base: "column-reverse", md: "row" }}
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Copyright />
+          <SocialMediaLinks color="white" />
+        </Stack>
+      </Stack>
+    </BlurryBackground>
+    // </Box>
   );
 };
 

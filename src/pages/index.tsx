@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Container from "../components/Container";
-import Date from "../components/Date";
+import { Layout } from "../layouts/Layout";
+import { Date } from "../components/Date";
 import { getSortedPostsData } from "../lib/blog";
 import NextLink from "next/link";
 import {
@@ -14,7 +14,7 @@ import {
 
 export default function Index({ allPostsData }) {
   return (
-    <Container>
+    <Layout>
       <Head>
         <title>West End Designs</title>
       </Head>
@@ -27,6 +27,6 @@ export default function Index({ allPostsData }) {
           </p>
         </Box>
       </Flex>
-    </Container>
+    </Layout>
   );
 }

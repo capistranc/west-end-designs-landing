@@ -1,17 +1,17 @@
 import Head from "next/head";
-import Container from "../components/Container";
+import { Layout } from "../layouts/Layout";
 import { NextPage } from "next";
 import { AirbnbExample } from "../components/cards/adCard";
 
 export const About: NextPage = () => {
   return (
-    <Container>
+    <Layout>
       <Head>
         <title>About</title>
       </Head>
 
       {AirbnbExample()}
-    </Container>
+    </Layout>
   );
 };
 

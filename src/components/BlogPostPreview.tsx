@@ -3,7 +3,13 @@ import NextLink from "next/link";
 import { useColorMode, Heading, Text, Flex, Box, Link } from "@chakra-ui/react";
 import { parseISO, format } from "date-fns";
 
-const BlogPostPreview = ({ title, publishedAt, author, summary, slug }) => {
+export const BlogPostPreview = ({
+  title,
+  publishedAt,
+  author,
+  summary,
+  slug,
+}) => {
   const { colorMode } = useColorMode();
   const secondaryTextColor = {
     light: "gray.700",
@@ -50,5 +56,3 @@ const BlogPostPreview = ({ title, publishedAt, author, summary, slug }) => {
     </NextLink>
   );
 };
-
-export default BlogPostPreview;

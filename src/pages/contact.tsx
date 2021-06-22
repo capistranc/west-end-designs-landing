@@ -1,17 +1,17 @@
 import Head from "next/head";
-import Container from "../components/Container";
+import { Layout } from "../layouts/Layout";
 import { NextPage } from "next";
 
 export const ContactUs: NextPage = () => {
   return (
-    <Container>
+    <Layout>
       <Head>
         <title>ContactUs</title>
       </Head>
       <section>
         <h2>ContactUs</h2>
       </section>
-    </Container>
+    </Layout>
   );
 };
 

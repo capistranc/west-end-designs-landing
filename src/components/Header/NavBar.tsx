@@ -4,10 +4,10 @@ import { Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import styled from "@emotion/styled";
 
-import Logo from "../Logo";
-import DarkModeSwitch from "../DarkModeSwitch";
+import { Logo } from "../Logo";
+import { DarkModeSwitch } from "../DarkModeSwitch";
 
-function NavBar({ links, ...props }) {
+export function NavBar({ links, ...props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -21,7 +21,7 @@ function NavBar({ links, ...props }) {
   );
 }
 
-const NavBarContainer = ({ children, ...props }) => {
+export const NavBarContainer = ({ children, ...props }) => {
   return (
     <Flex
       as="nav"
@@ -30,7 +30,7 @@ const NavBarContainer = ({ children, ...props }) => {
       wrap="wrap"
       w="100%"
       mb={8}
-      p={8}
+      p={4}
       {...props}
     >
       {children}
@@ -38,7 +38,7 @@ const NavBarContainer = ({ children, ...props }) => {
   );
 };
 
-const MenuToggle = ({ toggle, isOpen }) => {
+export const MenuToggle = ({ toggle, isOpen }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />}
@@ -46,7 +46,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-function MenuLinks({ links, isOpen, ...props }) {
+export function MenuLinks({ links, isOpen, ...props }) {
   const MenuItem = ({ children, to = "/", ...props }) => {
     return (
       <NextLink href={to} passHref>
@@ -66,13 +66,13 @@ function MenuLinks({ links, isOpen, ...props }) {
         <Stack
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
-          direction={["column", "row", "row", "row"]}
+          direction={["column", "column", "row", "row"]}
           spacing="10"
           pt={[4, 4, 0, 0]}
         >
           {links.map((link) => {
             return (
-              <MenuItem to={link.path} {...props}>
+              <MenuItem key={link.label} to={link.path} {...props}>
                 {link.label}
               </MenuItem>
             );
@@ -84,5 +84,3 @@ function MenuLinks({ links, isOpen, ...props }) {
     </>
   );
 }
-
-export default NavBar;

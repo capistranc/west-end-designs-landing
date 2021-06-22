@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Text, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-export default function Logo(props) {
+export function Logo(props) {
   return (
     <Box {...props}>
       <NextLink href="/">

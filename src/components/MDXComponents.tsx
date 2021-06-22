@@ -11,7 +11,7 @@ import {
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
-const CustomLink = (props) => {
+export const CustomLink = (props) => {
   const { colorMode } = useColorMode();
   const color = {
     light: "blue.500",
@@ -38,7 +38,7 @@ const CustomLink = (props) => {
   return <Link color={color[colorMode]} isExternal {...props} />;
 };
 
-const Quote = (props) => {
+export const Quote = (props) => {
   const { colorMode } = useColorMode();
   const bgColor = {
     light: "blue.50",
@@ -63,7 +63,7 @@ const Quote = (props) => {
   );
 };
 
-const DocsHeading = (props) => (
+export const DocsHeading = (props) => (
   <Heading
     css={{
       scrollMarginTop: "100px",
@@ -118,7 +118,7 @@ const Hr = () => {
   return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />;
 };
 
-const MDXComponents = {
+export const MDXComponents = {
   h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
   h2: (props) => <DocsHeading as="h2" size="lg" fontWeight="bold" {...props} />,
   h3: (props) => <DocsHeading as="h3" size="md" fontWeight="bold" {...props} />,
@@ -137,6 +137,3 @@ const MDXComponents = {
   li: (props) => <Box as="li" pb={1} {...props} />,
   blockquote: Quote,
 };
-
-export { CustomLink };
-export default MDXComponents;

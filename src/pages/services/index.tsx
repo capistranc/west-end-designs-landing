@@ -1,21 +1,21 @@
 import Head from "next/head";
-import Container from "../../components/Container";
+import { Layout } from "../../layouts/Layout";
 import { NextPage } from "next";
-import SubscribeForm from "../../components/SubscribeForm";
+// import SubscribeForm from "../../components/Footer/SubscribeForm";
 import { Flex } from "@chakra-ui/react";
 export const Services: NextPage = () => {
   return (
-    <Container>
+    <Layout>
       <Flex w="100%" maxWidth="1100">
         <Head>
           <title>Services</title>
         </Head>
         <section>
-          <SubscribeForm />
+          {/* <SubscribeForm /> */}
           <h2>Services</h2>
         </section>
       </Flex>
-    </Container>
+    </Layout>
   );
 };
 

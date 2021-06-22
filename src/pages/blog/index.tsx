@@ -10,9 +10,9 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 
-import Container from "../../components/Container";
+import { Layout } from "../../layouts/Layout";
 import { getAllFilesFrontMatter } from "../../lib/mdx";
-import BlogPost from "../../components/BlogPostPreview";
+import { BlogPostPreview } from "../../components/BlogPostPreview";
 
 import { SearchIcon } from "@chakra-ui/icons";
 
@@ -33,7 +33,7 @@ export default function Blog({ posts }) {
       <Head>
         <title>Blog - West End Designs</title>
       </Head>
-      <Container>
+      <Layout>
         <Stack
           as="main"
           spacing={8}
@@ -67,11 +67,11 @@ export default function Blog({ posts }) {
             </InputGroup>
             {!filteredBlogPosts.length && "No posts found :("}
             {filteredBlogPosts.map((frontMatter) => (
-              <BlogPost key={frontMatter.title} {...frontMatter} />
+              <BlogPostPreview key={frontMatter.title} {...frontMatter} />
             ))}
           </Flex>
         </Stack>
-      </Container>
+      </Layout>
     </>
   );
 }

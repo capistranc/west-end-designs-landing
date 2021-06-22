@@ -12,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
-import Container from "../components/Container";
-import StickyContactUs from "../components/ContactUsButton";
+import { Layout } from "./Layout";
+import { StickyContactUs } from "../components/ContactUsButton";
 
 export default function BlogLayout({ children, frontMatter }) {
   const { colorMode } = useColorMode();
@@ -25,7 +25,7 @@ export default function BlogLayout({ children, frontMatter }) {
   const slug = router.asPath.replace("/blog", "");
 
   return (
-    <Container>
+    <Layout>
       <Head>
         <title>${slug} - Blog - West End</title>
       </Head>
@@ -77,6 +77,6 @@ export default function BlogLayout({ children, frontMatter }) {
         {children}
         {/* <StickyContactUs /> */}
       </Stack>
-    </Container>
+    </Layout>
   );
 }
