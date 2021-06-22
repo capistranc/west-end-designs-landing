@@ -3,18 +3,14 @@ import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
 import { bgColor, fgColor } from "../styles/colors";
 
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
+import { StickyNavHeader } from "../components/Header";
 
-export const Layout = ({ children, title }) => {
+export const Parallax5 = ({ children }) => {
   const { colorMode } = useColorMode();
 
   return (
     <>
-      <Header
-        title={title}
-        bg={bgColor[colorMode]}
-        color={fgColor[colorMode]}
-      />
+      <StickyNavHeader bg={bgColor[colorMode]} color={fgColor[colorMode]} />
       <Flex
         position="relative"
         as="main"

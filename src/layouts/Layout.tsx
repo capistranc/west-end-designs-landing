@@ -3,7 +3,7 @@ import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
 import { bgColor, fgColor } from "../styles/colors";
 
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
+import { StickyNavHeader } from "../components/Header";
 import { Date, Logo } from "../components/";
 
 export const Layout = ({ children, title }) => {
@@ -11,7 +11,7 @@ export const Layout = ({ children, title }) => {
 
   return (
     <>
-      <Header
+      <StickyNavHeader
         title={title}
         bg={bgColor[colorMode]}
         color={fgColor[colorMode]}
