@@ -17,18 +17,19 @@ import { SocialMediaLinks } from "./SocialMediaLinks";
 import Logo from "../Logo";
 import { FooterHeading } from "./FooterHeading";
 import { Text, TextProps } from "@chakra-ui/layout";
+
 const Footer = ({ links, ...props }) => {
   const bgImageLight =
     "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalina.jpg')";
   const bgImageDark =
-    "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('/images/catalina.jpg')";
+    "linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.61)) , url('/images/catalina.jpg')";
 
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
 
   const color = "white";
 
   return (
-    <Box position="fixed" bottom="0" width="100%">
+    <Box position="relative" bottom="0" width="100%">
       <Box
         position="relative"
         bgPosition="center"
