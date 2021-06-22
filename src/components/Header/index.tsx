@@ -31,8 +31,13 @@ const Banner = ({ children, ...props }) => {
 export const Header = ({ title, ...props }) => {
   return (
     <>
+      <Box height="300px" top="0" w="100%">
+        <Banner h="100%" color="white">
+          <Heading as="h1">{title}</Heading>
+        </Banner>
+      </Box>
       <Box
-        position="sticky"
+        position="fixed"
         top="0"
         width="100%"
         zIndex="10"
