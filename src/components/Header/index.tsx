@@ -1,4 +1,5 @@
 import NavBar from "./NavBar";
+import { Flex, Box } from "@chakra-ui/react";
 
 const links = [
   { path: "/", label: "Home" },
@@ -10,7 +11,13 @@ const links = [
 ];
 
 const Header = (props) => {
-  return <NavBar links={links} {...props}></NavBar>;
+  return (
+    <>
+      <Flex position="sticky" zIndex="10" top="0" {...props}>
+        <NavBar links={links}></NavBar>
+      </Flex>
+    </>
+  );
 };
 
 export default Header;

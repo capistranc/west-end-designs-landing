@@ -17,9 +17,9 @@ import { SocialMediaLinks } from "./SocialMediaLinks";
 import Logo from "../Logo";
 import { FooterHeading } from "./FooterHeading";
 import { Text, TextProps } from "@chakra-ui/layout";
+import BlurryBackground from "../BlurryBackground";
 
-const Footer = ({ links, ...props }) => {
-  const image = "url('/images/catalina.jpg')";
+const Footer = ({ links }) => {
   const bgImageLight =
     "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalina.jpg')";
   const bgImageDark =
@@ -30,33 +30,19 @@ const Footer = ({ links, ...props }) => {
   const color = "white";
 
   return (
-    <Box position="relative" bottom="0" width="100%">
-      <Box
-        position="relative"
-        bgPosition="center"
-        as="footer"
-        role="contentinfo"
+    <Box
+      position="relative"
+      bottom="0"
+      width="100%"
+      as="footer"
+      role="contentinfo"
+    >
+      <BlurryBackground
+        bgImage={bgImage}
+        color={color}
         mx="auto"
         py="12"
-        height="100%"
-        width="100%"
-        color={color}
-        zIndex="0"
         px={{ base: "4", md: "8" }}
-        _before={{
-          position: "absolute",
-          content: '""',
-          bgImage: bgImage,
-          bgPosition: "center",
-          bgSize: "cover",
-          bgRepeat: "no-repeat",
-          zIndex: "-1",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          filter: "blur(8px)",
-        }}
       >
         <Stack
           zIndex="1"
@@ -94,7 +80,7 @@ const Footer = ({ links, ...props }) => {
             <SocialMediaLinks color="white" />
           </Stack>
         </Stack>
-      </Box>
+      </BlurryBackground>
     </Box>
   );
 };
