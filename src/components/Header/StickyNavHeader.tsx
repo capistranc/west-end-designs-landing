@@ -10,16 +10,17 @@ export const StickyNavHeader = ({ ...props }) => {
   return (
     <>
       <Box
+        bgColor="transparent"
         position="sticky"
         top="0"
         width="100%"
         zIndex="10"
         sx={{ "backdrop-filter": "blur(20px)" }}
+        {...props}
       >
         <NavBar
           links={links}
           mixBlendMode="difference"
-          {...props}
           bgColor="transparent"
         ></NavBar>
       </Box>

@@ -15,7 +15,9 @@ import { Logo } from "../Logo";
 import { Text, TextProps } from "@chakra-ui/layout";
 import { BlurryBackground } from "../BlurryBackground";
 
-const Footer = ({ links, ...props }) => {
+import { links } from "./index";
+
+export const BlurryFooter = ({ ...props }) => {
   const bgImageLight =
     "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalinaLight.jpg')";
   const bgImageDark =
@@ -35,42 +37,52 @@ const Footer = ({ links, ...props }) => {
       py="12"
       px={{ base: "4", md: "8" }}
     >
-      <Stack zIndex="1" align="center" spacing="10" divider={<StackDivider />}>
-        <Stack
-          d="flex"
-          direction={{ base: "column", lg: "row" }}
-          spacing={{ base: "10", lg: "28" }}
-          justify="center"
-        >
-          <Box flex="1">
-            <Logo />
-            <Link href="mailto:capistranc@gmail.com">
-              WestEndDesigns@gmail.com
-            </Link>
-            <Spacer />
-            <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
-          </Box>
-          <Stack
-            direction={{ base: "column", md: "row" }}
-            spacing={{ base: "10", md: "20" }}
-          >
-            <LinkGrid spacing={{ base: "10", md: "20", lg: "28" }} flex="1" />
-          </Stack>
-        </Stack>
-        <Stack
-          direction={{ base: "column-reverse", md: "row" }}
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Copyright />
-          <SocialMediaLinks color="white" />
-        </Stack>
-      </Stack>
+      <FooterContent links={links} />
     </BlurryBackground>
   );
 };
 
-export default Footer;
+export const FooterContent = ({ ...props }) => {
+  return (
+    <Stack
+      zIndex="1"
+      align="center"
+      spacing="10"
+      divider={<StackDivider />}
+      {...props}
+    >
+      <Stack
+        d="flex"
+        direction={{ base: "column", lg: "row" }}
+        spacing={{ base: "10", lg: "28" }}
+        justify="center"
+      >
+        <Box flex="1">
+          <Logo />
+          <Link href="mailto:capistranc@gmail.com">
+            WestEndDesigns@gmail.com
+          </Link>
+          <Spacer />
+          <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
+        </Box>
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          spacing={{ base: "10", md: "20" }}
+        >
+          <LinkGrid spacing={{ base: "10", md: "20", lg: "28" }} flex="1" />
+        </Stack>
+      </Stack>
+      <Stack
+        direction={{ base: "column-reverse", md: "row" }}
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Copyright />
+        <SocialMediaLinks color="white" />
+      </Stack>
+    </Stack>
+  );
+};
 
 export const Copyright = (props: TextProps) => (
   <Text fontSize="sm" {...props}>

@@ -27,6 +27,7 @@ const GlobalStyle = ({ children }) => {
             color: #fefefe;
           }
           html {
+            height: 100%
             min-width: 356px;
             scroll-behavior: smooth;
           }
