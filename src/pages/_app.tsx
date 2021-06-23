@@ -27,13 +27,16 @@ const GlobalStyle = ({ children }) => {
             color: #fefefe;
           }
           html {
+            height: 100%
             min-width: 356px;
             scroll-behavior: smooth;
+            mix-blend-mode: inherit;
           }
           #__next {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            mix-blend-mode: inherit;
             background: ${bgColor[colorMode]};
           }
         `}

@@ -1,30 +1,51 @@
 import React from "react";
-import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
-import { bgColor, fgColor } from "../styles/colors";
+import {
+  useColorMode,
+  Button,
+  Flex,
+  Text,
+  Box,
+  Stack,
+  Heading,
+} from "@chakra-ui/react";
 
-import { Footer } from "../components/Footer";
 import { StickyNavHeader } from "../components/Header";
 
-export const Parallax5 = ({ children }) => {
+export const Parallax5 = ({ components, bgImages }) => {
   const { colorMode } = useColorMode();
+
+  const ParallaxBox = ({ children, bgImage, ...props }) => {
+    return (
+      <Box
+        bgImage={bgImage}
+        position="relative"
+        backgroundAttachment="fixed"
+        backgroundPosition="center"
+        background-repeat="no-repeat"
+        backgroundSize="cover"
+        {...props}
+      >
+        {children}
+      </Box>
+    );
+  };
 
   return (
     <>
-      <StickyNavHeader bg={bgColor[colorMode]} color={fgColor[colorMode]} />
-      <Flex
-        position="relative"
-        as="main"
-        justifyContent="center"
-        align="center"
-        flexDirection="column"
-        bg={bgColor[colorMode]}
-        color={fgColor[colorMode]}
-        px={[0, 4, 4]}
-        mt={[4, 8, 8]}
-      >
-        {children}
-      </Flex>
-      <Footer bg={bgColor[colorMode]} color={fgColor[colorMode]} />
+      <StickyNavHeader position="fixed" />
+      <Stack as="main" height="100vh" width="100vw">
+        <ParallaxBox bgImage={bgImages[0]} minHeight="100%">
+          {components[0]}
+        </ParallaxBox>
+        <Box position="relative"> {components[1]}</Box>
+        <ParallaxBox bgImage={bgImages[1]} height="100%">
+          {components[2]}
+        </ParallaxBox>
+        <Box position="relative">{components[3]}</Box>
+        <ParallaxBox bgImage={bgImages[2]} height="100%">
+          {components[4]}
+        </ParallaxBox>
+      </Stack>
     </>
   );
 };
