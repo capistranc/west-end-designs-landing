@@ -26,6 +26,7 @@ export default function Index({ allPostsData }) {
         width="100%"
         text-align="center"
         color="white"
+        sx={{ "mix-blend-mode": "difference" }}
       >
         SCROLL DOWN
       </Heading>

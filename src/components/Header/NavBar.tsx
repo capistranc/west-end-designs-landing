@@ -51,7 +51,13 @@ export function MenuLinks({ links, isOpen, ...props }) {
     return (
       <NextLink href={to} passHref>
         <Button as="a" variant="ghost" {...props}>
-          <Text display="block">{children}</Text>
+          <Text
+            color="white"
+            sx={{ "mix-blend-mode": "difference" }}
+            display="block"
+          >
+            {children}
+          </Text>
         </Button>
       </NextLink>
     );

@@ -30,14 +30,8 @@ export const BlurryFooter = ({ ...props }) => {
 
   return (
     // <Box position="relative">
-    <BlurryBackground
-      bgImage={bgImage}
-      color={color}
-      mx="auto"
-      py="12"
-      px={{ base: "4", md: "8" }}
-    >
-      <FooterContent links={links} />
+    <BlurryBackground bgImage={bgImage} color={color} mx="auto">
+      <FooterContent zIndex="1" links={links} />
     </BlurryBackground>
   );
 };
@@ -45,10 +39,11 @@ export const BlurryFooter = ({ ...props }) => {
 export const FooterContent = ({ ...props }) => {
   return (
     <Stack
-      zIndex="1"
       align="center"
       spacing="10"
       divider={<StackDivider />}
+      py="12"
+      px={{ base: "4", md: "8" }}
       {...props}
     >
       <Stack

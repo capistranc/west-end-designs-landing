@@ -8,7 +8,6 @@ import {
   Stack,
   Heading,
 } from "@chakra-ui/react";
-import { bgColor, fgColor } from "../styles/colors";
 
 import { StickyNavHeader } from "../components/Header";
 
@@ -33,7 +32,20 @@ export const Parallax5 = ({ components, bgImages }) => {
 
   return (
     <>
-      <StickyNavHeader color={fgColor[colorMode]} position="fixed" />
+      <StickyNavHeader position="fixed" />
+
+      {/* <Box
+        position="fixed"
+        top="0"
+        left="0"
+        color="white"
+        zIndex="999"
+        sx={{ "mix-blend-mode": "difference" }}
+      >
+        <Heading as="h1" color="white">
+          TEESTESTTEESTESTTEESTEST
+        </Heading>
+      </Box> */}
       <Stack as="main" height="100vh" width="100vw">
         <ParallaxBox bgImage={bgImages[0]} minHeight="100%">
           {components[0]}

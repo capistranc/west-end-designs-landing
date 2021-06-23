@@ -20,8 +20,9 @@ export const StickyNavHeader = ({ ...props }) => {
       >
         <NavBar
           links={links}
-          mixBlendMode="difference"
-          bgColor="transparent"
+          color="white"
+          sx={{ "mix-blend-mode": "difference" }}
+          //   bgColor="transparent"
         ></NavBar>
       </Box>
     </>
