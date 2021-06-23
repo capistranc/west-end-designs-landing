@@ -1,6 +1,6 @@
-import FooterContainer from "./Footer";
+import { BlurryFooter } from "./Footer";
 
-const links = [
+export const links = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
   { path: "/services", label: "Services" },
@@ -10,7 +10,7 @@ const links = [
 ];
 
 export const Footer = (props) => {
-  return <FooterContainer links {...props} />;
+  return <BlurryFooter links {...props} />;
 };
 
 export * from "./FooterHeading";

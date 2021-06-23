@@ -3,21 +3,22 @@ import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
 import { bgColor, fgColor } from "../styles/colors";
 
 import { Footer } from "../components/Footer";
-import { StickyNavHeader } from "../components/Header";
+import { BannerHeader, StickyNavHeader } from "../components/Header";
 import { Date, Logo } from "../components/";
-
+import { FooterContent } from "../components/Footer";
 export const Layout = ({ children, title }) => {
   const { colorMode } = useColorMode();
 
   return (
     <>
-      <StickyNavHeader
+      <BannerHeader
         title={title}
         bg={bgColor[colorMode]}
         color={fgColor[colorMode]}
       />
       <Flex
-        position="relative"
+        position="absolute"
+        top="0"
         as="main"
         justifyContent="center"
         align="center"

@@ -12,7 +12,9 @@ export const DarkModeSwitch = ({ ...props }) => {
       onClick={toggleColorMode}
       // bgColor={bgColor[colorMode]}
       bg="transparent"
-      color={fgColor[colorMode]}
+      color="white"
+      mixBlendMode="difference"
+      // color={fgColor[colorMode]}
       {...props}
     />
   );
