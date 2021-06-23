@@ -24,8 +24,6 @@ export const Layout = ({ children, title }) => {
         flexDirection="column"
         bg={bgColor[colorMode]}
         color={fgColor[colorMode]}
-        px={[0, 4, 4]}
-        mt={[4, 8, 8]}
       >
         {children}
       </Flex>
