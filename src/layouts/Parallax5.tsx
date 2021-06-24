@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   useColorMode,
   Button,
@@ -17,6 +17,7 @@ export const Parallax5 = ({ components, bgImages }) => {
   const ParallaxBox = ({ children, bgImage, ...props }) => {
     return (
       <Box
+        className="background"
         bgImage={bgImage}
         position="relative"
         backgroundAttachment="fixed"
@@ -29,6 +30,33 @@ export const Parallax5 = ({ components, bgImages }) => {
       </Box>
     );
   };
+
+  const ref = useRef();
+
+  let options = {
+    root: null, //The element that is used as the viewport for checking visibility of the target.
+    // Must be the ancestor of the target. Defaults to the browser viewport if not specified or null
+    rootMargin: "0px",
+    threshold: [0.5],
+  };
+
+  const callback = (entries, observer) => {
+    // console.log(entries);
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        let elem = entry.target;
+
+        console.log("WHATS ON THIS ELEM", elem);
+      }
+    });
+  };
+
+  useEffect(() => {
+    let observer = new IntersectionObserver(callback, options);
+
+    observer.observe(ref.current);
+  });
 
   return (
     <>
