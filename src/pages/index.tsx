@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { FooterContent } from "../components/Footer";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
+import { AnimeImage } from "../components/Home/useOnScreenComponent";
 
 export default function Index({ allPostsData }) {
   const breakpoints = createBreakpoints({
@@ -64,16 +65,18 @@ export default function Index({ allPostsData }) {
     //     <Text>Unlimited updates</Text>
     //   </Center>
     // </Flex>
+
     <Box p={4} display={{ md: "flex" }}>
       <Box flexShrink={0}>
         {/* <ScaleFade> */}
-        <Image
+        {/* <Image
           borderRadius="lg"
           width={{ md: 40 }}
           src="/images/moneyBag.png"
           alt="Hand holding bag of money."
           opacity=".2"
-        />
+        /> */}
+        <AnimeImage image="/images/handShake.png" bg="/images/background.png" />
         {/* </ScaleFade> */}
       </Box>
       <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
