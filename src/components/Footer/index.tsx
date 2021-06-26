@@ -1,5 +1,3 @@
-import { BlurryFooter } from "./Footer";
-
 export const links = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
@@ -9,10 +7,8 @@ export const links = [
   { path: "/contact", label: "Contact Us" },
 ];
 
-export const Footer = (props) => {
-  return <BlurryFooter links {...props} />;
-};
-
 export * from "./FooterHeading";
 export * from "./SocialMediaLinks";
 export * from "./Footer";
+export * from "./BlurryFooter";
+export { BlurryFooter as Footer } from "./BlurryFooter";

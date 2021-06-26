@@ -7,34 +7,13 @@ import {
   SimpleGridProps,
   Stack,
   StackDivider,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { SocialMediaLinks, FooterHeading } from "./index";
 import { Logo } from "../Logo";
 import { Text, TextProps } from "@chakra-ui/layout";
-import { BlurryBackground } from "../BlurryBackground";
 
 import { links } from "./index";
-
-export const BlurryFooter = ({ ...props }) => {
-  const bgImageLight =
-    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalinaLight.jpg')";
-  const bgImageDark =
-    "linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.51)) , url('/images/catalinaDark.jpg')";
-  const bgImage = useColorModeValue(bgImageLight, bgImageDark);
-
-  //   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
-
-  const color = "white";
-
-  return (
-    // <Box position="relative">
-    <BlurryBackground bgImage={bgImage} color={color} mx="auto">
-      <FooterContent zIndex="1" links={links} />
-    </BlurryBackground>
-  );
-};
 
 export const FooterContent = ({ ...props }) => {
   return (

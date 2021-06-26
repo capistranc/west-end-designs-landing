@@ -17,7 +17,7 @@ export const Layout = ({ children, title }) => {
         color={fgColor[colorMode]}
       />
       <Flex
-        position="absolute"
+        position="relative"
         top="0"
         as="main"
         justifyContent="center"
