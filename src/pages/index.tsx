@@ -67,8 +67,7 @@ export default function Index({ allPostsData }) {
     // </Flex>
 
     <Box p={4} display={{ md: "flex" }}>
-      <Box flexShrink={0}>
-        {/* <ScaleFade> */}
+      <Box flexShrink={0} borderRadius="lg" width={{ md: 40 }}>
         {/* <Image
           borderRadius="lg"
           width={{ md: 40 }}
@@ -76,8 +75,7 @@ export default function Index({ allPostsData }) {
           alt="Hand holding bag of money."
           opacity=".2"
         /> */}
-        <AnimeImage image="/images/handShake.png" bg="/images/background.png" />
-        {/* </ScaleFade> */}
+        <AnimeImage image="/images/moneyBag.png" bg="" />
       </Box>
       <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
         <Text
@@ -100,16 +98,8 @@ export default function Index({ allPostsData }) {
           Have peace of mind knowing that ..
         </Link>
       </Box>
-      {/* <Center height="50px">
-        <Divider orientation="vertical" />
-      </Center> */}
-      <Box flexShrink={0}>
-        <Image
-          borderRadius="lg"
-          width={{ md: 40 }}
-          src="/images/handShake.png"
-          alt="Two hands shaking"
-        />
+      <Box flexShrink={0} borderRadius="lg" width={{ md: 40 }}>
+        <AnimeImage image="/images/handShake.png" bg="" />
       </Box>
       <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
         <Text
@@ -135,13 +125,8 @@ export default function Index({ allPostsData }) {
       {/* <Center height="50px">
         <Divider orientation="vertical" />
       </Center> */}
-      <Box flexShrink={0}>
-        <Image
-          borderRadius="lg"
-          width={{ md: 40 }}
-          src="/images/writingWithQuill.png"
-          alt="Hand using quill to write with"
-        />
+      <Box flexShrink={0} borderRadius="lg" width={{ md: 40 }}>
+        <AnimeImage image="/images/writingWithQuill.png" bg="" />
       </Box>
       <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
         <Text

@@ -5,15 +5,15 @@ import MyPage from "./MyPage";
 export const AnimeImage = ({ image, bg, ...props }) => {
   return (
     <Wrapper>
-      <Background src={bg} alt="background" />
-      <Title>useOnScreen Hook</Title>
+      <Background src={bg} />
+      {/* <Title>useOnScreen Hook</Title> */}
       <MyPage image={image} />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  padding-top: 150px;
+  // padding-top: 150px;
   margin: 0 auto;
   display: grid;
 `;
