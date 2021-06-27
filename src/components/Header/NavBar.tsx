@@ -2,7 +2,6 @@ import React from "react";
 import NextLink from "next/link";
 import { Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import styled from "@emotion/styled";
 
 import { Logo } from "../Logo";
 import { DarkModeSwitch } from "../DarkModeSwitch";
@@ -15,7 +14,6 @@ export function NavBar({ links, ...props }) {
   return (
     <NavBarContainer {...props}>
       <Logo />
-      {/* <DarkModeSwitch {...props} /> */}
       <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
       <MenuLinks links={links} isOpen={isOpen} {...props} />
     </NavBarContainer>

@@ -5,7 +5,7 @@ import { bgColor, fgColor } from "../styles/colors";
 import { Footer } from "../components/Footer";
 import { BannerHeader, StickyNavHeader } from "../components/Header";
 import { Date, Logo } from "../components/";
-import { FooterContent } from "../components/Footer";
+
 export const Layout = ({ children, title }) => {
   const { colorMode } = useColorMode();
 
@@ -17,7 +17,7 @@ export const Layout = ({ children, title }) => {
         color={fgColor[colorMode]}
       />
       <Flex
-        position="absolute"
+        position="relative"
         top="0"
         as="main"
         justifyContent="center"
