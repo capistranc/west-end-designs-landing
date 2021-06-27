@@ -52,11 +52,11 @@ export const Parallax5 = ({ components, bgImages }) => {
     });
   };
 
-  useEffect(() => {
-    let observer = new IntersectionObserver(callback, options);
+  // useEffect(() => {
+  //   let observer = new IntersectionObserver(callback, options);
 
-    observer.observe(ref.current);
-  });
+  //   observer.observe(ref.current);
+  // });
 
   return (
     <>
