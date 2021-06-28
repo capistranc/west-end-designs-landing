@@ -10,26 +10,26 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { FooterContent } from "../components/Footer";
-export default function Index({ allPostsData }) {
+
+export default function Index() {
   const bgImages = [
     "url('/images/catalinaLight.jpg')",
     "url('/images/catalinaDark.jpg')",
     "url('/images/catalinaLight.jpg')",
   ];
   const component1 = (
-    <Box as="caption">
-      <Heading
-        as="h1"
-        position="absolute"
-        left="0"
-        top="50%"
-        width="100%"
-        text-align="center"
-        color="white"
-      >
+    <Flex
+      h="100%"
+      w="100%"
+      color="white"
+      justify="center"
+      alignItems="center"
+      flexDir={["column", "column", "row", "row"]}
+    >
+      <Heading as="h1" color="white">
         SCROLL DOWN
       </Heading>
-    </Box>
+    </Flex>
   );
 
   const component2 = (
@@ -63,7 +63,6 @@ export default function Index({ allPostsData }) {
       color="white"
       justify="center"
       alignItems="center"
-      height="450px"
       flexDir={["column", "column", "row", "row"]}
     >
       <Text>Sometimes u wanna say something</Text>

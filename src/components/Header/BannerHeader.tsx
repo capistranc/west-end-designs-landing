@@ -34,14 +34,9 @@ export const BannerHeader = ({ title, ...props }) => {
         top="0"
         width="100%"
         zIndex="10"
-        sx={{ "backdrop-filter": "blur(20px)" }}
+        sx={{ backdropFilter: "blur(20px)" }}
       >
-        <NavBar
-          links={links}
-          mixBlendMode="difference"
-          {...props}
-          bgColor="transparent"
-        ></NavBar>
+        <NavBar links={links} {...props} bgColor="transparent"></NavBar>
       </Box>
     </>
   );

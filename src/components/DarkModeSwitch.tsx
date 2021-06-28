@@ -11,10 +11,8 @@ export const DarkModeSwitch = ({ ...props }) => {
       icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
       onClick={toggleColorMode}
       // bgColor={bgColor[colorMode]}
+      color={fgColor[colorMode]}
       bg="transparent"
-      color="white"
-      mixBlendMode="difference"
-      // color={fgColor[colorMode]}
       {...props}
     />
   );

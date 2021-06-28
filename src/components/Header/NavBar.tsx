@@ -6,7 +6,7 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { Logo } from "../Logo";
 import { DarkModeSwitch } from "../DarkModeSwitch";
 
-export function NavBar({ links, ...props }) {
+export const NavBar = ({ links, ...props }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -18,7 +18,7 @@ export function NavBar({ links, ...props }) {
       <MenuLinks links={links} isOpen={isOpen} {...props} />
     </NavBarContainer>
   );
-}
+};
 
 export const NavBarContainer = ({ children, ...props }) => {
   return (
@@ -44,18 +44,12 @@ export const MenuToggle = ({ toggle, isOpen }) => {
   );
 };
 
-export function MenuLinks({ links, isOpen, ...props }) {
+export const MenuLinks = ({ links, isOpen, ...props }) => {
   const MenuItem = ({ children, to = "/", ...props }) => {
     return (
       <NextLink href={to} passHref>
         <Button as="a" variant="ghost" {...props}>
-          <Text
-            color="white"
-            sx={{ "mix-blend-mode": "difference" }}
-            display="block"
-          >
-            {children}
-          </Text>
+          <Text display="block">{children}</Text>
         </Button>
       </NextLink>
     );
@@ -86,4 +80,4 @@ export function MenuLinks({ links, isOpen, ...props }) {
       </Box>
     </>
   );
-}
+};
