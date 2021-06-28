@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import useOnScreen from "./useOnScreen";
+import useOnScreen from "../../lib/hooks/useOnScreen";
 
 const MyPage = ({ image }) => {
   const ref = useRef(null);
@@ -31,7 +31,7 @@ const Image = styled.img`
       opacity: 0;
     }
     50% {
-      opacity: 0.2;
+      opacity: 0.4;
     }
     100% {
       opacity: 1;

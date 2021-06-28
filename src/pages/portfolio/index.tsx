@@ -9,9 +9,11 @@ import {
   Heading,
   Link,
   Stack,
+  Button,
   StackDivider,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { getPosts } from "../../lib/instagram";
 
 export const Portfolio: NextPage = () => {
   const bgImageLight =
@@ -19,12 +21,15 @@ export const Portfolio: NextPage = () => {
   const bgImageDark =
     "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('/images/catalina.jpg')";
 
+  console.log(getPosts());
+
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
   return (
     <Layout title="Portfolio">
       <Head>
         <title>Portfolio</title>
       </Head>
+      <Button onClick={getPosts}> CLICK FOR ISNTAGRAM STUFF </Button>
     </Layout>
   );
 };

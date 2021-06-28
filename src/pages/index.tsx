@@ -20,6 +20,7 @@ import {
 import { FooterContent } from "../components/Footer";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 import { AnimeImage } from "../components/Home/useOnScreenComponent";
+import { ParallaxText } from "../components/parallaxCards";
 
 export default function Index({ allPostsData }) {
   const breakpoints = createBreakpoints({
@@ -36,20 +37,18 @@ export default function Index({ allPostsData }) {
     "url('/images/catalinaLight.jpg')",
   ];
   const component1 = (
-    <Box as="caption">
-      <Heading
-        as="h1"
-        position="absolute"
-        left="0"
-        top="50%"
-        width="100%"
-        text-align="center"
-        color="white"
-        sx={{ "mix-blend-mode": "difference" }}
-      >
+    <Flex
+      h="100%"
+      w="100%"
+      color="white"
+      justify="center"
+      alignItems="center"
+      flexDir={["column", "column", "row", "row"]}
+    >
+      <Heading as="h1" color="white">
         SCROLL DOWN
       </Heading>
-    </Box>
+    </Flex>
   );
 
   const component2 = (
@@ -161,22 +160,13 @@ export default function Index({ allPostsData }) {
       alignItems="center"
       height="450px"
       flexDir={["column", "column", "row", "row"]}
-    >
-      <Text>Sometimes u wanna say something</Text>
-    </Flex>
+    ></Flex>
   );
+
   const component4 = (
-    <Flex
-      h="100%"
-      w="100%"
-      color="white"
-      justify="center"
-      alignItems="center"
-      height="450px"
-      flexDir={["column", "column", "row", "row"]}
-    >
-      <Text>Sometimes u wanna say something</Text>
-    </Flex>
+    <ParallaxText>
+      <Text color="black">Sometimes u wanna say something</Text>
+    </ParallaxText>
   );
 
   const component5 = <FooterContent color="white" />;

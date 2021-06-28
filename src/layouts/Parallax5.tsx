@@ -13,7 +13,7 @@ export const Parallax5 = ({ components, bgImages }) => {
         backgroundPosition="center"
         background-repeat="no-repeat"
         backgroundSize="cover"
-        minHeight="100vh"
+        // minHeight="100vh"
         {...props}
       >
         <Box className="sentinel" data-header={props["data-header"]}></Box>
@@ -23,34 +23,34 @@ export const Parallax5 = ({ components, bgImages }) => {
   };
 
   const [headerColor, setHeaderColor] = useState("white");
-  useEffect(() => {
-    // const headerRef = document.getElementById("sticky-nav-bar");
+  //   useEffect(() => {
+  //     // const headerRef = document.getElementById("sticky-nav-bar");
 
-    const sections = document.querySelectorAll(".sentinel");
-    const options = {
-      root: null, //The element that is used as the viewport for checking visibility of the target.
-      // Must be the ancestor of the target. Defaults to the browser viewport if not specified or null
-      rootMargin: "0px",
-      threshold: [0.2, 0.9],
-    };
+  //     const sections = document.querySelectorAll(".sentinel");
+  //     const options = {
+  //       root: null, //The element that is used as the viewport for checking visibility of the target.
+  //       // Must be the ancestor of the target. Defaults to the browser viewport if not specified or null
+  //       rootMargin: "0px",
+  //       threshold: [0.2, 0.9],
+  //     };
 
-    const callback = (entries, observer) => {
-      entries.forEach((entry) => {
-        console.log(entry);
+  //     const callback = (entries, observer) => {
+  //       entries.forEach((entry) => {
+  //         console.log(entry);
 
-        if (entry.isIntersecting) {
-          if (entry.intersectionRatio >= 0.9) {
-            setHeaderColor(entry.target.dataset.header);
-          }
-        }
-      });
-    };
-    let observer = new IntersectionObserver(callback, options);
+  //         if (entry.isIntersecting) {
+  //           if (entry.intersectionRatio >= 0.9) {
+  //             setHeaderColor(entry.target.dataset.header);
+  //           }
+  //         }
+  //       });
+  //     };
+  //     let observer = new IntersectionObserver(callback, options);
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-  });
+  //     sections.forEach((section) => {
+  //       observer.observe(section);
+  //     });
+  //   });
   // useEffect(() => {
   //   let observer = new IntersectionObserver(callback, options);
 
@@ -65,7 +65,7 @@ export const Parallax5 = ({ components, bgImages }) => {
         id="sticky-nav-bar"
       />
       <Stack top="0" as="main" height="100vh" width="100vw">
-        <ParallaxBox bgImage={bgImages[0]} data-header="white">
+        <ParallaxBox bgImage={bgImages[0]} minHeight="100%" data-header="white">
           {components[0]}
         </ParallaxBox>
         <ParallaxBox position="relative" data-header="black">
