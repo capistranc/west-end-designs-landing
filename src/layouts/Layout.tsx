@@ -17,6 +17,7 @@ export const Layout = ({ children, title }) => {
         color={fgColor[colorMode]}
       />
       <Flex
+        position="relative"
         top="0"
         as="main"
         justifyContent="center"
@@ -24,8 +25,6 @@ export const Layout = ({ children, title }) => {
         flexDirection="column"
         bg={bgColor[colorMode]}
         color={fgColor[colorMode]}
-        px={[0, 4, 4]}
-        mt={[4, 8, 8]}
       >
         {children}
       </Flex>

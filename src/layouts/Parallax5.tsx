@@ -51,6 +51,11 @@ export const Parallax5 = ({ components, bgImages }) => {
       observer.observe(section);
     });
   });
+  // useEffect(() => {
+  //   let observer = new IntersectionObserver(callback, options);
+
+  //   observer.observe(ref.current);
+  // });
 
   return (
     <Box>
