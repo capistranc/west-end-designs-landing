@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import useOnScreen from "../../lib/hooks/useOnScreen";
+import { useOnScreen } from "../../lib/hooks/useOnScreen";
 
 const MyPage = ({ image }) => {
   const ref = useRef(null);

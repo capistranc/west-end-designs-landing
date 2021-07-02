@@ -9,6 +9,7 @@ import {
   Box,
   Stack,
   StackDivider,
+  Button,
   Center,
   VStack,
   Spacer,
@@ -16,11 +17,20 @@ import {
   Link,
   Divider,
   ScaleFade,
+  Fade,
+  BoxProps,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FooterContent } from "../components/Footer";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 import { AnimeImage } from "../components/Home/useOnScreenComponent";
 import { ParallaxText } from "../components/parallaxCards";
+import { useOnScreen } from "../lib/hooks";
+import { useRef } from "react";
+
+import { motion } from "framer-motion";
+
+const MotionBox = motion<BoxProps>(Box);
 
 export default function Index({ allPostsData }) {
   const breakpoints = createBreakpoints({
@@ -160,13 +170,43 @@ export default function Index({ allPostsData }) {
       alignItems="center"
       height="450px"
       flexDir={["column", "column", "row", "row"]}
-    ></Flex>
+    >
+      <Box bgColor="white">
+        <Text color="black"> SAY SOME STUFF</Text>
+      </Box>
+    </Flex>
   );
 
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+
   const component4 = (
-    <ParallaxText>
-      <Text color="black">Sometimes u wanna say something</Text>
-    </ParallaxText>
+    <Box ref={ref}>
+      <Flex
+        h="100%"
+        w="100%"
+        color="white"
+        justify="center"
+        alignItems="center"
+        height="450px"
+        flexDir={["column", "column", "row", "row"]}
+      >
+        <Fade in={isVisible} transition={{ duration: 5 }}>
+          <Text color="black">Sometimes u wanna say something</Text>
+        </Fade>
+        <MotionBox
+          initial={false}
+          animate={{
+            x: 0,
+            y: 0,
+            scale: 1,
+            rotate: 365,
+          }}
+        >
+          <Text color="black">SAY WHAT YOU NEED TO SAY ALREADY</Text>
+        </MotionBox>
+      </Flex>
+    </Box>
   );
 
   const component5 = <FooterContent color="white" />;

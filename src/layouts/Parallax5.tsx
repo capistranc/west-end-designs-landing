@@ -1,10 +1,51 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, Flex, Text, Heading } from "@chakra-ui/react";
 
-import { StickyNavHeader } from "../components/Header";
+import { BannerHeader, StickyNavHeader } from "../components/Header";
+
+const BorderedBanner = (text: string) => {
+  const BannerText = (text) => {
+    return (
+      <Heading as="h1" color="white" fontFamily="Oswald">
+        {text}
+      </Heading>
+    );
+  };
+  return (
+    <Flex
+      className="BorderedBanner"
+      boxSizing="border-box"
+      border="1px solid rgba(255, 255, 255, 0.5)"
+      justify="center"
+      align="center"
+      h="100%"
+      w="100%"
+    >
+      {BannerText(text)}
+    </Flex>
+  );
+};
 
 export const Parallax5 = ({ components, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
+    function renderChild() {
+      if (props.bgImage) {
+        //If bgImage, render diagonal lines overlay
+        return (
+          <Box
+            height="100%"
+            width="100%"
+            backgroundImage="url('/images/diagonalLine.png')"
+          >
+            <Box position="relative" h="100%" w="100%">
+              {children}
+            </Box>
+          </Box>
+        );
+      } else {
+        return <>{children}</>;
+      }
+    }
     return (
       <Box
         className="parallaxSection"
@@ -16,46 +57,12 @@ export const Parallax5 = ({ components, bgImages }) => {
         // minHeight="100vh"
         {...props}
       >
-        <Box className="sentinel" data-header={props["data-header"]}></Box>
-        {children}
+        {renderChild()}
       </Box>
     );
   };
 
   const [headerColor, setHeaderColor] = useState("white");
-  //   useEffect(() => {
-  //     // const headerRef = document.getElementById("sticky-nav-bar");
-
-  //     const sections = document.querySelectorAll(".sentinel");
-  //     const options = {
-  //       root: null, //The element that is used as the viewport for checking visibility of the target.
-  //       // Must be the ancestor of the target. Defaults to the browser viewport if not specified or null
-  //       rootMargin: "0px",
-  //       threshold: [0.2, 0.9],
-  //     };
-
-  //     const callback = (entries, observer) => {
-  //       entries.forEach((entry) => {
-  //         console.log(entry);
-
-  //         if (entry.isIntersecting) {
-  //           if (entry.intersectionRatio >= 0.9) {
-  //             setHeaderColor(entry.target.dataset.header);
-  //           }
-  //         }
-  //       });
-  //     };
-  //     let observer = new IntersectionObserver(callback, options);
-
-  //     sections.forEach((section) => {
-  //       observer.observe(section);
-  //     });
-  //   });
-  // useEffect(() => {
-  //   let observer = new IntersectionObserver(callback, options);
-
-  //   observer.observe(ref.current);
-  // });
 
   return (
     <Box>
@@ -66,7 +73,7 @@ export const Parallax5 = ({ components, bgImages }) => {
       />
       <Stack top="0" as="main" height="100vh" width="100vw">
         <ParallaxBox bgImage={bgImages[0]} minHeight="100%" data-header="white">
-          {components[0]}
+          {BorderedBanner("CONNECT")}
         </ParallaxBox>
         <ParallaxBox position="relative" data-header="black">
           {components[1]}
