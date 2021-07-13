@@ -1,6 +1,6 @@
 import React from "react";
 import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
-import { bgColor, fgColor } from "../styles/colors";
+import { bgColor, fgColor } from "../theme/colors";
 
 import { Footer } from "../components/Footer";
 import { BannerHeader, StickyNavHeader } from "../components/Header";

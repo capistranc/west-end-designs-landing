@@ -1,28 +1,21 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Box, Stack, Flex, Text, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  Flex,
+  Text,
+  Heading,
+  Button,
+  Spacer,
+} from "@chakra-ui/react";
 
 import { BannerHeader, StickyNavHeader } from "../components/Header";
 
-const BorderedBanner = (text: string) => {
-  const BannerText = (text) => {
-    return (
-      <Heading as="h1" color="white" fontFamily="Oswald">
-        {text}
-      </Heading>
-    );
-  };
+const AnimatedBanner = ({ text, ...props }) => {
   return (
-    <Flex
-      className="BorderedBanner"
-      boxSizing="border-box"
-      border="1px solid rgba(255, 255, 255, 0.5)"
-      justify="center"
-      align="center"
-      h="100%"
-      w="100%"
-    >
-      {BannerText(text)}
-    </Flex>
+    <Heading as="h1" variant="banner-with-border">
+      {text}
+    </Heading>
   );
 };
 
@@ -72,8 +65,49 @@ export const Parallax5 = ({ components, bgImages }) => {
         id="sticky-nav-bar"
       />
       <Stack top="0" as="main" height="100vh" width="100vw">
-        <ParallaxBox bgImage={bgImages[0]} minHeight="100%" data-header="white">
-          {BorderedBanner("CONNECT")}
+        <ParallaxBox bgImage={bgImages[0]} minHeight="100%" minWidth="100%">
+          <Flex
+            h="100%"
+            w="100%"
+            flexDir="column"
+            align="center"
+            justify="center"
+            color="white"
+          >
+            <Heading
+              fontFamily="Raleway"
+              fontWeight="900"
+              fontSize="3xl"
+              py="10"
+            >
+              <b>WE HELP BUSINESSES</b>
+            </Heading>
+            <AnimatedBanner text="CONNECT" />
+            <Heading fontFamily="Raleway" fontSize="3xl" py="5">
+              with clients
+            </Heading>
+            <Flex flexDirection={["column", "column", "row", "row"]}>
+              <Button
+                px="5px"
+                borderRadius="0px"
+                variant="solid"
+                bg="black"
+                color="white"
+              >
+                LEARN MORE
+              </Button>
+              <Spacer px="2" />
+              <Button
+                px="5px"
+                borderRadius="0px"
+                variant="solid"
+                bg="white"
+                color="black"
+              >
+                CONNECT WITH US
+              </Button>
+            </Flex>
+          </Flex>
         </ParallaxBox>
         <ParallaxBox position="relative" data-header="black">
           {components[1]}

@@ -24,7 +24,6 @@ import {
 import { FooterContent } from "../components/Footer";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 import { AnimeImage } from "../components/Home/useOnScreenComponent";
-import { ParallaxText } from "../components/parallaxCards";
 import { useOnScreen } from "../lib/hooks";
 import { useRef } from "react";
 
@@ -42,9 +41,9 @@ export default function Index({ allPostsData }) {
   });
 
   const bgImages = [
-    "url('/images/catalinaLight.jpg')",
-    "url('/images/catalinaDark.jpg')",
-    "url('/images/catalinaLight.jpg')",
+    "url('/images/cliffEdge.jpeg')",
+    "url('/images/cliffStanding.jpeg')",
+    "url('/images/cliffBottom.jpeg')",
   ];
   const component1 = (
     <Flex

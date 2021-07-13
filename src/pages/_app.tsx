@@ -4,11 +4,15 @@ import {
   ColorModeProvider,
   useColorMode,
 } from "@chakra-ui/react";
-import customTheme from "../styles/theme";
+import customTheme from "../theme";
 import { AppProps } from "next/app";
 import { Global, css } from "@emotion/react";
-import { prismLightTheme, prismDarkTheme } from "../styles/prism";
-import { fgColor, bgColor } from "../styles/colors";
+import { prismLightTheme, prismDarkTheme } from "../theme/prism";
+import { fgColor, bgColor } from "../theme/colors";
+
+import "@fontsource/raleway/400.css";
+import "@fontsource/oswald/400.css";
+import "@fontsource/roboto/400.css";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
