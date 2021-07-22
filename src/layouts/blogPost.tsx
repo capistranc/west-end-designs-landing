@@ -13,7 +13,6 @@ import {
 import { useRouter } from "next/router";
 
 import { Layout } from "./Layout";
-import { StickyContactUs } from "../components/StickyContactUs";
 
 export default function BlogLayout({ children, frontMatter }) {
   const { colorMode } = useColorMode();

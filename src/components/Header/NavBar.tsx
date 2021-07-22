@@ -4,7 +4,7 @@ import { Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Logo } from "../Logo";
-import { DarkModeSwitch } from "../DarkModeSwitch";
+import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
 
 export const NavBar = ({ links, ...props }) => {
   const [isOpen, setIsOpen] = React.useState(false);

@@ -10,8 +10,10 @@ import {
 } from "@chakra-ui/react";
 
 import { BannerHeader, StickyNavHeader } from "../components/Header";
+import { FooterContent } from "../components/Footer";
 
 const AnimatedBanner = ({ text, ...props }) => {
+  const texts = ["CONNECT", "INSPIRE", "CREATE"];
   return (
     <Heading as="h1" variant="banner-with-border">
       {text}
@@ -47,7 +49,8 @@ export const Parallax5 = ({ components, bgImages }) => {
         backgroundPosition="center"
         background-repeat="no-repeat"
         backgroundSize="cover"
-        // minHeight="100vh"
+        minHeight="100vh"
+        minWidth="100vw"
         {...props}
       >
         {renderChild()}
@@ -121,6 +124,7 @@ export const Parallax5 = ({ components, bgImages }) => {
         <ParallaxBox bgImage={bgImages[2]} height="100%" data-header="white">
           {components[4]}
         </ParallaxBox>
+        <FooterContent bgColor="gray.700" color="white" />
       </Stack>
     </Box>
   );

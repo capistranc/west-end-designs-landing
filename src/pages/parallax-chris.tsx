@@ -8,14 +8,42 @@ import {
   Flex,
   Box,
   Stack,
+  StackDivider,
+  Button,
+  Center,
+  VStack,
+  Spacer,
+  Image,
+  Link,
+  Divider,
+  ScaleFade,
+  Fade,
+  BoxProps,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FooterContent } from "../components/Footer";
+import { createBreakpoints } from "@chakra-ui/theme-tools";
+import { AnimeImage } from "../components/Home/useOnScreenComponent";
+import { useOnScreen } from "../lib/hooks";
+import { useRef } from "react";
 
-export default function Index() {
+import { motion } from "framer-motion";
+
+const MotionBox = motion<BoxProps>(Box);
+
+export default function Index({ allPostsData }) {
+  const breakpoints = createBreakpoints({
+    sm: "30em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+    "2xl": "96em",
+  });
+
   const bgImages = [
-    "url('/images/catalinaLight.jpg')",
-    "url('/images/catalinaDark.jpg')",
-    "url('/images/catalinaLight.jpg')",
+    "url('/images/cliffEdge2.jpeg')",
+    "url('/images/cliffStanding.jpeg')",
+    "url('/images/cliffBottom.jpeg')",
   ];
   const component1 = (
     <Flex
@@ -33,27 +61,103 @@ export default function Index() {
   );
 
   const component2 = (
-    <Text
-      as="p"
-      color="#777"
-      background-color="white"
-      text-align="center"
-      padding="50px 80px"
-    >
-      Parallax scrolling is a web site trend where the background content is
-      moved at a different speed than the foreground content while scrolling.
-      Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
-      posuere mollis ullamcorper libero ante lectus, blandit pellentesque a,
-      magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna
-      mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam
-      pede, nullam vitae eu placerat eget et vehicula. Varius quisque non
-      molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris
-      ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla
-      vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id
-      vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin
-      magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas,
-      porta porttitor placerat leo.
-    </Text>
+    // <Flex background-color="white">
+    //   <Center h="100px" color="black" fontSize="xl" >
+    //     <Text>$0 down to start</Text>
+    //   </Center>
+    //   <Center h="100px" color="black" fontSize="xl">
+    //     <Text>No contract</Text>
+    //   </Center>
+    //   <Spacer />
+    //   <Center h="100px" color="black" fontSize="xl">
+    //     <Text>Unlimited updates</Text>
+    //   </Center>
+    // </Flex>
+
+    <Box p={4} display={{ md: "flex" }}>
+      <Box flexShrink={0} borderRadius="lg" width={{ md: 40 }}>
+        {/* <Image
+          borderRadius="lg"
+          width={{ md: 40 }}
+          src="/images/moneyBag.png"
+          alt="Hand holding bag of money."
+          opacity=".2"
+        /> */}
+        <AnimeImage image="/images/moneyBag.png" bg="" />
+      </Box>
+      <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
+        <Text
+          fontWeight="bold"
+          textTransform="uppercase"
+          fontSize="sm"
+          letterSpacing="wide"
+          color="teal.600"
+        >
+          $0 down to start
+        </Text>
+        <Link
+          mt={1}
+          display="block"
+          fontSize="md"
+          lineHeight="normal"
+          // fontWeight="semibold"
+          href="#"
+        >
+          Have peace of mind knowing that ..
+        </Link>
+      </Box>
+      <Box flexShrink={0} borderRadius="lg" width={{ md: 40 }}>
+        <AnimeImage image="/images/handShake.png" bg="" />
+      </Box>
+      <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
+        <Text
+          fontWeight="bold"
+          textTransform="uppercase"
+          fontSize="sm"
+          letterSpacing="wide"
+          color="teal.600"
+        >
+          No contract!
+        </Text>
+        <Link
+          mt={1}
+          display="block"
+          fontSize="md"
+          lineHeight="normal"
+          // fontWeight="semibold"
+          href="#"
+        >
+          Have peace of mind knowing that ..
+        </Link>
+      </Box>
+      {/* <Center height="50px">
+        <Divider orientation="vertical" />
+      </Center> */}
+      <Box flexShrink={0} borderRadius="lg" width={{ md: 40 }}>
+        <AnimeImage image="/images/writingWithQuill.png" bg="" />
+      </Box>
+      <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
+        <Text
+          fontWeight="bold"
+          textTransform="uppercase"
+          fontSize="sm"
+          letterSpacing="wide"
+          color="teal.600"
+        >
+          Unlimited edits!
+        </Text>
+        <Link
+          mt={1}
+          display="block"
+          fontSize="md"
+          lineHeight="normal"
+          // fontWeight="semibold"
+          href="#"
+        >
+          Have peace of mind knowing that ..
+        </Link>
+      </Box>
+    </Box>
   );
 
   const component3 = (
@@ -63,10 +167,45 @@ export default function Index() {
       color="white"
       justify="center"
       alignItems="center"
+      height="450px"
       flexDir={["column", "column", "row", "row"]}
     >
-      <Text>Sometimes u wanna say something</Text>
+      <Box bgColor="white">
+        <Text color="black"> SAY SOME STUFF</Text>
+      </Box>
     </Flex>
+  );
+
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+
+  const component4 = (
+    <Box ref={ref}>
+      <Flex
+        h="100%"
+        w="100%"
+        color="white"
+        justify="center"
+        alignItems="center"
+        height="450px"
+        flexDir={["column", "column", "row", "row"]}
+      >
+        <Fade in={isVisible} transition={{ duration: 5 }}>
+          <Text color="black">Sometimes u wanna say something</Text>
+        </Fade>
+        <MotionBox
+          initial={false}
+          animate={{
+            x: 0,
+            y: 0,
+            scale: 1,
+            rotate: 365,
+          }}
+        >
+          <Text color="black">SAY WHAT YOU NEED TO SAY ALREADY</Text>
+        </MotionBox>
+      </Flex>
+    </Box>
   );
 
   const component5 = <FooterContent color="white" />;
@@ -75,7 +214,7 @@ export default function Index() {
     component1,
     component2,
     component3,
-    component2,
+    component4,
     component5,
   ];
 

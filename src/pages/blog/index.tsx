@@ -12,7 +12,7 @@ import {
 
 import { Layout } from "../../layouts/Layout";
 import { getAllFilesFrontMatter } from "../../lib/mdx";
-import { BlogPostPreview } from "../../components/BlogPostPreview";
+import { BlogPostPreview } from "../../components/Blog/BlogPostPreview";
 
 import { SearchIcon } from "@chakra-ui/icons";
 
