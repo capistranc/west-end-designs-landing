@@ -49,8 +49,14 @@ export const Parallax5 = ({ components, bgImages }) => {
         backgroundPosition="center"
         background-repeat="no-repeat"
         backgroundSize="cover"
-        minHeight="100vh"
-        minWidth="100vw"
+        // height="100vh"
+        // width="100vw"
+        height="calc(var(--vh, 1vh))"
+        width="calc(var(--vw, 1vw))"
+        // height="var(--vh)"
+        // width="var(--vw)"
+        // height={window.innerHeight}
+        // width={window.innerWidth}
         {...props}
       >
         {renderChild()}
@@ -67,7 +73,12 @@ export const Parallax5 = ({ components, bgImages }) => {
         color={headerColor}
         id="sticky-nav-bar"
       />
-      <Stack top="0" as="main" height="100vh" width="100vw">
+      <Stack
+        top="0"
+        as="main"
+        // height="calc(var(--vh, 1vh) * 100)"
+        // width="calc(var(--vw, 1vw) * 100)"
+      >
         <ParallaxBox bgImage={bgImages[0]} minHeight="100%" minWidth="100%">
           <Flex
             h="100%"
@@ -124,7 +135,7 @@ export const Parallax5 = ({ components, bgImages }) => {
         <ParallaxBox bgImage={bgImages[2]} height="100%" data-header="white">
           {components[4]}
         </ParallaxBox>
-        <FooterContent bgColor="gray.700" color="white" />
+        <FooterContent bgColor="gray.300" color="white" />
       </Stack>
     </Box>
   );

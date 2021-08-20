@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import {
   ChakraProvider,
   ColorModeProvider,
@@ -31,16 +32,14 @@ const GlobalStyle = ({ children }) => {
             color: #fefefe;
           }
           html {
-            height: 100%
-            min-width: 356px;
             scroll-behavior: smooth;
             mix-blend-mode: inherit;
           }
           #__next {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            mix-blend-mode: inherit;
+            height: 100vh;
+            width: 100vw;
             background: ${bgColor[colorMode]};
           }
         `}
@@ -51,6 +50,15 @@ const GlobalStyle = ({ children }) => {
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      let vw = window.innerWidth;
+      document.documentElement.style.setProperty("--vw", `${vw}px`);
+    });
+  });
+
   return (
     <ChakraProvider resetCSS theme={customTheme}>
       <ColorModeProvider
