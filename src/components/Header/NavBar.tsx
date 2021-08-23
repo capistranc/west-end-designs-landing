@@ -1,18 +1,26 @@
 import React from "react";
 import NextLink from "next/link";
-import { Box, Flex, Text, Stack, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Stack, Button, useColorMode } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Logo } from "../Logo";
 import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
 
+import { fgColor, bgColor } from "../../theme/colors";
+
 export const NavBar = ({ links, ...props }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const { colorMode } = useColorMode();
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <NavBarContainer {...props}>
+    <NavBarContainer
+      bg={bgColor[colorMode]}
+      color={fgColor[colorMode]}
+      {...props}
+    >
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
       <MenuLinks links={links} isOpen={isOpen} {...props} />

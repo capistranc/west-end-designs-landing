@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {
   ChakraProvider,
@@ -14,9 +14,26 @@ import { fgColor, bgColor } from "../theme/colors";
 import "@fontsource/raleway/400.css";
 import "@fontsource/oswald/400.css";
 import "@fontsource/roboto/400.css";
+import { chownSync } from "fs";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
+
+  useEffect(() => {
+    function setViewportHeight() {
+      let vh = window.innerHeight;
+      let vw = window.innerWidth;
+
+      console.log(window);
+
+      console.log(vh, vw);
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      document.documentElement.style.setProperty("--vw", `${vw}px`);
+    }
+
+    window.addEventListener("load", setViewportHeight);
+    window.addEventListener("resize", setViewportHeight);
+  });
 
   return (
     <>
@@ -33,13 +50,10 @@ const GlobalStyle = ({ children }) => {
           }
           html {
             scroll-behavior: smooth;
-            mix-blend-mode: inherit;
           }
           #__next {
             display: flex;
             flex-direction: column;
-            height: 100vh;
-            width: 100vw;
             background: ${bgColor[colorMode]};
           }
         `}
@@ -50,15 +64,6 @@ const GlobalStyle = ({ children }) => {
 };
 
 const App = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      let vh = window.innerHeight;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-      let vw = window.innerWidth;
-      document.documentElement.style.setProperty("--vw", `${vw}px`);
-    });
-  });
-
   return (
     <ChakraProvider resetCSS theme={customTheme}>
       <ColorModeProvider
