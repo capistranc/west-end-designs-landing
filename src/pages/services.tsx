@@ -1,11 +1,11 @@
-import { Parallax5 } from "../layouts";
 import {
-  component1,
-  component2,
-  component3,
-  component4,
-  component5,
-} from "../components/Services";
+  Parallax5,
+  section1,
+  section2,
+  section3,
+  section4,
+  section5,
+} from "../layouts/Services";
 
 export default function Index({ allPostsData }) {
   const bgImages = [
@@ -14,13 +14,7 @@ export default function Index({ allPostsData }) {
     "url('/images/cliffBottom.jpeg')",
   ];
 
-  const components = [
-    component1,
-    component2,
-    component3,
-    component4,
-    component5,
-  ];
+  const sections = [section1, section2, section3, section4, section5];
 
-  return <Parallax5 components={components} bgImages={""}></Parallax5>;
+  return <Parallax5 sections={sections} bgImages={""}></Parallax5>;
 }

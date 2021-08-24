@@ -25,7 +25,7 @@ const AnimatedBanner = ({ text, ...props }) => {
   );
 };
 
-export const component1 = (
+export const section1 = (
   <Flex
     h="100%"
     w="100%"

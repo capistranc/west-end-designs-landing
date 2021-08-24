@@ -44,7 +44,7 @@ const ListItem = ({ header, subText, ...props }) => {
     </Flex>
   );
 };
-export const component2 = (
+export const section2 = (
   <Flex direction="column" h="100%" bg="gray.600">
     <Flex p="4" direction="row" justify="flex-start" align="flex-start">
       <Heading as="h1" color="white">
@@ -71,7 +71,7 @@ export const component2 = (
         <ImageWithTextCard
           header={"$0 DOWN"}
           subText={`$0 Down to start. We sell our software as a services on a
-            subscription based plan starting from as little as $150 a month.`}
+              subscription based plan starting from as little as $150 a month.`}
         />
       </Box>
 

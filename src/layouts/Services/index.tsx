@@ -10,11 +10,17 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
-import { bgColor, fgColor } from "../theme/colors";
-import { StickyNavHeader } from "../components/Header";
-import { FooterContent } from "../components/Footer";
+import { bgColor, fgColor } from "../../theme/colors";
+import { StickyNavHeader } from "../../components/Header";
+import { FooterContent } from "../../components/Footer";
 
-export const Parallax5 = ({ components, bgImages }) => {
+export * from "./section1";
+export * from "./section2";
+export * from "./section3";
+export * from "./section4";
+export * from "./section5";
+
+export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
     function renderChild() {
       if (props.bgImage) {
@@ -61,11 +67,11 @@ export const Parallax5 = ({ components, bgImages }) => {
         color={fgColor[colorMode]}
       />
       <Stack top="0" as="main">
-        <ParallaxBox bgImage={bgImages[0]}>{components[0]}</ParallaxBox>
-        <ParallaxBox position="relative">{components[1]}</ParallaxBox>
-        <ParallaxBox bgImage={bgImages[1]}>{components[2]}</ParallaxBox>
-        <ParallaxBox position="relative">{components[3]}</ParallaxBox>
-        <ParallaxBox bgImage={bgImages[2]}>{components[4]}</ParallaxBox>
+        <ParallaxBox bgImage={bgImages[0]}>{sections[0]}</ParallaxBox>
+        <ParallaxBox position="relative">{sections[1]}</ParallaxBox>
+        <ParallaxBox bgImage={bgImages[1]}>{sections[2]}</ParallaxBox>
+        <ParallaxBox position="relative">{sections[3]}</ParallaxBox>
+        <ParallaxBox bgImage={bgImages[2]}>{sections[4]}</ParallaxBox>
         <FooterContent bgColor="gray.700" width="100%" color="white" />
       </Stack>
     </Box>

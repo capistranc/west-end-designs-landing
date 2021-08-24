@@ -21,7 +21,7 @@ export const StickyNavHeader = ({ ...props }) => {
   //     }
   //   });
   // };
-  //
+  //ß∂
   // useEffect(() => {
   //   let observer = new IntersectionObserver(callback, options);
   //
