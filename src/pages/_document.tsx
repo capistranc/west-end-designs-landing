@@ -7,8 +7,8 @@ export default class MyDocument extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+        <Head></Head>
+
         <body>
           <ColorModeScript />
           <Main />

@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import customTheme from "../theme";
 import { AppProps } from "next/app";
+import Head from "next/head";
 import { Global, css } from "@emotion/react";
 import { prismLightTheme, prismDarkTheme } from "../theme/prism";
 import { fgColor, bgColor } from "../theme/colors";
@@ -50,6 +51,8 @@ const GlobalStyle = ({ children }) => {
           #__next {
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
+            min-width: 100vw;
             background: ${bgColor[colorMode]};
           }
         `}
@@ -61,15 +64,20 @@ const GlobalStyle = ({ children }) => {
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ChakraProvider resetCSS theme={customTheme}>
-      <ColorModeProvider
-        options={{ initialColorMode: "light", useSystemColorMode: true }}
-      >
-        <GlobalStyle>
-          <Component {...pageProps} />
-        </GlobalStyle>
-      </ColorModeProvider>
-    </ChakraProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      <ChakraProvider resetCSS theme={customTheme}>
+        <ColorModeProvider
+          options={{ initialColorMode: "light", useSystemColorMode: true }}
+        >
+          <GlobalStyle>
+            <Component {...pageProps} />
+          </GlobalStyle>
+        </ColorModeProvider>
+      </ChakraProvider>
+    </>
   );
 };
 
