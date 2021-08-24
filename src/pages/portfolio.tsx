@@ -21,7 +21,7 @@ export const Portfolio: NextPage = () => {
   const bgImageDark =
     "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('/images/catalina.jpg')";
 
-  console.log(getPosts());
+  //   console.log(getPosts());
 
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
   return (
@@ -29,7 +29,7 @@ export const Portfolio: NextPage = () => {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <Button onClick={getPosts}> CLICK FOR ISNTAGRAM STUFF </Button>
+      <Button> CLICK FOR ISNTAGRAM STUFF </Button>
     </Layout>
   );
 };

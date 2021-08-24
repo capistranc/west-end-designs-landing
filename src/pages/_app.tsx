@@ -19,21 +19,17 @@ import { chownSync } from "fs";
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
 
-  useEffect(() => {
-    function setViewportHeight() {
-      let vh = window.innerHeight;
-      let vw = window.innerWidth;
+  // useEffect(() => {
+  //   function setViewportHeight() {
+  //     let vh = window.innerHeight;
+  //     let vw = window.innerWidth;
+  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
+  //     document.documentElement.style.setProperty("--vw", `${vw}px`);
+  //   }
 
-      console.log(window);
-
-      console.log(vh, vw);
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-      document.documentElement.style.setProperty("--vw", `${vw}px`);
-    }
-
-    window.addEventListener("load", setViewportHeight);
-    window.addEventListener("resize", setViewportHeight);
-  });
+  //   window.addEventListener("load", setViewportHeight);
+  //   window.addEventListener("resize", setViewportHeight);
+  // });
 
   return (
     <>

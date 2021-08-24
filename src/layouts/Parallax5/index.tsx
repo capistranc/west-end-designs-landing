@@ -48,8 +48,8 @@ export const Parallax5 = ({ sections, bgImages }) => {
         backgroundPosition="center"
         background-repeat="no-repeat"
         backgroundSize="cover"
-        height="calc(var(--vh, 1vh))"
-        width="calc(var(--vw, 1vw))"
+        // height="calc(var(--vh, 1vh))"
+        // width="calc(var(--vw, 1vw))"
         {...props}
       >
         {renderChild()}
