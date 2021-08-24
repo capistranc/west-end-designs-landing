@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { Layout } from "../../layouts/Layout";
-import { Date } from "../../components/Date";
-import { getSortedPostsData } from "../../lib/blog";
+import { Layout } from "../layouts/Layout";
+import { Date } from "../components/Date";
+import { getSortedPostsData } from "../lib/blog";
 import NextLink from "next/link";
 import { NextPage } from "next";
 import {
@@ -13,7 +13,7 @@ import {
   StackDivider,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { getPosts } from "../../lib/instagram";
+import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
   const bgImageLight =
