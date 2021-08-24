@@ -37,7 +37,7 @@ export const Parallax5 = ({ components, bgImages }) => {
     return (
       <Box
         className="parallaxSection"
-        position="relative"
+        // position="relative"
         backgroundAttachment="fixed"
         backgroundPosition="center"
         background-repeat="no-repeat"
@@ -56,7 +56,8 @@ export const Parallax5 = ({ components, bgImages }) => {
     <Box>
       <StickyNavHeader
         id="sticky-nav-bar"
-        bg={bgColor[colorMode]}
+        // bg={bgColor[colorMode]}
+        position="fixed"
         color={fgColor[colorMode]}
       />
       <Stack top="0" as="main">

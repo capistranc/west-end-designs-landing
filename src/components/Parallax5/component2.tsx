@@ -18,7 +18,7 @@ export const component2 = (
       </Heading>
     </Flex>
 
-    <Flex>
+    <Flex marginBottom="20">
       <Spacer flex="2" />
       <Heading color="white">SEO Optimized Web Design</Heading>
       <Spacer flex="2" />

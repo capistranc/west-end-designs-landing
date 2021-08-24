@@ -16,11 +16,7 @@ export const NavBar = ({ links, ...props }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <NavBarContainer
-      bg={bgColor[colorMode]}
-      color={fgColor[colorMode]}
-      {...props}
-    >
+    <NavBarContainer {...props}>
       <Logo />
       <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
       <MenuLinks links={links} isOpen={isOpen} {...props} />
