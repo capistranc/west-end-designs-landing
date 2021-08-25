@@ -1,6 +1,14 @@
 import React from "react";
 import NextLink from "next/link";
-import { Box, Flex, Text, Stack, Button, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Stack,
+  Button,
+  useColorMode,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Logo } from "../Logo";
@@ -32,7 +40,7 @@ export const NavBarContainer = ({ children, ...props }) => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      p={3}
+      p="2"
       {...props}
     >
       {children}
@@ -66,11 +74,13 @@ export const MenuLinks = ({ links, isOpen, ...props }) => {
         flexBasis={{ base: "100%", md: "auto" }}
       >
         <Stack
+          maxHeight="100vh"
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "column", "row", "row"]}
-          spacing="10"
+          spacing="8"
           pt={[4, 4, 0, 0]}
+          wrap="wrap"
         >
           {links.map((link) => {
             return (
@@ -79,6 +89,7 @@ export const MenuLinks = ({ links, isOpen, ...props }) => {
               </MenuItem>
             );
           })}
+
           <DarkModeSwitch {...props} />
         </Stack>
       </Box>
