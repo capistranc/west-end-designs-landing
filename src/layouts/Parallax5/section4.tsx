@@ -45,12 +45,12 @@ export const section4 = (
       </Heading>
     </Flex>
 
-    <Flex direction="column">
+    <Flex direction="column" align="center" justify="center">
       <Flex
         direction="column"
         justify="flex-start"
         p="1rem"
-        px="2rem"
+        px="1rem"
         color="white"
       >
         <Heading color="white" size="3xl" mb="1rem">
@@ -68,15 +68,15 @@ export const section4 = (
       </Flex>
 
       <Flex
-        p="2" //4 spacing units is 1rem in chakra
+        p="4" //4 spacing units is 1rem in chakra
         flexDirection={["column-reverse", "column-reverse", "row", "row"]}
         color="white"
         height="100%"
-        justify="space-around"
+        justify="space-evenly"
         align="space-around"
         mb="4em"
       >
-        <Flex flex="2" direction="column">
+        <Flex flex="2" direction="column" align="center" justify="center">
           <SimpleGrid columns={[1, 2, 2, 2]} gap="8" mt="12" maxWidth="56em">
             <ListItem
               header="SEO Optimized"

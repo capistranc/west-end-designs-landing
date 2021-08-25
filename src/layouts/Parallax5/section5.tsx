@@ -22,7 +22,9 @@ const AdCard = ({ caption, imageSource, subText, ...props }) => {
         minWidth="12em"
       />
       <Heading>{caption}</Heading>
-      <Text textStyle="subText"> {subText}</Text>
+      <Text textStyle="subText" maxWidth="30em">
+        {subText}
+      </Text>
     </Flex>
   );
 };

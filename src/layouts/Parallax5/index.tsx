@@ -19,7 +19,7 @@ export * from "./section2";
 export * from "./section3";
 export * from "./section4";
 export * from "./section5";
-
+import { ContactUs } from "./ContactUs";
 export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
     function renderChild() {
@@ -84,8 +84,21 @@ export const Parallax5 = ({ sections, bgImages }) => {
         <ParallaxBox bgImage={bgImages[1]}>{sections[2]}</ParallaxBox>
         <ParallaxBox position="relative">{sections[3]}</ParallaxBox>
         <ParallaxBox bgImage={bgImages[2]}>{sections[4]}</ParallaxBox>
-        <ParallaxBox bgImage={bgImages[2]}>{sections[5]}</ParallaxBox>
-        <FooterContent bgColor="gray.700" width="100%" color="white" />
+        {/* <ParallaxBox>
+          {" "}
+          <ContactUs />
+        </ParallaxBox> */}
+        <Flex
+          bg="#1E1E1E"
+          minHeight="20em"
+          width="100%"
+          color="white"
+          justify="center"
+          align="center"
+        >
+          <Heading>PRETEND IM A CONTACT FORM</Heading>
+        </Flex>
+        <FooterContent bgColor="black" width="100%" color="white" />
       </Flex>
     </>
   );
