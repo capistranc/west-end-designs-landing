@@ -84,20 +84,8 @@ export const Parallax5 = ({ sections, bgImages }) => {
         <ParallaxBox bgImage={bgImages[1]}>{sections[2]}</ParallaxBox>
         <ParallaxBox position="relative">{sections[3]}</ParallaxBox>
         <ParallaxBox bgImage={bgImages[2]}>{sections[4]}</ParallaxBox>
-        {/* <ParallaxBox>
-          {" "}
-          <ContactUs />
-        </ParallaxBox> */}
-        <Flex
-          bg="#1E1E1E"
-          minHeight="20em"
-          width="100%"
-          color="white"
-          justify="center"
-          align="center"
-        >
-          <Heading>PRETEND IM A CONTACT FORM</Heading>
-        </Flex>
+
+        <ContactUs />
         <FooterContent bgColor="black" width="100%" color="white" />
       </Flex>
     </>
