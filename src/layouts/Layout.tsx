@@ -6,16 +6,12 @@ import { Footer } from "../components/Footer";
 import { BannerHeader, StickyNavHeader } from "../components/Header";
 import { Date, Logo } from "../components/";
 
-export const Layout = ({ children, title }) => {
+export const Layout = ({ children }) => {
   const { colorMode } = useColorMode();
 
   return (
     <>
-      <BannerHeader
-        title={title}
-        bg={bgColor[colorMode]}
-        color={fgColor[colorMode]}
-      />
+      <StickyNavHeader bg={bgColor[colorMode]} color={fgColor[colorMode]} />
       <Flex
         position="relative"
         top="0"

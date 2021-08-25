@@ -1,16 +1,13 @@
 import Head from "next/head";
 import { Layout } from "../layouts/Layout";
 import { NextPage } from "next";
+import { ContactUs } from "../layouts/Parallax5/ContactUs";
 
-export const ContactUs: NextPage = () => {
+export const ContactPage: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>ContactUs</title>
-      </Head>
-      <section>
-        <h2>ContactUs</h2>
-      </section>
+      <Head> Contact Us Page</Head>
+      <ContactUs />
     </Layout>
   );
 };
@@ -21,4 +18,4 @@ export async function getStaticProps() {
   };
 }
 
-export default ContactUs;
+export default ContactPage;
