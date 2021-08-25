@@ -14,11 +14,24 @@ export const Heading = {
   // 3. We can add a new visual variant
   variants: {
     "banner-with-border": {
-      fontSize: "100px",
+      //See Parallax5/section3 for usage
+      fontSize: ["5xl", "6xl", "8xl", "9xl"],
       boxSizing: "border-box",
       border: "2px solid rgba(255, 255, 255, 0.5)",
-      px: "200",
-      py: "50",
+      px: ["4rem", "8rem", "10rem", "12rem"],
+      py: ["1rem", "1.5rem", "1.75rem", "2rem"],
+    },
+
+    "banner-with-border-md": {
+      //See Parallax5/section3 for usage
+      fontSize: ["4xl", "5xl", "6xl", "7xl"],
+      boxSizing: "border-box",
+      border: "2px solid rgba(255, 255, 255, 0.5)",
+      px: ["4rem", "8rem", "10rem", "10rem"],
+      py: [".75rem", "1rem", "1.25rem", "1.5rem"],
+    },
+    h2: {
+      fontFamily: "Raleway",
     },
     // 4. We can override existing variants
     // solid: (props) => ({

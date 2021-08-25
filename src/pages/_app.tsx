@@ -12,25 +12,25 @@ import { Global, css } from "@emotion/react";
 import { prismLightTheme, prismDarkTheme } from "../theme/prism";
 import { fgColor, bgColor } from "../theme/colors";
 
-import "@fontsource/raleway/400.css";
-import "@fontsource/oswald/400.css";
-import "@fontsource/roboto/400.css";
-import { chownSync } from "fs";
+import "@fontsource/raleway/";
+import "@fontsource/oswald/";
+import "@fontsource/roboto/";
+import "@fontsource/roboto-condensed";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
 
-  // useEffect(() => {
-  //   function setViewportHeight() {
-  //     let vh = window.innerHeight;
-  //     let vw = window.innerWidth;
-  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
-  //     document.documentElement.style.setProperty("--vw", `${vw}px`);
-  //   }
+  useEffect(() => {
+    function setViewportHeight() {
+      let vh = window.innerHeight;
+      let vw = window.innerWidth;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      document.documentElement.style.setProperty("--vw", `${vw}px`);
+    }
 
-  //   window.addEventListener("load", setViewportHeight);
-  //   window.addEventListener("resize", setViewportHeight);
-  // });
+    window.addEventListener("load", setViewportHeight);
+    window.addEventListener("resize", setViewportHeight);
+  });
 
   return (
     <>
@@ -51,8 +51,7 @@ const GlobalStyle = ({ children }) => {
           #__next {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            min-width: 100vw;
+
             background: ${bgColor[colorMode]};
           }
         `}
@@ -66,7 +65,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
       </Head>
       <ChakraProvider resetCSS theme={customTheme}>
         <ColorModeProvider

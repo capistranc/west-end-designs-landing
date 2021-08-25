@@ -16,6 +16,7 @@
     "@fontsource/oswald": "^4.5.0",
     "@fontsource/raleway": "^4.5.0",
     "@fontsource/roboto": "^4.5.0",
+    "@fontsource/roboto-condensed": "^4.5.0",
     "axios": "^0.21.1",
     "date-fns": "^2.16.1",
     "framer-motion": "^4.1.2",

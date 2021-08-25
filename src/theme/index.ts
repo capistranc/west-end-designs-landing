@@ -7,13 +7,12 @@ const fonts = {
   ...chakraTheme.fonts,
   body: "Roboto",
   heading: "Oswald",
-  heading2: "Raleway",
 };
 
 const breakpoints = createBreakpoints({
-  sm: "40em",
-  md: "52em",
-  lg: "64em",
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
   xl: "80em",
 });
 
@@ -21,6 +20,20 @@ const overrides = {
   ...chakraTheme,
   fonts,
   breakpoints,
+  textStyles: {
+    h1: {
+      fontFamily: "Oswald",
+    },
+    h2: {
+      fontFamily: "Raleway",
+    },
+    description: {},
+    subText: {
+      fontFamily: "Roboto Condensed",
+      fontWeight: "hairline",
+      fontStyle: "italic",
+    },
+  },
   fontWeights: {
     normal: 300,
     medium: 600,

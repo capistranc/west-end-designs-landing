@@ -10,8 +10,8 @@ export default class MyDocument extends NextDocument {
         <Head></Head>
 
         <body>
-          <ColorModeScript />
           <Main />
+          <ColorModeScript />
           <NextScript />
         </body>
       </Html>
