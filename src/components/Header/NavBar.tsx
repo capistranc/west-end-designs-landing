@@ -78,7 +78,7 @@ export const MenuLinks = ({ links, isOpen, ...props }) => {
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "column", "row", "row"]}
-          spacing="8"
+          spacing="4"
           pt={[4, 4, 0, 0]}
           wrap="wrap"
         >
