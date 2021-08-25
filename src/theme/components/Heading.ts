@@ -18,7 +18,7 @@ export const Heading = {
       fontSize: ["5xl", "6xl", "8xl", "9xl"],
       boxSizing: "border-box",
       border: "2px solid rgba(255, 255, 255, 0.5)",
-      px: ["4rem", "8rem", "10rem", "12rem"],
+      px: ["3rem", "8rem", "10rem", "12rem"],
       py: ["1rem", "1.5rem", "1.75rem", "2rem"],
     },
 
@@ -27,7 +27,7 @@ export const Heading = {
       fontSize: ["4xl", "5xl", "6xl", "7xl"],
       boxSizing: "border-box",
       border: "2px solid rgba(255, 255, 255, 0.5)",
-      px: ["4rem", "8rem", "10rem", "10rem"],
+      px: ["3rem", "8rem", "10rem", "10rem"],
       py: [".75rem", "1rem", "1.25rem", "1.5rem"],
     },
     h2: {

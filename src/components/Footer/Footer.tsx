@@ -67,7 +67,7 @@ export const Copyright = (props: TextProps) => (
 
 export const LinkGrid = (props: SimpleGridProps) => (
   <SimpleGrid columns={2} {...props}>
-    <Box minW="130px">
+    <Box minW="6em">
       <FooterHeading mb="4">Product</FooterHeading>
       <Stack>
         <Link>How it works</Link>
@@ -75,7 +75,7 @@ export const LinkGrid = (props: SimpleGridProps) => (
         <Link>Use Cases</Link>
       </Stack>
     </Box>
-    <Box minW="130px">
+    <Box minW="6em">
       <FooterHeading mb="4">Legal</FooterHeading>
       <Stack>
         <Link>Privacy</Link>
