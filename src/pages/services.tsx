@@ -1,5 +1,5 @@
 import {
-  Parallax5,
+  Services5,
   section1,
   section2,
   section3,
@@ -7,14 +7,20 @@ import {
   section5,
 } from "../layouts/Services";
 
-export default function Index({ allPostsData }) {
-  const bgImages = [
-    "url('/images/cliffEdge2.jpeg')",
-    "url('/images/cliffStanding.jpeg')",
-    "url('/images/cliffBottom.jpeg')",
+export default function Services({ allPostsData }) {
+  let section1Component = section1();
+  let section2Component = section2();
+  let section3Component = section3();
+  let section4Component = section4();
+  let section5Component = section5();
+
+  const sections = [
+    section1Component,
+    section2Component,
+    section3Component,
+    section4Component,
+    section5Component,
   ];
 
-  const sections = [section1, section2, section3, section4, section5];
-
-  return <Parallax5 sections={sections} bgImages={""}></Parallax5>;
+  return <Services5 sections={sections}></Services5>;
 }

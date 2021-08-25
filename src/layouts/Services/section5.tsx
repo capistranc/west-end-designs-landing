@@ -1,16 +1,21 @@
-import { Flex, Heading, Box, Text, Link } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 
-export const section5 = (
-  <Flex
-    h="100%"
-    w="100%"
-    color="white"
-    justify="center"
-    alignItems="center"
-    flexDir={["column", "column", "row", "row"]}
-  >
-    <Heading as="h1" color="white">
-      SCROLL DOWN
-    </Heading>
-  </Flex>
-);
+export const section5 = () => {
+  return (
+    <>
+      <Box
+        height="25vh"
+        w="100%"
+        flexDir="column"
+        align="center"
+        justify="center"
+        color="white"
+        backgroundColor="black"
+      >
+        <Heading fontWeight="600" py="10" fontSize="4xl">
+          <b className="thing">Our Services</b>
+        </Heading>
+      </Box>
+    </>
+  );
+};

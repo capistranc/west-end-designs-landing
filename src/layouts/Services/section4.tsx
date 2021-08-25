@@ -1,29 +1,21 @@
-import { Flex, Heading, Box, Text, Link, BoxProps } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 
-const MotionBox = motion<BoxProps>(Box);
-export const section4 = (
-  <Box>
-    <Flex
-      h="100%"
-      w="100%"
-      color="white"
-      justify="center"
-      alignItems="center"
-      height="450px"
-      flexDir={["column", "column", "row", "row"]}
-    >
-      <MotionBox
-        initial={false}
-        animate={{
-          x: 0,
-          y: 0,
-          scale: 1,
-          rotate: 365,
-        }}
+export const section4 = () => {
+  return (
+    <>
+      <Box
+        height="25vh"
+        w="100%"
+        flexDir="column"
+        align="center"
+        justify="center"
+        color="white"
+        backgroundColor="black"
       >
-        <Text color="black">SAY WHAT YOU NEED TO SAY ALREADY</Text>
-      </MotionBox>
-    </Flex>
-  </Box>
-);
+        <Heading fontWeight="600" py="10" fontSize="4xl">
+          <b className="thing">Our Services</b>
+        </Heading>
+      </Box>
+    </>
+  );
+};
