@@ -34,10 +34,10 @@ export const section2 = () => {
 
   return (
     <>
-      <Box height="35vh" w="100%" backgroundColor="white">
+      <Flex height="30vh" w="100%" backgroundColor="white">
         <Box
-          height="90%"
-          w="80%"
+          height="100%"
+          w="70%"
           flexDir="column"
           align="center"
           justify="center"
@@ -48,7 +48,8 @@ export const section2 = () => {
           // paddingRight="30px"
           marginLeft="8%"
         ></Box>
-      </Box>
+        <Box flex="1">{/* <Text>ASDF</Text> */}</Box>
+      </Flex>
     </>
   );
 };

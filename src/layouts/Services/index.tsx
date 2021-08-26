@@ -29,7 +29,7 @@ export const Services5 = ({ sections }) => {
         position="sticky"
         color={fgColor[colorMode]}
       />
-      <Flex top="0" as="main" flexDirection="column">
+      <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}
         {sections[1]}
         {sections[2]}
