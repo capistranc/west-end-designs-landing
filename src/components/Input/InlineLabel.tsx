@@ -1,29 +1,19 @@
-import { Box, Input, InputGroup } from "@chakra-ui/react";
+import { FormLabel } from "@chakra-ui/form-control";
 
-export const InlineLabel = ({ label, placeHolder, ...props }) => {
-  return (
-    <InputGroup {...props}>
-      <Box
-        display="inline"
-        ml="0.5em"
-        px="4px"
-        position="absolute"
-        bg="#1E1E1E"
-        zIndex="2"
-        fontWeight="bold"
-        {...props}
-      >
-        {label}
-      </Box>
-
-      <Input
-        borderColor="gray.500"
-        variant="outline"
-        mt=".75em"
-        p="1.25em"
-        placeHolder={placeHolder}
-        {...props}
-      />
-    </InputGroup>
-  );
-};
+export const InLineLabel = ({ children, ...props }) => (
+  <FormLabel
+    display="inline"
+    ml="0.5em"
+    px="0.25em"
+    mb="1em"
+    position="absolute"
+    bg={props.bg || "#1E1E1E"}
+    zIndex="2"
+    borderRadius="full"
+    fontWeight="bold"
+    top="-0.75em"
+    {...props}
+  >
+    {children}
+  </FormLabel>
+);

@@ -11,7 +11,7 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      <StickyNavHeader bg={bgColor[colorMode]} color={fgColor[colorMode]} />
+      <BannerHeader bg={bgColor[colorMode]} color={fgColor[colorMode]} />
       <Flex
         position="relative"
         top="0"

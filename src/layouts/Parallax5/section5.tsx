@@ -66,21 +66,23 @@ function loadAdCards() {
   );
 }
 
-export const section5 = (
-  <Flex
-    minHeight="100vh"
-    minWidth="100vw"
-    h="100%"
-    w="100%"
-    flexDir="column"
-    color="white"
-  >
-    <Flex direction="column" justify="center" align="center" width="100%">
-      <Heading as="h1" my="1.25em" variant="banner-with-border-md">
-        Pricing
-      </Heading>
+export const section5 = () => {
+  return (
+    <Flex
+      minHeight="100vh"
+      minWidth="100vw"
+      h="100%"
+      w="100%"
+      flexDir="column"
+      color="white"
+    >
+      <Flex direction="column" justify="center" align="center" width="100%">
+        <Heading as="h1" my="1.25em" variant="banner-with-border-md">
+          Pricing
+        </Heading>
 
-      {loadAdCards()}
+        {loadAdCards()}
+      </Flex>
     </Flex>
-  </Flex>
-);
+  );
+};
