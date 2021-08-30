@@ -19,6 +19,7 @@
     "@fontsource/roboto-condensed": "^4.5.0",
     "axios": "^0.21.1",
     "date-fns": "^2.16.1",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^4.1.2",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.3",

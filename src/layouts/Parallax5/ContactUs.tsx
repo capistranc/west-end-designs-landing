@@ -33,7 +33,7 @@ import { Logo } from "../../components";
 
 export default function AlertPop(props) {
   return (
-    <Alert h="2em" status="error">
+    <Alert h="2em" status="error" zIndex="3">
       <AlertIcon />
       <AlertTitle mr={2}>{props.title}</AlertTitle>
     </Alert>
@@ -61,7 +61,6 @@ export const ContactUs = () => {
 
   const toast = useToast();
   const onSubmit = (data) => {
-    console.log(data);
     toast({
       title: "Submitted!",
       status: "success",
@@ -164,6 +163,12 @@ export const ContactUs = () => {
                       value: 4,
                       message: "Minimum length should be 4",
                     },
+                    pattern: {
+                      message:
+                        "Email must be formatted properly: ie JohnSnow@gmail.com",
+                      value:
+                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    },
                   })}
                 />
               </InputGroup>
@@ -218,11 +223,11 @@ export const ContactUs = () => {
                 minHeight="12rem"
                 type="question"
                 resize={resize}
-                placeholder="What do you need?"
+                placeholder={`I want to do the cha cha, come with me and let us do the cha cha. Maybe after we can do something else, maybe not, who knows! But for sure let's make time to do the cha cha, you and I. I think it will be a lot of fun.`}
                 {...register("question", {
                   required: `This field is required`,
                   minLength: {
-                    value: 9,
+                    value: 30,
                     message: "Minimum length should be 30",
                   },
                 })}
