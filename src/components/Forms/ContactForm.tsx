@@ -4,34 +4,35 @@ import {
   InputGroup,
   InputLeftElement,
   Input,
+  chakra,
   Button,
   Link,
   Spacer,
   Textarea,
   Stack,
-  FormLabel,
   FormControl,
-  Grid,
   Box,
-  GridItem,
   useToast,
+  HTMLChakraProps,
   FormErrorMessage,
-  toast,
 } from "@chakra-ui/react";
+import emailJS from "emailjs-com";
 
 const ContactInfo = () => (
   <Box>
     <Logo />
-    <Link href="mailto:capistranc@gmail.com">WestEndDesigns@gmail.com</Link>
+    <Link href="mailto:westendwebdesigns@gmail.com">
+      WestEndWebDesigns@gmail.com
+    </Link>
     <Spacer />
     <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
   </Box>
 );
 
 import { Alert, AlertIcon, AlertTitle } from "@chakra-ui/react";
-import { Logo } from "../../components";
+import { Logo } from "..";
 
-export default function AlertPop(props) {
+export default function AlertPop(props: HTMLChakraProps<"div">) {
   return (
     <Alert h="2em" status="error" zIndex="3">
       <AlertIcon />
@@ -40,37 +41,50 @@ export default function AlertPop(props) {
   );
 }
 
-import {
-  EmailIcon,
-  PhoneIcon,
-  QuestionIcon,
-  QuestionOutlineIcon,
-} from "@chakra-ui/icons";
-import { InLineLabel } from "../../components/Input";
+import { EmailIcon, PhoneIcon, QuestionIcon } from "@chakra-ui/icons";
+import { InLineLabel } from "../Input";
 import { useForm } from "react-hook-form";
 import React from "react";
 
-export const ContactUs = () => {
+emailJS.init(process.env.EmailJS_ID);
+
+export const ContactForm = (props: HTMLChakraProps<"form">) => {
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const [resize, setResize] = React.useState("vertical");
+  // const [resize, setResize] = React.useState("vertical");
+
+  const [isSending, setSending] = React.useState(false);
 
   const toast = useToast();
-  const onSubmit = (data) => {
-    toast({
-      title: "Submitted!",
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
+  const onSubmit = async (data) => {
+    setSending(true);
+    const result = await emailJS.send("contact_service", "contact_form", data);
+
+    if (result.status === 200) {
+      toast({
+        title: "Sent!",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: `Failed to send: ${result.text}`,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+
+    setSending(false);
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <chakra.form onSubmit={handleSubmit(onSubmit)} id="contact-form" {...props}>
       <Flex
         bg={"#1E1E1E"}
         minHeight="100vh"
@@ -155,6 +169,7 @@ export const ContactUs = () => {
                 />
                 <Input
                   id="email"
+                  type="email"
                   borderColor="gray.500"
                   placeholder="foobar@gmail.com"
                   {...register("email", {
@@ -191,11 +206,12 @@ export const ContactUs = () => {
                 <Input
                   borderColor="gray.500"
                   id="phone"
+                  type="tel"
                   placeholder="+1 (949) 555 - 6192"
                   {...register("phone", {
                     minLength: {
                       value: 9,
-                      message: "Minimum length should be 9",
+                      message: "Phone Number should be at least 9 digits",
                     },
                   })}
                 />
@@ -222,7 +238,7 @@ export const ContactUs = () => {
                 height="100%"
                 minHeight="12rem"
                 type="question"
-                resize={resize}
+                overflowY="scroll"
                 placeholder={`I want to do the cha cha, come with me and let us do the cha cha. Maybe after we can do something else, maybe not, who knows! But for sure let's make time to do the cha cha, you and I. I think it will be a lot of fun.`}
                 {...register("question", {
                   required: `This field is required`,
@@ -246,11 +262,17 @@ export const ContactUs = () => {
             </FormControl>
           </Flex>
 
-          <Button type="submit" width="60%" variant="solid">
-            SEND
+          <Button
+            type="submit"
+            width="60%"
+            variant="solid"
+            isLoading={isSending}
+            loadingText="Sending..."
+          >
+            Send
           </Button>
         </Flex>
       </Flex>
-    </form>
+    </chakra.form>
   );
 };
