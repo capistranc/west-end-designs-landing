@@ -34,7 +34,7 @@ import { Logo } from "..";
 
 export default function AlertPop(props: HTMLChakraProps<"div">) {
   return (
-    <Alert h="2em" status="error" zIndex="3">
+    <Alert h="1em" status="error" zIndex="3">
       <AlertIcon />
       <AlertTitle mr={2}>{props.title}</AlertTitle>
     </Alert>
@@ -84,11 +84,19 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
   };
 
   return (
-    <chakra.form onSubmit={handleSubmit(onSubmit)} id="contact-form" {...props}>
+    <chakra.form
+      minWidth="100vw"
+      onSubmit={handleSubmit(onSubmit)}
+      id="contact-form"
+      d="flex"
+      alignItems="center"
+      justifyContent="center"
+      bg={"#1E1E1E"}
+      {...props}
+    >
       <Flex
-        bg={"#1E1E1E"}
         minHeight="100vh"
-        minWidth="100vw"
+        maxWidth="64rem"
         width="100%"
         height="100%"
         color="white"
@@ -105,9 +113,9 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           direction={["column", "row", "row", "row"]}
           mb="4em"
         >
-          <Heading>Get in touch today!</Heading>
+          <Heading p="8">Get in touch today!</Heading>
 
-          <ContactInfo />
+          <ContactInfo p="8" />
         </Flex>
         <Flex
           direction="column"
@@ -118,7 +126,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
         >
           <Stack w="100%" direction={["column", "column", "row", "row"]}>
             <FormControl isInvalid={errors.name}>
-              <InLineLabel> Name </InLineLabel>
+              <InLineLabel bg={props.bg}> Name </InLineLabel>
               <Input
                 borderColor="gray.500"
                 variant="outline"
@@ -135,7 +143,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
             </FormControl>
 
             <FormControl isInvalid={errors.company}>
-              <InLineLabel>Company</InLineLabel>
+              <InLineLabel bg={props.bg}>Company</InLineLabel>
               <Input
                 borderColor="gray.500"
                 variant="outline"
@@ -161,7 +169,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
             direction={["column", "column", "row", "row"]}
           >
             <FormControl isInvalid={errors.email}>
-              <InLineLabel>Email</InLineLabel>
+              <InLineLabel bg={props.bg}>Email</InLineLabel>
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
@@ -197,7 +205,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
             </FormControl>
 
             <FormControl isInvalid={errors.phone}>
-              <InLineLabel>Phone</InLineLabel>
+              <InLineLabel bg={props.bg}>Phone</InLineLabel>
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
@@ -226,7 +234,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
 
           <Flex w="100%" height="100%" flex="1">
             <FormControl isInvalid={errors.question} h="100%">
-              <InLineLabel>
+              <InLineLabel bg={props.bg}>
                 <QuestionIcon mx="1" />
                 Message
               </InLineLabel>

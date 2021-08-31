@@ -21,6 +21,12 @@ export * from "./section4";
 export * from "./section5";
 import { ContactForm } from "../../components/Forms/ContactForm";
 
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.8,
+};
+
 export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
     function renderChild() {
@@ -64,6 +70,8 @@ export const Parallax5 = ({ sections, bgImages }) => {
   };
 
   const { colorMode } = useColorMode();
+
+  const sectionIds = [];
   return (
     <>
       <StickyNavHeader
@@ -80,11 +88,21 @@ export const Parallax5 = ({ sections, bgImages }) => {
         height="100%"
         width="100%"
       >
-        <ParallaxBox bgImage={bgImages[0]}>{sections[0]}</ParallaxBox>
-        <ParallaxBox position="relative">{sections[1]}</ParallaxBox>
-        <ParallaxBox bgImage={bgImages[1]}>{sections[2]}</ParallaxBox>
-        <ParallaxBox position="relative">{sections[3]}</ParallaxBox>
-        <ParallaxBox bgImage={bgImages[2]}>{sections[4]}</ParallaxBox>
+        <ParallaxBox bgImage={bgImages[0]} id="section1">
+          {sections[0]}
+        </ParallaxBox>
+        <ParallaxBox position="relative" id="section2">
+          {sections[1]}
+        </ParallaxBox>
+        <ParallaxBox bgImage={bgImages[1]} id="section3">
+          {sections[2]}
+        </ParallaxBox>
+        <ParallaxBox position="relative" id="section4">
+          {sections[3]}
+        </ParallaxBox>
+        <ParallaxBox bgImage={bgImages[2]} id="section5">
+          {sections[4]}
+        </ParallaxBox>
 
         <ContactForm />
         <FooterContent bgColor="black" width="100%" color="white" />

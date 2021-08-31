@@ -74,7 +74,7 @@ export const MenuLinks = ({ links, isOpen, ...props }) => {
         flexBasis={{ base: "100%", md: "auto" }}
       >
         <Stack
-          maxHeight="80vh"
+          maxHeight="70vh"
           align="center"
           justify={["center", "space-between", "flex-end", "flex-end"]}
           direction={["column", "column", "row", "row"]}

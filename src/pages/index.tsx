@@ -9,7 +9,7 @@ import {
 
 export default function Index({ allPostsData }) {
   const bgImages = [
-    "url('/images/cliffEdge2.jpeg')",
+    "url('/images/cliffEdge3.jpg')",
     "url('/images/cliffStanding.jpeg')",
     "url('/images/cliffBottom.jpeg')",
   ];
