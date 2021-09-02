@@ -7,8 +7,11 @@ import {
   Stack,
   Button,
   useColorMode,
-  SimpleGrid,
+  useDisclosure,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+import { Fade, ScaleFade, Slide, SlideFade, Collapse } from "@chakra-ui/react";
+
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Logo } from "../Logo";
@@ -17,17 +20,33 @@ import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
 import { fgColor, bgColor } from "../../theme/colors";
 
 export const NavBar = ({ links, ...props }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  // const { colorMode } = useColorMode();
+  const { isOpen, onToggle } = useDisclosure();
 
-  const { colorMode } = useColorMode();
+  const variant = useBreakpointValue({ base: "hamburger", md: "standard" });
 
-  const toggle = () => setIsOpen(!isOpen);
+  function renderLinks() {
+    if (variant === "standard") {
+      return <MenuLinks links={links} isOpen={isOpen} {...props} />;
+    } else {
+      return (
+        <>
+          <MenuToggle toggle={onToggle} isOpen={isOpen} {...props} />
+
+          <Box display="block" flexBasis="100%">
+            <Collapse in={isOpen} animateOpacity>
+              <MenuLinks links={links} isOpen={isOpen} {...props} />
+            </Collapse>
+          </Box>
+        </>
+      );
+    }
+  }
 
   return (
     <NavBarContainer {...props}>
       <Logo />
-      <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
-      <MenuLinks links={links} isOpen={isOpen} {...props} />
+      {renderLinks()}
     </NavBarContainer>
   );
 };
@@ -48,7 +67,7 @@ export const NavBarContainer = ({ children, ...props }) => {
   );
 };
 
-export const MenuToggle = ({ toggle, isOpen }) => {
+export const MenuToggle = ({ toggle, isOpen, ...props }) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />}

@@ -22,6 +22,7 @@ const ContactCard = ({
     <Flex direction="column" align="flex-start" {...props}>
       <Heading>{name}</Heading>
       <Text textStyle="subText"> {location}</Text>
+
       <Image
         my="4"
         alignSelf="center"
@@ -89,6 +90,17 @@ export const section3 = () => {
       flexDir="column"
       color="white"
     >
+      <Flex
+        p="4"
+        direction="row"
+        justify="flex-start"
+        align="flex-start"
+        className="stickyHeader"
+      >
+        <Heading variant="h2" fontWeight="light" color="white">
+          Who we work with
+        </Heading>
+      </Flex>
       <Flex direction="column" justify="center" align="center" width="100%">
         <Heading as="h1" my="1.25em" variant="banner-with-border-md">
           Our Clients

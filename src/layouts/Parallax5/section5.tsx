@@ -13,7 +13,14 @@ import React, { useState, useEffect } from "react";
 
 const AdCard = ({ caption, imageSource, subText, ...props }) => {
   return (
-    <Flex direction="column" align="flex-start" {...props}>
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      border="2px solid gray"
+      bg="rgba(0, 0, 0, 0.6)"
+      {...props}
+    >
       <Image
         my="4"
         alignSelf="center"
@@ -21,7 +28,7 @@ const AdCard = ({ caption, imageSource, subText, ...props }) => {
         minHeight="10em"
         minWidth="12em"
       />
-      <Heading>{caption}</Heading>
+      <Heading mb="4">{caption}</Heading>
       <Text textStyle="subText" maxWidth="30em">
         {subText}
       </Text>
@@ -57,11 +64,11 @@ function loadAdCards() {
       height="100%"
       flexDirection={["column", "column", "row", "row"]}
       justify="center"
-      align="center"
+      align="stretch"
     >
-      <AdCard p="8" {...adCards[0]} />
-      <AdCard p="8" {...adCards[1]} />
-      <AdCard p="8" {...adCards[2]} />
+      <AdCard p="8" m="4" {...adCards[0]} />
+      <AdCard p="8" m="4" {...adCards[1]} />
+      <AdCard p="8" m="4" {...adCards[2]} />
     </Flex>
   );
 }
@@ -76,7 +83,25 @@ export const section5 = () => {
       flexDir="column"
       color="white"
     >
-      <Flex direction="column" justify="center" align="center" width="100%">
+      <Flex
+        p="4"
+        direction="row"
+        justify="flex-start"
+        align="flex-start"
+        mb="8"
+        className="stickyHeader"
+      >
+        <Heading variant="h2" fontWeight="light" color="white">
+          How much does it cost
+        </Heading>
+      </Flex>
+      <Flex
+        direction="column"
+        justify="center"
+        align="center"
+        w="100%"
+        h="100%"
+      >
         <Heading as="h1" my="1.25em" variant="banner-with-border-md">
           Pricing
         </Heading>
