@@ -49,12 +49,6 @@ const ContactCards = () => {
   const TransitionCard = ({ direction, children }) => {
     const ref = useRef();
     const isVisible = useOnScreen(ref);
-    let variant = direction;
-
-    // if (Array.isArray(direction) {
-    //   variant = useBreakpointValue({sm: direction["sm"]})
-
-    // }
 
     return (
       <Slide
