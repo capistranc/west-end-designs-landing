@@ -14,7 +14,7 @@ import {
 import React, { useRef } from "react";
 import { useOnScreen } from "../../lib/hooks";
 
-import { ClientCard } from "../../components/Cards";
+import { ClientCard } from "../../components/Cards/ClientCard";
 
 const companies = [
   {

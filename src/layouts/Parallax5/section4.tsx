@@ -1,12 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Box,
-  Text,
-  Spacer,
-  Image,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Flex, Heading, Text, Image, SimpleGrid } from "@chakra-ui/react";
 
 import { CheckIcon } from "@chakra-ui/icons";
 
