@@ -20,10 +20,8 @@ import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
 import { fgColor, bgColor } from "../../theme/colors";
 
 export const NavBar = ({ links, ...props }) => {
-  // const [isOpen, setIsOpen] = React.useState(false);
+  // const { colorMode } = useColorMode();
   const { isOpen, onToggle } = useDisclosure();
-
-  const { colorMode } = useColorMode();
 
   const variant = useBreakpointValue({ base: "hamburger", md: "standard" });
 
@@ -32,29 +30,22 @@ export const NavBar = ({ links, ...props }) => {
       return <MenuLinks links={links} isOpen={isOpen} {...props} />;
     } else {
       return (
-        <Box
-          w="100%"
-          z
-          direction="column"
-          align="center"
-          jusify="center"
-          flexBasis="100%"
-        >
+        <>
           <MenuToggle toggle={onToggle} isOpen={isOpen} {...props} />
 
-          {/* <Collapse in={isOpen} animateOpacity> */}
-          {/* <Flex w="100%" justify="center" align="center"> */}
-          <MenuLinks links={links} isOpen={isOpen} {...props} />
-          {/* </Flex> */}
-          {/* </Collapse> */}
-        </Box>
+          <Box display="block" flexBasis="100%">
+            <Collapse in={isOpen} animateOpacity>
+              <MenuLinks links={links} isOpen={isOpen} {...props} />
+            </Collapse>
+          </Box>
+        </>
       );
     }
   }
 
   return (
     <NavBarContainer {...props}>
-      <Logo alignSelf="flex-start" />
+      <Logo />
       {renderLinks()}
     </NavBarContainer>
   );
@@ -66,6 +57,7 @@ export const NavBarContainer = ({ children, ...props }) => {
       as="nav"
       align="center"
       justify="space-between"
+      wrap="wrap"
       w="100%"
       p="2"
       {...props}
@@ -77,9 +69,9 @@ export const NavBarContainer = ({ children, ...props }) => {
 
 export const MenuToggle = ({ toggle, isOpen, ...props }) => {
   return (
-    <Flex onClick={toggle} justify="center" align="center" {...props}>
+    <Box display={{ base: "block", md: "none" }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />}
-    </Flex>
+    </Box>
   );
 };
 
