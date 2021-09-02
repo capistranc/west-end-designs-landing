@@ -27,8 +27,6 @@ const observerOptions = {
   threshold: 0.8,
 };
 
-const headerSections = "";
-
 export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
     function renderChild() {
@@ -73,7 +71,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
 
   const { colorMode } = useColorMode();
 
-  const sectionIds = [];
   return (
     <>
       <StickyNavHeader
