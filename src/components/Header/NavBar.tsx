@@ -7,8 +7,11 @@ import {
   Stack,
   Button,
   useColorMode,
-  SimpleGrid,
+  useDisclosure,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+import { Fade, ScaleFade, Slide, SlideFade, Collapse } from "@chakra-ui/react";
+
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Logo } from "../Logo";
@@ -17,17 +20,42 @@ import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
 import { fgColor, bgColor } from "../../theme/colors";
 
 export const NavBar = ({ links, ...props }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  // const [isOpen, setIsOpen] = React.useState(false);
+  const { isOpen, onToggle } = useDisclosure();
 
   const { colorMode } = useColorMode();
 
-  const toggle = () => setIsOpen(!isOpen);
+  const variant = useBreakpointValue({ base: "hamburger", md: "standard" });
+
+  function renderLinks() {
+    if (variant === "standard") {
+      return <MenuLinks links={links} isOpen={isOpen} {...props} />;
+    } else {
+      return (
+        <Box
+          w="100%"
+          z
+          direction="column"
+          align="center"
+          jusify="center"
+          flexBasis="100%"
+        >
+          <MenuToggle toggle={onToggle} isOpen={isOpen} {...props} />
+
+          {/* <Collapse in={isOpen} animateOpacity> */}
+          {/* <Flex w="100%" justify="center" align="center"> */}
+          <MenuLinks links={links} isOpen={isOpen} {...props} />
+          {/* </Flex> */}
+          {/* </Collapse> */}
+        </Box>
+      );
+    }
+  }
 
   return (
     <NavBarContainer {...props}>
-      <Logo />
-      <MenuToggle toggle={toggle} isOpen={isOpen} {...props} />
-      <MenuLinks links={links} isOpen={isOpen} {...props} />
+      <Logo alignSelf="flex-start" />
+      {renderLinks()}
     </NavBarContainer>
   );
 };
@@ -38,7 +66,6 @@ export const NavBarContainer = ({ children, ...props }) => {
       as="nav"
       align="center"
       justify="space-between"
-      wrap="wrap"
       w="100%"
       p="2"
       {...props}
@@ -48,11 +75,11 @@ export const NavBarContainer = ({ children, ...props }) => {
   );
 };
 
-export const MenuToggle = ({ toggle, isOpen }) => {
+export const MenuToggle = ({ toggle, isOpen, ...props }) => {
   return (
-    <Box display={{ base: "block", md: "none" }} onClick={toggle}>
+    <Flex onClick={toggle} justify="center" align="center" {...props}>
       {isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />}
-    </Box>
+    </Flex>
   );
 };
 

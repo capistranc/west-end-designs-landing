@@ -27,6 +27,8 @@ const observerOptions = {
   threshold: 0.8,
 };
 
+const headerSections = "";
+
 export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
     function renderChild() {
@@ -76,7 +78,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
     <>
       <StickyNavHeader
         id="sticky-nav-bar"
-        // bg={bgColor[colorMode]}
         position="fixed"
         color={fgColor[colorMode]}
       />
@@ -91,16 +92,20 @@ export const Parallax5 = ({ sections, bgImages }) => {
         <ParallaxBox bgImage={bgImages[0]} id="section1">
           {sections[0]}
         </ParallaxBox>
-        <ParallaxBox position="relative" id="section2">
+        <ParallaxBox position="relative" data-header="What We Do" id="section2">
           {sections[1]}
         </ParallaxBox>
-        <ParallaxBox bgImage={bgImages[1]} id="section3">
+        <ParallaxBox
+          bgImage={bgImages[1]}
+          data-header="Who we work with"
+          id="section3"
+        >
           {sections[2]}
         </ParallaxBox>
-        <ParallaxBox position="relative" id="section4">
+        <ParallaxBox position="relative" data-header="Pricing" id="section4">
           {sections[3]}
         </ParallaxBox>
-        <ParallaxBox bgImage={bgImages[2]} id="section5">
+        <ParallaxBox bgImage={bgImages[2]} data-header="Contact" id="section5">
           {sections[4]}
         </ParallaxBox>
 

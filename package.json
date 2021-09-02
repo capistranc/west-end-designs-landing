@@ -17,6 +17,7 @@
     "@fontsource/raleway": "^4.5.0",
     "@fontsource/roboto": "^4.5.0",
     "@fontsource/roboto-condensed": "^4.5.0",
+    "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "date-fns": "^2.16.1",
     "emailjs-com": "^3.2.0",

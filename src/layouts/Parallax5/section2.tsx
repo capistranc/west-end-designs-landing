@@ -7,12 +7,9 @@ import {
   Spacer,
   Image,
   SimpleGrid,
-  Grid,
-  GridItem,
-  Divider,
-  Textarea,
+  Icon,
 } from "@chakra-ui/react";
-
+import { AllInclusive, MoneyOff, Description, Block } from "@material-ui/icons";
 import { CheckIcon } from "@chakra-ui/icons";
 
 const ImageWithTextCard = ({ header, subText, ...props }) => {
@@ -26,7 +23,18 @@ const ImageWithTextCard = ({ header, subText, ...props }) => {
       {...props}
     >
       <Spacer />
-      <Image boxSize="200px" />
+
+      <Icon
+        border="2px solid gray "
+        borderRadius="360"
+        as={MoneyOff}
+        p="12"
+        my="4"
+        alignSelf="center"
+        minHeight="10em"
+        minWidth="10em"
+      ></Icon>
+
       <Heading py="8"> {header}</Heading>
       <Spacer />
       <Text align="center">{subText}</Text>
@@ -64,6 +72,7 @@ export const section2 = () => {
         justify="flex-start"
         align="flex-start"
         mb="24"
+        className="stickyHeader"
       >
         <Heading variant="h2" fontWeight="light" color="white">
           What We Do
