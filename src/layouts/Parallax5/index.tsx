@@ -1,14 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import {
-  Box,
-  Stack,
-  Flex,
-  Text,
-  Heading,
-  Button,
-  Spacer,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
 
 import { bgColor, fgColor } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
