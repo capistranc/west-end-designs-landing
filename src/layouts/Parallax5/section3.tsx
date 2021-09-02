@@ -8,77 +8,96 @@ import {
   Image,
   Text,
   Stack,
+  Slide,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
+import { useOnScreen } from "../../lib/hooks";
 
-const ContactCard = ({
-  name,
-  location,
-  imageSource,
-  description,
-  ...props
-}) => {
-  return (
-    <Flex direction="column" align="flex-start" {...props}>
-      <Heading>{name}</Heading>
-      <Text textStyle="subText"> {location}</Text>
+import { ClientCard } from "../../components/Cards";
 
-      <Image
-        my="4"
-        alignSelf="center"
-        src={imageSource}
-        minHeight="10em"
-        minWidth="12em"
-      />
-      <Text marginBottom="4em" maxWidth="22rem">
-        {description}
-      </Text>
-      <Button alignSelf="center" width="80%">
-        Visit
-      </Button>
-    </Flex>
-  );
-};
+const companies = [
+  {
+    name: "G&J Flower Distributors",
+    location: "Los Angeles, CA",
+    imageSource: `url('/images/catalinaLight.jpg')`,
+    description: `G&J Flower Distributors is the largest privately held construction
+  supply company in Seattle, WA for over 35 years`,
+  },
+  {
+    name: "New Veganings",
+    location: "Los Angeles, CA",
+    imageSource: `url('/images/catalinaLight.jpg')`,
+    description: `New Vegnaings is the largest privately held construction
+  supply company in Seattle, WA for over 35 years`,
+  },
+  {
+    name: "Jupiter Yoga",
+    location: "Aliso Viejo, CA",
+    imageSource: `url('/images/catalinaLight.jpg')`,
+    description: `Jupiter Yoga is the largest privately held construction
+  supply company in Seattle, WA for over 35 years`,
+  },
+];
 
-function loadContactCards() {
-  const companies = [
-    {
-      name: "G&J Flower Distributors",
-      location: "Los Angeles, CA",
-      imageSource: `url('/images/catalinaLight.jpg')`,
-      description: `G&J Flower Distributors is the largest privately held construction
-    supply company in Seattle, WA for over 35 years`,
-    },
-    {
-      name: "G&J Flower Distributors",
-      location: "Los Angeles, CA",
-      imageSource: `url('/images/catalinaLight.jpg')`,
-      description: `G&J Flower Distributors is the largest privately held construction
-    supply company in Seattle, WA for over 35 years`,
-    },
-    {
-      name: "G&J Flower Distributors",
-      location: "Los Angeles, CA",
-      imageSource: `url('/images/catalinaLight.jpg')`,
-      description: `G&J Flower Distributors is the largest privately held construction
-    supply company in Seattle, WA for over 35 years`,
-    },
-  ];
+const ContactCards = () => {
+  const transitionVariant = useBreakpointValue({
+    base: "right",
+    lg: "bottom",
+  });
+
+  const TransitionCard = ({ direction, children }) => {
+    const ref = useRef();
+    const isVisible = useOnScreen(ref);
+    let variant = direction;
+
+    // if (Array.isArray(direction) {
+    //   variant = useBreakpointValue({sm: direction["sm"]})
+
+    // }
+
+    return (
+      <Slide
+        direction={direction}
+        ref={ref}
+        style={{
+          flex: "1",
+          position: "static",
+          display: "flex",
+          alignSelf: "stretch",
+          justifySelf: "stretch",
+        }}
+        in={isVisible}
+      >
+        {children}
+      </Slide>
+    );
+  };
 
   return (
     <Flex
-      width="100%"
-      height="100%"
+      // width="100%"
+      // height="100%"
       flexDirection={["column", "column", "row", "row"]}
       justify="center"
       align="center"
+      p="8"
+      m="8"
     >
-      <ContactCard p="8" {...companies[0]} />
-      <ContactCard p="8" {...companies[1]} />
-      <ContactCard p="8" {...companies[2]} />
+      <TransitionCard direction="left">
+        <ClientCard {...companies[0]} />
+      </TransitionCard>
+
+      <TransitionCard direction={transitionVariant}>
+        <ClientCard {...companies[1]} />
+      </TransitionCard>
+
+      <TransitionCard direction="right">
+        <ClientCard {...companies[2]} />
+      </TransitionCard>
     </Flex>
   );
-}
+};
 
 export const section3 = () => {
   return (
@@ -106,7 +125,7 @@ export const section3 = () => {
           Our Clients
         </Heading>
 
-        {loadContactCards()}
+        {ContactCards()}
       </Flex>
     </Flex>
   );

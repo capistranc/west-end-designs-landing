@@ -17,8 +17,9 @@ const AdCard = ({ caption, imageSource, subText, ...props }) => {
       direction="column"
       align="center"
       justify="center"
-      border="2px solid gray"
+      border="2px solid rgba(255,255,255,0.2)"
       bg="rgba(0, 0, 0, 0.6)"
+      borderRadius="16"
       {...props}
     >
       <Image
