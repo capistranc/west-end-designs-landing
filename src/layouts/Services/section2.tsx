@@ -27,29 +27,23 @@
 //   </Flex>
 // );
 
-import { Flex, Box, Heading, Text } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text, Image, Link } from "@chakra-ui/react";
 
 export const section2 = () => {
   const bgImage = "url('/images/guyStandingNextToGraph.svg')";
 
   return (
     <>
-      <Flex height="30vh" w="100%" backgroundColor="white">
-        <Box
-          height="100%"
-          w="70%"
-          flexDir="column"
-          align="center"
-          justify="center"
-          bgImage={bgImage}
-          backgroundPosition="center"
-          backgroundSize="contain"
-          backgroundRepeat="no-repeat"
-          // paddingRight="30px"
-          marginLeft="8%"
-        ></Box>
-        <Box flex="1">{/* <Text>ASDF</Text> */}</Box>
-      </Flex>
+      <Box p={4} display={{ lg: "inline" }}>
+        <Box flexShrink={0}>
+          <Image
+            borderRadius="lg"
+            width={{ sm: "50%" }}
+            src="/images/guyStandingNextToGraph.svg"
+            alt="Guy standing next to graph"
+          />
+        </Box>
+      </Box>
     </>
   );
 };

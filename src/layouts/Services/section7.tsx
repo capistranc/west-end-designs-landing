@@ -1,6 +1,14 @@
-import { Flex, Box, Heading, Text, Stack, VStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Stack,
+  VStack,
+  Link,
+} from "@chakra-ui/react";
 
-export const section3 = () => {
+export const section7 = () => {
   return (
     <>
       <Box p={4} display={{ lg: "inline" }} w="100%" height="20%">
