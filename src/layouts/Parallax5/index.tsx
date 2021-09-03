@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Box, Flex, useColorMode } from "@chakra-ui/react";
-
+import { Box, Flex, useColorMode, Link } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { bgColor, fgColor } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
 import { FooterContent } from "../../components/Footer";
@@ -90,10 +90,14 @@ export const Parallax5 = ({ sections, bgImages }) => {
         >
           {sections[2]}
         </ParallaxBox>
-        <ParallaxBox position="relative" data-header="Pricing" id="section4">
+        <ParallaxBox
+          position="relative"
+          data-header="How we do it"
+          id="section4"
+        >
           {sections[3]}
         </ParallaxBox>
-        <ParallaxBox bgImage={bgImages[2]} data-header="Contact" id="section5">
+        <ParallaxBox bgImage={bgImages[2]} data-header="Pricing " id="section5">
           {sections[4]}
         </ParallaxBox>
 

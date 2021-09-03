@@ -40,20 +40,19 @@ const companies = [
   },
 ];
 
-const ContactCards = () => {
-  const transitionVariant = useBreakpointValue({
-    base: "right",
-    lg: "bottom",
-  });
+const TransitionCard = ({ slideFrom, children }) => {
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+  let direction = slideFrom;
 
-  const TransitionCard = ({ direction, children }) => {
-    const ref = useRef();
-    const isVisible = useOnScreen(ref);
+  if (typeof slideFrom === "object") {
+    direction = useBreakpointValue(slideFrom);
+  }
 
-    return (
+  return (
+    <Flex ref={ref} alignSelf="stretch" justifySelf="stretch">
       <Slide
         direction={direction}
-        ref={ref}
         style={{
           flex: "1",
           position: "static",
@@ -65,8 +64,17 @@ const ContactCards = () => {
       >
         {children}
       </Slide>
-    );
+    </Flex>
+  );
+};
+
+const ContactCards = () => {
+  const slideFrom2 = {
+    base: "right",
+    md: "bottom",
   };
+
+  const transitionVariant = useBreakpointValue(slideFrom2);
 
   return (
     <Flex
@@ -78,15 +86,15 @@ const ContactCards = () => {
       p="8"
       m="8"
     >
-      <TransitionCard direction="left">
+      <TransitionCard slideFrom="left">
         <ClientCard {...companies[0]} />
       </TransitionCard>
 
-      <TransitionCard direction={transitionVariant}>
+      <TransitionCard slideFrom={transitionVariant}>
         <ClientCard {...companies[1]} />
       </TransitionCard>
 
-      <TransitionCard direction="right">
+      <TransitionCard slideFrom={{ base: "left", lg: "right" }}>
         <ClientCard {...companies[2]} />
       </TransitionCard>
     </Flex>

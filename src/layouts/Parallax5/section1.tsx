@@ -5,9 +5,11 @@ import {
   Spacer,
   BoxProps,
   Box,
+  Link,
   Text,
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
+import NextLink from "next/link";
 
 import { motion } from "framer-motion";
 
@@ -52,7 +54,9 @@ export const section1 = () => {
           bg="black"
           color="white"
         >
-          LEARN MORE
+          <NextLink href="#" passHref>
+            <Link>LEARN MORE</Link>
+          </NextLink>
         </Button>
         <Spacer px="2" />
         <Button
@@ -62,7 +66,9 @@ export const section1 = () => {
           bg="white"
           color="black"
         >
-          CONNECT WITH US
+          <NextLink href="#contact-form" passHref>
+            <Link>CONNECT WITH US</Link>
+          </NextLink>
         </Button>
       </Flex>
     </Flex>

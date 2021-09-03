@@ -4,8 +4,6 @@ import { useOnScreen } from "../../lib/hooks/useOnScreen";
 
 const MyPage = ({ image }) => {
   const ref = useRef(null);
-
-  useEffect(() => {}, []);
   const isVisible = useOnScreen(ref);
   console.log("isVisible", isVisible);
 
