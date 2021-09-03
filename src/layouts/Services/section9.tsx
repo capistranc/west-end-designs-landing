@@ -11,7 +11,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-export const section8 = () => {
+export const section9 = () => {
   return (
     <>
       <Box p={4} display={{ lg: "inline" }} height="30%">
@@ -32,7 +32,7 @@ export const section8 = () => {
             <Flex align="center" w="100%" height="20%" bg="DarkTurquoise">
               <Flex align="center" justify="center" margin="auto">
                 <Text w="100%" height="100%" textAlign="center">
-                  PREMIUM
+                  PREMIUM PRO+
                 </Text>
               </Flex>
             </Flex>
@@ -40,7 +40,7 @@ export const section8 = () => {
               <VStack w="100%" align="normal">
                 <Flex align="center" mt="1">
                   <Flex align="center" justify="center" margin="auto">
-                    <Text textAlign="center">$150/Month</Text>
+                    <Text textAlign="center">$300/Month</Text>
                   </Flex>
                 </Flex>
                 <VStack align="normal">

@@ -8,6 +8,7 @@ import {
   section6,
   section7,
   section8,
+  section9,
 } from "../layouts/Services";
 
 export default function Services({ allPostsData }) {
@@ -19,6 +20,7 @@ export default function Services({ allPostsData }) {
   let section6Component = section6();
   let section7Component = section7();
   let section8Component = section8();
+  let section9Component = section9();
 
   const sections = [
     section1Component,
@@ -29,6 +31,7 @@ export default function Services({ allPostsData }) {
     section6Component,
     section7Component,
     section8Component,
+    section9Component,
   ];
 
   return <Services5 sections={sections}></Services5>;

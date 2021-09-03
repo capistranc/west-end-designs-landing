@@ -21,6 +21,7 @@ export * from "./section5";
 export * from "./section6";
 export * from "./section7";
 export * from "./section8";
+export * from "./section9";
 
 export const Services5 = ({ sections }) => {
   const { colorMode } = useColorMode();
@@ -41,6 +42,7 @@ export const Services5 = ({ sections }) => {
         {sections[5]}
         {sections[6]}
         {sections[7]}
+        {sections[8]}
         <FooterContent bgColor="gray.700" width="100%" color="white" />
       </Flex>
     </>
