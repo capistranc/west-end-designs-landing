@@ -31,7 +31,7 @@ export function BlurryBackground({ children, bgImage, ...props }) {
         left: 0,
         width: "100%",
         height: "100%",
-        filter: "blur(4px)",
+        // filter: "blur(4px)",
       }}
       {...props} //Keep props at bottom for manual override
     >

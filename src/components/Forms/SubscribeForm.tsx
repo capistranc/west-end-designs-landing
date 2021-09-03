@@ -10,6 +10,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+import { init } from "emailjs-com";
+init("user_4LtQ3LRB7J6d60KxeHQuY");
+
 const DefaultHeading = (props: HeadingProps) => (
   <Heading
     as="h4"

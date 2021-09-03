@@ -14,6 +14,7 @@ const Banner = ({ children, ...props }) => {
   // const bgImage = useColorModeValue(bgImageLight, bgImageDark);
 
   const bgImage = "url('/images/cliffEdge2.jpeg')";
+
   return (
     <BlurryBackground bgImage={bgImage}>
       <Flex justify="center" align="center" {...props} color="white">
@@ -22,12 +23,12 @@ const Banner = ({ children, ...props }) => {
     </BlurryBackground>
   );
 };
-export const BannerHeader = ({ title, ...props }) => {
+export const BannerHeader = ({ ...props }) => {
   return (
     <>
       <Box height="300px" top="0" w="100%">
         <Banner h="100%" color="white">
-          <Heading as="h1">{title}</Heading>
+          <Heading as="h1">{props.title || "PAGE"}</Heading>
         </Banner>
       </Box>
       <Box

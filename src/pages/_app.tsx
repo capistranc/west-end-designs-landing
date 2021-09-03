@@ -47,10 +47,14 @@ const GlobalStyle = ({ children }) => {
           }
           html {
             scroll-behavior: smooth;
+            height: 100%;
+            width: 100%;
           }
           #__next {
             display: flex;
             flex-direction: column;
+            height: 100%;
+            width: 100%;
 
             background: ${bgColor[colorMode]};
           }
