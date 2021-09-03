@@ -29,9 +29,13 @@ export const section8 = () => {
             w="100%"
             height="100%"
           >
-            <Box bg="blue" w="100%" height="20%">
-              <Center>PREMIUM</Center>
-            </Box>
+            <Flex align="center" w="100%" height="20%" bg="DarkTurquoise">
+              <Flex align="center" justify="center" margin="auto">
+                <Text w="100%" height="100%" textAlign="center">
+                  PREMIUM
+                </Text>
+              </Flex>
+            </Flex>
             <Box bg="white" w="100%" height="80%">
               <VStack w="100%" align="normal">
                 <Center text-align="center">$150/Month</Center>
