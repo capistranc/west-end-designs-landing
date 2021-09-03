@@ -36,6 +36,8 @@ export const Services5 = ({ sections }) => {
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}
+        <Box height={{ md: "150px" }} w="100%"></Box>
+
         <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
           {sections[1]}
           {sections[2]}
@@ -57,9 +59,14 @@ export const Services5 = ({ sections }) => {
           {sections[6]}
         </SimpleGrid>
         <Box height={{ md: "150px" }} w="100%"></Box>
-
-        {sections[7]}
-        {sections[8]}
+        <SimpleGrid
+          display={{ md: "inline-flex" }}
+          base={{ base: 2, md: 2 }}
+          justifyContent={{ md: "center" }}
+        >
+          {sections[7]}
+          {sections[8]}
+        </SimpleGrid>
         <Box height="30px" w="100%"></Box>
         <FooterContent bgColor="gray.700" width="100%" color="white" />
       </Flex>

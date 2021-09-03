@@ -118,7 +118,7 @@ const Banner = ({ children, ...props }) => {
 export const section1 = ({ ...props }) => {
   return (
     <>
-      <Box height="25vh" top="0" w="100%">
+      <Box height={{ base: "25vh", md: "35vh" }} top="0" w="100%">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
             <b className="thing">Our Services</b>
