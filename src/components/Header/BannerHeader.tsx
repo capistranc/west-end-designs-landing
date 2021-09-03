@@ -8,12 +8,13 @@ import { links } from "./index";
 
 const Banner = ({ children, ...props }) => {
   // const bgImageLight =
-  //   "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/cliffEdge2.jpeg')";
+  //   "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)), url('/images/catalinaLight.jpg')";
   // const bgImageDark =
-  //   "linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.61)) , url('/images/cliffEdge2.jpeg')";
+  //   "linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.61)) , url('/images/catalinaDark.jpg')";
   // const bgImage = useColorModeValue(bgImageLight, bgImageDark);
 
-  const bgImage = `url("/images/cliffEdge2.jpeg")`;
+  const bgImage = "url('/images/cliffEdge2.jpeg')";
+
   return (
     <BlurryBackground bgImage={bgImage}>
       <Flex justify="center" align="center" {...props} color="white">

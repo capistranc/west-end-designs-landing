@@ -1,7 +1,7 @@
 import { Flex, Box, Image } from "@chakra-ui/react";
 
-export const section4 = () => {
-  const bgImage = "url('/images/undraw_Job_hunt_re_q203.svg')";
+export const section6 = () => {
+  const bgImage = "url('/images/guyStandingNextToMobilePhone.svg')";
 
   return (
     <>
@@ -10,9 +10,8 @@ export const section4 = () => {
           <Image
             borderRadius="lg"
             // width={{ sm: "50%" }}
-            // height={{ md: "50%" }}
-            src="/images/undraw_Job_hunt_re_q203.svg"
-            alt="Guy hitting check marks"
+            src="/images/guyStandingNextToMobilePhone.svg"
+            alt="Guy standing next to mobile phone"
           />
         </Box>
       </Box>
