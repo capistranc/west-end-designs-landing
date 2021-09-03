@@ -38,7 +38,7 @@ export const section2 = () => {
         <Box flexShrink={0}>
           <Image
             borderRadius="lg"
-            width={{ sm: "50%" }}
+            // width={{ sm: "50%" }}
             src="/images/guyStandingNextToGraph.svg"
             alt="Guy standing next to graph"
           />

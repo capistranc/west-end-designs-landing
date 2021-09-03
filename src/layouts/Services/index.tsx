@@ -7,6 +7,7 @@ import {
   Button,
   Spacer,
   useColorMode,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 import { bgColor, fgColor } from "../../theme/colors";
@@ -35,14 +36,31 @@ export const Services5 = ({ sections }) => {
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}
-        {sections[1]}
-        {sections[2]}
-        {sections[3]}
-        {sections[4]}
-        {sections[5]}
-        {sections[6]}
+        <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
+          {sections[1]}
+          {sections[2]}
+        </SimpleGrid>
+        <Box height={{ md: "150px" }} w="100%"></Box>
+
+        <SimpleGrid
+          display={{ md: "inline-flex" }}
+          base={{ base: 2, md: 2 }}
+          flexDirection={{ md: "row-reverse" }}
+        >
+          {sections[3]}
+          {sections[4]}
+        </SimpleGrid>
+        <Box height={{ md: "150px" }} w="100%"></Box>
+
+        <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
+          {sections[5]}
+          {sections[6]}
+        </SimpleGrid>
+        <Box height={{ md: "150px" }} w="100%"></Box>
+
         {sections[7]}
         {sections[8]}
+        <Box height="30px" w="100%"></Box>
         <FooterContent bgColor="gray.700" width="100%" color="white" />
       </Flex>
     </>
