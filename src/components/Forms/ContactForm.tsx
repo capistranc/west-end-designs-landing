@@ -101,7 +101,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
         justify="center"
         align="center"
         direction="column"
-        p="12"
+        p="4"
       >
         <Flex
           h="100%"

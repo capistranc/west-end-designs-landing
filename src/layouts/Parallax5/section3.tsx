@@ -89,7 +89,7 @@ const ContactCards = () => {
       flexDirection={["column", "column", "row", "row"]}
       justify="center"
       align="center"
-      p=""
+      p="4"
       m="4"
     >
       <Flex justifySelf="stretch" alignSelf="stretch">
@@ -138,7 +138,6 @@ export const section3 = () => {
       color="white"
     >
       <Flex
-        p="4"
         direction="row"
         justify="flex-start"
         align="flex-start"
@@ -153,7 +152,7 @@ export const section3 = () => {
           Our Clients
         </Heading>
 
-        {ContactCards()}
+        {/* {ContactCards()} */}
       </Flex>
     </Flex>
   );
