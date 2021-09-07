@@ -15,6 +15,7 @@ import {
 import { CheckIcon } from "@chakra-ui/icons";
 
 import { AnimatedIconSwap } from "../../components/Cards/AnimatedIconSwap";
+import { MoneyOff } from "@material-ui/icons";
 
 const ListItem = ({ header, subText, ...props }) => {
   return (
@@ -81,14 +82,7 @@ export const section2 = () => {
             align="center"
             justify="center"
           >
-            <AnimatedIconSwap
-              flex="1"
-              header={"$0 DOWN"}
-              p="4"
-              maxWidth="32em"
-              subText={`$0 Down to start. We sell our software as a services on a
-              subscription based plan starting from as little as $150 a month.`}
-            />
+            <AnimatedIconSwap flex="1" p="4" maxWidth="32em" />
             <Box
               width={["100%", "100%", "8px", "8px"]}
               height={["8px", "8px", "100%", "100%"]}

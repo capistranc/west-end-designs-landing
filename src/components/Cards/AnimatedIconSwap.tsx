@@ -13,35 +13,78 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const MotionBox = motion<BoxProps>(Box);
+const MotionFlex = motion<FlexProps>(Flex);
 const MotionIcon = motion<IconProps>(Icon);
 import { AllInclusive, MoneyOff, Description, Block } from "@material-ui/icons";
 
-const IconData = [
+const iconCards = [
   {
-    Icon: MoneyOff,
+    CardIcon: MoneyOff,
     header: "$0 Down",
     subText: `$0 Down to start. We sell our software as a services on a
   subscription based plan starting from as little as $150 a month.`,
   },
   {
-    Icon: Description,
+    CardIcon: Description,
     header: "NO CONTRACT!",
     subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
 
   Cancel anytime for any reason.`,
   },
   {
-    Icon: AllInclusive,
+    CardIcon: AllInclusive,
     header: "UNLIMITED UPDATES",
     subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner
     `,
   },
 ];
 
-export const AnimatedIconSwap = ({ header, subText, ...props }) => {
-  // React.useEffect(() => {
-  // await setTimeout(4000, () => {});
-  // });
+export const AnimatedIconSwap = ({ ...props }) => {
+  const [i, setI] = useState(0);
+  const [cardData, useCardData] = useState(iconCards[i]);
+
+  const numCards = iconCards.length;
+
+  function swapNextCard() {
+    setI((i + 1) % numCards);
+    useCardData(iconCards[i]);
+  }
+
+  useEffect(() => {
+    const timerId = setTimeout(() => swapNextCard(), 4000);
+
+    return () => clearTimeout(timerId);
+  });
+
+  function renderIconCard({ CardIcon, header, subText }) {
+    return (
+      <AnimatedIconCard
+        {...props}
+        CardIcon={CardIcon}
+        header={header}
+        subText={subText}
+      />
+    );
+  }
+
+  return (
+    <MotionBox
+      layout
+      animate={{ rotateY: 360 }}
+      transition={{
+        type: "spring",
+        damping: 20,
+        stiffness: 300,
+      }}
+      {...props}
+    >
+      {renderIconCard(cardData)}
+      <MotionBox />
+    </MotionBox>
+  );
+};
+
+export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
   return (
     <Flex
       direction="column"
@@ -70,10 +113,10 @@ export const AnimatedIconSwap = ({ header, subText, ...props }) => {
           transition={{ duration: 4, repeat: Infinity }}
         ></MotionBox>
         <MotionIcon
-          zIndex="2"
+          zIndex="10"
           border="2px solid gray "
           borderRadius="360"
-          as={MoneyOff}
+          as={CardIcon}
           p="12"
           alignSelf="center"
           minHeight="10em"
