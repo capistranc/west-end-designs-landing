@@ -15,6 +15,8 @@ export const ClientCard = ({
       borderRadius="16"
       m="4"
       p="4"
+      justifySelf="stretch"
+      alignSelf="stretch"
       {...props}
     >
       <Heading>{name}</Heading>

@@ -3,7 +3,7 @@ import {
   Button,
   Heading,
   Spacer,
-  BoxProps,
+  FlexProps,
   Box,
   Image,
   Text,
@@ -13,8 +13,10 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { useOnScreen } from "../../lib/hooks";
-
+import { motion } from "framer-motion";
 import { ClientCard } from "../../components/Cards/ClientCard";
+
+const MotionFlex = motion<FlexProps>(Flex);
 
 const companies = [
   {
@@ -90,17 +92,37 @@ const ContactCards = () => {
       p="8"
       m="8"
     >
-      <TransitionCard slideFrom="left">
-        <ClientCard {...companies[0]} />
-      </TransitionCard>
+      <Flex justifySelf="stretch" alignSelf="stretch">
+        <MotionFlex
+          initial={{ x: "-100vw" }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          animate={{ x: "0" }}
+        >
+          <ClientCard {...companies[0]} />
+        </MotionFlex>
+      </Flex>
 
-      <TransitionCard slideFrom={transitionVariant}>
-        <ClientCard {...companies[1]} />
-      </TransitionCard>
+      <Flex justifySelf="stretch" alignSelf="stretch">
+        <MotionFlex
+          justifySelf="stretch"
+          alignSelf="stretch"
+          initial={{ y: "-100vh" }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          animate={{ y: "0" }}
+        >
+          <ClientCard {...companies[1]} />
+        </MotionFlex>
+      </Flex>
 
-      <TransitionCard slideFrom={{ base: "left", lg: "right" }}>
-        <ClientCard {...companies[2]} />
-      </TransitionCard>
+      <Flex justifySelf="stretch" alignSelf="stretch">
+        <MotionFlex
+          initial={{ x: "100vw" }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          animate={{ x: "0" }}
+        >
+          <ClientCard {...companies[2]} />
+        </MotionFlex>
+      </Flex>
     </Flex>
   );
 };
