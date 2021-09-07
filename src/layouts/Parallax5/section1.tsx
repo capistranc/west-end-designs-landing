@@ -1,17 +1,23 @@
 import {
   Flex,
-  Button,
+  FlexProps,
   Heading,
+  HeadingProps,
   Spacer,
-  BoxProps,
-  Box,
+  Button,
+  ButtonProps,
   Link,
   Text,
+  TextProps,
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
+const MotionFlex = motion<FlexProps>(Flex);
+const MotionHeading = motion<HeadingProps>(Heading);
+const MotionButton = motion<ButtonProps>(Button);
+const MotionText = motion<TextProps>(Text);
 
 const AnimatedBanner = ({ text, ...props }) => {
   const texts = ["CONNECT", "INSPIRE", "CREATE"];
@@ -27,9 +33,59 @@ const AnimatedBanner = ({ text, ...props }) => {
   );
 };
 
+const containerVariants = {
+  init: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      stiffness: 500,
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const slideVariants = {
+  initLeft: {
+    x: "-100vw",
+  },
+  center: {
+    x: 0,
+    y: 0,
+    transition: {
+      delay: 2,
+      type: "tween",
+    },
+  },
+  initRight: { x: "100vw" },
+  initBottom: { y: "100vh" },
+  initTop: { y: "-100vh" },
+};
+
+const growVariants = {
+  init: {
+    scale: 0,
+  },
+  visible: {
+    scale: 1,
+    transition: {
+      delay: 1,
+      duration: 1,
+    },
+  },
+};
+
 export const section1 = () => {
   return (
-    <Flex
+    <MotionFlex
+      variants={containerVariants}
+      initial="init"
+      animate="visible"
       mt="8"
       mb="8"
       // h="100vh"
@@ -39,15 +95,32 @@ export const section1 = () => {
       justify="center"
       color="white"
     >
-      <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
+      <MotionHeading
+        fontFamily="Raleway"
+        fontWeight="900"
+        fontSize="3xl"
+        py="10"
+      >
         We help businesses
-      </Heading>
-      <AnimatedBanner text="CONNECT" />
-      <Text textStyle="h2" fontSize="3xl" py="5">
+      </MotionHeading>
+      <MotionFlex variants={growVariants} initial="init" animate="visible">
+        <AnimatedBanner text="CONNECT" />
+      </MotionFlex>
+      <MotionText
+        variants={slideVariants}
+        initial="initBottom"
+        animate="center"
+        textStyle="h2"
+        fontSize="3xl"
+        py="5"
+      >
         with clients
-      </Text>
+      </MotionText>
       <Flex flexDirection={["column", "column", "row", "row"]}>
-        <Button
+        <MotionButton
+          variants={slideVariants}
+          initial="initLeft"
+          animate="center"
           px="5px"
           borderRadius="0px"
           variant="solid"
@@ -57,9 +130,12 @@ export const section1 = () => {
           <NextLink href="#" passHref>
             <Link>LEARN MORE</Link>
           </NextLink>
-        </Button>
+        </MotionButton>
         <Spacer px="2" />
-        <Button
+        <MotionButton
+          variants={slideVariants}
+          initial="initRight"
+          animate="center"
           px="5px"
           borderRadius="0px"
           variant="solid"
@@ -69,8 +145,8 @@ export const section1 = () => {
           <NextLink href="#contact-form" passHref>
             <Link>CONNECT WITH US</Link>
           </NextLink>
-        </Button>
+        </MotionButton>
       </Flex>
-    </Flex>
+    </MotionFlex>
   );
 };
