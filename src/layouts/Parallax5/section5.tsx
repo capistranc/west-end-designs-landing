@@ -9,6 +9,7 @@ import {
   Text,
   Stack,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
 
 const AdCard = ({ caption, imageSource, subText, ...props }) => {

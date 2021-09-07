@@ -8,43 +8,23 @@ import {
   Image,
   SimpleGrid,
   Icon,
+  FlexProps,
+  BoxProps,
+  IconProps,
 } from "@chakra-ui/react";
-import { AllInclusive, MoneyOff, Description, Block } from "@material-ui/icons";
 import { CheckIcon } from "@chakra-ui/icons";
 
-const ImageWithTextCard = ({ header, subText, ...props }) => {
-  return (
-    <Flex
-      direction="column"
-      justify="space-evenly"
-      align="center"
-      p="4"
-      height="100%"
-      {...props}
-    >
-      <Spacer />
+import { AnimatedIconSwap } from "../../components/Cards/AnimatedIconSwap";
+import { MoneyOff } from "@material-ui/icons";
 
-      <Icon
-        border="2px solid gray "
-        borderRadius="360"
-        as={MoneyOff}
-        p="12"
-        my="4"
-        alignSelf="center"
-        minHeight="10em"
-        minWidth="10em"
-      ></Icon>
-
-      <Heading py="8"> {header}</Heading>
-      <Spacer />
-      <Text align="center">{subText}</Text>
-      <Spacer />
-    </Flex>
-  );
-};
 const ListItem = ({ header, subText, ...props }) => {
   return (
-    <Flex direction="row" {...props}>
+    <Flex
+      direction="row"
+      {...props}
+      p="4"
+      _hover={{ boxShadow: "0px 2px rgba(255,255,255,0.2)" }}
+    >
       <CheckIcon mt="1" mr="2" color="blue.500" />
       <Flex direction="column" align="flex-start">
         <Heading as="h6" size="medium" mb="1">
@@ -102,14 +82,7 @@ export const section2 = () => {
             align="center"
             justify="center"
           >
-            <ImageWithTextCard
-              flex="1"
-              header={"$0 DOWN"}
-              p="4"
-              maxWidth="32em"
-              subText={`$0 Down to start. We sell our software as a services on a
-              subscription based plan starting from as little as $150 a month.`}
-            />
+            <AnimatedIconSwap flex="1" p="4" maxWidth="32em" />
             <Box
               width={["100%", "100%", "8px", "8px"]}
               height={["8px", "8px", "100%", "100%"]}
@@ -126,7 +99,7 @@ export const section2 = () => {
               business's brand.
             </Text>
 
-            <SimpleGrid columns={[1, 2, 2, 2]} gap="8" mt="12" maxWidth="56em">
+            <SimpleGrid columns={[1, 1, 2, 2]} gap="8" mt="12" maxWidth="56em">
               <ListItem
                 header="Hosting Fees Included"
                 subText={`Hosting fees are included in your monthly payments`}
