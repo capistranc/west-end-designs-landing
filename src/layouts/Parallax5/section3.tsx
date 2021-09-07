@@ -89,8 +89,8 @@ const ContactCards = () => {
       flexDirection={["column", "column", "row", "row"]}
       justify="center"
       align="center"
-      p="8"
-      m="8"
+      p="4"
+      m="4"
     >
       <Flex justifySelf="stretch" alignSelf="stretch">
         <MotionFlex

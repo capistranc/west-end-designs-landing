@@ -10,17 +10,20 @@ export const ClientCard = ({
     <Flex
       direction="column"
       align="flex-start"
+      justify="space-between"
       border="2px solid rgba(255,255,255,0.3)"
       bg="rgba(0, 0, 0, 0.6)"
       borderRadius="16"
       m="4"
+      h="100%"
       p="4"
-      justifySelf="stretch"
       alignSelf="stretch"
       {...props}
     >
-      <Heading>{name}</Heading>
-      <Text textStyle="subText"> {location}</Text>
+      <Flex direction="column">
+        <Heading>{name}</Heading>
+        <Text textStyle="subText"> {location}</Text>
+      </Flex>
 
       <Image
         my="4"
@@ -32,7 +35,7 @@ export const ClientCard = ({
       <Text marginBottom="4em" maxWidth="22rem">
         {description}
       </Text>
-      <Button alignSelf="center" width="80%">
+      <Button alignSelf="center" justifySelf="flex-end" width="80%">
         Visit
       </Button>
     </Flex>
