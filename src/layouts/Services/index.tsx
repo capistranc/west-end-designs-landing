@@ -23,6 +23,7 @@ export * from "./section6";
 export * from "./section7";
 export * from "./section8";
 export * from "./section9";
+export * from "./section10";
 
 export const Services5 = ({ sections }) => {
   const { colorMode } = useColorMode();
@@ -66,6 +67,7 @@ export const Services5 = ({ sections }) => {
         >
           {sections[7]}
           {sections[8]}
+          {sections[9]}
         </SimpleGrid>
         <Box height="30px" w="100%"></Box>
         <FooterContent bgColor="gray.700" width="100%" color="white" />

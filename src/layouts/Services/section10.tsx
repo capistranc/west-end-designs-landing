@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 
-export const section9 = () => {
+export const section10 = () => {
   return (
     <>
       <Center py={6} ml={{ md: "2" }} mr={{ md: "2" }}>
@@ -44,12 +44,12 @@ export const section9 = () => {
               color={"blue.500"}
               rounded={"full"}
             >
-              PREMIUM PLUS+
+              CUSTOM
             </Text>
             <Stack direction={"row"} align={"center"} justify={"center"}>
               <Text fontSize={"3xl"}>$</Text>
               <Text fontSize={"6xl"} fontWeight={800}>
-                300
+                ??
               </Text>
               <Text color={"gray.500"}>/month</Text>
             </Stack>
