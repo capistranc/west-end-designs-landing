@@ -56,9 +56,9 @@ const TransitionCard = ({ slideFrom, children }) => {
       direction={direction}
       style={{
         flex: "1",
-        // maxWidth: "100vw",
+        maxWidth: "100vw",
         width: "100%",
-        // position: "relative",
+        position: "relative",
         display: "flex",
         alignSelf: "stretch",
         justifySelf: "stretch",
