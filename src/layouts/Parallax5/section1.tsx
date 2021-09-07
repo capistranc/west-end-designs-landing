@@ -58,7 +58,7 @@ const slideVariants = {
     x: 0,
     y: 0,
     transition: {
-      delay: 2,
+      delay: 1,
       type: "tween",
     },
   },
@@ -74,8 +74,8 @@ const growVariants = {
   visible: {
     scale: 1,
     transition: {
-      delay: 1,
-      duration: 1,
+      delay: 0.75,
+      duration: 0.5,
     },
   },
 };

@@ -1,8 +1,6 @@
 import { FormLabel } from "@chakra-ui/form-control";
 
 export const InLineLabel = ({ children, ...props }) => {
-  console.log(props.bg);
-
   return (
     <FormLabel
       display="inline"
