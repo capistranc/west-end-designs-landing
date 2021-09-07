@@ -50,21 +50,24 @@ const TransitionCard = ({ slideFrom, children }) => {
   }
 
   return (
-    <Flex ref={ref} alignSelf="stretch" justifySelf="stretch">
-      <Slide
-        direction={direction}
-        style={{
-          flex: "1",
-          position: "static",
-          display: "flex",
-          alignSelf: "stretch",
-          justifySelf: "stretch",
-        }}
-        in={isVisible}
-      >
-        {children}
-      </Slide>
-    </Flex>
+    // <Flex ref={ref} alignSelf="stretch" justifySelf="stretch" maxWidth="100vw">
+    <Slide
+      ref={ref}
+      direction={direction}
+      style={{
+        flex: "1",
+        // maxWidth: "100vw",
+        width: "100%",
+        // position: "relative",
+        display: "flex",
+        alignSelf: "stretch",
+        justifySelf: "stretch",
+      }}
+      in={isVisible}
+    >
+      {children}
+    </Slide>
+    // </Flex>
   );
 };
 
@@ -80,6 +83,7 @@ const ContactCards = () => {
     <Flex
       // width="100%"
       // height="100%"
+      maxWidth="100vw"
       flexDirection={["column", "column", "row", "row"]}
       justify="center"
       align="center"
