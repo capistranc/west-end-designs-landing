@@ -23,21 +23,21 @@ const companies = [
   {
     name: "G&J Flower Distributors",
     location: "Los Angeles, CA",
-    imageSource: `url('/images/catalinaLight.jpg')`,
+    imageSource: `/images/profile.jpg`,
     description: `G&J Flower Distributors is the largest privately held construction
   supply company in Seattle, WA for over 35 years`,
   },
   {
     name: "New Veganings",
     location: "Los Angeles, CA",
-    imageSource: `url('/images/catalinaLight.jpg')`,
+    imageSource: `/images/profile.jpg`,
     description: `New Vegnaings is the largest privately held construction
   supply company in Seattle, WA for over 35 years`,
   },
   {
     name: "Jupiter Yoga",
     location: "Aliso Viejo, CA",
-    imageSource: `url('/images/catalinaLight.jpg')`,
+    imageSource: `/images/profile.jpg`,
     description: `Jupiter Yoga is the largest privately held construction
   supply company in Seattle, WA for over 35 years`,
   },

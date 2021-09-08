@@ -88,7 +88,7 @@ export const section2 = () => {
             align="center"
             justify="center"
           >
-            <AnimatedIconSwap flex="1" p="4" maxWidth="32em" />
+            {/* <AnimatedIconSwap flex="1" p="4" maxWidth="32em" /> */}
             <Box
               width={["100%", "100%", "8px", "8px"]}
               height={["8px", "8px", "100%", "100%"]}

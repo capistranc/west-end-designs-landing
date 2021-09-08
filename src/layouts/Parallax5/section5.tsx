@@ -26,7 +26,7 @@ const AdCard = ({ caption, imageSource, subText, ...props }) => {
       <Image
         my="4"
         alignSelf="center"
-        src={imageSource}
+        src="/images/profile.jpg"
         minHeight="10em"
         minWidth="12em"
       />
@@ -37,24 +37,25 @@ const AdCard = ({ caption, imageSource, subText, ...props }) => {
     </Flex>
   );
 };
+const link = "url('/images/cliffStanding.jpeg')";
 
 function loadAdCards() {
   const adCards = [
     {
       caption: "$0 DOWN",
-      imageSource: `url('/images/catalinaLight.jpg')`,
+      imageSource: `/images/profile.jpg`,
       subText: `$0 Down to start. We sell our software as a services on a subscription based plan starting from as little as $150 a month.`,
     },
     {
       caption: "NO CONTRACT!",
-      imageSource: `url('/images/catalinaLight.jpg')`,
+      imageSource: `/images/profile.jpg`,
       subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
 
       Cancel anytime for any reason.`,
     },
     {
       caption: "UNLIMITED EDITS",
-      imageSource: `url('/images/catalinaLight.jpg')`,
+      imageSource: `/images/profile.jpg`,
       subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner
       `,
     },
