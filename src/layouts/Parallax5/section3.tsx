@@ -51,10 +51,10 @@ const AnimateCard = ({ slideFrom, children, ...props }) => {
     <Flex
       ref={ref}
       // justifySelf="stretch"
-          // alignSelf="stretch"
-            minHeight="32rem"
+      // alignSelf="stretch"
+      minHeight="32rem"
       m="1"
-              {...props}
+      {...props}
     >
       {isVisible && (
         <MotionFlex
@@ -72,9 +72,7 @@ const AnimateCard = ({ slideFrom, children, ...props }) => {
 };
 
 const ContactCards = () => {
-  const slideFrom1 = slideFrom("left");
-  const slideFrom2 = slideFrom("bottom");
-  const slideFrom3 = slideFrom("left");
+  const slideFromLeft = slideFrom("left");
 
   return (
     <Flex
@@ -86,15 +84,15 @@ const ContactCards = () => {
       p="4"
       m="4"
     >
-      <AnimateCard slideFrom={slideFrom1}>
+      <AnimateCard slideFrom={slideFromLeft}>
         <ClientCard {...companies[0]} />
       </AnimateCard>
 
-      <AnimateCard slideFrom={slideFrom2}>
+      <AnimateCard slideFrom={slideFromLeft}>
         <ClientCard {...companies[1]} />
       </AnimateCard>
 
-      <AnimateCard slideFrom={slideFrom3}>
+      <AnimateCard slideFrom={slideFromLeft}>
         <ClientCard {...companies[2]} />
       </AnimateCard>
     </Flex>

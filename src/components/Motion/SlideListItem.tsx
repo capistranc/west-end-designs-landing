@@ -25,7 +25,7 @@ export const SlideListItem = ({ header, subText, ...props }) => {
   const ref = useRef();
   const isVisible = useOnScreen(ref);
   return (
-    <Box ref={ref} minHeight="6rem" h="100%">
+    <Box ref={ref} minHeight="6rem" h="100%" {...props}>
       {isVisible && (
         <MotionFlex
           initial="hidden"
