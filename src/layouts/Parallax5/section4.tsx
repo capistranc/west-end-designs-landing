@@ -39,7 +39,7 @@ export const section4 = () => {
           <Text as="h4" fontSize="2xl" textStyle="h2">
             Search Engine Optimized
           </Text>
-          <Text py="1" textStyle="subText" color="gray.300" maxWidth="80%">
+          <Text py="1" textStyle="subText" color="gray.300">
             We also offer logo and graphic design services via our own in-house
             graphic designer. If you have an existing logo that needs a touch up
             or need a completely new one we can help build your business's
