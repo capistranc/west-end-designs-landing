@@ -16,7 +16,7 @@ import { useOnScreen } from "../../lib/hooks";
 import { motion, AnimatePresence } from "framer-motion";
 import { ClientCard } from "../../components/Cards/ClientCard";
 
-const MotionFlex = motion<FlexProps>(Flex);
+const MotionFlex = motion<FlexProps>(Box);
 import { slideFrom } from "../../lib/motion/slideVariants";
 
 const companies = [
@@ -56,17 +56,18 @@ const AnimateCard = ({ slideFrom, children, ...props }) => {
       m="1"
       {...props}
     >
-      <AnimatePresence>
-        {isVisible && (
-          <MotionFlex
-            transition={{ duration: 0.5, stiffness: 500 }}
-            {...slideFrom}
-            // exit={{ x: "-100vw", transition: { delay: 1 } }}
-          >
-            {children}
-          </MotionFlex>
-        )}
-      </AnimatePresence>
+      {/* <AnimatePresence> */}
+      {isVisible && (
+        <MotionFlex
+          display="block"
+          transition={{ duration: 0.5, stiffness: 500 }}
+          {...slideFrom}
+          // exit={{ x: "-100vw", transition: { delay: 1 } }}
+        >
+          {children}
+        </MotionFlex>
+      )}
+      {/* </AnimatePresence> */}
     </Flex>
   );
 };
@@ -74,7 +75,7 @@ const AnimateCard = ({ slideFrom, children, ...props }) => {
 const ContactCards = () => {
   const slideFrom1 = slideFrom("left");
   const slideFrom2 = slideFrom("bottom");
-  const slideFrom3 = slideFrom("right");
+  const slideFrom3 = slideFrom("left");
 
   return (
     <Flex

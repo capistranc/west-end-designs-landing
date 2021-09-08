@@ -101,7 +101,9 @@ export const Parallax5 = ({ sections, bgImages }) => {
           {sections[4]}
         </ParallaxBox>
 
-        <ContactForm />
+        <ParallaxBox>
+          <ContactForm />
+        </ParallaxBox>
         <FooterContent bgColor="black" width="100%" color="white" />
       </Flex>
     </>
