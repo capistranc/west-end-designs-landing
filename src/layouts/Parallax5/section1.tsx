@@ -53,16 +53,28 @@ const containerVariants = {
 const slideVariants = {
   initLeft: {
     x: "-100vw",
+    opacity: 0,
   },
   center: {
     x: 0,
     y: 0,
+    opacity: 100,
     transition: {
       delay: 1,
       type: "tween",
     },
   },
-  initRight: { x: "100vw" },
+
+  centerSpring: {
+    x: 0,
+    y: 0,
+    opacity: 100,
+    transition: {
+      delay: 1,
+      type: "spring",
+    },
+  },
+  initRight: { x: "20vw", opacity: 0 },
   initBottom: { y: "100vh" },
   initTop: { y: "-100vh" },
 };

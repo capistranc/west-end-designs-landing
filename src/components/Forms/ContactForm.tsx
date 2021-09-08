@@ -55,8 +55,6 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  // const [resize, setResize] = React.useState("vertical");
-
   const [isSending, setSending] = React.useState(false);
 
   const toast = useToast();
@@ -92,36 +90,30 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
       justifyContent="center"
       bg={"#1E1E1E"}
       color="white"
+      width="100%"
+      height="100%"
       {...props}
     >
       <Flex
-        maxWidth="64rem"
-        width="100%"
-        height="100%"
         justify="center"
         align="center"
         direction="column"
         p="4"
+        h="100%"
+        w="100%"
+        maxWidth="64rem"
       >
         <Flex
-          h="100%"
-          w="100%"
           justify="space-evenly"
           align="center"
           direction={["column", "column", "row", "row"]}
           mb="4em"
         >
-          <Heading p="8">Get in touch today!</Heading>
+          <Heading p="4">Get in touch today!</Heading>
 
-          <ContactInfo p="8" />
+          <ContactInfo p="4" />
         </Flex>
-        <Flex
-          direction="column"
-          h="100%"
-          w="100%"
-          align="center"
-          justify="center"
-        >
+        <Flex direction="column" w="100%" align="center" justify="center">
           <Stack w="100%" direction={["column", "column", "row", "row"]}>
             <FormControl isInvalid={errors.name}>
               <InLineLabel bg={props.bg}> Name </InLineLabel>
@@ -230,8 +222,8 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
             </FormControl>
           </Stack>
 
-          <Flex w="100%" height="100%" flex="1">
-            <FormControl isInvalid={errors.question} h="100%" isRequired>
+          <Flex w="100%">
+            <FormControl isInvalid={errors.question} isRequired>
               <InLineLabel bg={props.bg}>
                 <QuestionIcon mx="1" />
                 Message
@@ -240,8 +232,6 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
               <Textarea
                 p="4"
                 borderColor="gray.500"
-                flex="1"
-                height="100%"
                 minHeight="12rem"
                 type="question"
                 overflowY="scroll"
@@ -267,17 +257,16 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
               </Box>
             </FormControl>
           </Flex>
-
-          <Button
-            type="submit"
-            width="60%"
-            variant="solid"
-            isLoading={isSending}
-            loadingText="Sending..."
-          >
-            Send
-          </Button>
         </Flex>
+        <Button
+          type="submit"
+          width="60%"
+          variant="solid"
+          isLoading={isSending}
+          loadingText="Sending..."
+        >
+          Send
+        </Button>
       </Flex>
     </chakra.form>
   );

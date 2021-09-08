@@ -45,10 +45,10 @@ export const Parallax5 = ({ sections, bgImages }) => {
         backgroundPosition="center"
         background-repeat="no-repeat"
         backgroundSize="cover"
-        minHeight="100vh"
-        minWidth="100vw"
         height="100%"
         width="100%"
+        minHeight="100vh"
+        minWidth="100vw"
         align="center"
         justify="center"
         // height="calc(var(--vh, 1vh))"
@@ -101,7 +101,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
           {sections[4]}
         </ParallaxBox>
 
-        <ParallaxBox>
+        <ParallaxBox height="100vh">
           <ContactForm />
         </ParallaxBox>
         <FooterContent bgColor="black" width="100%" color="white" />
