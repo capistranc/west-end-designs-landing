@@ -21,71 +21,13 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useOnScreen } from "../../lib/hooks";
 
-const MotionGrid = motion<SimpleGridProps>(SimpleGrid);
-const MotionFlex = motion<FlexProps>(Flex);
-const MotionBox = motion<BoxProps>(Box);
-
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 100,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: "1",
-    },
-  },
-};
-
-const listVariants = {
-  hidden: {
-    x: "-100vw",
-    opacity: 0,
-  },
-  visible: {
-    opacity: 100,
-    x: 0,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
-const ListItem = ({ header, subText, ...props }) => {
-  const ref = useRef();
-  const isVisible = useOnScreen(ref);
-  return (
-    <Box ref={ref}>
-      {isVisible && (
-        <MotionFlex
-          variants={listVariants}
-          direction="row"
-          {...props}
-          p="4"
-          _hover={{ boxShadow: "0px 2px rgba(255,255,255,0.2)" }}
-        >
-          <CheckIcon mt="1" mr="2" color="blue.500" />
-          <Flex direction="column" align="flex-start">
-            <Heading as="h6" size="medium" mb="1">
-              {header}
-            </Heading>
-            <Text textStyle="subText" color="gray.300">
-              {subText}
-            </Text>
-          </Flex>
-        </MotionFlex>
-      )}
-    </Box>
-  );
-};
+import { SlideListItem } from "../../components/Motion";
 
 export const section2 = () => {
   function renderContent() {
     return (
       <Flex direction="column" h="100%" width="100%">
-        <MotionFlex
-          variants={listVariants}
+        <Flex
           p="4"
           direction="row"
           justify="flex-start"
@@ -96,7 +38,7 @@ export const section2 = () => {
           <Heading variant="h2" fontWeight="light" color="white">
             What We Do
           </Heading>
-        </MotionFlex>
+        </Flex>
 
         <Flex direction="column">
           <Flex justify="center" px="20" p="4" marginBottom="8">
@@ -138,37 +80,37 @@ export const section2 = () => {
                 your business's brand.
               </Text>
 
-              <MotionGrid
+              <SimpleGrid
                 columns={[1, 1, 2, 2]}
                 gap="4"
                 mt="12"
                 maxWidth="56em"
               >
-                <ListItem
+                <SlideListItem
                   header="Hosting Fees Included"
                   subText={`Hosting fees are included in your monthly payments`}
                 />
-                <ListItem
+                <SlideListItem
                   header="24/7 Customer Service"
                   subText={`Call direct. No automated response. Talk to one of us directly.`}
                 />
-                <ListItem
+                <SlideListItem
                   header="Unlimited Edits"
                   subText={`We provide unlimited edits to your website anytime. See something you want updated, we will change it that day.`}
                 />
-                <ListItem
+                <SlideListItem
                   header={"Web Design & Development"}
                   subText={`Our websites are hand designed from scratch and will be tested for mobile devices, tabets, and pcs.`}
                 />
-                <ListItem
+                <SlideListItem
                   header="Google Analytics"
                   subText={`We will install  google analytics for free so you can measure  the traffic on your website.`}
                 />
-                <ListItem
+                <SlideListItem
                   header="Citations and Listings"
                   subText={`It's important to have your website backlinked from other websites`}
                 />
-              </MotionGrid>
+              </SimpleGrid>
             </Flex>
           </Flex>
         </Flex>
@@ -177,16 +119,8 @@ export const section2 = () => {
   }
 
   return (
-    <MotionBox
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      bg="#1E1E1E"
-      minHeight="100vh"
-      height="100%"
-      width="100%"
-    >
+    <Box bg="#1E1E1E" minHeight="100vh" height="100%" width="100%">
       {renderContent()}
-    </MotionBox>
+    </Box>
   );
 };
