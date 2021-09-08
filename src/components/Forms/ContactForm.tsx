@@ -18,8 +18,8 @@ import {
 } from "@chakra-ui/react";
 import emailJS from "emailjs-com";
 
-const ContactInfo = () => (
-  <Box>
+const ContactInfo = (props) => (
+  <Box {...props}>
     <Logo />
     <Link href="mailto:westendwebdesigns@gmail.com">
       WestEndWebDesigns@gmail.com
@@ -85,21 +85,19 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
 
   return (
     <chakra.form
-      minWidth="100vw"
       onSubmit={handleSubmit(onSubmit)}
       id="contact-form"
       d="flex"
       alignItems="center"
       justifyContent="center"
       bg={"#1E1E1E"}
+      color="white"
       {...props}
     >
       <Flex
-        minHeight="100vh"
         maxWidth="64rem"
         width="100%"
         height="100%"
-        color="white"
         justify="center"
         align="center"
         direction="column"
@@ -110,7 +108,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           w="100%"
           justify="space-evenly"
           align="center"
-          direction={["column", "row", "row", "row"]}
+          direction={["column", "column", "row", "row"]}
           mb="4em"
         >
           <Heading p="8">Get in touch today!</Heading>
@@ -168,7 +166,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
             align="space-between"
             direction={["column", "column", "row", "row"]}
           >
-            <FormControl isInvalid={errors.email}>
+            <FormControl isInvalid={errors.email} isRequired>
               <InLineLabel bg={props.bg}>Email</InLineLabel>
               <InputGroup>
                 <InputLeftElement
@@ -233,7 +231,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           </Stack>
 
           <Flex w="100%" height="100%" flex="1">
-            <FormControl isInvalid={errors.question} h="100%">
+            <FormControl isInvalid={errors.question} h="100%" isRequired>
               <InLineLabel bg={props.bg}>
                 <QuestionIcon mx="1" />
                 Message

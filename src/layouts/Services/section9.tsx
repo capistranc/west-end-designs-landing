@@ -9,63 +9,91 @@ import {
   Center,
   Image,
   Link,
+  List,
+  ListItem,
+  ListIcon,
+  Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 
 export const section9 = () => {
   return (
     <>
-      <Box p={4} display={{ lg: "inline" }} height="30%">
-        <Flex
-          //   mt={{ base: 4, md: 0 }}
-          //   bg="black"
-          width={{ base: "100%", sm: "400px" }}
-          height={{ base: "250px", sm: "300px" }}
-          margin="auto"
+      <Center py={6} ml={{ md: "2" }} mr={{ md: "2" }}>
+        <Box
+          maxW={"330px"}
+          w={"full"}
+          bg={useColorModeValue("white", "gray.800")}
+          boxShadow={"dark-lg"}
+          rounded={"md"}
+          overflow={"hidden"}
         >
-          <Box
-            boxShadow="0 0 10px gray"
-            rounded="md"
-            bg="gray.50"
-            w="100%"
-            height="100%"
+          <Stack
+            textAlign={"center"}
+            p={6}
+            color={useColorModeValue("gray.800", "white")}
+            align={"center"}
           >
-            <Flex align="center" w="100%" height="20%" bg="DarkTurquoise">
-              <Flex align="center" justify="center" margin="auto">
-                <Text w="100%" height="100%" textAlign="center">
-                  PREMIUM PRO+
-                </Text>
-              </Flex>
-            </Flex>
-            <Box bg="white" w="100%" height="80%">
-              <VStack w="100%" align="normal">
-                <Flex align="center" mt="1">
-                  <Flex align="center" justify="center" margin="auto">
-                    <Text textAlign="center">$300/Month</Text>
-                  </Flex>
-                </Flex>
-                <VStack align="normal">
-                  <Flex align="normal">
-                    <p> &#9733;</p>
-                    <Box>Lorem Ipsum</Box>
-                  </Flex>
-                  <Flex align="normal">
-                    <p> &#9733;</p>
-                    <Box>Lorem Ipsum</Box>
-                  </Flex>
-                  <Flex align="normal">
-                    <p> &#9733;</p>
-                    <Box>Lorem Ipsum</Box>
-                  </Flex>
-                  <Flex align="normal">
-                    <p> &#9733;</p>
-                    <Box>Lorem Ipsum</Box>
-                  </Flex>
-                </VStack>
-              </VStack>
-            </Box>
+            <Text
+              fontSize={"sm"}
+              fontWeight={500}
+              bg={useColorModeValue("blue.50", "blue.900")}
+              p={2}
+              px={3}
+              color={"blue.500"}
+              rounded={"full"}
+            >
+              PREMIUM PLUS+
+            </Text>
+            <Stack direction={"row"} align={"center"} justify={"center"}>
+              <Text fontSize={"3xl"}>$</Text>
+              <Text fontSize={"6xl"} fontWeight={800}>
+                300
+              </Text>
+              <Text color={"gray.500"}>/month</Text>
+            </Stack>
+          </Stack>
+
+          <Box bg={useColorModeValue("gray.50", "gray.900")} px={6} py={10}>
+            <List spacing={3}>
+              <ListItem>
+                <ListIcon as={CheckIcon} color="blue.400" />
+                5.000 page views
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckIcon} color="blue.400" />
+                50 automation executions
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckIcon} color="blue.400" />
+                50 identified users
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckIcon} color="blue.400" />
+                All features
+              </ListItem>
+            </List>
+
+            <Button
+              mt={10}
+              w={"full"}
+              bg={"blue.400"}
+              color={"white"}
+              rounded={"xl"}
+              boxShadow={"0 5px 20px 0px rgb(70 130 180 / 43%)"}
+              _hover={{
+                bg: "blue.500",
+              }}
+              _focus={{
+                bg: "blue.500",
+              }}
+            >
+              <Link href="/contact"> Send us an inquiry</Link>
+            </Button>
           </Box>
-        </Flex>
-      </Box>
+        </Box>
+      </Center>
     </>
   );
 };

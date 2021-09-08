@@ -3,7 +3,7 @@ import {
   Button,
   Heading,
   Spacer,
-  BoxProps,
+  FlexProps,
   Box,
   Image,
   Text,
@@ -13,8 +13,10 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { useOnScreen } from "../../lib/hooks";
-
+import { motion } from "framer-motion";
 import { ClientCard } from "../../components/Cards/ClientCard";
+
+const MotionFlex = motion<FlexProps>(Flex);
 
 const companies = [
   {
@@ -40,55 +42,87 @@ const companies = [
   },
 ];
 
+const TransitionCard = ({ slideFrom, children }) => {
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+  let direction = slideFrom;
+
+  if (typeof slideFrom === "object") {
+    direction = useBreakpointValue(slideFrom);
+  }
+
+  return (
+    // <Flex ref={ref} alignSelf="stretch" justifySelf="stretch" maxWidth="100vw">
+    <Slide
+      ref={ref}
+      direction={direction}
+      style={{
+        flex: "1",
+        maxWidth: "100vw",
+        width: "100%",
+        position: "relative",
+        display: "flex",
+        alignSelf: "stretch",
+        justifySelf: "stretch",
+      }}
+      in={isVisible}
+    >
+      {children}
+    </Slide>
+    // </Flex>
+  );
+};
+
 const ContactCards = () => {
-  const transitionVariant = useBreakpointValue({
+  const slideFrom2 = {
     base: "right",
-    lg: "bottom",
-  });
-
-  const TransitionCard = ({ direction, children }) => {
-    const ref = useRef();
-    const isVisible = useOnScreen(ref);
-
-    return (
-      <Slide
-        direction={direction}
-        ref={ref}
-        style={{
-          flex: "1",
-          position: "static",
-          display: "flex",
-          alignSelf: "stretch",
-          justifySelf: "stretch",
-        }}
-        in={isVisible}
-      >
-        {children}
-      </Slide>
-    );
+    md: "bottom",
   };
+
+  const transitionVariant = useBreakpointValue(slideFrom2);
 
   return (
     <Flex
       // width="100%"
       // height="100%"
+      maxWidth="100vw"
       flexDirection={["column", "column", "row", "row"]}
       justify="center"
       align="center"
-      p="8"
-      m="8"
+      p=""
+      m="4"
     >
-      <TransitionCard direction="left">
-        <ClientCard {...companies[0]} />
-      </TransitionCard>
+      <Flex justifySelf="stretch" alignSelf="stretch">
+        <MotionFlex
+          initial={{ x: "-100vw" }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          animate={{ x: "0" }}
+        >
+          <ClientCard {...companies[0]} />
+        </MotionFlex>
+      </Flex>
 
-      <TransitionCard direction={transitionVariant}>
-        <ClientCard {...companies[1]} />
-      </TransitionCard>
+      <Flex justifySelf="stretch" alignSelf="stretch">
+        <MotionFlex
+          justifySelf="stretch"
+          alignSelf="stretch"
+          initial={{ y: "-100vh" }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          animate={{ y: "0" }}
+        >
+          <ClientCard {...companies[1]} />
+        </MotionFlex>
+      </Flex>
 
-      <TransitionCard direction="right">
-        <ClientCard {...companies[2]} />
-      </TransitionCard>
+      <Flex justifySelf="stretch" alignSelf="stretch">
+        <MotionFlex
+          initial={{ x: "100vw" }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          animate={{ x: "0" }}
+        >
+          <ClientCard {...companies[2]} />
+        </MotionFlex>
+      </Flex>
     </Flex>
   );
 };
