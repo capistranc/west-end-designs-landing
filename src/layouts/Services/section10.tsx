@@ -16,9 +16,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-import { HoverButton } from "./hoverbutton";
 
-export const section8 = () => {
+export const section10 = () => {
   return (
     <>
       <Center py={6} ml={{ md: "2" }} mr={{ md: "2" }}>
@@ -45,12 +44,12 @@ export const section8 = () => {
               color={"blue.500"}
               rounded={"full"}
             >
-              PREMIUM
+              CUSTOM
             </Text>
             <Stack direction={"row"} align={"center"} justify={"center"}>
               <Text fontSize={"3xl"}>$</Text>
               <Text fontSize={"6xl"} fontWeight={800}>
-                150
+                ??
               </Text>
               <Text color={"gray.500"}>/month</Text>
             </Stack>
@@ -75,19 +74,7 @@ export const section8 = () => {
                 All features
               </ListItem>
             </List>
-            {/* <HoverButton>
-              <Link
-                href="/contact"
-                vertical-align="middle"
-                // transform="translate(-50%, -50%)"
-                // text-align="center"
-                // position="absolute"
-                // left="0"
-                // top="50%"
-              >
-                Send us an inquiry
-              </Link>
-            </HoverButton> */}
+
             <Button
               mt={10}
               w={"full"}
