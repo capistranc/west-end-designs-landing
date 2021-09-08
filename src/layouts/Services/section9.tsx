@@ -89,7 +89,7 @@ export const section9 = () => {
                 bg: "blue.500",
               }}
             >
-              Send us an inquiry
+              <Link href="/contact"> Send us an inquiry</Link>
             </Button>
           </Box>
         </Box>

@@ -31,8 +31,7 @@ export const Services5 = ({ sections }) => {
     <>
       <StickyNavHeader
         id="sticky-nav-bar"
-        // bg={bgColor[colorMode]}
-        position="sticky"
+        position="fixed"
         color={fgColor[colorMode]}
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
