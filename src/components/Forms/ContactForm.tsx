@@ -235,7 +235,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
                 minHeight="12rem"
                 type="question"
                 overflowY="scroll"
-                placeholder={`I want to do the cha cha, come with me and let us do the cha cha. Maybe after we can do something else, maybe not, who knows! But for sure let's make time to do the cha cha, you and I. I think it will be a lot of fun.`}
+                placeholder={`I want to do the cha cha, come with me and let us do the cha cha. Maybe after we can do something else, maybe not. But for sure let's make time. I think it will be a lot of fun.`}
                 {...register("question", {
                   required: `This field is required`,
                   minLength: {

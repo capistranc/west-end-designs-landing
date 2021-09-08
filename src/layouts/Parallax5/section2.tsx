@@ -20,7 +20,7 @@ import { MoneyOff } from "@material-ui/icons";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useOnScreen } from "../../lib/hooks";
-
+import { AnimatedCarousel } from "../../components/Cards/AnimatedCarousel";
 import { SlideListItem } from "../../components/Motion";
 
 export const section2 = () => {
@@ -63,7 +63,7 @@ export const section2 = () => {
               align="center"
               justify="center"
             >
-              {/* <AnimatedIconSwap flex="1" p="4" maxWidth="32em" /> */}
+              <AnimatedCarousel flex="1" p="4" maxWidth="32em" />
               <Box
                 width={["100%", "100%", "8px", "8px"]}
                 height={["8px", "8px", "100%", "100%"]}
