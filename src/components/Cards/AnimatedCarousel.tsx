@@ -82,8 +82,8 @@ const hoverVariant = {
 
 const buttonHover = {
   rest: {
-    backgroundColor: "#000000",
-    opacity: 0,
+    backgroundColor: "transparent",
+    opacity: 0.3,
     scale: 0.9,
     transition: {
       duration: 2,
@@ -93,7 +93,7 @@ const buttonHover = {
   },
   hover: {
     backgroundColor: "#333333",
-    opacity: 0.3,
+    opacity: 0.6,
     scale: 0.8,
     transition: {
       duration: 0.4,
@@ -108,7 +108,7 @@ const hoverLeft = {
     x: 0,
   },
   hover: {
-    x: -20,
+    x: -30,
     transition: { duration: 1 },
   },
 };
@@ -118,7 +118,7 @@ const hoverRight = {
     x: 0,
   },
   hover: {
-    x: 20,
+    x: 30,
     transition: { duration: 1 },
   },
 };
@@ -176,44 +176,43 @@ export const AnimatedCarousel = ({ ...props }) => {
         left="0"
         top="0"
         bg="blue.900"
+        justify="center"
+        align="center"
         h="90%"
         w="35%"
         onClick={() => paginate(-1)}
         variants={buttonHover}
       >
         <MotionIcon
-          h="50%"
-          w="50%"
+          //   h="50%"
+          //   w="50%"
           variants={hoverLeft}
           as={ArrowLeft}
-          minHeight="8em"
-          minWidth="8em"
-          justifySelf="flex-start"
-          alignSelf="center"
+          left="0"
+          minHeight="5em"
+          minWidth="5em"
         />
       </MotionFlex>
       <MotionFlex
         className="FINDMEE"
         key="right"
-        initial={{ opacity: 0 }}
         position="absolute"
-        opacity="0"
+        opacity="0.3"
         borderRadius="36"
         top="0"
         right="0"
         bg="blue.900"
         h="90%"
         w="35%"
-        justify="flex-end"
+        justify="center"
+        align="center"
         onClick={() => paginate(1)}
         variants={buttonHover}
       >
         <MotionIcon
-          minHeight="8em"
-          minWidth="8em"
-          alignSelf="center"
+          minHeight="5em"
+          minWidth="5em"
           variants={hoverRight}
-          justifySelf="flex-end"
           as={ArrowRight}
         />
       </MotionFlex>
