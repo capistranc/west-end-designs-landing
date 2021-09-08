@@ -75,7 +75,7 @@ const slideVariants = {
       type: "spring",
     },
   },
-  initRight: { x: "20vw", opacity: 0 },
+  initRight: { x: "15vw", opacity: 0 },
   initBottom: { y: "100vh" },
   initTop: { y: "-100vh" },
 };

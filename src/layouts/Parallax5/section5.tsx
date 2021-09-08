@@ -136,17 +136,6 @@ export const section5 = () => {
           Pricing
         </Heading>
 
-        <motion.div
-          variants={containerVariants}
-          initial="init"
-          animate="visible"
-        >
-          "TEST TEXT"
-          <motion.div variants={growVariants}>
-            DID IT WORK
-          </motion.div>
-        </motion.div>
-
         {loadAdCards()}
       </Flex>
     </Flex>
