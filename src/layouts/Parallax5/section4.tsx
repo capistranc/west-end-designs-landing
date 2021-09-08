@@ -1,22 +1,8 @@
 import { Flex, Heading, Text, Image, SimpleGrid } from "@chakra-ui/react";
 
 import { CheckIcon } from "@chakra-ui/icons";
+import { MotionFlex, SlideListItem } from "../../components/Motion";
 
-const ListItem = ({ header, subText, ...props }) => {
-  return (
-    <Flex direction="row" {...props}>
-      <CheckIcon mt="1" mr="2" color="blue.500" />
-      <Flex direction="column" align="flex-start">
-        <Heading as="h6" size="medium" mb="1">
-          {header}
-        </Heading>
-        <Text textStyle="subText" color="gray.300">
-          {subText}
-        </Text>
-      </Flex>
-    </Flex>
-  );
-};
 export const section4 = () => {
   return (
     <Flex
@@ -72,27 +58,27 @@ export const section4 = () => {
         >
           <Flex flex="2" direction="column" align="center" justify="center">
             <SimpleGrid columns={[1, 2, 2, 2]} gap="8" mt="12" maxWidth="56em">
-              <ListItem
+              <SlideListItem
                 header="SEO Optimized"
                 subText={`It's important to have your website linked from other websites, like directories.`}
               />
-              <ListItem
+              <SlideListItem
                 header="Server side rendered"
                 subText={`It's important to have your website linked from other websites, like directories.`}
               />
-              <ListItem
+              <SlideListItem
                 header="Google Business Profile"
                 subText={`We will install  google analytics for free so you can measure  the traffic on your website.`}
               />
-              <ListItem
+              <SlideListItem
                 header={"Hand Crafted"}
                 subText={`It's important to have your website linked from other websites, like directories.`}
               />
-              <ListItem
+              <SlideListItem
                 header="Frequent Updates"
                 subText={`We will install  google analytics for free so you can measure  the traffic on your website.`}
               />
-              <ListItem
+              <SlideListItem
                 header="Web Accessibility"
                 subText={`It's important to have your website backlinked from other websites`}
               />

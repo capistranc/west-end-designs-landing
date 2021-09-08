@@ -51,12 +51,11 @@ const AnimateCard = ({ slideFrom, children, ...props }) => {
     <Flex
       ref={ref}
       // justifySelf="stretch"
-      // alignSelf="stretch"
-      minHeight="32rem"
+          // alignSelf="stretch"
+            minHeight="32rem"
       m="1"
-      {...props}
+              {...props}
     >
-      {/* <AnimatePresence> */}
       {isVisible && (
         <MotionFlex
           display="block"

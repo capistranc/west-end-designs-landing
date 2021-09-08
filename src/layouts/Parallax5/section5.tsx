@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const AdCard = ({ caption, imageSource, subText, ...props }) => {
   return (
@@ -37,7 +38,6 @@ const AdCard = ({ caption, imageSource, subText, ...props }) => {
     </Flex>
   );
 };
-const link = "url('/images/cliffStanding.jpeg')";
 
 function loadAdCards() {
   const adCards = [
@@ -76,6 +76,33 @@ function loadAdCards() {
   );
 }
 
+const containerVariants = {
+  init: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const growVariants = {
+  init: {
+    scale: 0,
+  },
+  visible: {
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 export const section5 = () => {
   return (
     <Flex
@@ -108,6 +135,17 @@ export const section5 = () => {
         <Heading as="h1" my="1.25em" variant="banner-with-border-md">
           Pricing
         </Heading>
+
+        <motion.div
+          variants={containerVariants}
+          initial="init"
+          animate="visible"
+        >
+          "TEST TEXT"
+          <motion.div variants={growVariants}>
+            DID IT WORK
+          </motion.div>
+        </motion.div>
 
         {loadAdCards()}
       </Flex>

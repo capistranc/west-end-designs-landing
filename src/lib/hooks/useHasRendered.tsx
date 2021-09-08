@@ -2,12 +2,12 @@ import { truncate } from "fs/promises";
 import { useState, useEffect } from "react";
 
 export const useHasrendered = (ref, rootMargin = "0px") => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasRendered, setHasRendered] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(true);
+        setHasRendered(true);
       },
       {
         rootMargin,
@@ -25,5 +25,5 @@ export const useHasrendered = (ref, rootMargin = "0px") => {
     };
   });
 
-  return isVisible;
+  return hasRendered;
 };

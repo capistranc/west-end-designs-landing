@@ -14,6 +14,7 @@ import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 
 import { motion, useSpring } from "framer-motion";
+import { ModeComment } from "@material-ui/icons";
 const MotionFlex = motion<FlexProps>(Flex);
 const MotionHeading = motion<HeadingProps>(Heading);
 const MotionButton = motion<ButtonProps>(Button);
@@ -70,7 +71,7 @@ const slideVariants = {
     y: 0,
     opacity: 100,
     transition: {
-      delay: 1,
+      delay: 0,
       type: "spring",
     },
   },
@@ -107,14 +108,10 @@ export const section1 = () => {
       justify="center"
       color="white"
     >
-      <MotionHeading
-        fontFamily="Raleway"
-        fontWeight="900"
-        fontSize="3xl"
-        py="10"
-      >
+      <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
         We help businesses
-      </MotionHeading>
+      </Heading>
+
       <MotionFlex variants={growVariants} initial="init" animate="visible">
         <AnimatedBanner text="CONNECT" />
       </MotionFlex>
