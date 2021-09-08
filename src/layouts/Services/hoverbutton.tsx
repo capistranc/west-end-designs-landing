@@ -11,10 +11,11 @@ export function HoverButton({ children, ...props }) {
       dragConstraints={{ left: -100, right: 100 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      mt={10}
+      // mt={10}
       w={"full"}
       bg={"blue.400"}
       color={"white"}
+      display={"inline-flex"}
       rounded={"xl"}
       boxShadow={"0 5px 20px 0px rgb(70 130 180 / 43%)"}
       _focus={{
