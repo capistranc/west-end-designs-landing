@@ -23,24 +23,34 @@ import { useOnScreen } from "../../lib/hooks";
 import { AnimatedCarousel } from "../../components/Cards/AnimatedCarousel";
 import { SlideListItem } from "../../components/Motion";
 
+const divider = (
+  <Box
+    width={["100%", "100%", "8px", "8px"]}
+    height={["8px", "8px", "100%", "100%"]}
+    m="1"
+    border="2px solid rgba(255, 255, 255, 0.5)"
+  />
+);
 export const section2 = () => {
   function renderContent() {
     return (
-      <Flex direction="column" h="100%" width="100%">
+      <Flex direction="column" h="100%" w="100%" mb="8">
         <Flex
           p="4"
           direction="row"
           justify="flex-start"
           align="flex-start"
-          mb="24"
+          mb="4rem"
           className="stickyHeader"
+          h="100%"
+          w="100%"
         >
           <Heading variant="h2" fontWeight="light" color="white">
             What We Do
           </Heading>
         </Flex>
 
-        <Flex direction="column">
+        <Flex direction="column" h="100%" w="100%">
           <Flex justify="center" px="20" p="4" marginBottom="8">
             <Heading color="white" size="3xl">
               SEO Optimized Web Design
@@ -51,10 +61,10 @@ export const section2 = () => {
             p="2" //4 spacing units is 1rem in chakra
             flexDirection={["column", "column", "row", "row"]}
             color="white"
-            height="100%"
+            h="100%"
+            w="100%"
             justify="space-around"
             align="space-around"
-            mb="4em"
           >
             <Flex
               flex="1"
@@ -64,14 +74,22 @@ export const section2 = () => {
               justify="center"
             >
               <AnimatedCarousel flex="1" p="4" maxWidth="32em" />
-              <Box
-                width={["100%", "100%", "8px", "8px"]}
-                height={["8px", "8px", "100%", "100%"]}
-                m="1"
-                border="2px solid rgba(255, 255, 255, 0.5)"
-              />
             </Flex>
-            <Flex flex="2" direction="column">
+
+            <Flex
+              flex="2"
+              direction="column"
+              borderLeft={{
+                base: "none",
+                md: "2px solid rgba(255,255,255, 0.5)",
+              }}
+              borderTop={{
+                base: "2px solid rgba(255,255,255, 0.5)",
+                md: "none",
+              }}
+              pl="8"
+              pt="8"
+            >
               <Heading as="h4"> $0 Down, Starting at $150 a month. </Heading>
               <Text py="4" textStyle="subText" color="gray.300" maxWidth="56em">
                 We also offer logo and graphic design services via our own

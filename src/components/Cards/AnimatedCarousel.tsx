@@ -64,7 +64,7 @@ const hoverVariant = {
   rest: {
     color: "#f5f5f5",
     transition: {
-      duration: 2,
+      duration: 1,
       type: "tween",
       ease: "easeIn",
     },
@@ -73,7 +73,7 @@ const hoverVariant = {
     color: "#E6E1C5",
     scale: 1.1,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
       type: "tween",
       ease: "easeOut",
     },
@@ -83,10 +83,10 @@ const hoverVariant = {
 const buttonHover = {
   rest: {
     backgroundColor: "transparent",
-    opacity: 0.3,
+    opacity: 0.2,
     scale: 0.9,
     transition: {
-      duration: 2,
+      duration: 1,
       type: "tween",
       ease: "easeIn",
     },
@@ -94,7 +94,7 @@ const buttonHover = {
   hover: {
     backgroundColor: "#333333",
     opacity: 0.6,
-    scale: 0.8,
+    scale: 0.5,
     transition: {
       duration: 0.4,
       type: "tween",

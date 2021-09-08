@@ -61,6 +61,7 @@ const AnimateCard = ({ slideFrom, children, ...props }) => {
           display="block"
           transition={{ duration: 0.5, stiffness: 500 }}
           {...slideFrom}
+          {...props}
           // exit={{ x: "-100vw", transition: { delay: 1 } }}
         >
           {children}
