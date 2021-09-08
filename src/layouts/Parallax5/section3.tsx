@@ -13,10 +13,11 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { useOnScreen } from "../../lib/hooks";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ClientCard } from "../../components/Cards/ClientCard";
 
 const MotionFlex = motion<FlexProps>(Flex);
+import { slideFrom } from "../../lib/motion/slideVariants";
 
 const companies = [
   {
@@ -42,87 +43,60 @@ const companies = [
   },
 ];
 
-const TransitionCard = ({ slideFrom, children }) => {
+const AnimateCard = ({ slideFrom, children, ...props }) => {
   const ref = useRef();
   const isVisible = useOnScreen(ref);
-  let direction = slideFrom;
-
-  if (typeof slideFrom === "object") {
-    direction = useBreakpointValue(slideFrom);
-  }
 
   return (
-    // <Flex ref={ref} alignSelf="stretch" justifySelf="stretch" maxWidth="100vw">
-    <Slide
+    <Flex
       ref={ref}
-      direction={direction}
-      style={{
-        flex: "1",
-        maxWidth: "100vw",
-        width: "100%",
-        position: "relative",
-        display: "flex",
-        alignSelf: "stretch",
-        justifySelf: "stretch",
-      }}
-      in={isVisible}
+      // justifySelf="stretch"
+      // alignSelf="stretch"
+      minHeight="32rem"
+      m="1"
+      {...props}
     >
-      {children}
-    </Slide>
-    // </Flex>
+      <AnimatePresence>
+        {isVisible && (
+          <MotionFlex
+            transition={{ duration: 0.5, stiffness: 500 }}
+            {...slideFrom}
+            // exit={{ x: "-100vw", transition: { delay: 1 } }}
+          >
+            {children}
+          </MotionFlex>
+        )}
+      </AnimatePresence>
+    </Flex>
   );
 };
 
 const ContactCards = () => {
-  const slideFrom2 = {
-    base: "right",
-    md: "bottom",
-  };
-
-  const transitionVariant = useBreakpointValue(slideFrom2);
+  const slideFrom1 = slideFrom("left");
+  const slideFrom2 = slideFrom("bottom");
+  const slideFrom3 = slideFrom("right");
 
   return (
     <Flex
-      // width="100%"
-      // height="100%"
+      height="100%"
       maxWidth="100vw"
       flexDirection={["column", "column", "row", "row"]}
-      justify="center"
-      align="center"
+      justify="spaced-evenly"
+      align="spaced-evenly"
       p="4"
       m="4"
     >
-      <Flex justifySelf="stretch" alignSelf="stretch">
-        <MotionFlex
-          initial={{ x: "-100vw" }}
-          transition={{ duration: 0.5, stiffness: 500 }}
-          animate={{ x: "0" }}
-        >
-          <ClientCard {...companies[0]} />
-        </MotionFlex>
-      </Flex>
+      <AnimateCard slideFrom={slideFrom1}>
+        <ClientCard {...companies[0]} />
+      </AnimateCard>
 
-      <Flex justifySelf="stretch" alignSelf="stretch">
-        <MotionFlex
-          justifySelf="stretch"
-          alignSelf="stretch"
-          initial={{ y: "-100vh" }}
-          transition={{ duration: 0.5, stiffness: 500 }}
-          animate={{ y: "0" }}
-        >
-          <ClientCard {...companies[1]} />
-        </MotionFlex>
-      </Flex>
+      <AnimateCard slideFrom={slideFrom2}>
+        <ClientCard {...companies[1]} />
+      </AnimateCard>
 
-      <Flex justifySelf="stretch" alignSelf="stretch">
-        <MotionFlex
-          initial={{ x: "100vw" }}
-          transition={{ duration: 0.5, stiffness: 500 }}
-          animate={{ x: "0" }}
-        >
-          <ClientCard {...companies[2]} />
-        </MotionFlex>
-      </Flex>
+      <AnimateCard slideFrom={slideFrom3}>
+        <ClientCard {...companies[2]} />
+      </AnimateCard>
     </Flex>
   );
 };
@@ -130,6 +104,7 @@ const ContactCards = () => {
 export const section3 = () => {
   return (
     <Flex
+      // minHeight={["150vh", "150vh", "100vh", "100vh"]}
       minHeight="100vh"
       minWidth="100vw"
       h="100%"
@@ -152,7 +127,7 @@ export const section3 = () => {
           Our Clients
         </Heading>
 
-        {/* {ContactCards()} */}
+        {ContactCards()}
       </Flex>
     </Flex>
   );

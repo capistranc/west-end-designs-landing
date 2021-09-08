@@ -7,6 +7,7 @@ import {
   Spacer,
   Image,
   SimpleGrid,
+  SimpleGridProps,
   Icon,
   FlexProps,
   BoxProps,
@@ -16,6 +17,10 @@ import { CheckIcon } from "@chakra-ui/icons";
 
 import { AnimatedIconSwap } from "../../components/Cards/AnimatedIconSwap";
 import { MoneyOff } from "@material-ui/icons";
+
+import { motion } from "framer-motion";
+const MotionGrid = motion<SimpleGridProps>(SimpleGrid);
+const MotionFlex = motion<FlexProps>(Flex);
 
 const ListItem = ({ header, subText, ...props }) => {
   return (
@@ -37,6 +42,7 @@ const ListItem = ({ header, subText, ...props }) => {
     </Flex>
   );
 };
+
 export const section2 = () => {
   return (
     <Flex
@@ -99,7 +105,7 @@ export const section2 = () => {
               business's brand.
             </Text>
 
-            <SimpleGrid columns={[1, 1, 2, 2]} gap="8" mt="12" maxWidth="56em">
+            <MotionGrid columns={[1, 1, 2, 2]} gap="4" mt="12" maxWidth="56em">
               <ListItem
                 header="Hosting Fees Included"
                 subText={`Hosting fees are included in your monthly payments`}
@@ -124,7 +130,7 @@ export const section2 = () => {
                 header="Citations and Listings"
                 subText={`It's important to have your website backlinked from other websites`}
               />
-            </SimpleGrid>
+            </MotionGrid>
           </Flex>
         </Flex>
       </Flex>
