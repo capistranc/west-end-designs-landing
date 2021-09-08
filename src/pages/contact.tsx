@@ -42,7 +42,7 @@ export const ContactPage: NextPage = () => {
       <Box height={{ base: "35vh", md: "40vh" }} top="0" w="100%">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
-            <b className="thing">Our Services</b>
+            <b className="thing">Contact Us</b>
           </Heading>
         </Banner>
       </Box>

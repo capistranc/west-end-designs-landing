@@ -16,6 +16,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
+import { HoverButton } from "./hoverbutton";
 
 export const section8 = () => {
   return (
@@ -74,8 +75,19 @@ export const section8 = () => {
                 All features
               </ListItem>
             </List>
-
-            <Button
+            <HoverButton>
+              <Link
+                href="/contact"
+                transform="translate(-50%, -50%)"
+                text-align="center"
+                position="absolute"
+                left="0"
+                top="50%"
+              >
+                Send us an inquiry
+              </Link>
+            </HoverButton>
+            {/* <Button
               mt={10}
               w={"full"}
               bg={"blue.400"}
@@ -90,7 +102,7 @@ export const section8 = () => {
               }}
             >
               <Link href="/contact"> Send us an inquiry</Link>
-            </Button>
+            </Button> */}
           </Box>
         </Box>
       </Center>
