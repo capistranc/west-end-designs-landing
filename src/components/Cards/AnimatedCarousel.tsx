@@ -15,6 +15,8 @@ import { AnimatePresence, motion } from "framer-motion";
 const MotionBox = motion<BoxProps>(Box);
 const MotionFlex = motion<FlexProps>(Flex);
 const MotionIcon = motion<IconProps>(Icon);
+
+import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import {
   AllInclusive,
   MoneyOff,
@@ -44,42 +46,6 @@ const iconData = [
   },
 ];
 
-// export const AnimatedCarousel = ({ ...props }) => {
-//   const [i, setI] = useState(2);
-//   const [cardData, useCardData] = useState(iconData[i]);
-
-//   const numCards = iconData.length;
-
-//   function swapNextCard() {
-//     setI((i + 1) % numCards);
-//     useCardData(iconData[i]);
-//   }
-
-//   useEffect(() => {
-//     // const timerId = setTimeout(() => swapNextCard(), 4000);
-//     // return () => clearTimeout(timerId);
-//   });
-
-//   function renderIconCard({ CardIcon, header, subText }) {
-//     return (
-//       <AnimatedIconCard
-//         {...props}
-//         CardIcon={CardIcon}
-//         header={header}
-//         subText={subText}
-//       />
-//     );
-//   }
-
-//   return (
-//     <MotionFlex direction="row" justifyContent="stretch" w="100%">
-//       {iconData.map((iconData, i) => {
-//         return <AnimatedIconCard key={i} {...iconData}></AnimatedIconCard>;
-//       })}
-//     </MotionFlex>
-//   );
-// };
-
 const containerVariant = {
   hidden: (direction) => ({
     opacity: 0,
@@ -94,29 +60,105 @@ const containerVariant = {
   }),
 };
 
+const hoverVariant = {
+  rest: {
+    color: "#f5f5f5",
+    transition: {
+      duration: 2,
+      type: "tween",
+      ease: "easeIn",
+    },
+  },
+  hover: {
+    color: "#E6E1C5",
+    scale: 1.1,
+    transition: {
+      duration: 0.4,
+      type: "tween",
+      ease: "easeOut",
+    },
+  },
+};
+
+const buttonHover = {
+  rest: {
+    backgroundColor: "#000000",
+    opacity: 0,
+    scale: 0.9,
+    transition: {
+      duration: 2,
+      type: "tween",
+      ease: "easeIn",
+    },
+  },
+  hover: {
+    backgroundColor: "#333333",
+    opacity: 0.3,
+    scale: 0.8,
+    transition: {
+      duration: 0.4,
+      type: "tween",
+      ease: "easeOut",
+    },
+  },
+};
+
+const hoverLeft = {
+  rest: {
+    x: 0,
+  },
+  hover: {
+    x: -20,
+    transition: { duration: 1 },
+  },
+};
+
+const hoverRight = {
+  rest: {
+    x: 0,
+  },
+  hover: {
+    x: 20,
+    transition: { duration: 1 },
+  },
+};
+
 export const AnimatedCarousel = ({ ...props }) => {
   const [[page, direction], setPage] = useState([0, 0]);
+  useEffect(() => {
+    const timerId = setTimeout(() => paginate(1), 6000);
+
+    return () => clearTimeout(timerId);
+  });
 
   const paginate = (newDirection) => {
     const len = iconData.length;
 
-    const newPage = (page + newDirection) % len;
+    let newPage = (page + newDirection) % len;
+
+    newPage = newPage < 0 ? len - 1 : newPage;
 
     setPage([newPage, newDirection]);
   };
 
   return (
-    <Box h="100%" w="100%" position="relative">
-      <AnimatePresence custom={direction} exitBeforeEnter>
+    <MotionBox
+      h="100%"
+      w="100%"
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      position="relative"
+    >
+      <AnimatePresence custom={direction} initial={true} exitBeforeEnter>
         <MotionBox
           key={page}
           custom={direction}
           initial="hidden"
           animate="visible"
-          exit={{ opacity: 0 }}
+          exit={{ rotateY: 90, transition: { type: "tween" } }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => paginate(1)}
           variants={containerVariant}
         >
           <Flex>
@@ -124,48 +166,59 @@ export const AnimatedCarousel = ({ ...props }) => {
           </Flex>
         </MotionBox>
       </AnimatePresence>
-      {/* <MotionBox
+      <MotionFlex
         className="FINDMEE"
         key="left"
         //   initial={{ opacity: 0 }}
         opacity="0"
         position="absolute"
+        borderRadius="36"
         left="0"
         top="0"
         bg="blue.900"
-        h="100%"
-        w="40%"
-        whileHover={{ opacity: 0.3 }}
+        h="90%"
+        w="35%"
+        onClick={() => paginate(-1)}
+        variants={buttonHover}
       >
-        LEFT
-      </MotionBox>
-      <MotionBox
+        <MotionIcon
+          h="50%"
+          w="50%"
+          variants={hoverLeft}
+          as={ArrowLeft}
+          minHeight="8em"
+          minWidth="8em"
+          justifySelf="flex-start"
+          alignSelf="center"
+        />
+      </MotionFlex>
+      <MotionFlex
         className="FINDMEE"
         key="right"
         initial={{ opacity: 0 }}
         position="absolute"
         opacity="0"
-        right="0"
+        borderRadius="36"
         top="0"
+        right="0"
         bg="blue.900"
-        h="100%"
-        w="40%"
-        whileHover={{ opacity: 0.3 }}
+        h="90%"
+        w="35%"
+        justify="flex-end"
+        onClick={() => paginate(1)}
+        variants={buttonHover}
       >
-        RIGHT
-      </MotionBox> */}
-    </Box>
+        <MotionIcon
+          minHeight="8em"
+          minWidth="8em"
+          alignSelf="center"
+          variants={hoverRight}
+          justifySelf="flex-end"
+          as={ArrowRight}
+        />
+      </MotionFlex>
+    </MotionBox>
   );
-};
-
-const childVariant = {
-  hidden: {
-    rotate: 0,
-  },
-  visible: {
-    rotate: 360,
-    duration: 3.5,
-  },
 };
 
 export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
@@ -180,7 +233,9 @@ export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
       border="4px solid"
       borderColor="rgba(111,111,111,0.3)"
       borderRadius="36"
-      whileHover={{ scale: 1.1 }}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
       {...props}
     >
       <Flex direction="column" align="center">
@@ -193,9 +248,8 @@ export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
             borderTop="4px solid"
             borderColor="blue.500"
             borderRadius="360"
-            initial="hidden"
-            animate="visible"
-            variants={childVariant}
+            animate={{ rotate: 360, borderColor: "#E6E1C5" }}
+            transition={{ duration: 6, repeat: Infinity }}
           ></MotionBox>
           <MotionIcon
             zIndex="10"
@@ -206,7 +260,7 @@ export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
             alignSelf="center"
             minHeight="8em"
             minWidth="8em"
-            whileHover={{ scale: 1.1 }}
+            variants={hoverVariant}
           />
         </Box>
 
