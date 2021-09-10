@@ -23,15 +23,34 @@ import { useOnScreen } from "../../lib/hooks";
 import { AnimatedCarousel } from "../../components/Cards/AnimatedCarousel";
 import { SlideListItem } from "../../components/Motion";
 
-const divider = (
-  <Box
-    width={["100%", "100%", "8px", "8px"]}
-    height={["8px", "8px", "100%", "100%"]}
-    m="1"
-    border="2px solid rgba(255, 255, 255, 0.5)"
-  />
-);
 export const section2 = () => {
+  const listData = [
+    {
+      header: "Hosting Fees Included",
+      subText: `Hosting fees are included in your monthly payments`,
+    },
+    {
+      header: "24/7 Customer Service",
+      subText: `Call direct. No automated response. Talk to one of us directly.`,
+    },
+    {
+      header: "Unlimited Edits",
+      subText: `We provide unlimited edits to your website anytime. See something you want updated, we will change it that day.`,
+    },
+    {
+      header: "Web Design & Development",
+      subText: `Our websites are hand designed from scratch and will be tested for mobile devices, tabets, and pcs.`,
+    },
+    {
+      header: "Google Analytics",
+      subText: `We will install  google analytics for free so you can measure  the traffic on your website.`,
+    },
+    {
+      header: "Citations and Listings",
+      subText: `It's important to have your website backlinked from other websites`,
+    },
+  ];
+
   function renderContent() {
     return (
       <Flex direction="column" h="100%" w="100%" mb="8">
@@ -61,8 +80,8 @@ export const section2 = () => {
             p="2" //4 spacing units is 1rem in chakra
             flexDirection={["column", "column", "row", "row"]}
             color="white"
-            h="100%"
-            w="100%"
+            // h="100%"
+            // w="100%"
             justify="space-around"
             align="space-around"
           >
@@ -73,7 +92,12 @@ export const section2 = () => {
               align="center"
               justify="center"
             >
-              <AnimatedCarousel flex="1" p="4" maxWidth="32em" />
+              <AnimatedCarousel
+                minHeight="36em"
+                flex="1"
+                p="4"
+                maxWidth="32em"
+              />
             </Flex>
 
             <Flex
@@ -98,36 +122,10 @@ export const section2 = () => {
                 your business's brand.
               </Text>
 
-              <SimpleGrid
-                columns={[1, 1, 2, 2]}
-                gap="4"
-                mt="12"
-                maxWidth="56em"
-              >
-                <SlideListItem
-                  header="Hosting Fees Included"
-                  subText={`Hosting fees are included in your monthly payments`}
-                />
-                <SlideListItem
-                  header="24/7 Customer Service"
-                  subText={`Call direct. No automated response. Talk to one of us directly.`}
-                />
-                <SlideListItem
-                  header="Unlimited Edits"
-                  subText={`We provide unlimited edits to your website anytime. See something you want updated, we will change it that day.`}
-                />
-                <SlideListItem
-                  header={"Web Design & Development"}
-                  subText={`Our websites are hand designed from scratch and will be tested for mobile devices, tabets, and pcs.`}
-                />
-                <SlideListItem
-                  header="Google Analytics"
-                  subText={`We will install  google analytics for free so you can measure  the traffic on your website.`}
-                />
-                <SlideListItem
-                  header="Citations and Listings"
-                  subText={`It's important to have your website backlinked from other websites`}
-                />
+              <SimpleGrid columns={[1, 1, 2, 2]} gap="4" mt="8" maxWidth="56em">
+                {listData.map((item, i) => {
+                  return <SlideListItem {...item} key={i} delay={i} />;
+                })}
               </SimpleGrid>
             </Flex>
           </Flex>

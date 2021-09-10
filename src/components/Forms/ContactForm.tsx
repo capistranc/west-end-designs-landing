@@ -21,8 +21,8 @@ import emailJS from "emailjs-com";
 const ContactInfo = (props) => (
   <Box {...props}>
     <Logo />
-    <Link href="mailto:westendwebdesigns@gmail.com">
-      WestEndWebDesigns@gmail.com
+    <Link href="mailto:contact@westendwebdesigns.com">
+      contact@WestEndWebDesigns.com
     </Link>
     <Spacer />
     <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
@@ -34,7 +34,7 @@ import { Logo } from "..";
 
 export default function AlertPop(props: HTMLChakraProps<"div">) {
   return (
-    <Alert h="1em" status="error" zIndex="3">
+    <Alert h="1em" status="error" borderRadius="8" zIndex="3">
       <AlertIcon />
       <AlertTitle mr={2}>{props.title}</AlertTitle>
     </Alert>

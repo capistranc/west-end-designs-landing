@@ -4,6 +4,33 @@ import { CheckIcon } from "@chakra-ui/icons";
 import { MotionFlex, SlideListItem } from "../../components/Motion";
 
 export const section4 = () => {
+  const listData = [
+    {
+      header: "Hosting Fees Included",
+      subText: `Hosting fees are included in your monthly payments`,
+    },
+    {
+      header: "24/7 Customer Service",
+      subText: `Call direct. No automated response. Talk to one of us directly.`,
+    },
+    {
+      header: "Unlimited Edits",
+      subText: `We provide unlimited edits to your website anytime. See something you want updated, we will change it that day.`,
+    },
+    {
+      header: "Web Design & Development",
+      subText: `Our websites are hand designed from scratch and will be tested for mobile devices, tabets, and pcs.`,
+    },
+    {
+      header: "Google Analytics",
+      subText: `We will install  google analytics for free so you can measure  the traffic on your website.`,
+    },
+    {
+      header: "Citations and Listings",
+      subText: `It's important to have your website backlinked from other websites`,
+    },
+  ];
+
   return (
     <Flex
       direction="column"
@@ -17,14 +44,14 @@ export const section4 = () => {
         direction="row"
         justify="flex-start"
         align="flex-start"
-        mb="3rem"
+        mb="2rem"
       >
         <Heading variant="h2" fontWeight="light" color="white">
           How we do it.
         </Heading>
       </Flex>
 
-      <Flex direction="column" align="center" justify="center">
+      <Flex direction="column" w="100%" h="100%">
         <Flex
           direction="column"
           justify="flex-start"
@@ -36,10 +63,10 @@ export const section4 = () => {
             Mobile first Designs
           </Heading>
 
-          <Text as="h4" fontSize="2xl" textStyle="h2">
+          <Text as="h4" pl=".25em" fontSize="2xl" textStyle="h2">
             Search Engine Optimized
           </Text>
-          <Text py="1" textStyle="subText" color="gray.300">
+          <Text py="1" pl="0.5em" textStyle="subText" color="gray.300">
             We also offer logo and graphic design services via our own in-house
             graphic designer. If you have an existing logo that needs a touch up
             or need a completely new one we can help build your business's
@@ -51,37 +78,20 @@ export const section4 = () => {
           p="4" //4 spacing units is 1rem in chakra
           flexDirection={["column-reverse", "column-reverse", "row", "row"]}
           color="white"
-          height="100%"
           justify="space-evenly"
           align="space-around"
-          mb="4em"
+          mb="1em"
         >
           <Flex flex="2" direction="column" align="center" justify="center">
-            <SimpleGrid columns={[1, 2, 2, 2]} gap="8" mt="12" maxWidth="56em">
-              <SlideListItem
-                header="SEO Optimized"
-                subText={`It's important to have your website linked from other websites, like directories.`}
-              />
-              <SlideListItem
-                header="Server side rendered"
-                subText={`It's important to have your website linked from other websites, like directories.`}
-              />
-              <SlideListItem
-                header="Google Business Profile"
-                subText={`We will install  google analytics for free so you can measure  the traffic on your website.`}
-              />
-              <SlideListItem
-                header={"Hand Crafted"}
-                subText={`It's important to have your website linked from other websites, like directories.`}
-              />
-              <SlideListItem
-                header="Frequent Updates"
-                subText={`We will install  google analytics for free so you can measure  the traffic on your website.`}
-              />
-              <SlideListItem
-                header="Web Accessibility"
-                subText={`It's important to have your website backlinked from other websites`}
-              />
+            <SimpleGrid
+              columns={[1, 1, 2, 2]}
+              gap="1rem"
+              mt="2rem"
+              maxWidth="56em"
+            >
+              {listData.map((item, i) => {
+                return <SlideListItem {...item} key={i} delay={i} />;
+              })}
             </SimpleGrid>
           </Flex>
           <Flex

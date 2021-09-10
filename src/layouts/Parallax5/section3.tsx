@@ -43,64 +43,54 @@ const companies = [
   },
 ];
 
-const AnimateCard = ({ slideFrom, children, ...props }) => {
+const AnimateCard = ({ children, ...props }) => {
+  const slideFromLeft = slideFrom("left");
   const ref = useRef();
   const isVisible = useOnScreen(ref);
+  console.log(0.3 * props.delay);
 
   return (
-    <Flex
-      ref={ref}
-      // justifySelf="stretch"
-      // alignSelf="stretch"
-      minHeight="32rem"
-      m="1"
-      {...props}
-    >
+    <Flex ref={ref} minHeight="32rem" m="1" {...props}>
       {isVisible && (
         <MotionFlex
           display="block"
-          transition={{ duration: 0.5, stiffness: 500 }}
-          {...slideFrom}
+          {...slideFromLeft}
+          transition={{
+            duration: 0.5,
+            delay: 0.3 * props.delay,
+            stiffness: 500,
+          }}
           {...props}
-          // exit={{ x: "-100vw", transition: { delay: 1 } }}
         >
           {children}
         </MotionFlex>
       )}
-      {/* </AnimatePresence> */}
-    </Flex>
-  );
-};
-
-const ContactCards = () => {
-  const slideFromLeft = slideFrom("left");
-
-  return (
-    <Flex
-      height="100%"
-      maxWidth="100vw"
-      flexDirection={["column", "column", "row", "row"]}
-      justify="spaced-evenly"
-      align="spaced-evenly"
-      p="4"
-      m="4"
-    >
-      <AnimateCard slideFrom={slideFromLeft}>
-        <ClientCard {...companies[0]} />
-      </AnimateCard>
-
-      <AnimateCard slideFrom={slideFromLeft}>
-        <ClientCard {...companies[1]} />
-      </AnimateCard>
-
-      <AnimateCard slideFrom={slideFromLeft}>
-        <ClientCard {...companies[2]} />
-      </AnimateCard>
     </Flex>
   );
 };
 
 export const section3 = () => {
+  function renderCompanyCards() {
+    return (
+      <Flex
+        height="100%"
+        maxWidth="100vw"
+        flexDirection={["column", "column", "row", "row"]}
+        justify="spaced-evenly"
+        align="spaced-evenly"
+        p="4"
+        m="4"
+      >
+        {companies.map((companyData, i) => {
+          return (
+            <AnimateCard key={i} delay={i}>
+              <ClientCard {...companyData}> </ClientCard>
+            </AnimateCard>
+          );
+        })}
+      </Flex>
+    );
+  }
   return (
     <Flex
       // minHeight={["150vh", "150vh", "100vh", "100vh"]}
@@ -126,7 +116,7 @@ export const section3 = () => {
           Our Clients
         </Heading>
 
-        {ContactCards()}
+        {renderCompanyCards()}
       </Flex>
     </Flex>
   );
