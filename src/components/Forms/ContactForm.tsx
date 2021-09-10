@@ -60,18 +60,32 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
   const toast = useToast();
   const onSubmit = async (data) => {
     setSending(true);
-    const result = await emailJS.send("contact_service", "contact_form", data);
+    try {
+      const result = await emailJS.send(
+        "contact_service",
+        "contact_form",
+        data,
+      );
 
-    if (result.status === 200) {
+      if (result.status === 200) {
+        toast({
+          title: "Sent!",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: `Failed to send: ${result.text}`,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (e) {
+      console.log(e);
       toast({
-        title: "Sent!",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: `Failed to send: ${result.text}`,
+        title: `Failed to send: ${e.status}`,
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -262,7 +276,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           type="submit"
           width="60%"
           variant="solid"
-          isLoading={isSending}
+          isLoading={isSubmitting}
           loadingText="Sending..."
         >
           Send
