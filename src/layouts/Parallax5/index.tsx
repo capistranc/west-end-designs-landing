@@ -47,7 +47,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
         backgroundSize="cover"
         height="100%"
         width="100%"
-        minHeight="100vh"
         minWidth="100vw"
         align="center"
         justify="center"
@@ -77,7 +76,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
         height="100%"
         width="100%"
       >
-        <ParallaxBox bgImage={bgImages[0]} id="section1">
+        <ParallaxBox bgImage={bgImages[0]} minHeight="100vh" id="section1">
           {sections[0]}
         </ParallaxBox>
         <ParallaxBox position="relative" data-header="What We Do" id="section2">

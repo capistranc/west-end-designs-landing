@@ -12,12 +12,8 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
-import { useOnScreen } from "../../lib/hooks";
-import { motion, AnimatePresence } from "framer-motion";
+import { SlideIn } from "../../components/Motion/SlideIn";
 import { ClientCard } from "../../components/Cards/ClientCard";
-
-const MotionFlex = motion<FlexProps>(Box);
-import { slideFrom } from "../../lib/motion/slideVariants";
 
 const companies = [
   {
@@ -43,68 +39,32 @@ const companies = [
   },
 ];
 
-const AnimateCard = ({ slideFrom, children, ...props }) => {
-  const ref = useRef();
-  const isVisible = useOnScreen(ref);
-
-  return (
-    <Flex
-      ref={ref}
-      // justifySelf="stretch"
-      // alignSelf="stretch"
-      minHeight="32rem"
-      m="1"
-      {...props}
-    >
-      {isVisible && (
-        <MotionFlex
-          display="block"
-          transition={{ duration: 0.5, stiffness: 500 }}
-          {...slideFrom}
-          {...props}
-          // exit={{ x: "-100vw", transition: { delay: 1 } }}
-        >
-          {children}
-        </MotionFlex>
-      )}
-      {/* </AnimatePresence> */}
-    </Flex>
-  );
-};
-
-const ContactCards = () => {
-  const slideFromLeft = slideFrom("left");
-
-  return (
-    <Flex
-      height="100%"
-      maxWidth="100vw"
-      flexDirection={["column", "column", "row", "row"]}
-      justify="spaced-evenly"
-      align="spaced-evenly"
-      p="4"
-      m="4"
-    >
-      <AnimateCard slideFrom={slideFromLeft}>
-        <ClientCard {...companies[0]} />
-      </AnimateCard>
-
-      <AnimateCard slideFrom={slideFromLeft}>
-        <ClientCard {...companies[1]} />
-      </AnimateCard>
-
-      <AnimateCard slideFrom={slideFromLeft}>
-        <ClientCard {...companies[2]} />
-      </AnimateCard>
-    </Flex>
-  );
-};
-
 export const section3 = () => {
+  function renderCompanyCards() {
+    return (
+      <Flex
+        height="100%"
+        maxWidth="100vw"
+        flexDirection={["column", "column", "row", "row"]}
+        justify="spaced-evenly"
+        align="spaced-evenly"
+        p="4"
+        m="4"
+      >
+        {companies.map((companyData, i) => {
+          return (
+            <SlideIn key={i} delay={i}>
+              <ClientCard {...companyData}> </ClientCard>
+            </SlideIn>
+          );
+        })}
+      </Flex>
+    );
+  }
   return (
     <Flex
       // minHeight={["150vh", "150vh", "100vh", "100vh"]}
-      minHeight="100vh"
+
       minWidth="100vw"
       h="100%"
       w="100%"
@@ -126,7 +86,7 @@ export const section3 = () => {
           Our Clients
         </Heading>
 
-        {ContactCards()}
+        {renderCompanyCards()}
       </Flex>
     </Flex>
   );

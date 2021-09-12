@@ -17,13 +17,7 @@ const MotionFlex = motion<FlexProps>(Flex);
 const MotionIcon = motion<IconProps>(Icon);
 
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
-import {
-  AllInclusive,
-  MoneyOff,
-  Description,
-  Block,
-  Directions,
-} from "@material-ui/icons";
+import { AllInclusive, MoneyOff, Description } from "@material-ui/icons";
 
 const iconData = [
   {
@@ -142,14 +136,7 @@ export const AnimatedCarousel = ({ ...props }) => {
   };
 
   return (
-    <MotionBox
-      h="100%"
-      w="100%"
-      initial="rest"
-      whileHover="hover"
-      animate="rest"
-      position="relative"
-    >
+    <MotionBox h="100%" w="100%" position="relative">
       <AnimatePresence custom={direction} initial={true} exitBeforeEnter>
         <MotionBox
           key={page}
@@ -157,8 +144,6 @@ export const AnimatedCarousel = ({ ...props }) => {
           initial="hidden"
           animate="visible"
           exit={{ rotateY: 90, transition: { type: "tween" } }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
           variants={containerVariant}
         >
           <Flex>
@@ -167,9 +152,7 @@ export const AnimatedCarousel = ({ ...props }) => {
         </MotionBox>
       </AnimatePresence>
       <MotionFlex
-        className="FINDMEE"
         key="left"
-        //   initial={{ opacity: 0 }}
         opacity="0"
         position="absolute"
         borderRadius="36"
@@ -181,11 +164,12 @@ export const AnimatedCarousel = ({ ...props }) => {
         h="90%"
         w="35%"
         onClick={() => paginate(-1)}
+        initial="rest"
+        whileHover="hover"
+        animate="rest"
         variants={buttonHover}
       >
         <MotionIcon
-          //   h="50%"
-          //   w="50%"
           variants={hoverLeft}
           as={ArrowLeft}
           left="0"
@@ -194,7 +178,6 @@ export const AnimatedCarousel = ({ ...props }) => {
         />
       </MotionFlex>
       <MotionFlex
-        className="FINDMEE"
         key="right"
         position="absolute"
         opacity="0.3"
@@ -207,6 +190,9 @@ export const AnimatedCarousel = ({ ...props }) => {
         justify="center"
         align="center"
         onClick={() => paginate(1)}
+        initial="rest"
+        whileHover="hover"
+        animate="rest"
         variants={buttonHover}
       >
         <MotionIcon
@@ -228,6 +214,7 @@ export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
       align="center"
       p="4"
       m="4"
+      minHeight="32rem"
       py="8"
       border="4px solid"
       borderColor="rgba(111,111,111,0.3)"

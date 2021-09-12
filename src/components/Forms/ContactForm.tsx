@@ -21,8 +21,8 @@ import emailJS from "emailjs-com";
 const ContactInfo = (props) => (
   <Box {...props}>
     <Logo />
-    <Link href="mailto:westendwebdesigns@gmail.com">
-      WestEndWebDesigns@gmail.com
+    <Link href="mailto:contact@westendwebdesigns.com">
+      contact@WestEndWebDesigns.com
     </Link>
     <Spacer />
     <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
@@ -34,7 +34,7 @@ import { Logo } from "..";
 
 export default function AlertPop(props: HTMLChakraProps<"div">) {
   return (
-    <Alert h="1em" status="error" zIndex="3">
+    <Alert h="1em" status="error" borderRadius="8" zIndex="3">
       <AlertIcon />
       <AlertTitle mr={2}>{props.title}</AlertTitle>
     </Alert>
@@ -60,18 +60,32 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
   const toast = useToast();
   const onSubmit = async (data) => {
     setSending(true);
-    const result = await emailJS.send("contact_service", "contact_form", data);
+    try {
+      const result = await emailJS.send(
+        "contact_service",
+        "contact_form",
+        data,
+      );
 
-    if (result.status === 200) {
+      if (result.status === 200) {
+        toast({
+          title: "Sent!",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: `Failed to send: ${result.text}`,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } catch (e) {
+      console.log(e);
       toast({
-        title: "Sent!",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: `Failed to send: ${result.text}`,
+        title: `Failed to send: ${e.status}`,
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -262,7 +276,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           type="submit"
           width="60%"
           variant="solid"
-          isLoading={isSending}
+          isLoading={isSubmitting}
           loadingText="Sending..."
         >
           Send
