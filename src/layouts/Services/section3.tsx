@@ -13,7 +13,7 @@ export const section3 = () => {
             textTransform="uppercase"
             fontSize="md"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
             Building a better experience
           </Text>
@@ -22,7 +22,7 @@ export const section3 = () => {
             textTransform="uppercase"
             fontSize="md"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
             for your customers
           </Text>

@@ -21,7 +21,7 @@ export const section7 = () => {
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
             Mobile and desktop
           </Text>
@@ -30,7 +30,7 @@ export const section7 = () => {
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
             designs that keep users engaged
           </Text>

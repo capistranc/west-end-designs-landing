@@ -13,7 +13,7 @@ export const section5 = () => {
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
             Let us help you
           </Text>
@@ -22,7 +22,7 @@ export const section5 = () => {
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
             hit all the marks
           </Text>

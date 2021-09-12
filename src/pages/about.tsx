@@ -41,16 +41,16 @@ export const About: NextPage = () => {
         position="fixed"
         color={fgColor[colorMode]}
       />
-      <Box height={{ base: "35vh", md: "40vh" }} top="0" w="100%">
+      <Box height={{ base: "35vh", md: "40vh" }} top="0" w="100%" bg="white">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
             <b className="thing">About The Team</b>
           </Heading>
         </Banner>
       </Box>
-      <Box position="fixed" top="0" width="100%" zIndex="10"></Box>
+      <Box position="fixed" top="0" width="100%" zIndex="10" bg="white"></Box>
       {/* <Box>The Team</Box> */}
-      <Box height="140vh" mt={4}>
+      <Box height="150vh" pt={10} pb={10} bg="white">
         <SimpleGrid
           height="50%"
           w="100%"
@@ -58,8 +58,8 @@ export const About: NextPage = () => {
           base={{ base: 2, md: 2 }}
           //mr={4}
           //ml={4}
-          mb={{ base: "4", md: "0" }}
-          mt={{ base: "4", md: "0" }}
+          mb={{ base: "0", md: "0" }}
+          mt={{ base: "0", md: "0" }}
         >
           <Box
             height={{ base: "50%", md: "100%" }}
@@ -96,8 +96,8 @@ export const About: NextPage = () => {
           flexDirection={{ md: "row-reverse" }}
           //mr={4}
           //ml={4}
-          mb={{ base: "4", md: "0" }}
-          mt={{ base: "4", md: "0" }}
+          mb={{ base: "0", md: "0" }}
+          mt={{ base: "0", md: "0" }}
         >
           <Box
             height={{ base: "50%", md: "100%" }}
