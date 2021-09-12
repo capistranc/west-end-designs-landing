@@ -74,7 +74,7 @@ export const section2 = () => {
         <Flex direction="column" h="100%" w="100%">
           <Flex justify="center" px="20" p="4" marginBottom="8">
             <Heading color="white" size="3xl">
-              SEO Optimized Mobile Websites
+              Premium Web Designs
             </Heading>
           </Flex>
 
@@ -116,7 +116,7 @@ export const section2 = () => {
               pl="8"
               pt="8"
             >
-              <Heading as="h4"> $0 Down, Starting at $150 a month. </Heading>
+              <Heading as="h4"> SEO Optimized for Mobile Devices </Heading>
               <Text py="4" textStyle="subText" color="gray.300" maxWidth="56em">
                 We produce websites that are built to run smoothly on mobile
                 devices, tablets, and PCs. All while tailoring your content to

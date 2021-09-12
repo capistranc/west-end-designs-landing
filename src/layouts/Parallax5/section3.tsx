@@ -64,7 +64,7 @@ export const section3 = () => {
   return (
     <Flex
       // minHeight={["150vh", "150vh", "100vh", "100vh"]}
-      minHeight="100vh"
+
       minWidth="100vw"
       h="100%"
       w="100%"

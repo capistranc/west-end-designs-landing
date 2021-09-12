@@ -106,25 +106,14 @@ const growVariants = {
 export const section5 = () => {
   return (
     <Flex
-      minHeight="100vh"
       minWidth="100vw"
       h="100%"
       w="100%"
+      mb="8"
+      mt="8"
       flexDir="column"
       color="white"
     >
-      <Flex
-        p="4"
-        direction="row"
-        justify="flex-start"
-        align="flex-start"
-        mb="8"
-        className="stickyHeader"
-      >
-        <Heading variant="h2" fontWeight="light" color="white">
-          How much does it cost
-        </Heading>
-      </Flex>
       <Flex
         direction="column"
         justify="center"
@@ -133,7 +122,7 @@ export const section5 = () => {
         h="100%"
       >
         <Heading as="h1" my="1.25em" variant="banner-with-border-md">
-          Pricing
+          Prices
         </Heading>
 
         {loadAdCards()}

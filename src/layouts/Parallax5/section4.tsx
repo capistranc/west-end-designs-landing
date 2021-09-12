@@ -6,28 +6,28 @@ import { MotionFlex, SlideListItem } from "../../components/Motion";
 export const section4 = () => {
   const listData = [
     {
-      header: "Hosting Fees Included",
-      subText: `Hosting fees are included in your monthly payments`,
-    },
-    {
-      header: "24/7 Customer Service",
-      subText: `Call direct. No automated response. Talk to one of us directly.`,
+      header: "No Contract",
+      subText: `You pay as you go. Join when you want, and leave when you want.`,
     },
     {
       header: "Unlimited Edits",
-      subText: `We provide unlimited edits to your website anytime. See something you want updated, we will change it that day.`,
+      subText: `We provide unlimited edits to your website anytime.`,
     },
     {
-      header: "Web Design & Development",
-      subText: `Our websites are hand designed from scratch and will be tested for mobile devices, tabets, and pcs.`,
+      header: "Hosting Fees Included",
+      subText: `Hosting fees are included in your monthly payments. You just pay for your domain.`,
     },
     {
       header: "Google Analytics",
-      subText: `We will install  google analytics for free so you can measure  the traffic on your website.`,
+      subText: `We will install google analytics for free so you can measure the traffic on your website.`,
     },
     {
-      header: "Citations and Listings",
-      subText: `It's important to have your website backlinked from other websites`,
+      header: "Own your profiles",
+      subText: `We can help you set up your domain, google analytics, and email. But they belong to you.`,
+    },
+    {
+      header: "Additional Services",
+      subText: `You can talk to us about extra services, if you need help with blogs, social media, or adsense.`,
     },
   ];
 
@@ -35,42 +35,30 @@ export const section4 = () => {
     <Flex
       direction="column"
       bg="#444444"
-      minHeight="100vh"
       height="100%"
       width="100%"
+      pt="4"
+      pb="4"
     >
-      <Flex
-        p="4"
-        direction="row"
-        justify="flex-start"
-        align="flex-start"
-        mb="2rem"
-      >
-        <Heading variant="h2" fontWeight="light" color="white">
-          How we do it.
-        </Heading>
-      </Flex>
-
       <Flex direction="column" w="100%" h="100%">
+        <Heading p="4" mb="12" variant="h2" fontWeight="light" color="white">
+          How much does it cost
+        </Heading>
+
         <Flex
           direction="column"
-          justify="flex-start"
+          justify="center"
+          align="center"
           p="1rem"
           px="1rem"
           color="white"
         >
           <Heading color="white" size="3xl" mb="1rem">
-            Mobile first Designs
+            $0 Down, No Contract
           </Heading>
 
           <Text as="h4" pl=".25em" fontSize="2xl" textStyle="h2">
-            Search Engine Optimized
-          </Text>
-          <Text py="1" pl="0.5em" textStyle="subText" color="gray.300">
-            We also offer logo and graphic design services via our own in-house
-            graphic designer. If you have an existing logo that needs a touch up
-            or need a completely new one we can help build your business's
-            brand.
+            Starting at $150 per month.
           </Text>
         </Flex>
 
@@ -84,28 +72,15 @@ export const section4 = () => {
         >
           <Flex flex="2" direction="column" align="center" justify="center">
             <SimpleGrid
-              columns={[1, 1, 2, 2]}
+              columns={[1, 2, 3, 3]}
               gap="1rem"
               mt="2rem"
-              maxWidth="56em"
+              maxWidth="60em"
             >
               {listData.map((item, i) => {
                 return <SlideListItem {...item} key={i} delay={i} />;
               })}
             </SimpleGrid>
-          </Flex>
-
-          <Flex
-            flex="1"
-            flexDirection="column"
-            p="2em"
-            align="flex-start"
-            justify="flex-start"
-          >
-            <Heading variant="h2" fontSize="xl">
-              Improve Website Performance
-            </Heading>
-            <Image m="8" alignSelf="center" boxSize="10em" />
           </Flex>
         </Flex>
       </Flex>
