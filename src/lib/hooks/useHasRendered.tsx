@@ -1,17 +1,17 @@
 import { truncate } from "fs/promises";
 import { useState, useEffect } from "react";
 
-export const useHasrendered = (ref, rootMargin = "0px") => {
+export const useHasRendered = (ref, rootMargin = "0px") => {
   const [hasRendered, setHasRendered] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setHasRendered(true);
+        if (entry.isIntersecting) return setHasRendered(true);
       },
       {
         rootMargin,
-      }
+      },
     );
 
     const currentElement = ref?.current;

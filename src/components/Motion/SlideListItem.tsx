@@ -1,11 +1,9 @@
-import { motion } from "framer-motion";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-
-import React, { useRef } from "react";
-import { useOnScreen } from "../../lib/hooks";
-
 import { MotionFlex } from "./index";
+import React, { useRef } from "react";
+
+import { useOnScreen, useHasRendered } from "../../lib/hooks";
 
 export const SlideListItem = ({ header, subText, ...props }) => {
   const listVariants = {
@@ -24,7 +22,7 @@ export const SlideListItem = ({ header, subText, ...props }) => {
   };
 
   const ref = useRef();
-  const isVisible = useOnScreen(ref);
+  const isVisible = useHasRendered(ref);
   return (
     <Box ref={ref} minHeight="6em" h="100%" {...props}>
       {isVisible && (

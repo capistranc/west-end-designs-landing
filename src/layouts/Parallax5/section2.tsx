@@ -15,11 +15,8 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 
-import { AnimatedIconSwap } from "../../components/Cards/AnimatedIconSwap";
-import { MoneyOff } from "@material-ui/icons";
+
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
-import { useOnScreen } from "../../lib/hooks";
 import { AnimatedCarousel } from "../../components/Cards/AnimatedCarousel";
 import { SlideListItem } from "../../components/Motion";
 

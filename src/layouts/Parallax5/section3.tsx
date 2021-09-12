@@ -12,12 +12,8 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
-import { useOnScreen } from "../../lib/hooks";
-import { motion, AnimatePresence } from "framer-motion";
+import { SlideIn } from "../../components/Motion/SlideIn";
 import { ClientCard } from "../../components/Cards/ClientCard";
-
-const MotionFlex = motion<FlexProps>(Box);
-import { slideFrom } from "../../lib/motion/slideVariants";
 
 const companies = [
   {
@@ -43,32 +39,6 @@ const companies = [
   },
 ];
 
-const AnimateCard = ({ children, ...props }) => {
-  const slideFromLeft = slideFrom("left");
-  const ref = useRef();
-  const isVisible = useOnScreen(ref);
-  console.log(0.3 * props.delay);
-
-  return (
-    <Flex ref={ref} minHeight="32rem" m="1" {...props}>
-      {isVisible && (
-        <MotionFlex
-          display="block"
-          {...slideFromLeft}
-          transition={{
-            duration: 0.5,
-            delay: 0.3 * props.delay,
-            stiffness: 500,
-          }}
-          {...props}
-        >
-          {children}
-        </MotionFlex>
-      )}
-    </Flex>
-  );
-};
-
 export const section3 = () => {
   function renderCompanyCards() {
     return (
@@ -83,9 +53,9 @@ export const section3 = () => {
       >
         {companies.map((companyData, i) => {
           return (
-            <AnimateCard key={i} delay={i}>
+            <SlideIn key={i} delay={i}>
               <ClientCard {...companyData}> </ClientCard>
-            </AnimateCard>
+            </SlideIn>
           );
         })}
       </Flex>

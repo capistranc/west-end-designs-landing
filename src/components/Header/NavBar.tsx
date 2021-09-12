@@ -10,7 +10,7 @@ import {
   useDisclosure,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { Fade, ScaleFade, Slide, SlideFade, Collapse } from "@chakra-ui/react";
+import { Collapse } from "@chakra-ui/react";
 
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
