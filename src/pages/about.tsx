@@ -58,25 +58,31 @@ export const About: NextPage = () => {
           base={{ base: 2, md: 2 }}
           //mr={4}
           //ml={4}
-          mb={4}
-          mt={4}
+          mb={{ base: "4", md: "0" }}
+          mt={{ base: "4", md: "0" }}
         >
-          <Flex
-            justify="center"
-            w="100%"
-            height={{ base: "50%", md: "70%" }}
-            // bg="blue"
-            position="relative"
-            mb={4}
+          <Box
+            height={{ base: "50%", md: "100%" }}
+            w={{ base: "100%", md: "50%" }}
+            mb={{ base: 5, md: 0 }}
           >
-            <Image
-              layout="fill"
-              objectFit="contain"
-              src="/images/chrisCropped.png"
-              alt="Picture of developer"
-            />
-          </Flex>
-          <Box w="80%" margin="auto">
+            <Flex
+              justify="center"
+              w="100%"
+              height={{ base: "100%", md: "70%" }}
+              position="relative"
+              top={{ md: "15%" }}
+            >
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src="/images/chrisCropped.png"
+                alt="Picture of developer"
+              />
+            </Flex>
+          </Box>
+
+          <Box w={{ base: "80%", md: "40%" }} margin="auto">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -90,27 +96,34 @@ export const About: NextPage = () => {
           w="100%"
           display={{ md: "inline-flex" }}
           base={{ base: 2, md: 2 }}
+          flexDirection={{ md: "row-reverse" }}
           //mr={4}
           //ml={4}
-          mb={4}
-          mt={4}
+          mb={{ base: "4", md: "0" }}
+          mt={{ base: "4", md: "0" }}
         >
-          <Flex
-            justify="center"
-            w="100%"
-            height={{ base: "50%", md: "70%" }}
-            // bg="blue"
-            position="relative"
-            mb={4}
+          <Box
+            height={{ base: "50%", md: "100%" }}
+            w={{ base: "100%", md: "50%" }}
+            mb={{ base: 5, md: 0 }}
           >
-            <Image
-              layout="fill"
-              objectFit="contain"
-              src="/images/michaelCropped.png"
-              alt="Picture of developer"
-            />
-          </Flex>
-          <Box w="80%" margin="auto">
+            <Flex
+              justify="center"
+              w="100%"
+              height={{ base: "100%", md: "70%" }}
+              position="relative"
+              top={{ md: "15%" }}
+            >
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src="/images/michaelCropped.png"
+                alt="Picture of developer"
+              />
+            </Flex>
+          </Box>
+
+          <Box w={{ base: "80%", md: "40%" }} margin="auto">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
