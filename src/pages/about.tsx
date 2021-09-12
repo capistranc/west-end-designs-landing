@@ -83,12 +83,9 @@ export const About: NextPage = () => {
           </Box>
 
           <Box w={{ base: "80%", md: "40%" }} margin="auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            Chris Capistran is Co-Owner and a developer at West End Designs.
+            Chris majored in Math and Computer Science at UCLA and has numerous
+            years experience working in tech as a developer.
           </Box>
         </SimpleGrid>
         <SimpleGrid

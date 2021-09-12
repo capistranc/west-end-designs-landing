@@ -27,12 +27,10 @@ export const section5 = () => {
             Lorem Impsum
           </Text>
           <Text mt={2} color="gray.500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            In todays day and age, your online presence is important for
+            increasing your customer base. Many business owners are not aware of
+            what it takes now a days to have a website that creates a strong
+            online presence, and in turn helps increase your customer base.
           </Text>
         </Box>
       </Box>
