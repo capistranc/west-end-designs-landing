@@ -11,7 +11,7 @@ import {
 export const section7 = () => {
   return (
     <>
-      <Box p={4} display={{ lg: "inline" }} w="100%" height="20%">
+      <Box p={10} display={{ lg: "inline" }} w="100%" height="20%">
         <Box flexShrink={0}>
           <Box borderRadius="lg" width={{ md: 40 }} bg="blue"></Box>
         </Box>
@@ -23,7 +23,7 @@ export const section7 = () => {
             letterSpacing="wide"
             color="teal.600"
           >
-            Lorem Impsum
+            Mobile and desktop
           </Text>
           <Text
             fontWeight="bold"
@@ -32,13 +32,12 @@ export const section7 = () => {
             letterSpacing="wide"
             color="teal.600"
           >
-            Lorem Impsum
+            designs that keep users engaged
           </Text>
           <Text mt={2} color="gray.500">
-            In todays day and age, your online presence is important for
-            increasing your customer base. Many business owners are not aware of
-            what it takes now a days to have a website that creates a strong
-            online presence, and in turn helps increase your customer base.
+            More often than not, people are primarily accessing the internet
+            through their mobile phones. With our mobile first design approach,
+            our websites look great on phones, desktops, and other devices.
           </Text>
         </Box>
       </Box>
