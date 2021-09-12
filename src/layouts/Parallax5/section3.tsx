@@ -7,6 +7,7 @@ import {
   Box,
   Image,
   Text,
+  Avatar,
   Stack,
   Slide,
   useBreakpointValue,
@@ -14,6 +15,8 @@ import {
 import React, { useRef } from "react";
 import { SlideIn } from "../../components/Motion/SlideIn";
 import { ClientCard } from "../../components/Cards/ClientCard";
+import { getBoxShadow } from "@chakra-ui/popper/dist/types/utils";
+import { SearchIcon } from "@chakra-ui/icons";
 
 const companies = [
   {
@@ -39,55 +42,51 @@ const companies = [
   },
 ];
 
+import { TitledAvatar } from "../../components/Cards/TitledAvatar";
+
 export const section3 = () => {
-  function renderCompanyCards() {
-    return (
-      <Flex
-        height="100%"
-        maxWidth="100vw"
-        flexDirection={["column", "column", "row", "row"]}
-        justify="spaced-evenly"
-        align="spaced-evenly"
-        p="4"
-        m="4"
-      >
-        {companies.map((companyData, i) => {
-          return (
-            <SlideIn key={i} delay={i}>
-              <ClientCard {...companyData}> </ClientCard>
-            </SlideIn>
-          );
-        })}
-      </Flex>
-    );
-  }
   return (
-    <Flex
-      // minHeight={["150vh", "150vh", "100vh", "100vh"]}
-
-      minWidth="100vw"
+    <Box
       h="100%"
-      w="100%"
-      flexDir="column"
+      w="100vw"
+      position="relative"
       color="white"
+      // bg="linear-gradient(45deg, #6303B1, #ff0099)"
+      // transform="skewY(-11deg)"
+      _before={
+        {
+          // position: "absolute",
+          // top: 0,
+          // right: 0,
+          // left: 0,
+          // bottom: 0,
+          // zIndex: 0,
+          // bg: "linear-gradient(10deg, rgba(0.4,0.4,0.4,0.7), rgba(0,0,0,0.2))",
+          // transform: "skewY(8deg)",
+          // content: `" "`,
+        }
+      }
     >
-      <Flex
-        direction="row"
-        justify="flex-start"
-        align="flex-start"
-        className="stickyHeader"
+      <Heading>"</Heading>
+      <Heading>"</Heading>
+      <Stack
+        w="100%"
+        justify="center"
+        spacing="4"
+        direction={["column", "column", "row", "row"]}
       >
-        <Heading variant="h2" fontWeight="light" color="white">
-          Who we work with
-        </Heading>
-      </Flex>
-      <Flex direction="column" justify="center" align="center" width="100%">
-        <Heading as="h1" my="1.25em" variant="banner-with-border-md">
-          Our Clients
-        </Heading>
+        <TitledAvatar
+          name="Chris Capistran"
+          title="Lead Developer/Co-founder"
+          src=""
+        />
 
-        {renderCompanyCards()}
-      </Flex>
-    </Flex>
+        <TitledAvatar
+          name="Michael Esfahani"
+          title="Lead Developer/Co-founder"
+          src=""
+        />
+      </Stack>
+    </Box>
   );
 };

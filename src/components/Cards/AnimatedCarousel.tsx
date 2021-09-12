@@ -16,25 +16,32 @@ const MotionBox = motion<BoxProps>(Box);
 const MotionFlex = motion<FlexProps>(Flex);
 const MotionIcon = motion<IconProps>(Icon);
 
-import { ArrowLeft, ArrowRight } from "@material-ui/icons";
-import { AllInclusive, MoneyOff, Description } from "@material-ui/icons";
+import {
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
+  MdMoneyOff,
+  MdAllInclusive,
+  MdDescription,
+} from "react-icons/md";
 
 const iconData = [
   {
-    CardIcon: MoneyOff,
+    CardIcon: MdMoneyOff,
     header: "$0 DOWN",
     subText: `$0 Down to start. We sell our software as a services on a
     subscription based plan starting from as little as $150 a month.`,
   },
   {
-    CardIcon: Description,
+    CardIcon: MdDescription,
     header: "NO CONTRACT!",
     subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
   
     Cancel anytime for any reason.`,
   },
+
+  ,
   {
-    CardIcon: AllInclusive,
+    CardIcon: MdAllInclusive,
     header: "UNLIMITED UPDATES",
     subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner`,
   },
@@ -171,7 +178,7 @@ export const AnimatedCarousel = ({ ...props }) => {
       >
         <MotionIcon
           variants={hoverLeft}
-          as={ArrowLeft}
+          as={MdKeyboardArrowLeft}
           left="0"
           minHeight="5em"
           minWidth="5em"
@@ -199,7 +206,7 @@ export const AnimatedCarousel = ({ ...props }) => {
           minHeight="5em"
           minWidth="5em"
           variants={hoverRight}
-          as={ArrowRight}
+          as={MdKeyboardArrowRight}
         />
       </MotionFlex>
     </MotionBox>
