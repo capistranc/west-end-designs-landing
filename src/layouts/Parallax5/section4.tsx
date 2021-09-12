@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Image, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Heading, Box, Text, Image, SimpleGrid } from "@chakra-ui/react";
 
 import { CheckIcon } from "@chakra-ui/icons";
 import { MotionFlex, SlideListItem } from "../../components/Motion";
@@ -94,6 +94,7 @@ export const section4 = () => {
               })}
             </SimpleGrid>
           </Flex>
+
           <Flex
             flex="1"
             flexDirection="column"
