@@ -149,7 +149,7 @@ export const section2 = () => {
 
               <SimpleGrid columns={[1, 1, 2, 2]} gap="6" mt="8" maxWidth="56em">
                 {listData.map((item, i) => {
-                  return <SlideListItem {...item} key={i} delay={i} />;
+                  return <SlideListItem my="1" {...item} key={i} delay={i} />;
                 })}
               </SimpleGrid>
             </Flex>

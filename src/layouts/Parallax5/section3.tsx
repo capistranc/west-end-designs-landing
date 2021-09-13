@@ -113,6 +113,7 @@ export const section3 = () => {
         align="center"
         w={{ base: "90%", md: "70%" }}
         position="relative"
+        py="4"
       >
         <Icon
           left="0"
