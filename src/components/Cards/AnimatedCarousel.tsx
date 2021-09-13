@@ -23,6 +23,7 @@ import {
   MdAllInclusive,
   MdDescription,
 } from "react-icons/md";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const iconData = [
   {
@@ -38,8 +39,6 @@ const iconData = [
   
     Cancel anytime for any reason.`,
   },
-
-  ,
   {
     CardIcon: MdAllInclusive,
     header: "UNLIMITED UPDATES",
@@ -178,7 +177,7 @@ export const AnimatedCarousel = ({ ...props }) => {
       >
         <MotionIcon
           variants={hoverLeft}
-          as={MdKeyboardArrowLeft}
+          as={ChevronLeftIcon}
           left="0"
           minHeight="5em"
           minWidth="5em"
@@ -206,7 +205,7 @@ export const AnimatedCarousel = ({ ...props }) => {
           minHeight="5em"
           minWidth="5em"
           variants={hoverRight}
-          as={MdKeyboardArrowRight}
+          as={ChevronRightIcon}
         />
       </MotionFlex>
     </MotionBox>

@@ -34,7 +34,8 @@ export const section4 = () => {
   return (
     <Flex
       direction="column"
-      bg="#444444"
+      bg="linear-gradient(0deg,#444444, #1E1E1E)"
+      // bg="#444444"
       height="100%"
       width="100%"
       pt="4"

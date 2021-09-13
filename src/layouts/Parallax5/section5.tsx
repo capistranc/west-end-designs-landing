@@ -109,10 +109,9 @@ export const section5 = () => {
       minWidth="100vw"
       h="100%"
       w="100%"
-      mb="8"
-      mt="8"
       flexDir="column"
       color="white"
+      bg="linear-gradient(rgba(30,30,30,0.1),rgba(30,30,30,0.8)) "
     >
       <Flex
         direction="column"
@@ -120,6 +119,7 @@ export const section5 = () => {
         align="center"
         w="100%"
         h="100%"
+        mv="8rem"
       >
         <Heading as="h1" my="1.25em" variant="banner-with-border-md">
           Prices
