@@ -73,10 +73,9 @@ export const section3 = () => {
         <SlideIn
           width={{ md: "35%" }}
           minHeight={{ base: "24rem", md: "none" }}
-          h="100%"
           my="1em"
         >
-          <Box bg="rgba(0.4,0.4,0.4,0.4)" borderRadius="16" p="4">
+          <Box bg="rgba(0.4,0.4,0.4,0.4)" h="100%" borderRadius="16" p="4">
             <TitledAvatar
               name="Chris Capistran"
               title="Lead Developer/Co-founder"
@@ -112,10 +111,10 @@ export const section3 = () => {
         // border="2px solid"
         // borderColor="rgba(255,255,255,0.8)"
         borderRadius="0"
-        m="3em 6em"
+        my="2rem"
         alignSelf="center"
         align="center"
-        w="70%"
+        w={{ base: "90%", md: "70%" }}
         position="relative"
       >
         <Icon

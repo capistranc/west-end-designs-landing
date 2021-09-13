@@ -69,14 +69,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
 
   const { colorMode } = useColorMode();
 
-  const prefix = useBreakpointValue({
-    base: "mobile",
-    md: "browser",
-    xl: "hq",
-  });
-
-  bgImages.map((src) => prefix + src);
-
   return (
     <>
       <StickyNavHeader

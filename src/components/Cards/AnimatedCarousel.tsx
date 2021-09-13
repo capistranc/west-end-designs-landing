@@ -2,11 +2,11 @@ import {
   Flex,
   Spacer,
   Box,
-  Icon,
   Heading,
   Text,
   BoxProps,
   FlexProps,
+  Icon,
   IconProps,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
@@ -16,31 +16,25 @@ const MotionBox = motion<BoxProps>(Box);
 const MotionFlex = motion<FlexProps>(Flex);
 const MotionIcon = motion<IconProps>(Icon);
 
-import {
-  MdKeyboardArrowLeft,
-  MdKeyboardArrowRight,
-  MdMoneyOff,
-  MdAllInclusive,
-  MdDescription,
-} from "react-icons/md";
+import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const iconData = [
   {
-    CardIcon: MdMoneyOff,
+    CardIcon: (props) => <Icon {...props} as={MdMoneyOff} />,
     header: "$0 DOWN",
     subText: `$0 Down to start. We sell our software as a services on a
     subscription based plan starting from as little as $150 a month.`,
   },
   {
-    CardIcon: MdDescription,
+    CardIcon: (props) => <Icon {...props} as={MdDescription} />,
     header: "NO CONTRACT!",
     subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
   
     Cancel anytime for any reason.`,
   },
   {
-    CardIcon: MdAllInclusive,
+    CardIcon: (props) => <Icon {...props} as={MdAllInclusive} />,
     header: "UNLIMITED UPDATES",
     subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner`,
   },
