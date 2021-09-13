@@ -147,7 +147,7 @@ export const section3 = () => {
           as={ImQuotesRight}
           position="absolute"
           right="0"
-          color="blue.500"
+          color="blue.700"
           boxSize="2em"
           bottom="-1em"
         />
