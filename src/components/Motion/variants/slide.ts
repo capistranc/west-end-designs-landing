@@ -11,7 +11,7 @@ export const slideVariants = {
       type: "tween",
     },
   },
-  initRight: { x: "4rem", opacity: 0 },
+  initRight: { x: "6rem", opacity: 0 },
   initBottom: { y: "100vh" },
   initTop: { y: "-100vh" },
 };
