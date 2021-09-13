@@ -16,8 +16,9 @@ import {
 import { CheckIcon } from "@chakra-ui/icons";
 
 import React, { useRef } from "react";
-import { AnimatedCarousel } from "../../components/Cards/AnimatedCarousel";
+import { TimedCarousel } from "../../components/Motion/TimedCarousel";
 import { SlideListItem } from "../../components/Motion";
+import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 
 export const section2 = () => {
   const listData = [
@@ -50,6 +51,27 @@ export const section2 = () => {
     {
       header: "24/7 Customer Service",
       subText: `If you have any questions call us. No automated response. Talk to one of us directly.`,
+    },
+  ];
+
+  const iconData = [
+    {
+      CardIcon: MdMoneyOff,
+      header: "$0 DOWN",
+      subText: `$0 Down to start. We sell our software as a services on a
+    subscription based plan starting from as little as $150 a month.`,
+    },
+    {
+      CardIcon: MdDescription,
+      header: "NO CONTRACT!",
+      subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
+  
+    Cancel anytime for any reason.`,
+    },
+    {
+      CardIcon: MdAllInclusive,
+      header: "UNLIMITED UPDATES",
+      subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner`,
     },
   ];
 
@@ -94,10 +116,9 @@ export const section2 = () => {
               align="center"
               justify="center"
             >
-              <AnimatedCarousel
+              <TimedCarousel
+                iconData={iconData}
                 minHeight="36em"
-                flex="1"
-                p="4"
                 maxWidth="32em"
               />
             </Flex>

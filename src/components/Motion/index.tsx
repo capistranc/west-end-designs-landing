@@ -13,3 +13,4 @@ export const MotionFlex = motion<FlexProps>(Flex);
 export const MotionBox = motion<BoxProps>(Box);
 
 export * from "./SlideListItem";
+export * from "./LoadingIcon";

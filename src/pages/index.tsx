@@ -14,7 +14,6 @@ export default function Index({ allPostsData }) {
     md: "browser",
     xl: "hq",
   });
-  console.log(device);
 
   let bgImages = [
     `url('/images/${device}/cliffEdge.jpeg')`,
