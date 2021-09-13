@@ -119,7 +119,6 @@ export const section2 = () => {
               <TimedCarousel
                 iconData={iconData}
                 minHeight="36em"
-                maxHeight="100vh"
                 maxWidth="32em"
               />
             </Flex>
