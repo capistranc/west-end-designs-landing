@@ -16,8 +16,9 @@ import {
 import { CheckIcon } from "@chakra-ui/icons";
 
 import React, { useRef } from "react";
-import { AnimatedCarousel } from "../../components/Cards/AnimatedCarousel";
+import { TimedCarousel } from "../../components/Motion/TimedCarousel";
 import { SlideListItem } from "../../components/Motion";
+import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 
 export const section2 = () => {
   const listData = [
@@ -50,6 +51,27 @@ export const section2 = () => {
     {
       header: "24/7 Customer Service",
       subText: `If you have any questions call us. No automated response. Talk to one of us directly.`,
+    },
+  ];
+
+  const iconData = [
+    {
+      CardIcon: MdMoneyOff,
+      header: "$0 DOWN",
+      subText: `$0 Down to start. We sell our software as a services on a
+    subscription based plan starting from as little as $150 a month.`,
+    },
+    {
+      CardIcon: MdDescription,
+      header: "NO CONTRACT!",
+      subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
+  
+    Cancel anytime for any reason.`,
+    },
+    {
+      CardIcon: MdAllInclusive,
+      header: "UNLIMITED UPDATES",
+      subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner`,
     },
   ];
 
@@ -90,14 +112,13 @@ export const section2 = () => {
             <Flex
               flex="1"
               flexDirection={["column", "column", "row", "row"]}
-              p="2em"
+              p="1em"
               align="center"
               justify="center"
             >
-              <AnimatedCarousel
+              <TimedCarousel
+                iconData={iconData}
                 minHeight="36em"
-                flex="1"
-                p="4"
                 maxWidth="32em"
               />
             </Flex>
@@ -113,8 +134,8 @@ export const section2 = () => {
                 base: "2px solid rgba(255,255,255, 0.5)",
                 md: "none",
               }}
-              pl="8"
-              pt="8"
+              pl="4"
+              pt="4"
             >
               <Heading as="h4"> SEO Optimized for Mobile Devices </Heading>
               <Text py="4" textStyle="subText" color="gray.300" maxWidth="56em">
@@ -125,9 +146,9 @@ export const section2 = () => {
                 content backlinking.
               </Text>
 
-              <SimpleGrid columns={[1, 1, 2, 2]} gap="4" mt="8" maxWidth="56em">
+              <SimpleGrid columns={[1, 1, 2, 3]} gap="6" mt="8">
                 {listData.map((item, i) => {
-                  return <SlideListItem {...item} key={i} delay={i} />;
+                  return <SlideListItem my="1" {...item} key={i} delay={i} />;
                 })}
               </SimpleGrid>
             </Flex>
@@ -138,7 +159,7 @@ export const section2 = () => {
   }
 
   return (
-    <Box bg="#1E1E1E" minHeight="100vh" height="100%" width="100%">
+    <Box bg="#1E1E1E" height="100%" width="100%">
       {renderContent()}
     </Box>
   );

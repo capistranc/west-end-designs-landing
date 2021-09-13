@@ -83,7 +83,6 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
         });
       }
     } catch (e) {
-      console.log(e);
       toast({
         title: `Failed to send: ${e.status}`,
         status: "error",

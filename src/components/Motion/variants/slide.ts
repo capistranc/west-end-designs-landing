@@ -5,12 +5,13 @@ export const slideVariants = {
   center: {
     x: 0,
     y: 0,
+    opacity: 1,
     transition: {
       duration: 0.75,
       type: "tween",
     },
   },
-  initRight: { x: "100vw" },
+  initRight: { x: "6rem", opacity: 0 },
   initBottom: { y: "100vh" },
   initTop: { y: "-100vh" },
 };

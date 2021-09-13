@@ -1,5 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Box, Flex, useColorMode, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  useColorMode,
+  Stack,
+  Link,
+  useMediaQuery,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import { bgColor, fgColor } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
@@ -24,13 +32,13 @@ export const Parallax5 = ({ sections, bgImages }) => {
       if (props.bgImage) {
         //If bgImage, render diagonal lines overlay
         return (
-          <Box
+          // <Box
           // backgroundImage="url('/images/diagonalLine.png')"
-          >
-            <Box position="relative" h="100%" w="100%">
-              {children}
-            </Box>
-          </Box>
+          // >
+          // <Flex h="100%" w="100%">
+          <>{children}</>
+          // </Flex>
+          // </Box>
         );
       } else {
         return <>{children}</>;
@@ -47,7 +55,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
         backgroundSize="cover"
         height="100%"
         width="100%"
-        minWidth="100vw"
         align="center"
         justify="center"
         // height="calc(var(--vh, 1vh))"
@@ -58,6 +65,13 @@ export const Parallax5 = ({ sections, bgImages }) => {
       </Flex>
     );
   };
+
+  let mobileHeight = 0;
+
+  useEffect(() => {
+    mobileHeight =
+      window.outerHeight > mobileHeight ? window.outerHeight : mobileHeight;
+  });
 
   const { colorMode } = useColorMode();
 
@@ -76,7 +90,14 @@ export const Parallax5 = ({ sections, bgImages }) => {
         height="100%"
         width="100%"
       >
-        <ParallaxBox bgImage={bgImages[0]} minHeight="100vh" id="section1">
+        <ParallaxBox
+          bgImage={bgImages[0]}
+          minHeight={{
+            base: mobileHeight > 0 ? mobileHeight : "100vh",
+            md: "100vh",
+          }}
+          id="section1"
+        >
           {sections[0]}
         </ParallaxBox>
         <ParallaxBox position="relative" data-header="What We Do" id="section2">

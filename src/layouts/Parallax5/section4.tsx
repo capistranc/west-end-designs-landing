@@ -34,7 +34,8 @@ export const section4 = () => {
   return (
     <Flex
       direction="column"
-      bg="#444444"
+      bg="linear-gradient(0deg, #444444, #1E1E1E)"
+      // bg="#444444"
       height="100%"
       width="100%"
       pt="4"
@@ -53,7 +54,7 @@ export const section4 = () => {
           px="1rem"
           color="white"
         >
-          <Heading color="white" size="3xl" mb="1rem">
+          <Heading color="white" fontSize="5xl" mb="1rem">
             $0 Down, No Contract
           </Heading>
 
@@ -70,13 +71,8 @@ export const section4 = () => {
           align="space-around"
           mb="1em"
         >
-          <Flex flex="2" direction="column" align="center" justify="center">
-            <SimpleGrid
-              columns={[1, 2, 3, 3]}
-              gap="1rem"
-              mt="2rem"
-              maxWidth="60em"
-            >
+          <Flex direction="column" align="center" justify="center">
+            <SimpleGrid columns={[1, 2, 3, 3]} gap="1rem" mt="2rem">
               {listData.map((item, i) => {
                 return <SlideListItem {...item} key={i} delay={i} />;
               })}

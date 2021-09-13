@@ -2,18 +2,17 @@ import {
   Flex,
   Button,
   Heading,
-  Spacer,
-  FlexProps,
   Box,
-  Image,
   Text,
-  Stack,
-  Slide,
+  Link,
+  Icon,
+  Container,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { SlideIn } from "../../components/Motion/SlideIn";
-import { ClientCard } from "../../components/Cards/ClientCard";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+import NextLink from "next/link";
 
 const companies = [
   {
@@ -39,55 +38,131 @@ const companies = [
   },
 ];
 
+import { TitledAvatar } from "../../components/Cards/TitledAvatar";
+
 export const section3 = () => {
-  function renderCompanyCards() {
-    return (
-      <Flex
-        height="100%"
-        maxWidth="100vw"
-        flexDirection={["column", "column", "row", "row"]}
-        justify="spaced-evenly"
-        align="spaced-evenly"
-        p="4"
-        m="4"
-      >
-        {companies.map((companyData, i) => {
-          return (
-            <SlideIn key={i} delay={i}>
-              <ClientCard {...companyData}> </ClientCard>
-            </SlideIn>
-          );
-        })}
-      </Flex>
-    );
-  }
   return (
     <Flex
-      // minHeight={["150vh", "150vh", "100vh", "100vh"]}
-
-      minWidth="100vw"
       h="100%"
-      w="100%"
-      flexDir="column"
+      w="100vw"
+      position="relative"
       color="white"
+      direction="column"
+      // bg="linear-gradient(45deg, #6303B1, #ff0099)"
+      // transform="skewY(-11deg)"
+      _before={
+        {
+          // position: "absolute",
+          // top: 0,
+          // right: 0,
+          // left: 0,
+          // bottom: 0,
+          // zIndex: 0,
+          // bg: "linear-gradient(10deg, rgba(0.4,0.4,0.4,0.7), rgba(0,0,0,0.2))",
+          // transform: "skewY(8deg)",
+          // content: `" "`,
+        }
+      }
     >
-      <Flex
-        direction="row"
-        justify="flex-start"
-        align="flex-start"
-        className="stickyHeader"
-      >
-        <Heading variant="h2" fontWeight="light" color="white">
-          Who we work with
-        </Heading>
-      </Flex>
-      <Flex direction="column" justify="center" align="center" width="100%">
-        <Heading as="h1" my="1.25em" variant="banner-with-border-md">
-          Our Clients
-        </Heading>
+      <Heading p="4" mb="3em" variant="h2">
+        Who we are
+      </Heading>
 
-        {renderCompanyCards()}
+      <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
+        <SlideIn
+          width={{ md: "35%" }}
+          minHeight={{ base: "24rem", md: "none" }}
+          my="1em"
+        >
+          <Box
+            bg="rgba(0.4,0.4,0.4,0.4)"
+            h="100%"
+            borderRadius="16"
+            maxWidth="32rem"
+            p="4"
+          >
+            <TitledAvatar
+              name="Chris Capistran"
+              title="Lead Developer/Co-founder"
+              src=""
+            />
+            <Text mt="3em">Hi, my name is Chris. I like to do Jujitsu.</Text>
+          </Box>
+        </SlideIn>
+
+        <SlideIn
+          width={{ md: "35%" }}
+          minHeight={{ base: "24rem", md: "none" }}
+          from="right"
+          my="1em"
+        >
+          <Box
+            bg="rgba(0.4,0.4,0.4,0.4)"
+            h="100%"
+            maxWidth="32rem"
+            borderRadius="16"
+            p="4"
+          >
+            <TitledAvatar
+              name="Michael Esfahani"
+              title="Lead Developer/Co-founder"
+              src=""
+            />
+            <Text mt="3em">
+              Hey, I'm Michael. I like fish and fish accessories.
+            </Text>
+          </Box>
+        </SlideIn>
       </Flex>
+      <Box
+        bg="rgba(0.4,0.4,0.4,0.4)"
+        // border="2px solid"
+        // borderColor="rgba(255,255,255,0.8)"
+        borderRadius="0"
+        my="2rem"
+        alignSelf="center"
+        align="center"
+        w={{ base: "90%", md: "70%" }}
+        position="relative"
+        py="4"
+      >
+        <Icon
+          left="0"
+          boxSize="2em"
+          top="-1em"
+          color="blue.500"
+          as={ImQuotesLeft}
+          position="absolute"
+        />
+        <Text p="4">
+          Together we are West End Designs. An up and coming SEO Web Development
+          company based in Orange County. After years of working for large
+          companies in the tech industry, we decided that we could use all that
+          we have learned to help local businesses around the world compete in
+          the SEO game. With the goal of working as we travel and traveling as
+          we work, we aim to bring the style of the West End every where we go.
+        </Text>
+
+        <NextLink href="/about" passHref>
+          <Link
+            ml="4"
+            textStyle="h1"
+            mb="2"
+            fontWeight="extrabold"
+            color="blue.300"
+          >
+            LEARN MORE
+          </Link>
+        </NextLink>
+        <Icon
+          as={ImQuotesRight}
+          position="absolute"
+          right="0"
+          color="blue.700"
+          boxSize="2em"
+          bottom="-1em"
+        />
+      </Box>
     </Flex>
   );
 };
