@@ -67,6 +67,12 @@ export const Parallax5 = ({ sections, bgImages }) => {
     );
   };
 
+  let mobileHeight = "100vh";
+
+  useEffect(() => {
+    mobileHeight = window.outerHeight.toString();
+  });
+
   const { colorMode } = useColorMode();
 
   return (
@@ -84,7 +90,11 @@ export const Parallax5 = ({ sections, bgImages }) => {
         height="100%"
         width="100%"
       >
-        <ParallaxBox bgImage={bgImages[0]} minHeight="100vh" id="section1">
+        <ParallaxBox
+          bgImage={bgImages[0]}
+          minHeight={{ base: mobileHeight, md: "100vh" }}
+          id="section1"
+        >
           {sections[0]}
         </ParallaxBox>
         <ParallaxBox position="relative" data-header="What We Do" id="section2">
