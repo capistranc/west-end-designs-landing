@@ -92,7 +92,7 @@ export const section3 = () => {
           </Box>
         </SlideIn>
 
-        <SlideIn width={{ md: "35%" }} from="right" my="1em" mt>
+        <SlideIn width={{ md: "35%" }} from="right" my="1em">
           <Box bg="rgba(0.4,0.4,0.4,0.4)" h="100%" borderRadius="16" p="4">
             <TitledAvatar
               name="Michael Esfahani"

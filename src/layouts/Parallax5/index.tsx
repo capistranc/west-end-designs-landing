@@ -1,5 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Box, Flex, useColorMode, Stack, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  useColorMode,
+  Stack,
+  Link,
+  useMediaQuery,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import { bgColor, fgColor } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
@@ -60,6 +68,14 @@ export const Parallax5 = ({ sections, bgImages }) => {
   };
 
   const { colorMode } = useColorMode();
+
+  const prefix = useBreakpointValue({
+    base: "mobile",
+    md: "browser",
+    xl: "hq",
+  });
+
+  bgImages.map((src) => prefix + src);
 
   return (
     <>
