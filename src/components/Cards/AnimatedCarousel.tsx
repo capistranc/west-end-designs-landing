@@ -21,20 +21,20 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const iconData = [
   {
-    CardIcon: (props) => <Icon {...props} as={MdMoneyOff} />,
+    CardIcon: MdMoneyOff,
     header: "$0 DOWN",
     subText: `$0 Down to start. We sell our software as a services on a
     subscription based plan starting from as little as $150 a month.`,
   },
   {
-    CardIcon: (props) => <Icon {...props} as={MdDescription} />,
+    CardIcon: MdDescription,
     header: "NO CONTRACT!",
     subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
   
     Cancel anytime for any reason.`,
   },
   {
-    CardIcon: (props) => <Icon {...props} as={MdAllInclusive} />,
+    CardIcon: MdAllInclusive,
     header: "UNLIMITED UPDATES",
     subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner`,
   },
@@ -169,13 +169,9 @@ export const AnimatedCarousel = ({ ...props }) => {
         animate="rest"
         variants={buttonHover}
       >
-        <MotionIcon
-          variants={hoverLeft}
-          as={ChevronLeftIcon}
-          left="0"
-          minHeight="5em"
-          minWidth="5em"
-        />
+        <MotionBox variants={hoverLeft}>
+          <Icon as={ChevronLeftIcon} left="0" minHeight="5em" minWidth="5em" />
+        </MotionBox>
       </MotionFlex>
       <MotionFlex
         key="right"
@@ -195,12 +191,9 @@ export const AnimatedCarousel = ({ ...props }) => {
         animate="rest"
         variants={buttonHover}
       >
-        <MotionIcon
-          minHeight="5em"
-          minWidth="5em"
-          variants={hoverRight}
-          as={ChevronRightIcon}
-        />
+        <MotionBox variants={hoverRight}>
+          <MotionIcon minHeight="5em" minWidth="5em" as={ChevronRightIcon} />
+        </MotionBox>
       </MotionFlex>
     </MotionBox>
   );
@@ -237,17 +230,18 @@ export const AnimatedIconCard = ({ header, subText, CardIcon, ...props }) => {
             animate={{ rotate: 360, borderColor: "#E6E1C5" }}
             transition={{ duration: 6, repeat: Infinity }}
           ></MotionBox>
-          <MotionIcon
-            zIndex="10"
-            border="2px solid gray "
-            borderRadius="360"
-            as={CardIcon}
-            p="8"
-            alignSelf="center"
-            minHeight="8em"
-            minWidth="8em"
-            variants={hoverVariant}
-          />
+          <MotionBox variants={hoverVariant}>
+            <Icon
+              zIndex="10"
+              border="2px solid gray "
+              borderRadius="360"
+              as={CardIcon}
+              p="8"
+              alignSelf="center"
+              minHeight="8em"
+              minWidth="8em"
+            />
+          </MotionBox>
         </Box>
 
         <Heading py="8" fontSize="3xl" align="center" flexWrap="wrap">

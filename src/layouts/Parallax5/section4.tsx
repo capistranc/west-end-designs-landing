@@ -34,7 +34,7 @@ export const section4 = () => {
   return (
     <Flex
       direction="column"
-      bg="linear-gradient(0deg,#444444, #1E1E1E)"
+      bg="linear-gradient(0deg, #444444, #1E1E1E)"
       // bg="#444444"
       height="100%"
       width="100%"
@@ -54,7 +54,7 @@ export const section4 = () => {
           px="1rem"
           color="white"
         >
-          <Heading color="white" size="3xl" mb="1rem">
+          <Heading color="white" fontSize="5xl" mb="1rem">
             $0 Down, No Contract
           </Heading>
 

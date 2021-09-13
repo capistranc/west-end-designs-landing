@@ -11,7 +11,7 @@ import { useBreakpointValue } from "@chakra-ui/media-query";
 export default function Index({ allPostsData }) {
   const device = useBreakpointValue({
     base: "mobile",
-    sm: "browser",
+    md: "browser",
     xl: "hq",
   });
   console.log(device);
