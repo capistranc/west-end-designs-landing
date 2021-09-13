@@ -2,6 +2,7 @@ import { theme as chakraTheme } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 import components from "./components";
+import { colors } from "./colors";
 
 const fonts = {
   ...chakraTheme.fonts,
@@ -34,6 +35,7 @@ const overrides = {
       fontStyle: "italic",
     },
   },
+  colors,
   fontWeights: {
     normal: 300,
     medium: 600,

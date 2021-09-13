@@ -14,9 +14,7 @@ import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 
 import { motion, useSpring } from "framer-motion";
-import { ModeComment } from "@material-ui/icons";
 const MotionFlex = motion<FlexProps>(Flex);
-const MotionHeading = motion<HeadingProps>(Heading);
 const MotionButton = motion<ButtonProps>(Button);
 const MotionText = motion<TextProps>(Text);
 

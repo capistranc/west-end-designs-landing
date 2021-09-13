@@ -32,15 +32,7 @@ export const section4 = () => {
   ];
 
   return (
-    <Flex
-      direction="column"
-      bg="linear-gradient(0deg, #444444, #1E1E1E)"
-      // bg="#444444"
-      height="100%"
-      width="100%"
-      pt="4"
-      pb="4"
-    >
+    <Flex direction="column" height="100%" width="100%" pt="4" pb="4">
       <Flex direction="column" w="100%" h="100%">
         <Heading p="4" mb="12" variant="h2" fontWeight="light" color="white">
           How much does it cost

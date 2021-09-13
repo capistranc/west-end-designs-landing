@@ -100,31 +100,37 @@ export const Parallax5 = ({ sections, bgImages }) => {
         >
           {sections[0]}
         </ParallaxBox>
-        <ParallaxBox position="relative" data-header="What We Do" id="section2">
+        <ParallaxBox
+          bg="gray.800"
+          position="relative"
+          data-header="What We Do"
+          id="section2"
+        >
           {sections[1]}
         </ParallaxBox>
         <ParallaxBox
           bgImage={bgImages[1]}
-          data-header="Who we work with"
+          data-header="Who we are"
           id="section3"
         >
           {sections[2]}
         </ParallaxBox>
         <ParallaxBox
+          bg="gray.700"
           position="relative"
-          data-header="How we do it"
+          data-header="Pricing"
           id="section4"
         >
           {sections[3]}
         </ParallaxBox>
-        <ParallaxBox bgImage={bgImages[2]} data-header="Pricing " id="section5">
+        <ParallaxBox bgImage={bgImages[2]} data-header="Packages" id="section5">
           {sections[4]}
         </ParallaxBox>
 
-        <ParallaxBox bgColor="#1E1E1E">
+        <ParallaxBox bgColor="gray.800">
           <ContactForm />
         </ParallaxBox>
-        <FooterContent bgColor="black" width="100%" color="white" />
+        <FooterContent bgColor="gray.900" width="100%" color="white" />
       </Flex>
     </>
   );

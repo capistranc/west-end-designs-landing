@@ -75,7 +75,7 @@ export const section3 = () => {
           my="1em"
         >
           <Box
-            bg="rgba(0.4,0.4,0.4,0.4)"
+            bg="rgba(0.4,0.4,0.4,0.6)"
             h="100%"
             borderRadius="16"
             maxWidth="32rem"
@@ -97,7 +97,7 @@ export const section3 = () => {
           my="1em"
         >
           <Box
-            bg="rgba(0.4,0.4,0.4,0.4)"
+            bg="rgba(0.4,0.4,0.4,0.6)"
             h="100%"
             maxWidth="32rem"
             borderRadius="16"
@@ -115,9 +115,7 @@ export const section3 = () => {
         </SlideIn>
       </Flex>
       <Box
-        bg="rgba(0.4,0.4,0.4,0.4)"
-        // border="2px solid"
-        // borderColor="rgba(255,255,255,0.8)"
+        bg="rgba(0.4,0.4,0.4,0.8)"
         borderRadius="0"
         my="2rem"
         alignSelf="center"
@@ -149,7 +147,8 @@ export const section3 = () => {
             textStyle="h1"
             mb="2"
             fontWeight="extrabold"
-            color="blue.300"
+            color="blue.500"
+            _hover={{ color: "blue.400" }}
           >
             LEARN MORE
           </Link>
@@ -158,7 +157,7 @@ export const section3 = () => {
           as={ImQuotesRight}
           position="absolute"
           right="0"
-          color="blue.700"
+          color="blue.500"
           boxSize="2em"
           bottom="-1em"
         />

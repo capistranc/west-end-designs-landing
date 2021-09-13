@@ -159,7 +159,7 @@ export const section2 = () => {
   }
 
   return (
-    <Box bg="#1E1E1E" height="100%" width="100%">
+    <Box height="100%" width="100%">
       {renderContent()}
     </Box>
   );
