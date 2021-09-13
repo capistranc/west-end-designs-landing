@@ -71,13 +71,8 @@ export const section4 = () => {
           align="space-around"
           mb="1em"
         >
-          <Flex flex="2" direction="column" align="center" justify="center">
-            <SimpleGrid
-              columns={[1, 2, 3, 3]}
-              gap="1rem"
-              mt="2rem"
-              maxWidth="60em"
-            >
+          <Flex direction="column" align="center" justify="center">
+            <SimpleGrid columns={[1, 2, 3, 3]} gap="1rem" mt="2rem">
               {listData.map((item, i) => {
                 return <SlideListItem {...item} key={i} delay={i} />;
               })}

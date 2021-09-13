@@ -68,13 +68,19 @@ export const section3 = () => {
         Who we are
       </Heading>
 
-      <Flex justify="space-around" direction={{ base: "column", md: "row" }}>
+      <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
         <SlideIn
           width={{ md: "35%" }}
           minHeight={{ base: "24rem", md: "none" }}
           my="1em"
         >
-          <Box bg="rgba(0.4,0.4,0.4,0.4)" h="100%" borderRadius="16" p="4">
+          <Box
+            bg="rgba(0.4,0.4,0.4,0.4)"
+            h="100%"
+            borderRadius="16"
+            maxWidth="32rem"
+            p="4"
+          >
             <TitledAvatar
               name="Chris Capistran"
               title="Lead Developer/Co-founder"
@@ -90,7 +96,13 @@ export const section3 = () => {
           from="right"
           my="1em"
         >
-          <Box bg="rgba(0.4,0.4,0.4,0.4)" h="100%" borderRadius="16" p="4">
+          <Box
+            bg="rgba(0.4,0.4,0.4,0.4)"
+            h="100%"
+            maxWidth="32rem"
+            borderRadius="16"
+            p="4"
+          >
             <TitledAvatar
               name="Michael Esfahani"
               title="Lead Developer/Co-founder"

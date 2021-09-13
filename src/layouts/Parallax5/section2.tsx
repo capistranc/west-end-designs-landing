@@ -146,7 +146,7 @@ export const section2 = () => {
                 content backlinking.
               </Text>
 
-              <SimpleGrid columns={[1, 1, 2, 2]} gap="6" mt="8" maxWidth="56em">
+              <SimpleGrid columns={[1, 1, 2, 3]} gap="6" mt="8">
                 {listData.map((item, i) => {
                   return <SlideListItem my="1" {...item} key={i} delay={i} />;
                 })}
