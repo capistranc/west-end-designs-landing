@@ -130,9 +130,8 @@ export const section3 = () => {
           company based in Orange County. After years of working for large
           companies in the tech industry, we decided that we could use all that
           we have learned to help local businesses around the world compete in
-          the SEO game. With the goal to working as we travel and traveling as
-          we work, we aim to bring the style and engineering of the West End
-          every where we go.
+          the SEO game. With the goal of working as we travel and traveling as
+          we work, we aim to bring the style of the West End every where we go.
         </Text>
 
         <NextLink href="/about" passHref>
