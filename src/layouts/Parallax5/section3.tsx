@@ -2,14 +2,8 @@ import {
   Flex,
   Button,
   Heading,
-  Spacer,
-  FlexProps,
   Box,
-  Image,
   Text,
-  Avatar,
-  Stack,
-  Slide,
   Link,
   Icon,
   Container,
@@ -17,9 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { SlideIn } from "../../components/Motion/SlideIn";
-import { ClientCard } from "../../components/Cards/ClientCard";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
-import { SearchIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 
 const companies = [
@@ -78,7 +70,12 @@ export const section3 = () => {
       </Heading>
 
       <Flex justify="space-around" direction={{ base: "column", md: "row" }}>
-        <SlideIn width={{ md: "35%" }} h="100%" my="1em">
+        <SlideIn
+          width={{ md: "35%" }}
+          minHeight={{ base: "24rem", md: "none" }}
+          h="100%"
+          my="1em"
+        >
           <Box bg="rgba(0.4,0.4,0.4,0.4)" borderRadius="16" p="4">
             <TitledAvatar
               name="Chris Capistran"
@@ -87,12 +84,17 @@ export const section3 = () => {
             />
             <Text mt="3em">
               Hi, my name is Chris. I'm a huge design nerd in all areas of
-              science and practitioner of Brazilian Jujitsu.
+              science and practitioner of Brazilian Jsujitsu.
             </Text>
           </Box>
         </SlideIn>
 
-        <SlideIn width={{ md: "35%" }} from="right" my="1em">
+        <SlideIn
+          width={{ md: "35%" }}
+          minHeight={{ base: "24rem", md: "none" }}
+          from="right"
+          my="1em"
+        >
           <Box bg="rgba(0.4,0.4,0.4,0.4)" h="100%" borderRadius="16" p="4">
             <TitledAvatar
               name="Michael Esfahani"

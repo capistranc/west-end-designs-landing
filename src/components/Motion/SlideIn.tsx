@@ -3,9 +3,11 @@ import { Box } from "@chakra-ui/react";
 import { MotionFlex, MotionBox } from "./index";
 import { useOnScreen, useHasRendered } from "../../lib/hooks";
 import { slideFrom } from "./variants";
+import { useBreakpointValue } from "@chakra-ui/media-query";
 
 export const SlideIn = ({ children, from = "left", ...props }) => {
-  const variant = slideFrom(from);
+  const isBrowser = useBreakpointValue({ md: "browser" });
+  const variant = isBrowser ? slideFrom(from) : slideFrom("left");
   const ref = useRef();
   const isVisible = useHasRendered(ref);
 
