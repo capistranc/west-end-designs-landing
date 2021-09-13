@@ -160,7 +160,6 @@ export const TimedCarousel = ({ iconData, ...props }) => {
     <MotionBox h="100%" w="100%" position="relative" {...props}>
       <AnimatePresence custom={direction} initial={true} exitBeforeEnter>
         <MotionBox
-          maxHeight="100vh"
           key={page}
           custom={direction}
           initial="hidden"

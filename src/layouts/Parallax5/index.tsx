@@ -32,13 +32,13 @@ export const Parallax5 = ({ sections, bgImages }) => {
       if (props.bgImage) {
         //If bgImage, render diagonal lines overlay
         return (
-          <Box
+          // <Box
           // backgroundImage="url('/images/diagonalLine.png')"
-          >
-            <Box position="relative" h="100%" w="100%">
-              {children}
-            </Box>
-          </Box>
+          // >
+          <Flex h="100%" w="100%">
+            {children}
+          </Flex>
+          // </Box>
         );
       } else {
         return <>{children}</>;
@@ -55,7 +55,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
         backgroundSize="cover"
         height="100%"
         width="100%"
-        minWidth="100vw"
         align="center"
         justify="center"
         // height="calc(var(--vh, 1vh))"

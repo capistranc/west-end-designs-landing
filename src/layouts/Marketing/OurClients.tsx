@@ -62,7 +62,7 @@ export const section3 = () => {
     );
   }
   return (
-    <Flex minWidth="100vw" h="100%" w="100%" flexDir="column" color="white">
+    <Flex h="100%" w="100%" flexDir="column" color="white">
       <Flex
         direction="row"
         justify="flex-start"

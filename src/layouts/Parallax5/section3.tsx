@@ -45,7 +45,6 @@ export const section3 = () => {
     <Flex
       h="100%"
       w="100vw"
-      p="4"
       position="relative"
       color="white"
       direction="column"
