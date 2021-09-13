@@ -126,17 +126,23 @@ export const section3 = () => {
           position="absolute"
         />
         <Text p="4">
-          Together we are West End Designs. We are two friends who devided to
-          start this business in order to sharpen our web development skills
-          while allowing us work as we travel. We are an up and coming SEO Web
-          Development company based in Orange County. After years of working for
-          big companies in the tech industry, we are now using these same
-          techniques to help local businesses compete in the SEO game. Help us
-          help you in boosting your local business to the next level.
+          Together we are West End Designs. An up and coming SEO Web Development
+          company based in Orange County. After years of working for large
+          companies in the tech industry, we decided that we could use all that
+          we have learned to help local businesses around the world compete in
+          the SEO game. With the goal to working as we travel and traveling as
+          we work, we aim to bring the style and engineering of the West End
+          every where we go.
         </Text>
 
         <NextLink href="/about" passHref>
-          <Link ml="4" textStyle="h1" fontWeight="extrabold" color="blue.300">
+          <Link
+            ml="4"
+            textStyle="h1"
+            mb="2"
+            fontWeight="extrabold"
+            color="blue.300"
+          >
             LEARN MORE
           </Link>
         </NextLink>
