@@ -101,7 +101,7 @@ export const SwitchableCard = ({
       direction="column"
       justify="space-between"
       align="center"
-      py="8"
+      py="4"
       border="4px solid"
       borderColor="rgba(111,111,111,0.3)"
       borderRadius="36"
@@ -112,11 +112,11 @@ export const SwitchableCard = ({
     >
       <Flex direction="column" align="center">
         <LoadingIcon
-          boxSize="12rem"
+          boxSize={["8rem", "9rem", "10rem", "11rem"]}
           CardIcon={CardIcon}
           iconVariants={hoverGrow}
         />
-        <Heading py="8" fontSize="3xl" align="center" flexWrap="wrap">
+        <Heading py="4" fontSize="3xl" align="center" flexWrap="wrap">
           {header}
         </Heading>
       </Flex>
@@ -160,6 +160,7 @@ export const TimedCarousel = ({ iconData, ...props }) => {
     <MotionBox h="100%" w="100%" position="relative" {...props}>
       <AnimatePresence custom={direction} initial={true} exitBeforeEnter>
         <MotionBox
+          maxHeight="100vh"
           key={page}
           custom={direction}
           initial="hidden"

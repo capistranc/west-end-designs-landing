@@ -112,13 +112,14 @@ export const section2 = () => {
             <Flex
               flex="1"
               flexDirection={["column", "column", "row", "row"]}
-              p="2em"
+              p="1em"
               align="center"
               justify="center"
             >
               <TimedCarousel
                 iconData={iconData}
                 minHeight="36em"
+                maxHeight="100vh"
                 maxWidth="32em"
               />
             </Flex>
@@ -134,8 +135,8 @@ export const section2 = () => {
                 base: "2px solid rgba(255,255,255, 0.5)",
                 md: "none",
               }}
-              pl="8"
-              pt="8"
+              pl="4"
+              pt="4"
             >
               <Heading as="h4"> SEO Optimized for Mobile Devices </Heading>
               <Text py="4" textStyle="subText" color="gray.300" maxWidth="56em">
@@ -146,7 +147,7 @@ export const section2 = () => {
                 content backlinking.
               </Text>
 
-              <SimpleGrid columns={[1, 1, 2, 2]} gap="4" mt="8" maxWidth="56em">
+              <SimpleGrid columns={[1, 1, 2, 2]} gap="6" mt="8" maxWidth="56em">
                 {listData.map((item, i) => {
                   return <SlideListItem {...item} key={i} delay={i} />;
                 })}
