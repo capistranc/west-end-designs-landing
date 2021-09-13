@@ -71,7 +71,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
 
   useEffect(() => {
     mobileHeight =
-      window.outerHeight < mobileHeight ? window.outerHeight : mobileHeight;
+      window.outerHeight > mobileHeight ? window.outerHeight : mobileHeight;
   });
 
   const { colorMode } = useColorMode();
