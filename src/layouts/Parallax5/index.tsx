@@ -35,9 +35,9 @@ export const Parallax5 = ({ sections, bgImages }) => {
           // <Box
           // backgroundImage="url('/images/diagonalLine.png')"
           // >
-          <Flex h="100%" w="100%">
-            {children}
-          </Flex>
+          // <Flex h="100%" w="100%">
+          <>{children}</>
+          // </Flex>
           // </Box>
         );
       } else {
