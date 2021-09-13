@@ -18,7 +18,7 @@ import {
 import React, { useRef } from "react";
 import { SlideIn } from "../../components/Motion/SlideIn";
 import { ClientCard } from "../../components/Cards/ClientCard";
-import { ImQuotesLeft, ImQuotesRight } from "react-icons/Im";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import { SearchIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 
