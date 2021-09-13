@@ -81,10 +81,7 @@ export const section3 = () => {
               title="Lead Developer/Co-founder"
               src=""
             />
-            <Text mt="3em">
-              Hi, my name is Chris. I'm a huge design nerd in all areas of
-              science and practitioner of Brazilian Jsujitsu.
-            </Text>
+            <Text mt="3em">Hi, my name is Chris. I like to do Jujitsu.</Text>
           </Box>
         </SlideIn>
 
@@ -101,7 +98,7 @@ export const section3 = () => {
               src=""
             />
             <Text mt="3em">
-              Hey, I'm Michael. I do fish stuff and fish accessories.
+              Hey, I'm Michael. I like fish and fish accessories.
             </Text>
           </Box>
         </SlideIn>
