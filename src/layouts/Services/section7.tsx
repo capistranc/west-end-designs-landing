@@ -35,9 +35,10 @@ export const section7 = () => {
             designs that keep users engaged
           </Text>
           <Text mt={2} color="gray.500">
-            More often than not, people are primarily accessing the internet
-            through their mobile phones. With our mobile first design approach,
-            our websites look great on phones, desktops, and other devices.
+            More than half of all website traffic is now being done with mobile
+            devices. We develop websites that are designed for mobile, yet still
+            look good on desktops. Its important that websites are built to look
+            great for the devices people are using.
           </Text>
         </Box>
       </Box>

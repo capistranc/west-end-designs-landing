@@ -10,8 +10,8 @@ import { FooterContent } from "../components/Footer";
 import Image from "next/image";
 
 import {
-  Box,
   Flex,
+  Box,
   Text,
   Heading,
   Button,
@@ -41,7 +41,7 @@ export const About: NextPage = () => {
         position="fixed"
         color={fgColor[colorMode]}
       />
-      <Box height={{ base: "35vh", md: "40vh" }} top="0" w="100%" bg="white">
+      <Box height={{ base: "20rem", md: "30rem" }} top="0" w="100%" bg="white">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
             <b className="thing">About The Team</b>
@@ -50,19 +50,18 @@ export const About: NextPage = () => {
       </Box>
       <Box position="fixed" top="0" width="100%" zIndex="10" bg="white"></Box>
       {/* <Box>The Team</Box> */}
-      <Box height="150vh" pt={10} pb={10} bg="white">
+      <Box height="70rem" bg="white">
         <SimpleGrid
           height="50%"
           w="100%"
           display={{ md: "inline-flex" }}
           base={{ base: 2, md: 2 }}
-          //mr={4}
-          //ml={4}
+          padding={{ base: 6 }}
           mb={{ base: "0", md: "0" }}
           mt={{ base: "0", md: "0" }}
         >
           <Box
-            height={{ base: "50%", md: "100%" }}
+            height={{ base: "70%", md: "100%" }}
             w={{ base: "100%", md: "50%" }}
             mb={{ base: 5, md: 0 }}
           >
@@ -82,25 +81,24 @@ export const About: NextPage = () => {
             </Flex>
           </Box>
 
-          <Box w={{ base: "80%", md: "40%" }} margin="auto">
+          <Box w={{ base: "100%", md: "40%" }} margin="auto">
             Chris Capistran is Co-Owner and a developer at West End Designs.
             Chris majored in Math and Computer Science at UCLA and has numerous
             years experience working in tech as a developer.
           </Box>
         </SimpleGrid>
         <SimpleGrid
+          // bg="red"
           height="50%"
           w="100%"
           display={{ md: "inline-flex" }}
           base={{ base: 2, md: 2 }}
-          flexDirection={{ md: "row-reverse" }}
-          //mr={4}
-          //ml={4}
+          padding={{ base: 6 }}
           mb={{ base: "0", md: "0" }}
           mt={{ base: "0", md: "0" }}
         >
           <Box
-            height={{ base: "50%", md: "100%" }}
+            height={{ base: "70%", md: "100%" }}
             w={{ base: "100%", md: "50%" }}
             mb={{ base: 5, md: 0 }}
           >
@@ -120,13 +118,10 @@ export const About: NextPage = () => {
             </Flex>
           </Box>
 
-          <Box w={{ base: "80%", md: "40%" }} margin="auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+          <Box w={{ base: "100%", md: "40%" }} margin="auto">
+            Chris Capistran is Co-Owner and a developer at West End Designs.
+            Chris majored in Math and Computer Science at UCLA and has numerous
+            years experience working in tech as a developer.
           </Box>
         </SimpleGrid>
       </Box>
