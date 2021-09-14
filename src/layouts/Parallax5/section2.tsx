@@ -77,7 +77,7 @@ export const section2 = () => {
 
   function renderContent() {
     return (
-      <Flex direction="column" h="100%" w="100%" mb="8">
+      <Flex direction="column" h="100%" w="100%" mb="8" color="white">
         <Flex
           p="4"
           direction="row"
@@ -88,22 +88,19 @@ export const section2 = () => {
           h="100%"
           w="100%"
         >
-          <Heading variant="h2" fontWeight="light" color="white">
+          <Heading variant="h2" fontWeight="light">
             What We Do
           </Heading>
         </Flex>
 
         <Flex direction="column" h="100%" w="100%">
           <Flex justify="center" px="20" p="4" marginBottom="8">
-            <Heading color="white" size="3xl">
-              Premium Web Designs
-            </Heading>
+            <Heading size="3xl">Premium Web Designs</Heading>
           </Flex>
 
           <Flex
             p="2" //4 spacing units is 1rem in chakra
             flexDirection={["column", "column", "row", "row"]}
-            color="white"
             // h="100%"
             // w="100%"
             justify="space-around"

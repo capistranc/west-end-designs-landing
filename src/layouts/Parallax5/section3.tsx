@@ -48,8 +48,6 @@ export const section3 = () => {
       position="relative"
       color="white"
       direction="column"
-      // bg="linear-gradient(45deg, #6303B1, #ff0099)"
-      // transform="skewY(-11deg)"
       _before={
         {
           // position: "absolute",

@@ -94,8 +94,8 @@ const growVariants = {
 export const section1 = () => {
   return (
     <MotionFlex
-      variants={containerVariants}
       initial="init"
+      variants={containerVariants}
       animate="visible"
       mt="8"
       mb="8"

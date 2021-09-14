@@ -110,8 +110,6 @@ export const section5 = () => {
       h="100%"
       w="100%"
       flexDir="column"
-      color="white"
-      bg="linear-gradient(rgba(30,30,30,0.1),rgba(30,30,30,0.8))"
     >
       <Flex
         direction="column"

@@ -32,9 +32,16 @@ export const section4 = () => {
   ];
 
   return (
-    <Flex direction="column" height="100%" width="100%" pt="4" pb="4">
+    <Flex
+      direction="column"
+      color="white"
+      height="100%"
+      width="100%"
+      pt="4"
+      pb="4"
+    >
       <Flex direction="column" w="100%" h="100%">
-        <Heading p="4" mb="12" variant="h2" fontWeight="light" color="white">
+        <Heading p="4" mb="12" variant="h2" fontWeight="light">
           How much does it cost
         </Heading>
 
@@ -44,9 +51,8 @@ export const section4 = () => {
           align="center"
           p="1rem"
           px="1rem"
-          color="white"
         >
-          <Heading color="white" fontSize="5xl" mb="1rem">
+          <Heading fontSize="5xl" mb="1rem">
             $0 Down, No Contract
           </Heading>
 
@@ -58,7 +64,6 @@ export const section4 = () => {
         <Flex
           p="4" //4 spacing units is 1rem in chakra
           flexDirection={["column-reverse", "column-reverse", "row", "row"]}
-          color="white"
           justify="space-evenly"
           align="space-around"
           mb="1em"
