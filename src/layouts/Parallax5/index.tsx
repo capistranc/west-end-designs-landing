@@ -123,6 +123,30 @@ export const Parallax5 = ({ sections, bgImages }) => {
     },
   };
 
+  const OverlayBox = (
+    <MotionBox
+      position="absolute"
+      top="0"
+      overflow="hidden"
+      bottom="0"
+      left="0"
+      right="0"
+      h="100vh"
+      w="100vw"
+      variants={overlayVariant}
+      custom={colorMode}
+      opacity="0"
+      initial="hidden"
+      animate="show"
+      exit={overlayVariant.hidden}
+      bg="url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)"
+      {...overlayProps[colorMode]}
+      background-repeat="no-repeat"
+      backgroundSize="cover"
+      backgroundPosition="right"
+    />
+  );
+
   return (
     <>
       <StickyNavHeader
@@ -140,50 +164,27 @@ export const Parallax5 = ({ sections, bgImages }) => {
       >
         <ParallaxBox
           bgImage={bgImages[0]}
-          minHeight={{
+          height={{
             base: mobileHeight > 0 ? mobileHeight : "100vh",
             md: "100vh",
           }}
-          id="section1"
-          position="relative"
+          width="100vw"
+          id="section0"
         >
-          <AnimatePresence custom={colorMode} exitBeforeEnter>
-            <MotionBox
-              position="absolute"
-              top="0"
-              overflow="hidden"
-              bottom="0"
-              left="0"
-              right="0"
-              h="100%"
-              w="100%"
-              variants={overlayVariant}
-              custom={colorMode}
-              opacity="0"
-              initial="hidden"
-              animate="show"
-              exit={overlayVariant.hidden}
-              bg="url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)"
-              {...overlayProps[colorMode]}
-              background-repeat="no-repeat"
-              backgroundSize="cover"
-              backgroundPosition="right"
-            />
-          </AnimatePresence>
           {sections[0]}
         </ParallaxBox>
         <ParallaxBox
           bg="gray.800"
           position="relative"
           data-header="What We Do"
-          id="section2"
+          id="section1"
         >
           {sections[1]}
         </ParallaxBox>
         <ParallaxBox
           bgImage={bgImages[1]}
           data-header="Who we are"
-          id="section3"
+          id="section2"
         >
           {sections[2]}
         </ParallaxBox>
@@ -191,7 +192,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
           bg="gray.700"
           position="relative"
           data-header="Pricing"
-          id="section4"
+          id="section3"
         >
           {sections[3]}
         </ParallaxBox>
