@@ -6,6 +6,7 @@ import { Background } from "../layouts/Services/styledSectionComponent";
 import { StickyNavHeader } from "../components/Header";
 import { bgColor, fgColor } from "../theme/colors";
 import React, { useRef, useEffect, useState } from "react";
+import { FooterContent } from "../components/Footer";
 
 import {
   Box,
@@ -48,6 +49,7 @@ export const ContactPage: NextPage = () => {
       </Box>
       <Box position="fixed" top="0" width="100%" zIndex="10"></Box>
       <ContactForm />
+      <FooterContent bgColor="gray.700" width="100%" color="white" />
     </>
   );
 };
