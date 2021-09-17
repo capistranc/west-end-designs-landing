@@ -55,8 +55,6 @@ const GlobalStyle = ({ children }) => {
             background-size: cover;
           }
           #__next {
-            display: flex;
-            flex-direction: column;
             height: 100%;
             width: 100%;
 

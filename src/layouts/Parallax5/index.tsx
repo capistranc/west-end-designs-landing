@@ -161,6 +161,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
         align="center"
         height="100%"
         width="100%"
+        color="white"
       >
         <ParallaxBox
           bgImage={bgImages[0]}
