@@ -3,7 +3,7 @@ import { Flex, Box, Heading, Text, Stack, VStack } from "@chakra-ui/react";
 export const section5 = () => {
   return (
     <>
-      <Box p={4} display={{ lg: "inline" }} w="100%" height="20%">
+      <Box p={10} display={{ lg: "inline" }} w="100%" height="20%">
         <Box flexShrink={0}>
           <Box borderRadius="lg" width={{ md: 40 }} bg="blue"></Box>
         </Box>
@@ -13,26 +13,23 @@ export const section5 = () => {
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
-            Lorem Impsum
+            Let us help you
           </Text>
           <Text
             fontWeight="bold"
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
-            Lorem Impsum
+            hit all the marks
           </Text>
           <Text mt={2} color="gray.500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            We focus on hitting all the checkpoints that are needed to drive
+            customers to your website, and keep them there. We create fast, well
+            designed, and Search Engine Optimized (SEO) websites..
           </Text>
         </Box>
       </Box>

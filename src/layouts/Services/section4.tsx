@@ -5,7 +5,7 @@ export const section4 = () => {
 
   return (
     <>
-      <Box p={4} display={{ lg: "inline" }}>
+      <Box p={10} display={{ lg: "inline" }}>
         <Box flexShrink={0}>
           <Image
             borderRadius="lg"

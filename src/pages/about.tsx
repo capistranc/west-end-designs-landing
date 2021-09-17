@@ -1,24 +1,132 @@
 import Head from "next/head";
 import { Layout } from "../layouts/Layout";
 import { NextPage } from "next";
-import styled from "@emotion/styled";
-import { Flex } from "@chakra-ui/react";
+import { ContactForm } from "../components/Forms/ContactForm";
+import { Background } from "../layouts/Services/styledSectionComponent";
+import { StickyNavHeader } from "../components/Header";
+import { bgColor, fgColor } from "../theme/colors";
+import React, { useRef, useEffect, useState } from "react";
+import { FooterContent } from "../components/Footer";
+import Image from "next/image";
 
-const StickyButton = styled(Flex)`
-  position: sticky;
-  right: 0;
-  z-index: 0;
-  backdrop-filter: saturate(180%) blur(20px);
-  transition: height 0.5s, line-height 0.5s;
-  align-self: flex-end;
-  bottom: 0;
-`;
+import {
+  Flex,
+  Box,
+  Text,
+  Heading,
+  Button,
+  Spacer,
+  useColorMode,
+  SimpleGrid,
+} from "@chakra-ui/react";
+
+const Banner = ({ children, ...props }) => {
+  const bgImage = "url('/images/cliffEdge2.jpeg')";
+  return (
+    <Background bgImage={bgImage}>
+      <Flex justify="center" align="center" {...props} color="white">
+        {children}
+      </Flex>
+    </Background>
+  );
+};
 
 export const About: NextPage = () => {
+  const { colorMode } = useColorMode();
+
   return (
-    <Layout>
-      <StickyButton sx={{}}></StickyButton>
-    </Layout>
+    <>
+      <StickyNavHeader
+        id="sticky-nav-bar"
+        position="fixed"
+        color={fgColor[colorMode]}
+      />
+      <Box height={{ base: "20rem", md: "30rem" }} top="0" w="100%" bg="white">
+        <Banner h="100%" color="white">
+          <Heading fontWeight="600" py="10" fontSize="4xl">
+            <b className="thing">About The Team</b>
+          </Heading>
+        </Banner>
+      </Box>
+      <Box position="fixed" top="0" width="100%" zIndex="10" bg="white"></Box>
+      {/* <Box>The Team</Box> */}
+      <Box height="70rem" bg="white">
+        <SimpleGrid
+          height="50%"
+          w="100%"
+          display={{ md: "inline-flex" }}
+          base={{ base: 2, md: 2 }}
+          padding={{ base: 6 }}
+          mb={{ base: "0", md: "0" }}
+          mt={{ base: "0", md: "0" }}
+        >
+          <Box
+            height={{ base: "70%", md: "100%" }}
+            w={{ base: "100%", md: "50%" }}
+            mb={{ base: 5, md: 0 }}
+          >
+            <Flex
+              justify="center"
+              w="100%"
+              height={{ base: "100%", md: "70%" }}
+              position="relative"
+              top={{ md: "15%" }}
+            >
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src="/images/chrisCropped.png"
+                alt="Picture of developer"
+              />
+            </Flex>
+          </Box>
+
+          <Box w={{ base: "100%", md: "40%" }} margin="auto">
+            Chris Capistran is Co-Owner and a developer at West End Designs.
+            Chris majored in Math and Computer Science at UCLA and has numerous
+            years experience working in tech as a developer.
+          </Box>
+        </SimpleGrid>
+        <SimpleGrid
+          // bg="red"
+          height="50%"
+          w="100%"
+          display={{ md: "inline-flex" }}
+          base={{ base: 2, md: 2 }}
+          padding={{ base: 6 }}
+          mb={{ base: "0", md: "0" }}
+          mt={{ base: "0", md: "0" }}
+        >
+          <Box
+            height={{ base: "70%", md: "100%" }}
+            w={{ base: "100%", md: "50%" }}
+            mb={{ base: 5, md: 0 }}
+          >
+            <Flex
+              justify="center"
+              w="100%"
+              height={{ base: "100%", md: "70%" }}
+              position="relative"
+              top={{ md: "15%" }}
+            >
+              <Image
+                layout="fill"
+                objectFit="contain"
+                src="/images/michaelCropped.png"
+                alt="Picture of developer"
+              />
+            </Flex>
+          </Box>
+
+          <Box w={{ base: "100%", md: "40%" }} margin="auto">
+            Chris Capistran is Co-Owner and a developer at West End Designs.
+            Chris majored in Math and Computer Science at UCLA and has numerous
+            years experience working in tech as a developer.
+          </Box>
+        </SimpleGrid>
+      </Box>
+      <FooterContent bgColor="gray.700" width="100%" color="white" />
+    </>
   );
 };
 

@@ -11,7 +11,7 @@ import {
 export const section7 = () => {
   return (
     <>
-      <Box p={4} display={{ lg: "inline" }} w="100%" height="20%">
+      <Box p={10} display={{ lg: "inline" }} w="100%" height="20%">
         <Box flexShrink={0}>
           <Box borderRadius="lg" width={{ md: 40 }} bg="blue"></Box>
         </Box>
@@ -21,26 +21,24 @@ export const section7 = () => {
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
-            Lorem Impsum
+            Mobile and desktop
           </Text>
           <Text
             fontWeight="bold"
             textTransform="uppercase"
             fontSize="sm"
             letterSpacing="wide"
-            color="teal.600"
+            color="blue.500"
           >
-            Lorem Impsum
+            designs that keep users engaged
           </Text>
           <Text mt={2} color="gray.500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            More than half of all website traffic is now being done with mobile
+            devices. We develop websites that are designed for mobile, yet still
+            look good on desktops. Its important that websites are built to look
+            great for the devices people are using.
           </Text>
         </Box>
       </Box>

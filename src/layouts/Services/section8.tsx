@@ -48,8 +48,10 @@ export const section8 = () => {
               PREMIUM
             </Text>
             <Stack direction={"row"} align={"center"} justify={"center"}>
-              <Text fontSize={"3xl"}>$</Text>
-              <Text fontSize={"6xl"} fontWeight={800}>
+              <Text fontSize={"3xl"} color={"gray.900"}>
+                $
+              </Text>
+              <Text fontSize={"6xl"} fontWeight={800} color={"gray.900"}>
                 150
               </Text>
               <Text color={"gray.500"}>/month</Text>
