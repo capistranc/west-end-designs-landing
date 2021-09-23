@@ -14,9 +14,13 @@ import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 
 import { motion, useSpring } from "framer-motion";
-const MotionFlex = motion<FlexProps>(Flex);
-const MotionButton = motion<ButtonProps>(Button);
-const MotionText = motion<TextProps>(Text);
+
+import {
+  MotionFlex,
+  MotionBox,
+  MotionText,
+  MotionButton,
+} from "../../components/Motion";
 
 const AnimatedBanner = ({ text, ...props }) => {
   const texts = ["CONNECT", "INSPIRE", "CREATE"];
@@ -99,8 +103,8 @@ export const section1 = () => {
       animate="visible"
       mt="8"
       mb="8"
-      // h="100vh"
-      // w="100vw"
+      h="100vh"
+      w="100vw"
       flexDir="column"
       align="center"
       justify="center"

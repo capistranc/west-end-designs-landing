@@ -32,7 +32,7 @@ const observerOptions = {
 export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
     return (
-      <Flex
+      <Box
         className="parallaxSection"
         // position="relative"
         // display="flex"
@@ -44,12 +44,13 @@ export const Parallax5 = ({ sections, bgImages }) => {
         width="100%"
         align="center"
         justify="center"
+        m="auto"
         // height="calc(var(--vh, 1vh))"
         // width="calc(var(--vw, 1vw))"
         {...props}
       >
         {children}
-      </Flex>
+      </Box>
     );
   };
 
@@ -154,15 +155,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
         position="fixed"
         color={fgColor[colorMode]}
       />
-      <Flex
-        top="0"
-        as="main"
-        direction="column"
-        align="center"
-        height="100%"
-        width="100%"
-        color="white"
-      >
+      <Box top="0" as="main" color="white">
         <ParallaxBox
           bgImage={bgImages[0]}
           height={{
@@ -205,7 +198,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
           <ContactForm />
         </ParallaxBox>
         <FooterContent bgColor="gray.900" width="100%" color="white" />
-      </Flex>
+      </Box>
     </>
   );
 };

@@ -42,12 +42,13 @@ import { TitledAvatar } from "../../components/Cards/TitledAvatar";
 
 export const section3 = () => {
   return (
-    <Flex
+    <Box
       h="100%"
       w="100vw"
       position="relative"
       color="white"
       direction="column"
+      py="1rem"
       _before={
         {
           // position: "absolute",
@@ -62,9 +63,11 @@ export const section3 = () => {
         }
       }
     >
-      <Heading p="4" mb="3em" variant="h2">
-        Who we are
-      </Heading>
+      <Box textAlign="left">
+        <Heading p="4" mb="3em" variant="h2">
+          Who we are
+        </Heading>
+      </Box>
 
       <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
         <SlideIn
@@ -160,6 +163,6 @@ export const section3 = () => {
           bottom="-1em"
         />
       </Box>
-    </Flex>
+    </Box>
   );
 };

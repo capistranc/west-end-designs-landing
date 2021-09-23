@@ -77,7 +77,7 @@ export const section2 = () => {
 
   function renderContent() {
     return (
-      <Flex direction="column" h="100%" w="100%" mb="8" color="white">
+      <Box direction="column" h="100%" w="100%" color="white">
         <Flex
           p="4"
           direction="row"
@@ -151,7 +151,7 @@ export const section2 = () => {
             </Flex>
           </Flex>
         </Flex>
-      </Flex>
+      </Box>
     );
   }
 

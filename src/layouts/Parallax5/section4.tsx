@@ -32,7 +32,7 @@ export const section4 = () => {
   ];
 
   return (
-    <Flex
+    <Box
       direction="column"
       color="white"
       height="100%"
@@ -40,43 +40,35 @@ export const section4 = () => {
       pt="4"
       pb="4"
     >
-      <Flex direction="column" w="100%" h="100%">
-        <Heading p="4" mb="12" variant="h2" fontWeight="light">
-          How much does it cost
+      <Heading p="4" textAlign="left" mb="12" variant="h2" fontWeight="light">
+        How much does it cost
+      </Heading>
+
+      <Box p="1rem" px="1rem">
+        <Heading fontSize="5xl" mb="1rem">
+          $0 Down, No Contract
         </Heading>
 
-        <Flex
-          direction="column"
-          justify="center"
-          align="center"
-          p="1rem"
-          px="1rem"
-        >
-          <Heading fontSize="5xl" mb="1rem">
-            $0 Down, No Contract
-          </Heading>
+        <Text as="h4" pl=".25em" fontSize="2xl" textStyle="h2">
+          Starting at $150 per month.
+        </Text>
+      </Box>
 
-          <Text as="h4" pl=".25em" fontSize="2xl" textStyle="h2">
-            Starting at $150 per month.
-          </Text>
-        </Flex>
-
-        <Flex
-          p="4" //4 spacing units is 1rem in chakra
-          flexDirection={["column-reverse", "column-reverse", "row", "row"]}
-          justify="space-evenly"
-          align="space-around"
-          mb="1em"
-        >
-          <Flex direction="column" align="center" justify="center">
-            <SimpleGrid columns={[1, 2, 3, 3]} gap="1rem" mt="2rem">
-              {listData.map((item, i) => {
-                return <SlideListItem {...item} key={i} delay={i} />;
-              })}
-            </SimpleGrid>
-          </Flex>
+      <Flex
+        p="4" //4 spacing units is 1rem in chakra
+        flexDirection={["column-reverse", "column-reverse", "row", "row"]}
+        justify="space-evenly"
+        align="space-around"
+        mb="1em"
+      >
+        <Flex direction="column" align="center" justify="center">
+          <SimpleGrid columns={[1, 2, 3, 3]} gap="1rem" mt="2rem">
+            {listData.map((item, i) => {
+              return <SlideListItem {...item} key={i} delay={i} />;
+            })}
+          </SimpleGrid>
         </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
