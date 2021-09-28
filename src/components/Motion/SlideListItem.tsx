@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-import { MotionFlex } from "./index";
+import { MotionFlex, MotionBox } from "./index";
 import React, { useRef } from "react";
 
 import { useOnScreen, useHasRendered } from "../../lib/hooks";
@@ -36,14 +36,14 @@ export const SlideListItem = ({ header, subText, ...props }) => {
           _hover={{ boxShadow: "0px 2px rgba(255,255,255,0.2)" }}
         >
           <CheckIcon mt="1" mr="2" color="blue.500" />
-          <Flex direction="column" align="flex-start">
+          <Box direction="column" textAlign="left">
             <Heading as="h6" size="medium" mb="1">
               {header}
             </Heading>
             <Text textStyle="subText" color="gray.300">
               {subText}
             </Text>
-          </Flex>
+          </Box>
         </MotionFlex>
       )}
     </Box>

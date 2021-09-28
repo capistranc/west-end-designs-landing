@@ -109,6 +109,8 @@ export const section5 = () => {
       // minWidth="100vw"
       h="100%"
       w="100%"
+      align="center"
+      justify="center"
       flexDir="column"
     >
       <Flex

@@ -18,7 +18,16 @@ import { CheckIcon } from "@chakra-ui/icons";
 import React, { useRef } from "react";
 import { TimedCarousel } from "../../components/Motion/TimedCarousel";
 import { SlideListItem } from "../../components/Motion";
-import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
+import {
+  MdMoneyOff,
+  MdAllInclusive,
+  MdDescription,
+  MdDevicesOther,
+  MdDevices,
+} from "react-icons/md";
+
+import { FaCodepen } from "react-icons/fa";
+import { BiCodeAlt, BiMobileVibration } from "react-icons/bi";
 
 export const section2 = () => {
   const listData = [
@@ -77,26 +86,44 @@ export const section2 = () => {
 
   function renderContent() {
     return (
-      <Box direction="column" h="100%" w="100%" color="white">
-        <Flex
-          p="4"
-          direction="row"
-          justify="flex-start"
-          align="flex-start"
-          mb="4rem"
-          className="stickyHeader"
-          h="100%"
-          w="100%"
-        >
-          <Heading variant="h2" fontWeight="light">
-            What We Do
-          </Heading>
-        </Flex>
+      <Box color="white" align="center" justify="center">
+        {/* <Icon
+          position="absolute"
+          top="-50"
+          right="-50"
+          overflow="hidden"
+          boxSize={["16rem", "20rem", "24rem", "24rem"]}
+          color="gray.300"
+          transform="rotate(0.1turn)"
+          opacity="0.1"
+          as={BiCodeAlt}
+        /> */}
+        <Icon
+          position="absolute"
+          bottom="0%"
+          left="0%"
+          overflow="hidden"
+          boxSize={["16rem", "20rem", "24rem", "24rem"]}
+          color="gray.300"
+          // transform="rotate(0.1turn)"
+          opacity="0.1"
+          as={BiMobileVibration}
+        />
 
-        <Flex direction="column" h="100%" w="100%">
-          <Flex justify="center" px="20" p="4" marginBottom="8">
-            <Heading size="3xl">Premium Web Designs</Heading>
-          </Flex>
+        <Heading
+          variant="h2"
+          p="4"
+          mb="4rem"
+          textAlign="left"
+          fontWeight="light"
+        >
+          What We Do
+        </Heading>
+
+        <Box>
+          <Heading size="3xl" px="20" p="4" marginBottom="8">
+            Premium Web Designs
+          </Heading>
 
           <Flex
             p="2" //4 spacing units is 1rem in chakra
@@ -120,9 +147,8 @@ export const section2 = () => {
               />
             </Flex>
 
-            <Flex
+            <Box
               flex="2"
-              direction="column"
               borderLeft={{
                 base: "none",
                 md: "2px solid rgba(255,255,255, 0.5)",
@@ -133,6 +159,8 @@ export const section2 = () => {
               }}
               pl="4"
               pt="4"
+              textAlign="left"
+              position="relative"
             >
               <Heading as="h4"> SEO Optimized for Mobile Devices </Heading>
               <Text py="4" textStyle="subText" color="gray.300" maxWidth="56em">
@@ -143,14 +171,14 @@ export const section2 = () => {
                 content backlinking.
               </Text>
 
-              <SimpleGrid columns={[1, 1, 2, 3]} gap="6" mt="8">
+              <SimpleGrid columns={[1, 1, 2, 2]} gap="6" mt="8">
                 {listData.map((item, i) => {
                   return <SlideListItem my="1" {...item} key={i} delay={i} />;
                 })}
               </SimpleGrid>
-            </Flex>
+            </Box>
           </Flex>
-        </Flex>
+        </Box>
       </Box>
     );
   }

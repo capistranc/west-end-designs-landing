@@ -12,6 +12,7 @@ import {
 import React, { useRef } from "react";
 import { SlideIn } from "../../components/Motion/SlideIn";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+
 import NextLink from "next/link";
 
 const companies = [
@@ -44,10 +45,11 @@ export const section3 = () => {
   return (
     <Box
       h="100%"
-      w="100vw"
       position="relative"
       color="white"
-      direction="column"
+      w="100%"
+      align="center"
+      justify="center"
       py="1rem"
       _before={
         {

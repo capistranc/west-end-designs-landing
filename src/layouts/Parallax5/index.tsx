@@ -20,8 +20,6 @@ export * from "./section4";
 export * from "./section5";
 import { ContactForm } from "../../components/Forms/ContactForm";
 import { MotionBox } from "../../components/Motion/";
-import { AnimatePresence } from "framer-motion";
-import { FaRegIdBadge } from "react-icons/fa";
 
 const observerOptions = {
   root: null,
@@ -36,14 +34,15 @@ export const Parallax5 = ({ sections, bgImages }) => {
         className="parallaxSection"
         // position="relative"
         // display="flex"
+        overflow="hidden"
         backgroundAttachment="fixed"
-        backgroundPosition="center"
         background-repeat="no-repeat"
+        backgroundPosition="center"
         backgroundSize="cover"
-        height="100%"
-        width="100%"
-        align="center"
-        justify="center"
+        // height="100%"
+        // width="100%"
+        // align="center"
+        // justify="center"
         m="auto"
         // height="calc(var(--vh, 1vh))"
         // width="calc(var(--vw, 1vw))"
@@ -100,13 +99,13 @@ export const Parallax5 = ({ sections, bgImages }) => {
     light: {
       bg: "url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)",
       sx: {
-        "mix-blend-mode": "hard-light",
+        mixBlendMode: "hard-light",
       },
     },
     dark: {
       bg: "url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)",
       sx: {
-        "mix-blend-mode": "color-burn",
+        mixBlendMode: "color-burn",
       },
       _before: {
         position: "absolute",
@@ -124,7 +123,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
     },
   };
 
-  const OverlayBox = (
+  const OverlayBox = () => (
     <MotionBox
       position="absolute"
       top="0"
@@ -134,6 +133,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
       right="0"
       h="100vh"
       w="100vw"
+      zIndex="1"
       variants={overlayVariant}
       custom={colorMode}
       opacity="0"
@@ -153,6 +153,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
       <StickyNavHeader
         id="sticky-nav-bar"
         position="fixed"
+        w="100vw"
         color={fgColor[colorMode]}
       />
       <Box top="0" as="main" color="white">
@@ -162,11 +163,15 @@ export const Parallax5 = ({ sections, bgImages }) => {
             base: mobileHeight > 0 ? mobileHeight : "100vh",
             md: "100vh",
           }}
-          width="100vw"
+          w="100vw"
+          backgroundPosition={{ base: "-40px 0", md: "center" }}
+          backgroundSize={{ base: "140vh 100vh", md: "cover" }}
           id="section0"
         >
+          <OverlayBox />
           {sections[0]}
         </ParallaxBox>
+        {/* </Box> */}
         <ParallaxBox
           bg="gray.800"
           position="relative"

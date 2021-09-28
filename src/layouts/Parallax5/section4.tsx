@@ -1,7 +1,16 @@
-import { Flex, Heading, Box, Text, Image, SimpleGrid } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Box,
+  Text,
+  Image,
+  Icon,
+  SimpleGrid,
+} from "@chakra-ui/react";
 
 import { CheckIcon } from "@chakra-ui/icons";
 import { MotionFlex, SlideListItem } from "../../components/Motion";
+import { FaCodepen } from "react-icons/fa";
 
 export const section4 = () => {
   const listData = [
@@ -38,8 +47,21 @@ export const section4 = () => {
       height="100%"
       width="100%"
       pt="4"
+      align="center"
+      justify="center"
       pb="4"
     >
+      <Icon
+        position="absolute"
+        overflow="hidden"
+        boxSize={["16rem", "18rem", "20rem", "24rem"]}
+        color="gray.300"
+        transform="rotate(0.5turn)"
+        opacity="0.1"
+        as={FaCodepen}
+        bottom="10%"
+        right="-5%"
+      />
       <Heading p="4" textAlign="left" mb="12" variant="h2" fontWeight="light">
         How much does it cost
       </Heading>
@@ -62,7 +84,7 @@ export const section4 = () => {
         mb="1em"
       >
         <Flex direction="column" align="center" justify="center">
-          <SimpleGrid columns={[1, 2, 3, 3]} gap="1rem" mt="2rem">
+          <SimpleGrid columns={[1, 2, 2, 2]} gap="1rem" mt="2rem">
             {listData.map((item, i) => {
               return <SlideListItem {...item} key={i} delay={i} />;
             })}
