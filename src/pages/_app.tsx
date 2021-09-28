@@ -78,7 +78,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ChakraProvider resetCSS theme={customTheme}>
         <ColorModeProvider
-          options={{ initialColorMode: "light", useSystemColorMode: true }}
+          options={{ initialColorMode: "light", useSystemColorMode: false }}
         >
           <GlobalStyle>
             <Component {...pageProps} />
