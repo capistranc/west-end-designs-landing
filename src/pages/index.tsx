@@ -9,18 +9,16 @@ import {
 
 import { useBreakpointValue } from "@chakra-ui/media-query";
 export default function Index({ allPostsData }) {
-  let device = "mobile";
-
-  device = useBreakpointValue({
+  const device = useBreakpointValue({
     base: "mobile",
     md: "browser",
     xl: "hq",
   });
 
   let bgImages = [
-    `url('/images/${device}/cliffEdge.jpeg')`,
-    `url('/images/${device}/cliffStanding.jpeg')`,
-    `url('/images/${device}/cliffBottom.jpeg')`,
+    `url('/images/${device || "mobile"}/cliffEdge.jpeg')`,
+    `url('/images/${device || "mobile"}/cliffStanding.jpeg')`,
+    `url('/images/${device || "mobile"}/cliffBottom.jpeg')`,
   ];
 
   const sections = [section0, section1, section2, section3, section4].map(

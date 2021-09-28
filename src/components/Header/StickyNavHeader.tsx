@@ -30,12 +30,12 @@ export const StickyNavHeader = ({ ...props }) => {
 
   return (
     <Box
-      bgColor="transparent"
       position="sticky"
       top="0"
       width="100%"
       zIndex="100"
-      // backgroundColor="rgba(0,0,0,0.4)"
+      bgColor="rgba(0.4,0.4,0.4,0.4)"
+      // bg="linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.5) 100%)"
       // sx={{ backdropFilter: "blur(1rem)" }}
       {...props}
     >
