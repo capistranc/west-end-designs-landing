@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 
 import { MotionFlex, MotionText, MotionButton } from "../../components/Motion";
+import { slideFrom } from "../../components/Motion/variants";
 
 const AnimatedBanner = ({ text, ...props }) => {
   const texts = ["CONNECT", "INSPIRE", "CREATE"];
@@ -19,59 +20,28 @@ const AnimatedBanner = ({ text, ...props }) => {
 };
 
 const containerVariants = {
-  init: {
+  hidden: {
     y: "100vh",
     opacity: 0,
   },
-  visible: {
+  show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 1,
       stiffness: 500,
       when: "beforeChildren",
-      staggerChildren: 0.3,
     },
   },
-};
-
-const slideVariants = {
-  initLeft: {
-    x: "-100vw",
-    opacity: 0,
-  },
-  center: {
-    x: 0,
-    y: 0,
-    opacity: 100,
-    transition: {
-      delay: 1,
-      type: "tween",
-    },
-  },
-
-  centerSpring: {
-    x: 0,
-    y: 0,
-    opacity: 100,
-    transition: {
-      delay: 0,
-      type: "spring",
-    },
-  },
-  initRight: { x: "15vw", opacity: 0 },
-  initBottom: { y: "100vh" },
-  initTop: { y: "-100vh" },
 };
 
 const growVariants = {
-  init: {
+  hidden: {
     scale: 0,
   },
-  visible: {
+  show: {
     scale: 1,
     transition: {
-      delay: 0.75,
       duration: 0.5,
     },
   },
@@ -80,9 +50,9 @@ const growVariants = {
 export const section0 = () => {
   return (
     <MotionFlex
-      initial="init"
       variants={containerVariants}
-      animate="visible"
+      initial="hidden"
+      animate="show"
       mt="8"
       mb="8"
       h="100vh"
@@ -97,24 +67,20 @@ export const section0 = () => {
         We help businesses
       </Heading>
 
-      <MotionFlex variants={growVariants} initial="init" animate="visible">
+      <MotionFlex variants={growVariants}>
         <AnimatedBanner text="CONNECT" />
       </MotionFlex>
       <MotionText
-        variants={slideVariants}
-        initial="initBottom"
-        animate="center"
         textStyle="h2"
         fontSize="3xl"
         py="5"
+        variants={slideFrom("bottom")}
       >
         with clients
       </MotionText>
       <Flex flexDirection={["column", "column", "row", "row"]}>
         <MotionButton
-          variants={slideVariants}
-          initial="initLeft"
-          animate="center"
+          variants={slideFrom("left", { duration: 0.2 })}
           px="5px"
           borderRadius="0px"
           variant="solid"
@@ -127,9 +93,7 @@ export const section0 = () => {
         </MotionButton>
         <Spacer px="2" />
         <MotionButton
-          variants={slideVariants}
-          initial="initRight"
-          animate="center"
+          variants={slideFrom("right", { duration: 0.2 })}
           px="5px"
           borderRadius="0px"
           variant="solid"

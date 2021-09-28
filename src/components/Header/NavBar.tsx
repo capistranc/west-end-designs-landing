@@ -6,7 +6,6 @@ import {
   Text,
   Stack,
   Button,
-  useColorMode,
   useDisclosure,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -16,8 +15,6 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 
 import { Logo } from "../Logo";
 import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
-
-import { fgColor, bgColor } from "../../theme/colors";
 
 export const NavBar = ({ links, ...props }) => {
   // const { colorMode } = useColorMode();

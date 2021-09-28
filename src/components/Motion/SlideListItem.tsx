@@ -11,7 +11,7 @@ export const SlideListItem = ({ header, subText, ...props }) => {
       x: "-100vw",
       opacity: 0,
     },
-    visible: {
+    show: {
       opacity: 100,
       x: 0,
       transition: {
@@ -28,7 +28,7 @@ export const SlideListItem = ({ header, subText, ...props }) => {
       {isVisible && (
         <MotionFlex
           initial="hidden"
-          animate="visible"
+          animate="show"
           variants={listVariants}
           direction="row"
           {...props}

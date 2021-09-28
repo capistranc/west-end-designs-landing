@@ -54,17 +54,16 @@ export const Parallax5 = ({ sections, bgImages }) => {
       window.outerHeight > mobileHeight ? window.outerHeight : mobileHeight;
   });
 
-  const { colorMode } = useColorMode();
-
   return (
     <>
       <StickyNavHeader
         id="sticky-nav-bar"
         position="fixed"
         w="100vw"
-        color={fgColor[colorMode]}
+        color="white"
+        // color={fgColor[colorMode]}
       />
-      <Box top="0" as="main" color="white">
+      <Box top="0" as="main" color="white" zIndex="1">
         <ParallaxBox
           bgImage={bgImages[0]}
           height={{
@@ -76,8 +75,8 @@ export const Parallax5 = ({ sections, bgImages }) => {
           backgroundSize={{ base: "140vh 100vh", md: "cover" }}
           id="section0"
         >
-          {sections[0]}
           <SunOverlay />
+          {sections[0]}
         </ParallaxBox>
 
         <ParallaxBox

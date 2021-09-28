@@ -17,7 +17,9 @@ export const SlideIn = ({ children, from = "left", ...props }) => {
         <MotionBox
           h="100%"
           w="100%"
-          {...variant}
+          variants={variant}
+          initial="hidden"
+          animate="show"
           transition={{
             duration: 0.5,
             delay: 0.3 * props.delay,

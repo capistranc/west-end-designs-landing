@@ -1,12 +1,12 @@
 import { MotionBox } from "./index";
 import { useColorMode } from "@chakra-ui/react";
 const overlayVariant = {
-  hidden: {
+  hidden: (colorMode) => ({
     bg: "rgba(0,0,0,0)",
     opacity: 0,
-    scale: 10,
-    rotateZ: -90,
-  },
+    scale: colorMode === "light" ? 5 : 1,
+    rotateZ: colorMode === "light" ? -90 : 0,
+  }),
   show: (colorMode) => {
     if (colorMode === "light") {
       return {
@@ -15,6 +15,7 @@ const overlayVariant = {
         rotateZ: 0,
         transition: {
           type: "tween",
+          // delay: 2,
           duration: 2,
         },
       };
@@ -26,6 +27,7 @@ const overlayVariant = {
         bg: "rgba(9,59,72,1)",
         transition: {
           type: "tween",
+          // delay: 2,
           duration: 2,
         },
       };
@@ -41,23 +43,11 @@ const overlayProps = {
     },
   },
   dark: {
-    bg: "url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)",
+    bg: "rgba(9,59,72,.9)",
     sx: {
       mixBlendMode: "color-burn",
     },
-    _before: {
-      position: "absolute",
-      top: "0",
-      bottom: "0",
-      left: "0",
-      right: "0",
-      overflow: "hidden",
-      height: "100%",
-      width: "100%",
-      content: `""`,
-      opacity: "70%",
-      bgColor: "rgba(9,59,72,1)",
-    },
+    opacity: "70%",
   },
 };
 
@@ -79,8 +69,6 @@ export const SunOverlay = () => {
       opacity="0"
       initial="hidden"
       animate="show"
-      zIndex="1"
-      exit={overlayVariant.hidden}
       bg="url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)"
       {...overlayProps[colorMode]}
       background-repeat="no-repeat"

@@ -1,40 +1,43 @@
 export const slideVariants = {
   initLeft: {
     x: "-100vw",
+    opacity: 0,
   },
-  center: {
+  center: (params) => ({
     x: 0,
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.75,
       type: "tween",
+      ...params,
     },
-  },
+  }),
   initRight: { x: "6rem", opacity: 0 },
-  initBottom: { y: "100vh" },
-  initTop: { y: "-100vh" },
+  initBottom: { y: "100vh", opacity: 0 },
+  initTop: { y: "-100vh", opacity: 0 },
 };
 
-export const slideFrom = (from: string) => {
+export const slideFrom = (from: string, overrides = {}) => {
   const left = {
-    initial: slideVariants.initLeft,
-    animate: slideVariants.center,
+    hidden: slideVariants.initLeft,
+    show: slideVariants.center(overrides),
   };
 
   const right = {
-    initial: slideVariants.initRight,
-    animate: slideVariants.center,
+    hidden: slideVariants.initRight,
+    show: slideVariants.center(overrides),
   };
   const bottom = {
-    initial: slideVariants.initBottom,
-    animate: slideVariants.center,
+    hidden: slideVariants.initBottom,
+    show: slideVariants.center(overrides),
   };
   const top = {
-    initial: slideVariants.initTop,
-    animate: slideVariants.center,
+    hidden: slideVariants.initTop,
+    show: slideVariants.center(overrides),
   };
 
   const slide = { left, right, top, bottom };
+
   return slide[from];
 };

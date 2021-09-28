@@ -34,9 +34,9 @@ export const StickyNavHeader = ({ ...props }) => {
       position="sticky"
       top="0"
       width="100%"
-      zIndex="10"
-      // backgroundColor="blue.900"
-      sx={{ backdropFilter: "blur(20px)" }}
+      zIndex="100"
+      // backgroundColor="rgba(0,0,0,0.4)"
+      sx={{ backdropFilter: "blur(1rem)" }}
       {...props}
     >
       <NavBar
