@@ -1,96 +1,132 @@
 import {
   Flex,
+  Button,
   Heading,
+  Spacer,
+  BoxProps,
   Box,
-  Text,
   Image,
-  Icon,
-  SimpleGrid,
+  Text,
+  Stack,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-import { CheckIcon } from "@chakra-ui/icons";
-import { MotionFlex, SlideListItem } from "../../components/Motion";
-import { FaCodepen } from "react-icons/fa";
+const AdCard = ({ caption, imageSource, subText, ...props }) => {
+  return (
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      border="2px solid rgba(255,255,255,0.2)"
+      bg="rgba(0, 0, 0, 0.6)"
+      borderRadius="16"
+      {...props}
+    >
+      <Image
+        my="4"
+        alignSelf="center"
+        src="/images/profile.jpg"
+        minHeight="10em"
+        minWidth="12em"
+      />
+      <Heading mb="4">{caption}</Heading>
+      <Text textStyle="subText" maxWidth="30em">
+        {subText}
+      </Text>
+    </Flex>
+  );
+};
 
-export const section4 = () => {
-  const listData = [
+function loadAdCards() {
+  const adCards = [
     {
-      header: "No Contract",
-      subText: `You pay as you go. Join when you want, and leave when you want.`,
+      caption: "$0 DOWN",
+      imageSource: `/images/profile.jpg`,
+      subText: `$0 Down to start. We sell our software as a services on a subscription based plan starting from as little as $150 a month.`,
     },
     {
-      header: "Unlimited Edits",
-      subText: `We provide unlimited edits to your website anytime.`,
+      caption: "NO CONTRACT!",
+      imageSource: `/images/profile.jpg`,
+      subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
+
+      Cancel anytime for any reason.`,
     },
     {
-      header: "Hosting Fees Included",
-      subText: `Hosting fees are included in your monthly payments. You just pay for your domain.`,
-    },
-    {
-      header: "Google Analytics",
-      subText: `We will install google analytics for free so you can measure the traffic on your website.`,
-    },
-    {
-      header: "Own your profiles",
-      subText: `We can help you set up your domain, google analytics, and email. But they belong to you.`,
-    },
-    {
-      header: "Additional Services",
-      subText: `You can talk to us about extra services, if you need help with blogs, social media, or adsense.`,
+      caption: "UNLIMITED EDITS",
+      imageSource: `/images/profile.jpg`,
+      subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner
+      `,
     },
   ];
 
   return (
-    <Box
-      direction="column"
-      color="white"
-      height="100%"
+    <Flex
       width="100%"
-      pt="4"
+      height="100%"
+      flexDirection={["column", "column", "row", "row"]}
+      justify="center"
+      align="stretch"
+    >
+      <AdCard p="8" m="4" {...adCards[0]} />
+      <AdCard p="8" m="4" {...adCards[1]} />
+      <AdCard p="8" m="4" {...adCards[2]} />
+    </Flex>
+  );
+}
+
+const containerVariants = {
+  init: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const growVariants = {
+  init: {
+    scale: 0,
+  },
+  visible: {
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+export const section4 = () => {
+  return (
+    <Flex
+      // minWidth="100vw"
+      h="100%"
+      w="100%"
       align="center"
       justify="center"
-      pb="4"
+      flexDir="column"
     >
-      <Icon
-        position="absolute"
-        overflow="hidden"
-        boxSize={["16rem", "18rem", "20rem", "24rem"]}
-        color="gray.300"
-        transform="rotate(0.5turn)"
-        opacity="0.1"
-        as={FaCodepen}
-        bottom="10%"
-        right="-5%"
-      />
-      <Heading p="4" textAlign="left" mb="12" variant="h2" fontWeight="light">
-        How much does it cost
-      </Heading>
-
-      <Box p="1rem" px="1rem">
-        <Heading fontSize="5xl" mb="1rem">
-          $0 Down, No Contract
+      <Flex
+        direction="column"
+        justify="center"
+        align="center"
+        w="100%"
+        h="100%"
+        mv="8rem"
+      >
+        <Heading as="h1" my="1.25em" variant="banner-with-border-md">
+          Prices
         </Heading>
 
-        <Text as="h4" pl=".25em" fontSize="2xl" textStyle="h2">
-          Starting at $150 per month.
-        </Text>
-      </Box>
-
-      <Flex
-        p="4" //4 spacing units is 1rem in chakra
-        flexDirection={["column-reverse", "column-reverse", "row", "row"]}
-        justify="space-evenly"
-        align="space-around"
-        mb="1em"
-      >
-        <Flex direction="column" align="center" justify="center">
-          <SimpleGrid columns={[1, 2, 2, 2]} gap="1rem" mt="2rem">
-            {listData.map((item, i) => {
-              return <SlideListItem {...item} key={i} delay={i} />;
-            })}
-          </SimpleGrid>
-        </Flex>
+        {loadAdCards()}
       </Flex>
-    </Box>
+    </Flex>
   );
 };

@@ -1,15 +1,16 @@
 import {
   Parallax5,
+  section0,
   section1,
   section2,
   section3,
   section4,
-  section5,
 } from "../layouts/Parallax5";
 
 import { useBreakpointValue } from "@chakra-ui/media-query";
 export default function Index({ allPostsData }) {
   let device = "mobile";
+
   device = useBreakpointValue({
     base: "mobile",
     md: "browser",
@@ -22,7 +23,7 @@ export default function Index({ allPostsData }) {
     `url('/images/${device}/cliffBottom.jpeg')`,
   ];
 
-  const sections = [section1, section2, section3, section4, section5].map(
+  const sections = [section0, section1, section2, section3, section4].map(
     (section) => section(),
   );
 

@@ -1,163 +1,191 @@
 import {
   Flex,
-  FlexProps,
   Heading,
-  HeadingProps,
-  Spacer,
-  Button,
-  ButtonProps,
-  Link,
+  Box,
   Text,
-  TextProps,
+  Link,
+  Spacer,
+  Image,
+  SimpleGrid,
+  SimpleGridProps,
+  Icon,
+  FlexProps,
+  BoxProps,
+  IconProps,
 } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
-import NextLink from "next/link";
+import { CheckIcon } from "@chakra-ui/icons";
 
-import { motion, useSpring } from "framer-motion";
-
+import React, { useRef } from "react";
+import { TimedCarousel } from "../../components/Motion/TimedCarousel";
+import { SlideListItem } from "../../components/Motion";
 import {
-  MotionFlex,
-  MotionBox,
-  MotionText,
-  MotionButton,
-} from "../../components/Motion";
+  MdMoneyOff,
+  MdAllInclusive,
+  MdDescription,
+  MdDevicesOther,
+  MdDevices,
+} from "react-icons/md";
 
-const AnimatedBanner = ({ text, ...props }) => {
-  const texts = ["CONNECT", "INSPIRE", "CREATE"];
-
-  const [bannerText, setBannerText] = useState(texts[0]);
-  const [count, setCount] = useState(0);
-  const [inTransition, setTransition] = useState(false);
-
-  return (
-    <Heading as="h1" variant="banner-with-border">
-      {bannerText}
-    </Heading>
-  );
-};
-
-const containerVariants = {
-  init: {
-    y: "100vh",
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      stiffness: 500,
-      when: "beforeChildren",
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const slideVariants = {
-  initLeft: {
-    x: "-100vw",
-    opacity: 0,
-  },
-  center: {
-    x: 0,
-    y: 0,
-    opacity: 100,
-    transition: {
-      delay: 1,
-      type: "tween",
-    },
-  },
-
-  centerSpring: {
-    x: 0,
-    y: 0,
-    opacity: 100,
-    transition: {
-      delay: 0,
-      type: "spring",
-    },
-  },
-  initRight: { x: "15vw", opacity: 0 },
-  initBottom: { y: "100vh" },
-  initTop: { y: "-100vh" },
-};
-
-const growVariants = {
-  init: {
-    scale: 0,
-  },
-  visible: {
-    scale: 1,
-    transition: {
-      delay: 0.75,
-      duration: 0.5,
-    },
-  },
-};
+import { FaCodepen } from "react-icons/fa";
+import { BiCodeAlt, BiMobileVibration } from "react-icons/bi";
 
 export const section1 = () => {
-  return (
-    <MotionFlex
-      initial="init"
-      variants={containerVariants}
-      animate="visible"
-      mt="8"
-      mb="8"
-      h="100vh"
-      w="100vw"
-      flexDir="column"
-      align="center"
-      justify="center"
-      color="white"
-    >
-      <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
-        We help businesses
-      </Heading>
+  const listData = [
+    {
+      header: "Web Design & Development",
+      subText: `Have peace of mind knowing that experts are building your website, so that you don't have to. Our websites are made to run flawlesly on mobile devices, tablets, and PC.`,
+    },
+    {
+      header: "Manage your content",
+      subText: `Figuring out how to explain your business can be hard, and with us you don't have too. Our inhouse team of SEO Copywriters will write all the content for you.`,
+    },
+    {
+      header: "Lightning fast load times",
+      subText: (
+        <>
+          Whether you are using the latest iPhone or an old flip phone, our
+          websites load <u>fast</u>. Our statically rendered website designs
+          guarantee this.
+        </>
+      ),
+    },
+    {
+      header: "Improve your click count",
+      subText: `More views means more customers. We will make sure your website reaches more eyes by utilizing the power of Google Analytics and modern SEO strategies.`,
+    },
+    {
+      header: "Improve Customer Conversion",
+      subText: `First impressions are important. We all know this. By having a professionaly made website your customers will be confident in your business.`,
+    },
+    {
+      header: "24/7 Customer Service",
+      subText: `If you have any questions call us. No automated response. Talk to one of us directly.`,
+    },
+  ];
 
-      <MotionFlex variants={growVariants} initial="init" animate="visible">
-        <AnimatedBanner text="CONNECT" />
-      </MotionFlex>
-      <MotionText
-        variants={slideVariants}
-        initial="initBottom"
-        animate="center"
-        textStyle="h2"
-        fontSize="3xl"
-        py="5"
-      >
-        with clients
-      </MotionText>
-      <Flex flexDirection={["column", "column", "row", "row"]}>
-        <MotionButton
-          variants={slideVariants}
-          initial="initLeft"
-          animate="center"
-          px="5px"
-          borderRadius="0px"
-          variant="solid"
-          bg="black"
-          color="white"
+  const iconData = [
+    {
+      CardIcon: MdMoneyOff,
+      header: "$0 DOWN",
+      subText: `$0 Down to start. We sell our software as a services on a
+    subscription based plan starting from as little as $150 a month.`,
+    },
+    {
+      CardIcon: MdDescription,
+      header: "NO CONTRACT!",
+      subText: `We don't believe in trapping people in contracts. We believe that the quality of our content should be enough to keep you as a customer. 
+  
+    Cancel anytime for any reason.`,
+    },
+    {
+      CardIcon: MdAllInclusive,
+      header: "UNLIMITED UPDATES",
+      subText: `Updates to the content of the website will be quick and easy. We respond to all update requests in a timely manner`,
+    },
+  ];
+
+  function renderContent() {
+    return (
+      <Box color="white" align="center" justify="center">
+        {/* <Icon
+          position="absolute"
+          top="-50"
+          right="-50"
+          overflow="hidden"
+          boxSize={["16rem", "20rem", "24rem", "24rem"]}
+          color="gray.300"
+          transform="rotate(0.1turn)"
+          opacity="0.1"
+          as={BiCodeAlt}
+        /> */}
+        <Icon
+          position="absolute"
+          bottom="0%"
+          left="0%"
+          overflow="hidden"
+          boxSize={["16rem", "20rem", "24rem", "24rem"]}
+          color="gray.300"
+          // transform="rotate(0.1turn)"
+          opacity="0.1"
+          as={BiMobileVibration}
+        />
+
+        <Heading
+          variant="h2"
+          p="4"
+          mb="4rem"
+          textAlign="left"
+          fontWeight="light"
         >
-          <NextLink href="#" passHref>
-            <Link>LEARN MORE</Link>
-          </NextLink>
-        </MotionButton>
-        <Spacer px="2" />
-        <MotionButton
-          variants={slideVariants}
-          initial="initRight"
-          animate="center"
-          px="5px"
-          borderRadius="0px"
-          variant="solid"
-          bg="white"
-          color="black"
-        >
-          <NextLink href="#contact-form" passHref>
-            <Link>CONNECT WITH US</Link>
-          </NextLink>
-        </MotionButton>
-      </Flex>
-    </MotionFlex>
+          What We Do
+        </Heading>
+
+        <Box>
+          <Heading size="3xl" px="20" p="4" marginBottom="8">
+            Premium Web Designs
+          </Heading>
+
+          <Flex
+            p="2" //4 spacing units is 1rem in chakra
+            flexDirection={["column", "column", "row", "row"]}
+            // h="100%"
+            // w="100%"
+            justify="space-around"
+            align="space-around"
+          >
+            <Flex
+              flex="1"
+              flexDirection={["column", "column", "row", "row"]}
+              p="1em"
+              align="center"
+              justify="center"
+            >
+              <TimedCarousel
+                iconData={iconData}
+                minHeight="36em"
+                maxWidth="32em"
+              />
+            </Flex>
+
+            <Box
+              flex="2"
+              borderLeft={{
+                base: "none",
+                md: "2px solid rgba(255,255,255, 0.5)",
+              }}
+              borderTop={{
+                base: "2px solid rgba(255,255,255, 0.5)",
+                md: "none",
+              }}
+              pl="4"
+              pt="4"
+              textAlign="left"
+              position="relative"
+            >
+              <Heading as="h4"> SEO Optimized for Mobile Devices </Heading>
+              <Text py="4" textStyle="subText" color="gray.300" maxWidth="56em">
+                We produce websites that are built to run smoothly on mobile
+                devices, tablets, and PCs. All while tailoring your content to
+                maximize throughput from googles search algorithm. We tackle SEO
+                Optimization from both ends, through website architecture and
+                content backlinking.
+              </Text>
+
+              <SimpleGrid columns={[1, 1, 2, 2]} gap="6" mt="8">
+                {listData.map((item, i) => {
+                  return <SlideListItem my="1" {...item} key={i} delay={i} />;
+                })}
+              </SimpleGrid>
+            </Box>
+          </Flex>
+        </Box>
+      </Box>
+    );
+  }
+
+  return (
+    <Box height="100%" width="100%">
+      {renderContent()}
+    </Box>
   );
 };

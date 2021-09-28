@@ -1,170 +1,96 @@
 import {
   Flex,
-  Button,
   Heading,
   Box,
   Text,
-  Link,
+  Image,
   Icon,
-  Container,
-  useBreakpointValue,
+  SimpleGrid,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
-import { SlideIn } from "../../components/Motion/SlideIn";
-import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 
-import NextLink from "next/link";
-
-const companies = [
-  {
-    name: "G&J Flower Distributors",
-    location: "Los Angeles, CA",
-    imageSource: `/images/profile.jpg`,
-    description: `G&J Flower Distributors is the largest privately held construction
-  supply company in Seattle, WA for over 35 years`,
-  },
-  {
-    name: "New Veganings",
-    location: "Los Angeles, CA",
-    imageSource: `/images/profile.jpg`,
-    description: `New Vegnaings is the largest privately held construction
-  supply company in Seattle, WA for over 35 years`,
-  },
-  {
-    name: "Jupiter Yoga",
-    location: "Aliso Viejo, CA",
-    imageSource: `/images/profile.jpg`,
-    description: `Jupiter Yoga is the largest privately held construction
-  supply company in Seattle, WA for over 35 years`,
-  },
-];
-
-import { TitledAvatar } from "../../components/Cards/TitledAvatar";
+import { CheckIcon } from "@chakra-ui/icons";
+import { MotionFlex, SlideListItem } from "../../components/Motion";
+import { FaCodepen } from "react-icons/fa";
 
 export const section3 = () => {
+  const listData = [
+    {
+      header: "No Contract",
+      subText: `You pay as you go. Join when you want, and leave when you want.`,
+    },
+    {
+      header: "Unlimited Edits",
+      subText: `We provide unlimited edits to your website anytime.`,
+    },
+    {
+      header: "Hosting Fees Included",
+      subText: `Hosting fees are included in your monthly payments. You just pay for your domain.`,
+    },
+    {
+      header: "Google Analytics",
+      subText: `We will install google analytics for free so you can measure the traffic on your website.`,
+    },
+    {
+      header: "Own your profiles",
+      subText: `We can help you set up your domain, google analytics, and email. But they belong to you.`,
+    },
+    {
+      header: "Additional Services",
+      subText: `You can talk to us about extra services, if you need help with blogs, social media, or adsense.`,
+    },
+  ];
+
   return (
     <Box
-      h="100%"
-      position="relative"
+      direction="column"
       color="white"
-      w="100%"
+      height="100%"
+      width="100%"
+      pt="4"
       align="center"
       justify="center"
-      py="1rem"
-      _before={
-        {
-          // position: "absolute",
-          // top: 0,
-          // right: 0,
-          // left: 0,
-          // bottom: 0,
-          // zIndex: 0,
-          // bg: "linear-gradient(10deg, rgba(0.4,0.4,0.4,0.7), rgba(0,0,0,0.2))",
-          // transform: "skewY(8deg)",
-          // content: `" "`,
-        }
-      }
+      pb="4"
     >
-      <Box textAlign="left">
-        <Heading p="4" mb="3em" variant="h2">
-          Who we are
+      <Icon
+        position="absolute"
+        overflow="hidden"
+        boxSize={["16rem", "18rem", "20rem", "24rem"]}
+        color="gray.300"
+        transform="rotate(0.5turn)"
+        opacity="0.1"
+        as={FaCodepen}
+        bottom="10%"
+        right="-5%"
+      />
+      <Heading p="4" textAlign="left" mb="12" variant="h2" fontWeight="light">
+        How much does it cost
+      </Heading>
+
+      <Box p="1rem" px="1rem">
+        <Heading fontSize="5xl" mb="1rem">
+          $0 Down, No Contract
         </Heading>
-      </Box>
 
-      <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
-        <SlideIn
-          width={{ md: "35%" }}
-          minHeight={{ base: "24rem", md: "none" }}
-          my="1em"
-        >
-          <Box
-            bg="rgba(0.4,0.4,0.4,0.6)"
-            h="100%"
-            borderRadius="16"
-            maxWidth="32rem"
-            p="4"
-          >
-            <TitledAvatar
-              name="Chris Capistran"
-              title="Lead Developer/Co-founder"
-              src=""
-            />
-            <Text mt="3em">Hi, my name is Chris. I like to do Jujitsu.</Text>
-          </Box>
-        </SlideIn>
-
-        <SlideIn
-          width={{ md: "35%" }}
-          minHeight={{ base: "24rem", md: "none" }}
-          from="right"
-          my="1em"
-        >
-          <Box
-            bg="rgba(0.4,0.4,0.4,0.6)"
-            h="100%"
-            maxWidth="32rem"
-            borderRadius="16"
-            p="4"
-          >
-            <TitledAvatar
-              name="Michael Esfahani"
-              title="Lead Developer/Co-founder"
-              src=""
-            />
-            <Text mt="3em">
-              Hey, I'm Michael. I like fish and fish accessories.
-            </Text>
-          </Box>
-        </SlideIn>
-      </Flex>
-      <Box
-        bg="rgba(0.4,0.4,0.4,0.8)"
-        borderRadius="0"
-        my="2rem"
-        alignSelf="center"
-        align="center"
-        w={{ base: "90%", md: "70%" }}
-        position="relative"
-        py="4"
-      >
-        <Icon
-          left="0"
-          boxSize="2em"
-          top="-1em"
-          color="blue.500"
-          as={ImQuotesLeft}
-          position="absolute"
-        />
-        <Text p="4">
-          Together we are West End Designs. An up and coming SEO Web Development
-          company based in Orange County. After years of working for large
-          companies in the tech industry, we decided that we could use all that
-          we have learned to help local businesses around the world compete in
-          the SEO game. With the goal of working as we travel and traveling as
-          we work, we aim to bring the style of the West End every where we go.
+        <Text as="h4" pl=".25em" fontSize="2xl" textStyle="h2">
+          Starting at $150 per month.
         </Text>
-
-        <NextLink href="/about" passHref>
-          <Link
-            ml="4"
-            textStyle="h1"
-            mb="2"
-            fontWeight="extrabold"
-            color="blue.500"
-            _hover={{ color: "blue.400" }}
-          >
-            LEARN MORE
-          </Link>
-        </NextLink>
-        <Icon
-          as={ImQuotesRight}
-          position="absolute"
-          right="0"
-          color="blue.500"
-          boxSize="2em"
-          bottom="-1em"
-        />
       </Box>
+
+      <Flex
+        p="4" //4 spacing units is 1rem in chakra
+        flexDirection={["column-reverse", "column-reverse", "row", "row"]}
+        justify="space-evenly"
+        align="space-around"
+        mb="1em"
+      >
+        <Flex direction="column" align="center" justify="center">
+          <SimpleGrid columns={[1, 2, 2, 2]} gap="1rem" mt="2rem">
+            {listData.map((item, i) => {
+              return <SlideListItem {...item} key={i} delay={i} />;
+            })}
+          </SimpleGrid>
+        </Flex>
+      </Flex>
     </Box>
   );
 };
