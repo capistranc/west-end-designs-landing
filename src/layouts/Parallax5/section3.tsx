@@ -43,7 +43,6 @@ export const section3 = () => {
   return (
     <Box
       direction="column"
-      color="white"
       height="100%"
       width="100%"
       pt="4"

@@ -1,4 +1,5 @@
-import { Flex, Button, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Button, Heading, Image, Text, Box } from "@chakra-ui/react";
+import NextImage from "next/image";
 export const ClientCard = ({
   name,
   location,
@@ -7,7 +8,7 @@ export const ClientCard = ({
   ...props
 }) => {
   return (
-    <Flex
+    <Box
       direction="column"
       align="flex-start"
       justify="space-between"
@@ -18,10 +19,10 @@ export const ClientCard = ({
       p="4"
       {...props}
     >
-      <Flex direction="column">
+      <Box>
         <Heading>{name}</Heading>
         <Text textStyle="subText"> {location}</Text>
-      </Flex>
+      </Box>
 
       <Image
         my="4"
@@ -36,6 +37,6 @@ export const ClientCard = ({
       <Button alignSelf="center" justifySelf="flex-end" width="80%">
         Visit
       </Button>
-    </Flex>
+    </Box>
   );
 };

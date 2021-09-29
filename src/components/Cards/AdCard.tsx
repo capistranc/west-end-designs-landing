@@ -1,37 +1,26 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Text, Heading } from "@chakra-ui/react";
 import NextImage from "next/image";
 
-export function AirbnbExample() {
-  const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    baths: 2,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-    formattedPrice: "$1,900.00",
-    reviewCount: 34,
-    rating: 4,
-  };
-
+export const AdCard = ({ caption, imageSource, subText, ...props }) => {
   return (
-    // <Box
-    //   bg="tomato"
-    //   w="100%"
-    //   p={4}
-    //   color="white"
-    //   borderWidth="10px"
-    //   borderRadius="lg"
-    //   overflow="hidden"
-    //   bgImage=""
-    // >
-    <div>
+    <Box
+      align="center"
+      border="2px solid rgba(255,255,255,0.2)"
+      bg="rgba(0, 0, 0, 0.6)"
+      borderRadius="16"
+      {...props}
+    >
       <Image
-        src="/images/catalina.jpeg"
-        alt="its a pic"
-        width={500}
-        height={500}
+        my="4"
+        alignSelf="center"
+        src="/images/profile.jpg"
+        minHeight="10em"
+        minWidth="12em"
       />
-    </div>
-    /* </Box> */
+      <Heading mb="4">{caption}</Heading>
+      <Text textStyle="subText" maxWidth="30em">
+        {subText}
+      </Text>
+    </Box>
   );
-}
+};

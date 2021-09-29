@@ -3,30 +3,16 @@ import {
   Heading,
   Box,
   Text,
-  Link,
-  Spacer,
-  Image,
   SimpleGrid,
-  SimpleGridProps,
   Icon,
-  FlexProps,
-  BoxProps,
-  IconProps,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
+import { fgColor, bgColor } from "../../theme/colors";
 
-import React, { useRef } from "react";
 import { TimedCarousel } from "../../components/Motion/TimedCarousel";
 import { SlideListItem } from "../../components/Motion";
-import {
-  MdMoneyOff,
-  MdAllInclusive,
-  MdDescription,
-  MdDevicesOther,
-  MdDevices,
-} from "react-icons/md";
+import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 
-import { FaCodepen } from "react-icons/fa";
 import { BiCodeAlt, BiMobileVibration } from "react-icons/bi";
 
 export const section1 = () => {
@@ -86,7 +72,7 @@ export const section1 = () => {
 
   function renderContent() {
     return (
-      <Box color="white" align="center" justify="center">
+      <Box align="center" justify="center">
         {/* <Icon
           position="absolute"
           top="-50"
@@ -183,8 +169,10 @@ export const section1 = () => {
     );
   }
 
+  // const { colorMode } = useColorMode();
+
   return (
-    <Box height="100%" width="100%">
+    <Box height="100%" width="100%" bgColor="gray.700">
       {renderContent()}
     </Box>
   );

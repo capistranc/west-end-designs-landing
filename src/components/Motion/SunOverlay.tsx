@@ -1,11 +1,18 @@
 import { MotionBox } from "./index";
 import { useColorMode } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
+
 const overlayVariant = {
   hidden: (colorMode) => ({
     bg: "rgba(0,0,0,0)",
     opacity: 0,
+    x: 0,
+    y: 0,
     scale: colorMode === "light" ? 5 : 1,
     rotateZ: colorMode === "light" ? -90 : 0,
+    transition: {
+      duration: 1,
+    },
   }),
   show: (colorMode) => {
     if (colorMode === "light") {
@@ -14,24 +21,29 @@ const overlayVariant = {
         scale: 1,
         rotateZ: 0,
         transition: {
-          type: "tween",
           // delay: 2,
-          duration: 2,
+          duration: 1,
         },
       };
     } else if (colorMode === "dark") {
       return {
         opacity: 0.7,
-        scale: 1,
+        scale: 1.1,
         rotateZ: 0,
         bg: "rgba(9,59,72,1)",
         transition: {
-          type: "tween",
+          type: "spring",
           // delay: 2,
-          duration: 2,
+          duration: 1,
         },
       };
     }
+  },
+  exit: {
+    opacity: 0,
+    scale: 5,
+    rotateZ: 90,
+    transition: { type: "spring", duration: 0.5 },
   },
 };
 
@@ -43,7 +55,7 @@ const overlayProps = {
     },
   },
   dark: {
-    bg: "rgba(9,59,72,.9)",
+    bg: "rgba(9,59,72,.8)",
     sx: {
       mixBlendMode: "color-burn",
     },
@@ -54,8 +66,9 @@ const overlayProps = {
 export const SunOverlay = () => {
   const { colorMode } = useColorMode();
 
-  return (
+  const Overlay = ({ ...props }) => (
     <MotionBox
+      key="sun"
       position="absolute"
       top="0"
       overflow="hidden"
@@ -69,11 +82,19 @@ export const SunOverlay = () => {
       opacity="0"
       initial="hidden"
       animate="show"
+      exit="exit"
       bg="url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)"
-      {...overlayProps[colorMode]}
       background-repeat="no-repeat"
       backgroundSize="cover"
       backgroundPosition="right"
+      {...overlayProps[colorMode]}
+      {...props}
     />
+  );
+
+  return (
+    <AnimatePresence custom={colorMode} initial={true} exitBeforeEnter>
+      <Overlay key={colorMode} />
+    </AnimatePresence>
   );
 };

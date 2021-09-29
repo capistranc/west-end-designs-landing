@@ -19,6 +19,8 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 
+import NextImage from "next/image";
+
 const Banner = ({ children, ...props }) => {
   const bgImage = "url('/images/cliffEdge2.jpeg')";
   return (
@@ -40,15 +42,38 @@ export const ContactPage: NextPage = () => {
         position="fixed"
         color={fgColor[colorMode]}
       />
-      <Box height={{ base: "35vh", md: "40vh" }} top="0" w="100%">
+      {/* <Box height={{ base: "35vh", md: "40vh" }} top="0" w="100%">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
             <b className="thing">Contact Us</b>
           </Heading>
         </Banner>
+      </Box> */}
+
+      <Box position="relative">
+        <Box
+          position="absolute"
+          h="100%"
+          w="100%"
+          top="0"
+          bot="0"
+          left="0"
+          right="0"
+        >
+          <NextImage
+            src="/images/cliffEdge2.jpeg"
+            layout="fill"
+            objectFit="cover"
+          />
+        </Box>
+        <Box position="relative">
+          <Heading color="red" fontSize="30rem">
+            {" "}
+            WHAT HAPPEN
+          </Heading>
+        </Box>
       </Box>
-      <Box position="fixed" top="0" width="100%" zIndex="10"></Box>
-      <ContactForm />
+      <ContactForm position="relative" />
       <FooterContent bgColor="gray.700" width="100%" color="white" />
     </>
   );

@@ -1,6 +1,6 @@
 export const hoverGrow = {
   rest: {
-    color: "#f5f5f5",
+    // color: "#f5f5f5",
     transition: {
       duration: 1,
       type: "tween",

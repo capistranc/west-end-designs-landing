@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { MotionFlex, MotionBox } from "./index";
 import React, { useRef } from "react";

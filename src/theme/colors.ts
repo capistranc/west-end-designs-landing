@@ -1,10 +1,10 @@
 export const bgColor = {
-  light: "#E6E1C5",
-  dark: "#395C6B",
+  light: "white",
+  dark: "gray.800",
 };
 
 export const fgColor = {
-  light: "#1D5171",
+  light: "blue.700",
   dark: "white",
 };
 
