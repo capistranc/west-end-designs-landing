@@ -27,10 +27,10 @@ const overlayVariant = {
       };
     } else if (colorMode === "dark") {
       return {
-        opacity: 0.7,
+        opacity: 0.5,
         scale: 1.1,
         rotateZ: 0,
-        bg: "rgba(9,59,72,1)",
+        bg: "rgba(25, 25, 112,1)",
         transition: {
           type: "spring",
           // delay: 2,
@@ -55,7 +55,7 @@ const overlayProps = {
     },
   },
   dark: {
-    bg: "rgba(9,59,72,.8)",
+    bg: "rgba(9,59,72,.7)",
     sx: {
       mixBlendMode: "color-burn",
     },
