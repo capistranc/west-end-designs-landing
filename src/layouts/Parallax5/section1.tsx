@@ -6,16 +6,17 @@ import {
   SimpleGrid,
   Icon,
   useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { fgColor, bgColor } from "../../theme/colors";
 
 import { TimedCarousel } from "../../components/Motion/TimedCarousel";
 import { SlideListItem } from "../../components/Motion";
-import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 
+import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 import { BiCodeAlt, BiMobileVibration } from "react-icons/bi";
 
-export const section1 = () => {
+export const Section1 = () => {
   const listData = [
     {
       header: "Web Design & Development",
@@ -72,7 +73,11 @@ export const section1 = () => {
 
   function renderContent() {
     return (
-      <Box align="center" justify="center">
+      <Box
+        align="center"
+        justify="center"
+        // color={useColorModeValue("white", "gray")}
+      >
         {/* <Icon
           position="absolute"
           top="-50"
@@ -169,7 +174,7 @@ export const section1 = () => {
     );
   }
 
-  // const { colorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   return (
     <Box height="100%" width="100%" bgColor="gray.700">

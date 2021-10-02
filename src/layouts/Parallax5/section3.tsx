@@ -6,13 +6,14 @@ import {
   Image,
   Icon,
   SimpleGrid,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { CheckIcon } from "@chakra-ui/icons";
 import { MotionFlex, SlideListItem } from "../../components/Motion";
 import { FaCodepen } from "react-icons/fa";
 
-export const section3 = () => {
+export const Section3 = () => {
   const listData = [
     {
       header: "No Contract",
@@ -57,6 +58,7 @@ export const section3 = () => {
         color="gray.300"
         transform="rotate(0.5turn)"
         opacity="0.1"
+        // color={useColorModeValue("white", "gray")}
         as={FaCodepen}
         bottom="10%"
         right="-5%"

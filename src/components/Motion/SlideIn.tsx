@@ -12,7 +12,7 @@ export const SlideIn = ({ children, from = "left", ...props }) => {
   const isVisible = useHasRendered(ref);
 
   return (
-    <Box ref={ref} {...props}>
+    <Box ref={ref} {...props} overflow="hidden">
       {isVisible && (
         <MotionBox
           h="100%"

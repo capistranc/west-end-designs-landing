@@ -26,9 +26,9 @@ export const PricingCard = ({
   ...props
 }) => {
   function renderList(listData) {
-    return listData.map((data) => {
+    return listData.map((data, i) => {
       return (
-        <ListItem>
+        <ListItem key={i}>
           <ListIcon as={CheckIcon} color="blue.400" />
           {data}
         </ListItem>

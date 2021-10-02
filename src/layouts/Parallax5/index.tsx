@@ -2,9 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import {
   Box,
   Flex,
-  useColorMode,
   Stack,
   Link,
+  useColorMode,
   useMediaQuery,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -21,6 +21,9 @@ export * from "./section4";
 import { ContactForm } from "../../components/Forms/ContactForm";
 import { SunOverlay } from "../../components/Motion/SunOverlay";
 import NextImage from "next/image";
+import { Intro } from "./intro";
+import { ServiceCards } from "./services";
+import { Roadmap } from "./Roadmap";
 
 const observerOptions = {
   root: null,
@@ -30,44 +33,6 @@ const observerOptions = {
 
 export const Parallax5 = ({ sections, bgImages }) => {
   const ParallaxBox = ({ children, ...props }) => {
-    // if (props.bgImage) {
-    //   return (
-    //     <Box
-    //       className="parallaxSection"
-    //       h="100vh"
-    //       w="100vw"
-    //       // h="100%"
-    //       // w="100%"
-    //       overflow="hidden"
-    //       backgroundAttachment="fixed"
-    //       background-repeat="no-repeat"
-    //       backgroundPosition="center"
-    //       backgroundSize="cover"
-    //       positon="relative"
-    //       {...props}
-    //     >
-    //       <Box
-    //         position="sticky"
-    //         top="0"
-    //         bot="0"
-    //         left="0"
-    //         right="0"
-    //         h="100vh"
-    //         w="100vw"
-    //         objectFit="cover"
-    //       >
-    //         <NextImage
-    //           src={props.bgImage}
-    //           layout="fill"
-    //           objectFit="cover"
-    //           objectPosition="center"
-    //         />
-    //       </Box>
-    //       <Box position="relative">{children}</Box>
-    //     </Box>
-    //   );
-    // }
-
     return (
       <Box
         position="relative"
@@ -95,8 +60,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
       window.outerHeight > mobileHeight ? window.outerHeight : mobileHeight;
   });
 
-  // const { colorMode } = useColorMode();
-
   return (
     <>
       <StickyNavHeader
@@ -109,17 +72,20 @@ export const Parallax5 = ({ sections, bgImages }) => {
         <ParallaxBox
           bgImage={bgImages[0]}
           height={{
-            base: mobileHeight > 0 ? mobileHeight : "100vh",
-            md: "100vh",
+            base: mobileHeight > 0 ? mobileHeight : "110vh",
+            md: "110vh",
           }}
           w="100vw"
           backgroundPosition={{ base: "-40px 0", md: "center" }}
-          backgroundSize={{ base: "140vh 100vh", md: "cover" }}
+          backgroundSize={{ base: "140vh 110vh", md: "cover" }}
           id="section0"
         >
           <SunOverlay />
           {sections[0]}
         </ParallaxBox>
+        <Intro />
+        <ServiceCards />
+        <Roadmap />
 
         <ParallaxBox
           // bg={bgColor[colorMode]}
@@ -135,6 +101,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
           data-header="Who we are"
           id="section2"
         >
+          <SunOverlay />
           {sections[2]}
         </ParallaxBox>
         <ParallaxBox

@@ -1,4 +1,12 @@
-import { Flex, Heading, Spacer, Link } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Spacer,
+  Link,
+  Box,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 
@@ -47,7 +55,7 @@ const growVariants = {
   },
 };
 
-export const section0 = () => {
+export const Section0 = () => {
   return (
     <MotionFlex
       variants={containerVariants}
@@ -84,8 +92,8 @@ export const section0 = () => {
           px="5px"
           borderRadius="0px"
           variant="solid"
-          bg="black"
-          color="white"
+          bg="white"
+          color="teal.700"
         >
           <NextLink href="#" passHref>
             <Link>LEARN MORE</Link>
@@ -97,8 +105,8 @@ export const section0 = () => {
           px="5px"
           borderRadius="0px"
           variant="solid"
-          bg="white"
-          color="black"
+          bg="black"
+          color="white"
         >
           <NextLink href="#contact-form" passHref>
             <Link>CONNECT WITH US</Link>

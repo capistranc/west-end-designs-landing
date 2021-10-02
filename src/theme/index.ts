@@ -11,7 +11,7 @@ const fonts = {
 };
 
 const breakpoints = createBreakpoints({
-  sm: "30em",
+  sm: "34em",
   md: "52em",
   lg: "62em",
   xl: "80em",
@@ -32,7 +32,7 @@ const overrides = {
     subText: {
       fontFamily: "Roboto Condensed",
       fontWeight: "hairline",
-      fontStyle: "italic",
+      // fontStyle: "italic",
     },
   },
   colors,

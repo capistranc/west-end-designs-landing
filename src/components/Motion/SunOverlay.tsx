@@ -21,8 +21,7 @@ const overlayVariant = {
         scale: 1,
         rotateZ: 0,
         transition: {
-          // delay: 2,
-          duration: 1,
+          duration: 0.8,
         },
       };
     } else if (colorMode === "dark") {
@@ -43,23 +42,23 @@ const overlayVariant = {
     opacity: 0,
     scale: 5,
     rotateZ: 90,
-    transition: { type: "spring", duration: 0.5 },
+    transition: { type: "tween", duration: 0.3 },
   },
 };
 
 const overlayProps = {
   light: {
-    bg: "url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)",
+    bg: "url('/images/sunOverlay.png')",
     sx: {
       mixBlendMode: "hard-light",
     },
   },
   dark: {
-    bg: "rgba(9,59,72,.7)",
+    bg: "rgba(25,25,112,1)",
     sx: {
-      mixBlendMode: "color-burn",
+      mixBlendMode: "hard-light",
     },
-    opacity: "70%",
+    opacity: "100%",
   },
 };
 
@@ -75,15 +74,17 @@ export const SunOverlay = () => {
       bottom="0"
       left="0"
       right="0"
-      h="100vh"
-      w="100vw"
+      // h="100vh"
+      // w="100vw"
+      h="100%"
+      w="100%"
       variants={overlayVariant}
       custom={colorMode}
       opacity="0"
       initial="hidden"
       animate="show"
       exit="exit"
-      bg="url('/images/sunOverlay.png'), rgba(0.4,0.4,0.4,0.2)"
+      bg="url('/images/sunOverlay.png')"
       background-repeat="no-repeat"
       backgroundSize="cover"
       backgroundPosition="right"

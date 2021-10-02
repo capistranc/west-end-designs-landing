@@ -8,6 +8,8 @@ import {
   Icon,
   Container,
   useBreakpointValue,
+  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { SlideIn } from "../../components/Motion/SlideIn";
@@ -41,7 +43,7 @@ const companies = [
 
 import { TitledAvatar } from "../../components/Cards/TitledAvatar";
 
-export const section2 = () => {
+export const Section2 = () => {
   return (
     <Box
       h="100%"

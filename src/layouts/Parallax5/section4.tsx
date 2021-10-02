@@ -21,7 +21,7 @@ function loadPrices() {
   const priceCards = [
     {
       title: "WEB STANDARD",
-      subText: "",
+
       price: `150`,
       listData: [
         "5 Page Website",
@@ -44,7 +44,7 @@ function loadPrices() {
     {
       title: "FULL STACK CONSULT",
       unit: "project",
-      price: `??`,
+      price: `ask`,
       listData: [
         "Complete Custom Website",
         "Full Stack Application",
@@ -78,7 +78,7 @@ function loadPrices() {
   );
 }
 
-export const section4 = () => {
+export const Section4 = () => {
   return (
     <Box w="100%" m="0 auto" align="center">
       <Flex justify="center">

@@ -8,18 +8,26 @@ export const fgColor = {
   dark: "white",
 };
 
+export function toHex(colorStr: string) {
+  if (colorStr.startsWith("#")) return colorStr;
+  if (colorStr.startsWith("rgb")) return colorStr;
+  const match = colorStr.match(/([a-z]+)\.([0-9]+)/);
+  const [cString, color, weight] = match;
+  return colors[color][weight];
+}
+
 export const colors = {
   teal: {
-    50: "#defcfe",
-    100: "#baf0f5",
-    200: "#92e4ed",
-    300: "#69d9e4",
-    400: "#46cddd",
-    500: "#30b4c3",
-    600: "#218d98",
-    700: "#12656d",
-    800: "#013c42",
-    900: "#001619",
+    50: "#e4f7fa",
+    100: "#cae1e7",
+    200: "#abccd3",
+    300: "#8cb7c1",
+    400: "#6ca1ae",
+    500: "#548895",
+    600: "#3f6a74",
+    700: "#2c4c54",
+    800: "#162e33",
+    900: "#001116",
   },
   gray: {
     50: "#f8f0f2",
@@ -46,15 +54,32 @@ export const colors = {
     900: "#180803",
   },
   blue: {
-    50: "#e6f6fc",
-    100: "#c6e1eb",
-    200: "#a4ccdc",
-    300: "#80b7ce",
-    400: "#5fa3c0",
-    500: "#478aa7",
-    600: "#376b82",
-    700: "#264d5d",
-    800: "#142e39",
-    900: "#011017",
+    50: "#e4f6fd",
+    100: "#c9dfe6",
+    200: "#acc9d2",
+    300: "#8db3be",
+    400: "#6f9dab",
+    500: "#558491",
+    600: "#416672",
+    700: "#2c4952",
+    800: "#172d33",
+    900: "#001215",
   },
+};
+
+export const theme = {
+  bg: {
+    light: "white",
+    dark: "gray.800",
+  },
+  fg: {
+    light: "blue.700",
+    dark: "white",
+  },
+  toHex: (colorStr: string) => {
+    const match = colorStr.match(/([a-z]+)\.([0-9]+)/);
+    const [cString, color, weight] = match;
+    return colors[color][weight];
+  },
+  ...colors,
 };
