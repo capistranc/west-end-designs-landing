@@ -75,7 +75,6 @@ export const Parallax5 = ({ sections, bgImages }) => {
             base: mobileHeight > 0 ? mobileHeight : "110vh",
             md: "110vh",
           }}
-          w="100vw"
           backgroundPosition={{ base: "-40px 0", md: "center" }}
           backgroundSize={{ base: "140vh 110vh", md: "cover" }}
           id="section0"
@@ -101,7 +100,7 @@ export const Parallax5 = ({ sections, bgImages }) => {
           data-header="Who we are"
           id="section2"
         >
-          <SunOverlay />
+          {/* <SunOverlay /> */}
           {sections[2]}
         </ParallaxBox>
         <ParallaxBox
