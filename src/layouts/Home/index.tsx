@@ -86,10 +86,10 @@ export const Home = () => {
 
         <Services2 />
 
-        <Parallax bgImage={bgImages[2]} data-header="Who we are" id="section2">
+        {/* <Parallax bgImage={bgImages[2]} data-header="Who we are" id="section2">
           <SunOverlay />
           <AboutUs />
-        </Parallax>
+        </Parallax> */}
 
         <Box>
           <ContactForm />

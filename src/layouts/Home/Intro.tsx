@@ -22,10 +22,7 @@ export const Intro = ({ ...props }) => {
 
   return (
     <Box position="relative" id="intro">
-      <DiamondDecorator
-        color={theme.fg[colorMode]}
-        bgColor={theme.bg[colorMode]}
-      />
+      <DiamondDecorator bgColor={theme.bg2[colorMode]} />
       <Box
         align="center"
         color={theme.fg[colorMode]}
