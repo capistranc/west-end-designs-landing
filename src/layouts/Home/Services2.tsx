@@ -12,8 +12,10 @@ import {
 import { CheckIcon } from "@chakra-ui/icons";
 import { MotionFlex, SlideListItem } from "../../components/Motion";
 import { FaCodepen } from "react-icons/fa";
+import { DashedLine } from "../../components/svg/DashedLine";
+import { theme } from "../../theme/colors";
 
-export const Section3 = () => {
+export const Services2 = () => {
   const listData = [
     {
       header: "No Contract",
@@ -46,11 +48,14 @@ export const Section3 = () => {
       direction="column"
       height="100%"
       width="100%"
-      pt="4"
       align="center"
       justify="center"
-      pb="4"
+      backgroundColor={useColorModeValue("blue.400", "teal.800")}
+      color={useColorModeValue("white", "gray.100")}
     >
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      />
       <Icon
         position="absolute"
         overflow="hidden"
@@ -63,9 +68,6 @@ export const Section3 = () => {
         bottom="10%"
         right="-5%"
       />
-      <Heading p="4" textAlign="left" mb="12" variant="h2" fontWeight="light">
-        How much does it cost
-      </Heading>
 
       <Box p="1rem" px="1rem">
         <Heading fontSize="5xl" mb="1rem">
@@ -92,6 +94,9 @@ export const Section3 = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      />
     </Box>
   );
 };

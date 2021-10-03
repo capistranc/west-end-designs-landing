@@ -16,7 +16,7 @@ import { SlideListItem } from "../../components/Motion";
 import { MdMoneyOff, MdAllInclusive, MdDescription } from "react-icons/md";
 import { BiCodeAlt, BiMobileVibration } from "react-icons/bi";
 
-export const Section1 = () => {
+export const Services4 = () => {
   const listData = [
     {
       header: "Web Design & Development",

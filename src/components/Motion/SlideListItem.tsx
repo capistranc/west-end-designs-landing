@@ -40,9 +40,7 @@ export const SlideListItem = ({ header, subText, ...props }) => {
             <Heading as="h6" size="medium" mb="1">
               {header}
             </Heading>
-            <Text textStyle="subText" color="gray.300">
-              {subText}
-            </Text>
+            <Text textStyle="subText">{subText}</Text>
           </Box>
         </MotionFlex>
       )}

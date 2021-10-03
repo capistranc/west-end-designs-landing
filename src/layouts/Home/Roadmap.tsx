@@ -84,6 +84,21 @@ export const RoadmapSlide = ({
 export const Roadmap = ({ ...props }) => {
   const { colorMode } = useColorMode();
 
+  const data = [
+    {
+      headerProps: {
+        title: "Research",
+        step: 1,
+        stepProps: {
+          color: "teal.50",
+        },
+      },
+      icon: GiMagnifyingGlass,
+      text: "We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly.",
+      orient: "left",
+    },
+  ];
+
   return (
     <Box position="relative" align="center" overflow="hidden">
       <Box
@@ -96,9 +111,7 @@ export const Roadmap = ({ ...props }) => {
         />
         <SlideIn from="right">
           <RoadmapSlide
-            position="relative"
             py="4"
-            zIndex="2"
             icon={GiMagnifyingGlass}
             headerProps={{
               title: "Research",
@@ -117,8 +130,6 @@ export const Roadmap = ({ ...props }) => {
 
         <SlideIn from="left">
           <RoadmapSlide
-            position="relative"
-            zIndex="2"
             py="4"
             icon={GiCrosshair}
             orient="right"
@@ -137,7 +148,6 @@ export const Roadmap = ({ ...props }) => {
         />
         <SlideIn from="right">
           <RoadmapSlide
-            zIndex="2"
             icon={GiArchBridge}
             py="4"
             headerProps={{
@@ -156,7 +166,6 @@ export const Roadmap = ({ ...props }) => {
         />
         <SlideIn from="left">
           <RoadmapSlide
-            zIndex="2"
             icon={BiCodeAlt}
             py="4"
             orient="right"
@@ -176,7 +185,6 @@ export const Roadmap = ({ ...props }) => {
 
         <SlideIn from="right">
           <RoadmapSlide
-            zIndex="2"
             icon={MdHeadsetMic}
             py="4"
             headerProps={{

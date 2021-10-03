@@ -1,5 +1,5 @@
 export * from "./Blog/BlogPostPreview";
-export * from "./BlurryBackground";
+export * from "./Wrappers/BlurryBackground";
 export * from "./Buttons/StickyContactUs";
 export * from "./Buttons/DarkModeSwitch";
 export * from "./Date";

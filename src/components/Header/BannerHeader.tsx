@@ -1,7 +1,7 @@
 import { NavBar } from "./NavBar";
 import Head from "next/head";
 import { Flex, Box, Heading, Text } from "@chakra-ui/react";
-import { BlurryBackground } from "../BlurryBackground";
+import { BlurryBackground } from "../Wrappers/BlurryBackground";
 import { useColorModeValue } from "@chakra-ui/react";
 
 import { links } from "./index";

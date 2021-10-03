@@ -12,11 +12,8 @@ import {
 import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  FlexPricingCard,
-  PricingCard,
-} from "../../components/Cards/PricingCard";
-
+import { PricingCard } from "../../components/Cards/PricingCard";
+import { DashedLine } from "../../components/svg/DashedLine";
 function loadPrices() {
   const priceCards = [
     {
@@ -52,17 +49,17 @@ function loadPrices() {
         "API Integrations",
       ],
     },
-    // {
-    //   title: "ONE-TIME CONTRACT",
-    //   unit: "page",
-    //   price: `200`,
-    //   listData: [
-    //     "No Monthly Fee",
-    //     "$150/hr for updates",
-    //     "You pay for hosting",
-    //     "You own the code",
-    //   ],
-    // },
+    {
+      title: "ONE-TIME CONTRACT",
+      unit: "page",
+      price: `200`,
+      listData: [
+        "No Monthly Fee",
+        "$150/hr for updates",
+        "You pay for hosting",
+        "You own the code",
+      ],
+    },
   ];
 
   return (
@@ -78,9 +75,10 @@ function loadPrices() {
   );
 }
 
-export const Section4 = () => {
+export const Prices = () => {
   return (
     <Box w="100%" m="0 auto" align="center">
+      <DashedLine />
       <Flex justify="center">
         <Heading as="h1" my="1.25em" variant="banner-with-border-md">
           Prices
@@ -88,6 +86,7 @@ export const Section4 = () => {
       </Flex>
 
       {loadPrices()}
+      <DashedLine />
     </Box>
   );
 };

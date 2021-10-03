@@ -13,31 +13,13 @@ import {
 import { colors, fgColor, bgColor } from "../../theme/colors";
 import NextLink from "next/link";
 import { DashedLine } from "../../components/svg/DashedLine";
+import { GiBigWave, GiCliffCrossing } from "react-icons/gi";
 
 export const Intro = ({ ...props }) => {
   const { colorMode } = useColorMode();
 
   return (
-    <Box position="relative">
-      {/* <Box
-        position="absolute"
-        w="50vw"
-        h="12vh"
-        top="-5vh"
-        positon="absolute"
-        // transform="skewY(3deg)"
-        // bgColor="red"
-        right="0"
-      >
-        <svg
-          viewBox="0 0 100 10"
-          // preserveAspectRatio="xMinYMid none"
-          preserveAspectRatio="xMinYMin "
-          fill="red"
-        >
-          <path strokeWidth="4" stroke="red" d="M0, 0 L 50, 10 L 100,0 Z" />
-        </svg>
-      </Box> */}
+    <Box position="relative" id="intro">
       <Box
         align="center"
         color={fgColor[colorMode]}

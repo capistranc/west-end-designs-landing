@@ -1,5 +1,5 @@
 import { MotionBox } from "./index";
-import { useColorMode } from "@chakra-ui/react";
+import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 
 const overlayVariant = {
@@ -96,6 +96,14 @@ export const SunOverlay = () => {
   return (
     <AnimatePresence custom={colorMode} initial={true} exitBeforeEnter>
       <Overlay key={colorMode} />
+      <Overlay
+        key={colorMode}
+        sx={{ mixBlendMode: "overlay" }}
+        bg={useColorModeValue(
+          "transparent",
+          "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8491771708683473) 50%, rgba(0,0,0,1) 100%)",
+        )}
+      />
     </AnimatePresence>
   );
 };

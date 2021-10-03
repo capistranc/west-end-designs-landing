@@ -42,8 +42,9 @@ const companies = [
 ];
 
 import { TitledAvatar } from "../../components/Cards/TitledAvatar";
+import { DashedLine } from "../../components/svg/DashedLine";
 
-export const Section2 = () => {
+export const Portfolio = () => {
   return (
     <Box
       h="100%"
@@ -52,7 +53,6 @@ export const Section2 = () => {
       w="100%"
       align="center"
       justify="center"
-      py="1rem"
       _before={
         {
           // position: "absolute",
@@ -67,11 +67,7 @@ export const Section2 = () => {
         }
       }
     >
-      <Box textAlign="left">
-        <Heading p="4" mb="3em" variant="h2">
-          Who we are
-        </Heading>
-      </Box>
+      <DashedLine strokeColors="white" />
 
       <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
         <SlideIn
@@ -167,6 +163,7 @@ export const Section2 = () => {
           bottom="-1em"
         />
       </Box>
+      <DashedLine strokeColors="white" />
     </Box>
   );
 };

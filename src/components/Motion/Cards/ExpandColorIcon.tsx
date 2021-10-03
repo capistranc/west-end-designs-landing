@@ -54,7 +54,7 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
     <>
       <MotionBox
         as="button"
-        overflow="hidden"
+        // overflow="hidden"
         variants={containerVariant}
         initial="rest"
         animate={isFocused ? "hover" : "rest"}
@@ -63,9 +63,10 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
         onHoverEnd={() => setFocus(false)}
         onBlur={() => setFocus(false)}
         p="4"
+        width="100%"
         {...props}
       >
-        <Box p="4" position="relative" align="left" minWidth="20rem">
+        <Box p="4" position="relative" align="left">
           <MotionBox
             position="absolute"
             variants={iconVariant}

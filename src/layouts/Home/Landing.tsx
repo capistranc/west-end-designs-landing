@@ -55,7 +55,7 @@ const growVariants = {
   },
 };
 
-export const Section0 = () => {
+export const Landing = ({ ...props }) => {
   return (
     <MotionFlex
       variants={containerVariants}
@@ -70,6 +70,7 @@ export const Section0 = () => {
       justify="center"
       color="white"
       zIndex="2"
+      {...props}
     >
       <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
         We help businesses
@@ -95,7 +96,7 @@ export const Section0 = () => {
           bg="white"
           color="teal.700"
         >
-          <NextLink href="#" passHref>
+          <NextLink href="#intro" passHref>
             <Link>LEARN MORE</Link>
           </NextLink>
         </MotionButton>
