@@ -53,12 +53,14 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
   return (
     <>
       <MotionBox
-        as="button"
+        // as="button"
         // overflow="hidden"
         variants={containerVariant}
         initial="rest"
         animate={isFocused ? "hover" : "rest"}
         onFocus={() => setFocus(true)}
+        whileHover="hover"
+        // _hover={(e) => console.log(e)}
         onHoverStart={() => setFocus(true)}
         onHoverEnd={() => setFocus(false)}
         onBlur={() => setFocus(false)}
