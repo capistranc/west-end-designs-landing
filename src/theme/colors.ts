@@ -1,4 +1,4 @@
-import { useColorMode } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 export function toHex(colorStr: string) {
   if (colorStr === "white") return "#FFFFFF";
@@ -61,10 +61,10 @@ export const colors = {
   },
 };
 
-export const theme = {
+const colorSchemes = {
   bg: {
     light: toHex("white"),
-    dark: toHex("gray.800"),
+    dark: toHex("teal.900"),
   },
   bg2: {
     light: toHex("blue.500"),
@@ -83,6 +83,16 @@ export const theme = {
     light: toHex("teal.500"),
     dark: "rgba(255,255,255,0.8",
   },
+};
+
+// const props = {
+//   scheme1: {
+//     bg: () => useColorModeValue(colorSchemes.bg.light, colorSchemes.bg.dark),
+//   },
+// };
+
+export const theme = {
+  ...colorSchemes,
   toHex,
   ...colors,
 };

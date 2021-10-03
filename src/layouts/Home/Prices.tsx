@@ -75,7 +75,7 @@ function loadPrices() {
   );
 }
 
-import { MotionBox } from "../../components/Motion";
+import { DiagonalDecorator } from "../../components/Decorators/Diagonal";
 export const Prices = () => {
   return (
     <Box
@@ -86,15 +86,8 @@ export const Prices = () => {
       color={useColorModeValue("gray.700", "gray.100")}
       position="relative"
     >
-      <Box
-        position="absolute"
-        top="-10rem"
-        right="0"
-        zIndex="1"
-        transform="skewY(5deg)"
+      <DiagonalDecorator
         backgroundColor={useColorModeValue("blue.400", "teal.800")}
-        h="10rem"
-        w="100%"
       />
 
       <DashedLine />
