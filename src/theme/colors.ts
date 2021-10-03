@@ -74,7 +74,7 @@ const colorSchemes = {
     light: toHex("blue.500"),
     dark: toHex("gray.900"),
   },
-  fg: { light: toHex("gray.700"), dark: toHex("gray.50") },
+  fg: { light: toHex("gray.700"), dark: toHex("gray.100") },
   fg2: {
     light: toHex("white"),
     dark: toHex("gray.100"),

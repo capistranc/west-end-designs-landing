@@ -113,7 +113,7 @@ export const Services = ({ ...props }) => {
                 key={i}
                 {...service}
                 maxWidth="24rem"
-                color={useColorModeValue("gray.700", "gray.100")}
+                color={theme.fg[colorMode]}
               />
             );
           })}
