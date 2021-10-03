@@ -61,10 +61,10 @@ export const Services2 = () => {
         position="absolute"
         overflow="hidden"
         boxSize={["16rem", "18rem", "20rem", "24rem"]}
-        color="gray.300"
+        // color="gray.300"
         transform="rotate(0.5turn)"
         opacity="0.1"
-        // color={useColorModeValue("white", "gray")}
+        color={useColorModeValue("white", "gray300")}
         as={FaCodepen}
         bottom="10%"
         right="-5%"

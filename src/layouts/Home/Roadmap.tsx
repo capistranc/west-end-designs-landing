@@ -19,6 +19,9 @@ import { GiMagnifyingGlass, GiArchBridge, GiCrosshair } from "react-icons/gi";
 import { MdHeadsetMic } from "react-icons/md";
 import { BiCodeAlt } from "react-icons/bi";
 import { SlideIn } from "../../components/Motion/SlideIn";
+
+import { MotionBox } from "../../components/Motion";
+
 export const RoadmapSlide = ({
   headerProps,
   icon,
@@ -54,6 +57,10 @@ export const RoadmapSlide = ({
     );
   };
 
+  const borderProps = {
+    1: {},
+  };
+
   const width = ["20em", "22em", "24em", "30em"];
   return (
     <Flex
@@ -66,14 +73,25 @@ export const RoadmapSlide = ({
       {...props}
     >
       <Header {...headerProps} orient={orient} width={width} />
-      <Box
-        borderRadius="full"
-        border="1em solid"
-        borderColor={useColorModeValue("blue.200", "teal.700")}
-        p="2rem"
-      >
-        <Icon as={icon} boxSize="5rem" />
+      <Box position="relative">
+        {/* <Box
+          position="absolute"
+          boxSize="11rem"
+          borderRadius="full"
+          border="1rem solid"
+          borderTop="none"
+          borderColor={useColorModeValue("blue.200", "teal.800")}
+        ></Box> */}
+        <Icon
+          as={icon}
+          boxSize="11rem"
+          borderRadius="full"
+          border="1rem solid"
+          p="1rem"
+          borderColor={useColorModeValue("blue.200", "teal.700")}
+        />
       </Box>
+
       <Text p="4" align="left" width={width}>
         {text}
       </Text>
@@ -86,6 +104,7 @@ export const Roadmap = ({ ...props }) => {
 
   const data = [
     {
+      icon: { GiMagnifyingGlass },
       headerProps: {
         title: "Research",
         step: 1,
@@ -93,9 +112,7 @@ export const Roadmap = ({ ...props }) => {
           color: "teal.50",
         },
       },
-      icon: GiMagnifyingGlass,
       text: "We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly.",
-      orient: "left",
     },
   ];
 
@@ -123,7 +140,7 @@ export const Roadmap = ({ ...props }) => {
                 color: "teal.50",
               },
             }}
-            text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
+            text="We sit down and gather information about your business, your needs, and your goals."
           />
         </SlideIn>
 
@@ -160,7 +177,7 @@ export const Roadmap = ({ ...props }) => {
                 color: "teal.500",
               },
             }}
-            text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
+            text="We create a mockup of the web sites design and have our copy writers begin to write up SEO optimized content. We give you 2 free revisions to make sure we can find a design you are happy with."
           />
         </SlideIn>
 
@@ -179,7 +196,7 @@ export const Roadmap = ({ ...props }) => {
                 color: "blue.500",
               },
             }}
-            text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
+            text="Once you sign off on the design and content, we code the website from scratch. Leveraging modern frameworks to statically generate your site for further SEO optimization."
           />
         </SlideIn>
         <DashedLine
@@ -197,7 +214,7 @@ export const Roadmap = ({ ...props }) => {
                 color: "blue.600",
               },
             }}
-            text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
+            text="We don't leave you hanging once your website is launched. Lifetime updates are included with our service. Give us a call and we'll respond right away."
           />
         </SlideIn>
 

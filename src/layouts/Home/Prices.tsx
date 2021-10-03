@@ -17,6 +17,7 @@ import { motion } from "framer-motion";
 import { PricingCard } from "../../components/Cards/PricingCard";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { Shake } from "../../components/Motion/Shake";
+import { SlideIn } from "../../components/Motion/SlideIn";
 function loadPrices() {
   const priceCards = [
     {
@@ -100,7 +101,7 @@ export const Prices = () => {
             color={useColorModeValue("teal.600", "white")}
             borderColor={useColorModeValue("teal.600", "white")}
           >
-            Pricing
+            PRICING
           </Heading>
         </Flex>
       </Shake>
