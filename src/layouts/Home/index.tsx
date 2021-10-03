@@ -122,14 +122,14 @@ export const Home = () => {
         </Box>
 
         <Box position="relative">
-          <Icon
+          {/* <Icon
             as={GiBigWave}
             position="absolute"
             boxSize="16rem"
             bottom="-4"
             left="-4"
             // opacity="0.5"
-          />
+          /> */}
           <FooterContent
             bg={theme.bg2[colorMode]}
             color={theme.fg2[colorMode]}
