@@ -62,7 +62,7 @@ export const Home = () => {
       <StickyNavHeader
         id="sticky-nav-bar"
         position="fixed"
-        w="100vw"
+        w="100%"
         color="white"
       />
       <Box position="relative" as="main" color="white" zIndex="1">
@@ -72,6 +72,7 @@ export const Home = () => {
             base: mobileHeight > 0 ? mobileHeight : "120vh",
             md: "1200vh",
           }}
+          overflow="hidden"
           backgroundPosition={{ base: "-100px 0", md: "center" }}
           backgroundSize={{ base: "120vh 110vh", md: "cover" }}
           id="section0"
