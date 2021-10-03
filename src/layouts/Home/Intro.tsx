@@ -45,8 +45,14 @@ export const Intro = ({ ...props }) => {
         </Box>
 
         <DashedLine height="6rem" />
-        <Button variant="solid" borderRadius="0" my="4">
-          <NextLink href="#contact-form">CONTACT US</NextLink>
+        <Button
+          variant="solid"
+          borderRadius="0"
+          my="4"
+          // bg="teal.500"
+          // color="white"
+        >
+          <NextLink href="#contact-form">CONNECT NOW</NextLink>
         </Button>
 
         <DashedLine height="6rem" />

@@ -97,7 +97,7 @@ export const SunOverlay = () => {
     <AnimatePresence custom={colorMode} initial={true} exitBeforeEnter>
       <Overlay key={colorMode} />
       <Overlay
-        key={colorMode}
+        key={`${colorMode}2`}
         sx={{ mixBlendMode: "overlay" }}
         bg={useColorModeValue(
           "transparent",

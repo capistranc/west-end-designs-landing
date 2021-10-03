@@ -1,5 +1,4 @@
-import { blacken } from "@chakra-ui/theme-tools";
-import { GiRayGun } from "react-icons/gi";
+import { useColorMode } from "@chakra-ui/react";
 
 export function toHex(colorStr: string) {
   if (colorStr === "white") return "#FFFFFF";

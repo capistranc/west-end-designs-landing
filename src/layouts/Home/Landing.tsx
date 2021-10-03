@@ -94,7 +94,7 @@ export const Landing = ({ ...props }) => {
           borderRadius="0px"
           variant="solid"
           bg="white"
-          color="teal.700"
+          color="black"
         >
           <NextLink href="#intro" passHref>
             <Link>LEARN MORE</Link>

@@ -14,7 +14,7 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
     },
     hover: {
       color: "rgba(255,255,255,1)",
-      backgroundColor: toHex("teal.800"),
+      backgroundColor: useColorModeValue(toHex("blue.500"), toHex("teal.800")),
     },
   };
 

@@ -109,6 +109,9 @@ export const Roadmap = ({ ...props }) => {
         <DashedLine
           strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
         />
+        <DashedLine
+          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+        />
         <SlideIn from="right">
           <RoadmapSlide
             py="4"
@@ -198,6 +201,9 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
+        <DashedLine
+          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+        />
         <DashedLine
           strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
         />

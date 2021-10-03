@@ -117,6 +117,8 @@ export const Services = ({ ...props }) => {
         </SimpleGrid>
       </Flex>
       <DashedLine />
+      <DashedLine />
+      <DashedLine />
     </Box>
   );
 };
