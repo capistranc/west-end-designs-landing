@@ -69,11 +69,11 @@ export const SunOverlay = () => {
     <MotionBox
       key="sun"
       position="absolute"
-      top="0"
       overflow="hidden"
       bottom="0"
       left="0"
-      right="0"
+      top={{ base: "-50", md: "0" }}
+      right={{ base: "-50", md: "0" }}
       // h="100vh"
       // w="100vw"
       h="100%"

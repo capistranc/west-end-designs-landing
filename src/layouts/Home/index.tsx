@@ -72,7 +72,7 @@ export const Home = () => {
             base: mobileHeight > 0 ? mobileHeight : "120vh",
             md: "1200vh",
           }}
-          backgroundPosition={{ base: "-40px 0", md: "center" }}
+          backgroundPosition={{ base: "-100px 0", md: "center" }}
           backgroundSize={{ base: "120vh 110vh", md: "cover" }}
           id="section0"
         >
