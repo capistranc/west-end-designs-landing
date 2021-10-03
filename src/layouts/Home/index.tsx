@@ -70,10 +70,10 @@ export const Home = () => {
           bgImage={bgImages[0]}
           height={{
             base: mobileHeight > 0 ? mobileHeight : "120vh",
-            md: "120vh",
+            md: "1200vh",
           }}
           backgroundPosition={{ base: "-40px 0", md: "center" }}
-          backgroundSize={{ base: "140vh 110vh", md: "cover" }}
+          backgroundSize={{ base: "120vh 110vh", md: "cover" }}
           id="section0"
         >
           <SunOverlay />
@@ -87,37 +87,12 @@ export const Home = () => {
 
         <Services2 />
 
-        {/* <Parallax bgImage={bgImages[2]} data-header="Who we are" id="section2">
-          <SunOverlay />
-          <AboutUs />
-        </Parallax> */}
-
         <Box
           position="relative"
           mt="10rem"
           color={theme.fg[colorMode]}
           bg={theme.bg[colorMode]}
         >
-          {/* <Box
-            position="absolute"
-            top="-10rem"
-            right="0"
-            zIndex="1"
-            transform="skewY(-5deg)"
-            bg={theme.bg2[colorMode]}
-            h="10rem"
-            w="100%"
-          />
-          <Box
-            position="absolute"
-            top="-0rem"
-            right="0"
-            zIndex="1"
-            transform="skewY(-5deg)"
-            backgroundColor={theme.bg[colorMode]}
-            h="10rem"
-            w="100%"
-          /> */}
           <ContactForm position="relative" zIndex="5" />
         </Box>
 
