@@ -8,10 +8,9 @@ import { useColorModeValue } from "@chakra-ui/color-mode";
 
 export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
   const [isFocused, setFocus] = useState(false);
-  console.log("expandColor", props.color);
   const containerVariant = {
     rest: {
-      color: props.color,
+      color: useColorModeValue(toHex("gray.700"), toHex("gray.200")),
     },
     hover: {
       color: "rgba(255,255,255,1)",
@@ -31,7 +30,7 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
   };
 
   const textVariant = {
-    rest: { x: 0, y: 0, color: props.color },
+    rest: { x: 0, y: 0 },
     hover: {
       fontWeight: "600",
       y: -20,
@@ -59,9 +58,9 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
         variants={containerVariant}
         initial="rest"
         // animate={isFocused ? "hover" : "rest"}
+        onFocus={() => setFocus(true)}
         whileHover="hover"
         _hover={{ animate: "hover" }}
-        onFocus={() => setFocus(true)}
         onHoverStart={() => setFocus(true)}
         onHoverEnd={() => setFocus(false)}
         onBlur={() => setFocus(false)}
@@ -78,9 +77,9 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
           >
             <Icon as={icon} boxSize="6rem" />
           </MotionBox>
-          <Icon as={icon} boxSize="6rem" color={props.color} />
+          <Icon as={icon} boxSize="6rem" />
 
-          <MotionBox variants={textVariant} py="1rem" color={props.color}>
+          <MotionBox variants={textVariant} py="1rem">
             <Text fontSize="xl" fontWeight="bold">
               {title}
             </Text>
