@@ -74,6 +74,7 @@ export const Services2 = () => {
         h="10rem"
         w="100%"
       />
+
       <Icon
         position="absolute"
         overflow="hidden"

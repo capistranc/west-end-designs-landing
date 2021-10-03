@@ -74,10 +74,12 @@ export const Services = ({ ...props }) => {
     },
   ];
 
+  const { colorMode } = useColorMode();
+
   return (
     <Box
-      bg={useColorModeValue("white", "teal.900")}
-      color={useColorModeValue("gray.700", "gray.100")}
+      bg={theme.bg[colorMode]}
+      color={theme.fg[colorMode]}
       align="center"
       position="relative"
     >
@@ -86,7 +88,7 @@ export const Services = ({ ...props }) => {
         bottom="-5rem"
         left="0"
         transform="skewY(5deg)"
-        bg={useColorModeValue("white", "teal.900")}
+        bg={theme.bg[colorMode]}
         h="15rem"
         w="50%"
         zIndex="1"
@@ -96,7 +98,7 @@ export const Services = ({ ...props }) => {
         bottom="-5rem"
         right="0"
         transform="skewY(-5deg)"
-        bg={useColorModeValue("white", "teal.900")}
+        bg={theme.bg[colorMode]}
         h="15rem"
         zIndex="1"
         w="50%"

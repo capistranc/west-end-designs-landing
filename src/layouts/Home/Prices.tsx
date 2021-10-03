@@ -1,19 +1,12 @@
 import {
   Flex,
-  Button,
   Heading,
-  Spacer,
-  BoxProps,
   Box,
-  Image,
-  Text,
-  Circle,
-  Stack,
   useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { PricingCard } from "../../components/Cards/PricingCard";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { Shake } from "../../components/Motion/Shake";
@@ -77,6 +70,7 @@ function loadPrices() {
 
 import { DiagonalDecorator } from "../../components/Decorators/Diagonal";
 export const Prices = () => {
+  const { colorMode } = useColorMode();
   return (
     <Box
       w="100%"
@@ -86,9 +80,7 @@ export const Prices = () => {
       color={useColorModeValue("gray.700", "gray.100")}
       position="relative"
     >
-      <DiagonalDecorator
-        backgroundColor={useColorModeValue("blue.400", "teal.800")}
-      />
+      <DiagonalDecorator backgroundColor={theme.bg2[colorMode]} />
 
       <DashedLine />
       <svg viewBox="0 0 100 100" height="20px" width="20px">

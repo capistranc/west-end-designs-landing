@@ -6,6 +6,7 @@ import {
   Link,
   useColorMode,
   useMediaQuery,
+  useColorModeValue,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
@@ -26,8 +27,7 @@ import { Landing } from "./Landing";
 import { AboutUs } from "./AboutUs";
 import { Portfolio } from "./Portfolio";
 import { Parallax } from "../../components/Wrappers/Parallax";
-import { ThemeContext } from "@emotion/react";
-
+import { DiagonalDecorator } from "../../components/Decorators/Diagonal";
 const observerOptions = {
   root: null,
   rootMargin: "0px",
@@ -91,8 +91,33 @@ export const Home = () => {
           <AboutUs />
         </Parallax> */}
 
-        <Box>
-          <ContactForm />
+        <Box
+          position="relative"
+          mt="10rem"
+          color={theme.fg[colorMode]}
+          bg={theme.bg[colorMode]}
+        >
+          {/* <Box
+            position="absolute"
+            top="-10rem"
+            right="0"
+            zIndex="1"
+            transform="skewY(-5deg)"
+            bg={theme.bg2[colorMode]}
+            h="10rem"
+            w="100%"
+          />
+          <Box
+            position="absolute"
+            top="-0rem"
+            right="0"
+            zIndex="1"
+            transform="skewY(-5deg)"
+            backgroundColor={theme.bg[colorMode]}
+            h="10rem"
+            w="100%"
+          /> */}
+          <ContactForm position="relative" zIndex="5" />
         </Box>
 
         <FooterContent

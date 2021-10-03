@@ -1,26 +1,19 @@
 import {
   Flex,
-  Heading,
   Box,
   Text,
-  Image,
   Icon,
-  SimpleGrid,
   Button,
-  Spacer,
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
 import { theme } from "../../theme/colors";
 
 import { DashedLine } from "../../components/svg/DashedLine";
-import { FaAddressCard } from "react-icons/fa";
 import { GiMagnifyingGlass, GiArchBridge, GiCrosshair } from "react-icons/gi";
 import { MdHeadsetMic } from "react-icons/md";
-import { BiCodeAlt } from "react-icons/bi";
+import { BiCodeAlt, BiWalk } from "react-icons/bi";
 import { SlideIn } from "../../components/Motion/SlideIn";
-
-import { MotionBox } from "../../components/Motion";
 
 export const RoadmapSlide = ({
   headerProps,
@@ -117,7 +110,7 @@ export const Roadmap = ({ ...props }) => {
       position="relative"
       align="center"
       overflow="hidden"
-      backgroundColor={useColorModeValue("blue.400", "teal.800")}
+      backgroundColor={theme.bg2[colorMode]}
     >
       <Box
         position="absolute"
@@ -136,26 +129,17 @@ export const Roadmap = ({ ...props }) => {
           variant="solid"
           fontSize="1.5rem"
           height="4rem"
-          bg={useColorModeValue("black", "white")}
-          color={useColorModeValue("white", "black")}
+          color={theme.wb[colorMode]}
+          bg={theme.bw[colorMode]}
         >
           {" "}
           GET STARTED NOW{" "}
         </Button>
       </Box>
 
-      <Box
-        align="center"
-        color="white"
-        backgroundColor={useColorModeValue("blue.400", "teal.800")}
-      >
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-          zIndex="10"
-        />
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
+      <Box align="center" color="white" backgroundColor={theme.bg2[colorMode]}>
+        <DashedLine strokeColors={theme.bg[colorMode]} zIndex="10" />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide
             py="4"
@@ -171,9 +155,7 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
 
         <SlideIn from="left">
           <RoadmapSlide
@@ -190,9 +172,7 @@ export const Roadmap = ({ ...props }) => {
             text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
           />
         </SlideIn>
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide
             icon={GiArchBridge}
@@ -208,9 +188,7 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
         <SlideIn from="left">
           <RoadmapSlide
             icon={BiCodeAlt}
@@ -226,9 +204,7 @@ export const Roadmap = ({ ...props }) => {
             text="Once you sign off on the design and content, we code the website from scratch. Leveraging modern frameworks to statically generate your site for further SEO optimization."
           />
         </SlideIn>
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
 
         <SlideIn from="right">
           <RoadmapSlide
@@ -245,12 +221,8 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
-        <DashedLine
-          strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-        />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
       </Box>
     </Box>
   );

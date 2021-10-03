@@ -67,14 +67,14 @@ const colorSchemes = {
     dark: toHex("teal.900"),
   },
   bg2: {
-    light: toHex("blue.500"),
-    dark: toHex("teal.900"),
+    light: toHex("blue.400"),
+    dark: toHex("teal.800"),
   },
   bg3: {
-    light: toHex("white"),
-    dark: toHex("teal.900"),
+    light: toHex("blue.500"),
+    dark: toHex("gray.900"),
   },
-  fg: { light: toHex("gray.800"), dark: toHex("white") },
+  fg: { light: toHex("gray.700"), dark: toHex("gray.50") },
   fg2: {
     light: toHex("white"),
     dark: toHex("gray.100"),
@@ -83,15 +83,25 @@ const colorSchemes = {
     light: toHex("teal.500"),
     dark: "rgba(255,255,255,0.8",
   },
+  bw: {
+    light: toHex("black"),
+    dark: toHex("white"),
+  },
+  wb: {
+    light: toHex("white"),
+    dark: toHex("black"),
+  },
 };
 
-// const props = {
-//   scheme1: {
-//     bg: () => useColorModeValue(colorSchemes.bg.light, colorSchemes.bg.dark),
-//   },
-// };
+const scheme = {
+  bw: {
+    bg: () => useColorModeValue(toHex("black"), toHex("white")),
+    color: () => useColorModeValue(toHex("white"), toHex("black")),
+  },
+};
 
 export const theme = {
+  scheme,
   ...colorSchemes,
   toHex,
   ...colors,
