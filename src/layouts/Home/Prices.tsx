@@ -18,6 +18,7 @@ import { PricingCard } from "../../components/Cards/PricingCard";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { Shake } from "../../components/Motion/Shake";
 import { SlideIn } from "../../components/Motion/SlideIn";
+import { theme } from "../../theme";
 function loadPrices() {
   const priceCards = [
     {
@@ -98,7 +99,12 @@ export const Prices = () => {
 
       <DashedLine />
       <svg viewBox="0 0 100 100" height="20px" width="20px">
-        <circle cx="50" fill="white" cy="50" r="50" />{" "}
+        <circle
+          cx="50"
+          fill={useColorModeValue(theme.toHex("teal.600"), "white")}
+          cy="50"
+          r="50"
+        />{" "}
       </svg>
 
       <DashedLine />
