@@ -77,6 +77,7 @@ export const Services = ({ ...props }) => {
   return (
     <Box
       bg={useColorModeValue("white", "teal.900")}
+      color={useColorModeValue("gray.700", "gray.100")}
       align="center"
       position="relative"
     >

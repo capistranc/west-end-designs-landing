@@ -2,7 +2,7 @@ import { FormLabel } from "@chakra-ui/form-control";
 
 import { useColorMode } from "@chakra-ui/react";
 
-import { bgColor } from "../../theme/colors";
+import { theme } from "../../theme/colors";
 
 export const InLineLabel = ({ children, ...props }) => {
   const { colorMode } = useColorMode();
@@ -18,7 +18,7 @@ export const InLineLabel = ({ children, ...props }) => {
       borderRadius="full"
       fontWeight="bold"
       top="-0.75em"
-      bgColor={bgColor[colorMode]}
+      bgColor={theme.bg[colorMode]}
       {...props}
     >
       {children}

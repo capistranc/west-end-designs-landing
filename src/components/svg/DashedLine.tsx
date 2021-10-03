@@ -1,5 +1,5 @@
 import { useColorModeValue } from "@chakra-ui/react";
-import { colors, fgColor, bgColor } from "../../theme/colors";
+import { colors } from "../../theme";
 
 export const DashedLine = ({
   horizontal = false,

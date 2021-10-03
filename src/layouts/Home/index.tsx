@@ -9,7 +9,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { bgColor, fgColor } from "../../theme/colors";
+import { theme } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
 import { FooterContent } from "../../components/Footer";
 
@@ -26,6 +26,7 @@ import { Landing } from "./Landing";
 import { AboutUs } from "./AboutUs";
 import { Portfolio } from "./Portfolio";
 import { Parallax } from "../../components/Wrappers/Parallax";
+import { ThemeContext } from "@emotion/react";
 
 const observerOptions = {
   root: null,
@@ -46,6 +47,8 @@ export const Home = () => {
     md: "browser",
     xl: "hq",
   });
+
+  const { colorMode } = useColorMode();
 
   let bgImages = [
     `url('/images/${device || "mobile"}/cliffEdge.jpeg')`,
@@ -79,26 +82,24 @@ export const Home = () => {
         <Services />
         <Roadmap />
 
-        <Parallax
-          bgColor="teal.900"
-          position="relative"
-          data-header="Pricing"
-          id="section3"
-        >
-          <Prices />
-        </Parallax>
-        <Parallax data-header="Packages" id="section4">
-          <Services2 />
-        </Parallax>
+        <Prices />
+
+        <Services2 />
+
         <Parallax bgImage={bgImages[2]} data-header="Who we are" id="section2">
           <SunOverlay />
           <AboutUs />
         </Parallax>
 
-        <Parallax bg="gray.800">
-          <ContactForm bg="gray.800" color="white" />
-        </Parallax>
-        <FooterContent bg="gray.900" width="100%" color="white" />
+        <Box>
+          <ContactForm />
+        </Box>
+
+        <FooterContent
+          bg={theme.bg2[colorMode]}
+          color={theme.fg[colorMode]}
+          width="100%"
+        />
       </Box>
     </>
   );

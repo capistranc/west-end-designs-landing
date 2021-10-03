@@ -67,7 +67,7 @@ export const AboutUs = () => {
         }
       }
     >
-      <DashedLine strokeColors="white" />
+      <DashedLine />
 
       <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
         <SlideIn
@@ -163,7 +163,7 @@ export const AboutUs = () => {
           bottom="-1em"
         />
       </Box>
-      <DashedLine strokeColors="white" />
+      <DashedLine />
     </Box>
   );
 };

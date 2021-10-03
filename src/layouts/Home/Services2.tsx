@@ -50,6 +50,7 @@ export const Services2 = () => {
       width="100%"
       align="center"
       justify="center"
+      position="relative"
       backgroundColor={useColorModeValue("blue.400", "teal.800")}
       color={useColorModeValue("white", "gray.100")}
     >

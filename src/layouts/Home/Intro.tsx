@@ -10,7 +10,7 @@ import {
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
-import { colors, fgColor, bgColor } from "../../theme/colors";
+import { theme } from "../../theme/colors";
 import NextLink from "next/link";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { GiBigWave, GiCliffCrossing } from "react-icons/gi";
@@ -22,8 +22,8 @@ export const Intro = ({ ...props }) => {
     <Box position="relative" id="intro">
       <Box
         align="center"
-        color={fgColor[colorMode]}
-        bgColor={bgColor[colorMode]}
+        color={theme.fg[colorMode]}
+        bgColor={theme.bg[colorMode]}
         backgroundColor={useColorModeValue("white", "teal.900")}
       >
         <DashedLine />

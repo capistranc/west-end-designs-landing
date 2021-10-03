@@ -10,7 +10,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 
-import { bgColor, fgColor } from "../../theme/colors";
+import { theme } from "../../theme/";
 import { StickyNavHeader } from "../../components/Header";
 import { FooterContent } from "../../components/Footer";
 
@@ -32,7 +32,7 @@ export const Services5 = ({ sections }) => {
       <StickyNavHeader
         id="sticky-nav-bar"
         position="fixed"
-        color={fgColor[colorMode]}
+        color={theme.fg[colorMode]}
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}

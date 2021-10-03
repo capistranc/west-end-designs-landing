@@ -1,14 +1,9 @@
-export const bgColor = {
-  light: "white",
-  dark: "gray.800",
-};
-
-export const fgColor = {
-  light: "blue.700",
-  dark: "white",
-};
+import { blacken } from "@chakra-ui/theme-tools";
+import { GiRayGun } from "react-icons/gi";
 
 export function toHex(colorStr: string) {
+  if (colorStr === "white") return "#FFFFFF";
+  if (colorStr === "black") return "#000000";
   if (colorStr.startsWith("#")) return colorStr;
   if (colorStr.startsWith("rgb")) return colorStr;
   const match = colorStr.match(/([a-z]+)\.([0-9]+)/);
@@ -69,17 +64,18 @@ export const colors = {
 
 export const theme = {
   bg: {
-    light: "white",
-    dark: "gray.800",
+    light: toHex("white"),
+    dark: toHex("gray.800"),
   },
-  fg: {
-    light: "blue.700",
-    dark: "white",
+  bg2: {
+    light: toHex("blue.500"),
+    dark: toHex("teal.900"),
   },
-  toHex: (colorStr: string) => {
-    const match = colorStr.match(/([a-z]+)\.([0-9]+)/);
-    const [cString, color, weight] = match;
-    return colors[color][weight];
+  fg: { light: toHex("gray.800"), dark: toHex("white") },
+  fg2: {
+    light: toHex("white"),
+    dark: toHex("gray.100"),
   },
+  toHex,
   ...colors,
 };

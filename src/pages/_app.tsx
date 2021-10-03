@@ -10,7 +10,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { Global, css } from "@emotion/react";
 import { prismLightTheme, prismDarkTheme } from "../theme/prism";
-import { fgColor, bgColor } from "../theme/colors";
+import { theme } from "../theme";
 
 import "@fontsource/raleway/";
 import "@fontsource/oswald/";
@@ -57,8 +57,9 @@ const GlobalStyle = ({ children }) => {
           #__next {
             height: 100%;
             width: 100%;
+            overflow: hidden;
 
-            background: ${bgColor[colorMode]};
+            background: ${theme.bg[colorMode]};
           }
         `}
       />

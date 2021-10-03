@@ -1,6 +1,6 @@
 import React from "react";
 import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
-import { bgColor, fgColor } from "../theme/colors";
+import { theme } from "../theme/colors";
 
 import { Footer } from "../components/Footer";
 import { BannerHeader, StickyNavHeader } from "../components/Header";
@@ -11,7 +11,7 @@ export const Layout = ({ children }) => {
 
   return (
     <>
-      <BannerHeader bg={bgColor[colorMode]} color={fgColor[colorMode]} />
+      <BannerHeader bg={theme.bg[colorMode]} color={theme.fg[colorMode]} />
       <Flex
         position="relative"
         top="0"
@@ -19,12 +19,12 @@ export const Layout = ({ children }) => {
         justifyContent="center"
         align="center"
         flexDirection="column"
-        bg={bgColor[colorMode]}
-        color={fgColor[colorMode]}
+        bg={theme.bg[colorMode]}
+        color={theme.fg[colorMode]}
       >
         {children}
       </Flex>
-      <Footer bg={bgColor[colorMode]} color={fgColor[colorMode]} />
+      <Footer bg={theme.bg[colorMode]} color={theme.fg[colorMode]} />
     </>
   );
 };

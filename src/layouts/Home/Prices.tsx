@@ -8,6 +8,7 @@ import {
   Image,
   Text,
   Stack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
@@ -77,11 +78,24 @@ function loadPrices() {
 
 export const Prices = () => {
   return (
-    <Box w="100%" m="0 auto" align="center">
+    <Box
+      w="100%"
+      m="0 auto"
+      align="center"
+      bg={useColorModeValue("blue.50", "teal.900")}
+      color={useColorModeValue("gray.700", "gray.100")}
+    >
+      <DashedLine />
       <DashedLine />
       <Flex justify="center">
-        <Heading as="h1" my="1.25em" variant="banner-with-border-md">
-          Prices
+        <Heading
+          as="h1"
+          mb="1.25em"
+          variant="banner-with-border-md"
+          borderWidth="4px"
+          borderColor={useColorModeValue("teal.500", "white")}
+        >
+          Pricing
         </Heading>
       </Flex>
 

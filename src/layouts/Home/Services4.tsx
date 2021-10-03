@@ -8,7 +8,7 @@ import {
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
-import { fgColor, bgColor } from "../../theme/colors";
+import { theme } from "../../theme/colors";
 
 import { TimedCarousel } from "../../components/Motion/TimedCarousel";
 import { SlideListItem } from "../../components/Motion";
