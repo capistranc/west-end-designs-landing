@@ -7,7 +7,7 @@ import NextLink from "next/link";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 
 export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
-  const [isFocused, setFocus] = useState(false);
+  // const [isFocused, setFocus] = useState(false);
   const containerVariant = {
     rest: {
       color: useColorModeValue(toHex("gray.700"), toHex("gray.300")),
@@ -57,12 +57,12 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
         // overflow="hidden"
         variants={containerVariant}
         initial="rest"
-        onFocus={() => setFocus(true)}
+        // onFocus={() => setFocus(true)}
         whileHover="hover"
         _hover={{ animate: "hover" }}
-        onHoverStart={() => setFocus(true)}
-        onHoverEnd={() => setFocus(false)}
-        onBlur={() => setFocus(false)}
+        // onHoverStart={() => setFocus(true)}
+        // onHoverEnd={() => setFocus(false)}
+        // onBlur={() => setFocus(false)}
         p="4"
         width="100%"
         {...props}
