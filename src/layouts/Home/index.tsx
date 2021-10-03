@@ -5,6 +5,7 @@ import {
   Stack,
   Link,
   useColorMode,
+  Icon,
   useMediaQuery,
   useColorModeValue,
   useBreakpointValue,
@@ -17,7 +18,7 @@ import { FooterContent } from "../../components/Footer";
 import { ContactForm } from "../../components/Forms/ContactForm";
 import { SunOverlay } from "../../components/Motion/SunOverlay";
 import NextImage from "next/image";
-
+import { GiBigWave } from "react-icons/gi";
 import { Intro } from "./Intro";
 import { Prices } from "./Prices";
 import { Services } from "./Services";
@@ -120,11 +121,21 @@ export const Home = () => {
           <ContactForm position="relative" zIndex="5" />
         </Box>
 
-        <FooterContent
-          bg={theme.bg2[colorMode]}
-          color={theme.fg2[colorMode]}
-          width="100%"
-        />
+        <Box position="relative">
+          <Icon
+            as={GiBigWave}
+            position="absolute"
+            boxSize="16rem"
+            bottom="-4"
+            left="-4"
+            // opacity="0.5"
+          />
+          <FooterContent
+            bg={theme.bg2[colorMode]}
+            color={theme.fg2[colorMode]}
+            width="100%"
+          />
+        </Box>
       </Box>
     </>
   );
