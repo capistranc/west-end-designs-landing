@@ -60,7 +60,7 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
         animate={isFocused ? "hover" : "rest"}
         onFocus={() => setFocus(true)}
         whileHover="hover"
-        // _hover={(e) => console.log(e)}
+        _hover={{ animate: "hover" }}
         onHoverStart={() => setFocus(true)}
         onHoverEnd={() => setFocus(false)}
         onBlur={() => setFocus(false)}
