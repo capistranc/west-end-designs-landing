@@ -7,6 +7,7 @@ import {
   Box,
   Image,
   Text,
+  Circle,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -15,11 +16,11 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { PricingCard } from "../../components/Cards/PricingCard";
 import { DashedLine } from "../../components/svg/DashedLine";
+import { Shake } from "../../components/Motion/Shake";
 function loadPrices() {
   const priceCards = [
     {
       title: "WEB STANDARD",
-
       price: `150`,
       listData: [
         "5 Page Website",
@@ -64,11 +65,7 @@ function loadPrices() {
   ];
 
   return (
-    <Flex
-      flexDirection={["column", "column", "row", "row"]}
-      justify="center"
-      // align="stretch"
-    >
+    <Flex flexDirection={["column", "column", "row", "row"]} justify="center">
       <PricingCard p="8" m="4" {...priceCards[0]} />
       <PricingCard p="8" m="4" {...priceCards[1]} />
       <PricingCard p="8" m="4" {...priceCards[2]} />
@@ -76,6 +73,7 @@ function loadPrices() {
   );
 }
 
+import { MotionBox } from "../../components/Motion";
 export const Prices = () => {
   return (
     <Box
@@ -86,18 +84,26 @@ export const Prices = () => {
       color={useColorModeValue("gray.700", "gray.100")}
     >
       <DashedLine />
+      <svg viewBox="0 0 100 100" height="20px" width="20px">
+        <circle cx="50" fill="white" cy="50" r="50" />{" "}
+      </svg>
+
       <DashedLine />
-      <Flex justify="center">
-        <Heading
-          as="h1"
-          mb="1.25em"
-          variant="banner-with-border-md"
-          borderWidth="4px"
-          borderColor={useColorModeValue("teal.500", "white")}
-        >
-          Pricing
-        </Heading>
-      </Flex>
+
+      <Shake>
+        <Flex justify="center">
+          <Heading
+            as="h1"
+            mb="1.25em"
+            variant="banner-with-border-md"
+            borderWidth="4px"
+            color={useColorModeValue("teal.600", "white")}
+            borderColor={useColorModeValue("teal.600", "white")}
+          >
+            Pricing
+          </Heading>
+        </Flex>
+      </Shake>
 
       {loadPrices()}
       <DashedLine />

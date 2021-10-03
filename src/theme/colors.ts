@@ -76,6 +76,10 @@ export const theme = {
     light: toHex("white"),
     dark: toHex("gray.100"),
   },
+  line: {
+    light: toHex("teal.500"),
+    dark: "rgba(255,255,255,0.8",
+  },
   toHex,
   ...colors,
 };
