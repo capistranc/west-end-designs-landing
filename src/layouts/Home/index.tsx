@@ -97,7 +97,7 @@ export const Home = () => {
 
         <FooterContent
           bg={theme.bg2[colorMode]}
-          color={theme.fg[colorMode]}
+          color={theme.fg2[colorMode]}
           width="100%"
         />
       </Box>
