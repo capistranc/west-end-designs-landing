@@ -70,6 +70,10 @@ export const theme = {
     light: toHex("blue.500"),
     dark: toHex("teal.900"),
   },
+  bg3: {
+    light: toHex("white"),
+    dark: toHex("teal.900"),
+  },
   fg: { light: toHex("gray.800"), dark: toHex("white") },
   fg2: {
     light: toHex("white"),
