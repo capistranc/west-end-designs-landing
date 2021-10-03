@@ -81,26 +81,27 @@ export const Services = ({ ...props }) => {
       align="center"
       position="relative"
     >
-      {/* <Box position="absolute" bottom="0" bg="teal.800" h="12rem" w="100%">
-        <Box
-          position="absolute"
-          bottom="50%"
-          left="0"
-          transform="skewY(5deg)"
-          bg="teal.900"
-          h="10rem"
-          w="50%"
-        />
-        <Box
-          position="absolute"
-          bottom="50%"
-          right="0"
-          transform="skewY(-5deg)"
-          bg="teal.900"
-          h="10rem"
-          w="50%"
-        />
-      </Box> */}
+      <Box
+        position="absolute"
+        bottom="-5rem"
+        left="0"
+        transform="skewY(5deg)"
+        bg={useColorModeValue("white", "teal.900")}
+        h="15rem"
+        w="50%"
+        zIndex="1"
+      />
+      <Box
+        position="absolute"
+        bottom="-5rem"
+        right="0"
+        transform="skewY(-5deg)"
+        bg={useColorModeValue("white", "teal.900")}
+        h="15rem"
+        zIndex="1"
+        w="50%"
+      />
+
       <Flex direction="row" wrap="wrap" align="center" justify="center">
         <SimpleGrid columns={[1, 2, 2, 3]}>
           {services.map((service, i) => {
@@ -116,9 +117,9 @@ export const Services = ({ ...props }) => {
           })}
         </SimpleGrid>
       </Flex>
-      <DashedLine />
-      <DashedLine />
-      <DashedLine />
+      <DashedLine zIndex="10" />
+      <DashedLine zIndex="10" />
+      <DashedLine zIndex="10" />
     </Box>
   );
 };

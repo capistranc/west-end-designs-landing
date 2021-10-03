@@ -19,6 +19,7 @@ export const Button = {
     // 4. We can override existing variants
     solid: (props) => ({
       color: "white",
+      borderRadius: 0,
       bg: props.colorMode === "dark" ? "teal.700" : "teal.600",
     }),
   },

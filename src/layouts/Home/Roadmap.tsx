@@ -57,10 +57,6 @@ export const RoadmapSlide = ({
     );
   };
 
-  const borderProps = {
-    1: {},
-  };
-
   const width = ["20em", "22em", "24em", "30em"];
   return (
     <Flex
@@ -117,7 +113,37 @@ export const Roadmap = ({ ...props }) => {
   ];
 
   return (
-    <Box position="relative" align="center" overflow="hidden">
+    <Box
+      position="relative"
+      align="center"
+      overflow="hidden"
+      backgroundColor={useColorModeValue("blue.400", "teal.800")}
+    >
+      <Box
+        position="absolute"
+        bottom="-10rem"
+        right="0"
+        transform="skewY(5deg)"
+        bg={useColorModeValue("blue.50", "teal.900")}
+        h="10rem"
+        zIndex="1"
+        w="100%"
+      />
+
+      <DashedLine zIndex="10" />
+      <Box position="relative" py="4" zIndex="10">
+        <Button
+          variant="solid"
+          fontSize="1.5rem"
+          height="4rem"
+          bg={useColorModeValue("black", "white")}
+          color={useColorModeValue("white", "black")}
+        >
+          {" "}
+          GET STARTED NOW{" "}
+        </Button>
+      </Box>
+
       <Box
         align="center"
         color="white"
@@ -125,6 +151,7 @@ export const Roadmap = ({ ...props }) => {
       >
         <DashedLine
           strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+          zIndex="10"
         />
         <DashedLine
           strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}

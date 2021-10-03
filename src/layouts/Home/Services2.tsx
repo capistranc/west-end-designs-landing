@@ -54,8 +54,25 @@ export const Services2 = () => {
       backgroundColor={useColorModeValue("blue.400", "teal.800")}
       color={useColorModeValue("white", "gray.100")}
     >
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      <Box
+        position="absolute"
+        top="-10rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(-5deg)"
+        bg={useColorModeValue("blue.50", "teal.900")}
+        h="10rem"
+        w="100%"
+      />
+      <Box
+        position="absolute"
+        top="-0rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(-5deg)"
+        backgroundColor={useColorModeValue("blue.400", "teal.800")}
+        h="10rem"
+        w="100%"
       />
       <Icon
         position="absolute"
@@ -66,8 +83,17 @@ export const Services2 = () => {
         opacity="0.1"
         color={useColorModeValue("white", "gray300")}
         as={FaCodepen}
-        bottom="10%"
+        top="10%"
         right="-5%"
+      />
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      />
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      />
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
       />
 
       <Box p="1rem" px="1rem">

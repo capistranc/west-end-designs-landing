@@ -83,7 +83,19 @@ export const Prices = () => {
       align="center"
       bg={useColorModeValue("blue.50", "teal.900")}
       color={useColorModeValue("gray.700", "gray.100")}
+      position="relative"
     >
+      <Box
+        position="absolute"
+        top="-10rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(5deg)"
+        backgroundColor={useColorModeValue("blue.400", "teal.800")}
+        h="10rem"
+        w="100%"
+      />
+
       <DashedLine />
       <svg viewBox="0 0 100 100" height="20px" width="20px">
         <circle cx="50" fill="white" cy="50" r="50" />{" "}
@@ -107,6 +119,8 @@ export const Prices = () => {
       </Shake>
 
       {loadPrices()}
+      <DashedLine />
+      <DashedLine />
       <DashedLine />
     </Box>
   );

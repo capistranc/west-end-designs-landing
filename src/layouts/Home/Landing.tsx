@@ -12,6 +12,7 @@ import NextLink from "next/link";
 
 import { MotionFlex, MotionText, MotionButton } from "../../components/Motion";
 import { slideFrom } from "../../components/Motion/variants";
+import { DashedLine } from "../../components/svg/DashedLine";
 
 const AnimatedBanner = ({ text, ...props }) => {
   const texts = ["CONNECT", "INSPIRE", "CREATE"];
@@ -57,63 +58,66 @@ const growVariants = {
 
 export const Landing = ({ ...props }) => {
   return (
-    <MotionFlex
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-      mt="8"
-      mb="8"
-      h="100vh"
-      w="100vw"
-      flexDir="column"
-      align="center"
-      justify="center"
-      color="white"
-      zIndex="2"
-      {...props}
-    >
-      <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
-        We help businesses
-      </Heading>
-
-      <MotionFlex variants={growVariants}>
-        <AnimatedBanner text="CONNECT" />
-      </MotionFlex>
-      <MotionText
-        textStyle="h2"
-        fontSize="3xl"
-        py="5"
-        variants={slideFrom("bottom")}
+    <Box position="relative" align="center">
+      <MotionFlex
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        mt="8"
+        mb="8"
+        h="100vh"
+        w="100vw"
+        flexDir="column"
+        align="center"
+        justify="center"
+        color="white"
+        zIndex="2"
+        position="relative"
+        {...props}
       >
-        with clients
-      </MotionText>
-      <Flex flexDirection={["column", "column", "row", "row"]}>
-        <MotionButton
-          variants={slideFrom("left", { duration: 0.2 })}
-          px="5px"
-          borderRadius="0px"
-          variant="solid"
-          bg="white"
-          color="black"
+        <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
+          We help businesses
+        </Heading>
+
+        <MotionFlex variants={growVariants}>
+          <AnimatedBanner text="CONNECT" />
+        </MotionFlex>
+        <MotionText
+          textStyle="h2"
+          fontSize="3xl"
+          py="5"
+          variants={slideFrom("bottom")}
         >
-          <NextLink href="#intro" passHref>
-            <Link>LEARN MORE</Link>
-          </NextLink>
-        </MotionButton>
-        <Spacer px="2" />
-        <MotionButton
-          variants={slideFrom("right", { duration: 0.2 })}
-          px="5px"
-          borderRadius="0px"
-          variant="solid"
-          bg="black"
-          color="white"
-        >
-          <NextLink href="#contact-form" passHref>
-            <Link>CONNECT WITH US</Link>
-          </NextLink>
-        </MotionButton>
-      </Flex>
-    </MotionFlex>
+          with clients
+        </MotionText>
+        <Flex flexDirection={["column", "column", "row", "row"]}>
+          <MotionButton
+            variants={slideFrom("left", { duration: 0.2 })}
+            px="5px"
+            borderRadius="0px"
+            variant="solid"
+            bg="white"
+            color="black"
+          >
+            <NextLink href="#intro" passHref>
+              <Link>LEARN MORE</Link>
+            </NextLink>
+          </MotionButton>
+          <Spacer px="2" />
+          <MotionButton
+            variants={slideFrom("right", { duration: 0.2 })}
+            px="5px"
+            borderRadius="0px"
+            variant="solid"
+            bg="black"
+            color="white"
+          >
+            <NextLink href="#contact-form" passHref>
+              <Link>CONNECT WITH US</Link>
+            </NextLink>
+          </MotionButton>
+        </Flex>
+      </MotionFlex>
+    </Box>
   );
 };
