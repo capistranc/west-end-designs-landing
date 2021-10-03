@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import { ContactForm } from "../components/Forms/ContactForm";
 import { Background } from "../layouts/Services/styledSectionComponent";
 import { StickyNavHeader } from "../components/Header";
-import { bgColor, fgColor } from "../theme/colors";
+import { theme } from "../theme/colors";
 import React, { useRef, useEffect, useState } from "react";
 import { FooterContent } from "../components/Footer";
 import Image from "next/image";
@@ -39,7 +39,7 @@ export const About: NextPage = () => {
       <StickyNavHeader
         id="sticky-nav-bar"
         position="fixed"
-        color={fgColor[colorMode]}
+        color={theme.fg[colorMode]}
       />
       <Box height={{ base: "20rem", md: "30rem" }} top="0" w="100%" bg="white">
         <Banner h="100%" color="white">
