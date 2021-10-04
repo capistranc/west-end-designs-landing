@@ -53,19 +53,6 @@ export const Portfolio = () => {
       w="100%"
       align="center"
       justify="center"
-      _before={
-        {
-          // position: "absolute",
-          // top: 0,
-          // right: 0,
-          // left: 0,
-          // bottom: 0,
-          // zIndex: 0,
-          // bg: "linear-gradient(10deg, rgba(0.4,0.4,0.4,0.7), rgba(0,0,0,0.2))",
-          // transform: "skewY(8deg)",
-          // content: `" "`,
-        }
-      }
     >
       <DashedLine strokeColors="white" />
 
