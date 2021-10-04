@@ -5,9 +5,9 @@ import { useOnScreen, useHasRendered } from "../../lib/hooks";
 import { slideFrom } from "./variants";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 
-export const SlideIn = ({ children, from = "left", ...props }) => {
-  const isBrowser = useBreakpointValue({ md: "browser" });
-  const variant = isBrowser ? slideFrom(from) : slideFrom("left");
+// export const SlideIn = ({ children, from = "left", ...props }) => {
+//   const isBrowser = useBreakpointValue({ md: "browser" });
+//   const variant = isBrowser ? slideFrom(from) : slideFrom("left");
   const ref = useRef();
   const isVisible = useHasRendered(ref);
 
@@ -17,7 +17,7 @@ export const SlideIn = ({ children, from = "left", ...props }) => {
         <MotionBox
           h="100%"
           w="100%"
-          variants={variant}
+          variants={slideFrom(from)}
           initial="hidden"
           animate="show"
           transition={{
