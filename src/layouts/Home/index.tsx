@@ -70,11 +70,10 @@ export const Home = () => {
           bgImage={bgImages[0]}
           height={{
             base: mobileHeight > 0 ? mobileHeight : "120vh",
-            md: "1200vh",
+            md: "120vh",
           }}
-          overflow="hidden"
-          backgroundPosition={{ base: "-100px 0", md: "center" }}
-          backgroundSize={{ base: "120vh 110vh", md: "cover" }}
+          backgroundPosition={{ base: "-40px 0", md: "center" }}
+          backgroundSize={{ base: "140vh 110vh", md: "cover" }}
           id="section0"
         >
           <SunOverlay />
