@@ -7,10 +7,13 @@ export const DashedLine = ({
 }) => {
   return (
     <Box position="relative" zIndex="10" {...props}>
-      <svg viewBox="0 0 100 100" height="5rem" {...props}>
+      <svg
+        viewBox="0 0 100 100"
+        height="5rem"
+        preserveAspectRatio="none"
+        {...props}
+      >
         <path
-          width="100%"
-          height="100%"
           strokeDasharray="12,5"
           strokeWidth="6"
           stroke={

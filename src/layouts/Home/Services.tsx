@@ -17,9 +17,9 @@ import { GiSmartphone } from "react-icons/gi";
 import { FaLaptopCode } from "react-icons/fa";
 import { ImStack } from "react-icons/im";
 import { VscGraph } from "react-icons/vsc";
-import { BsGraphUp } from "react-icons/bs";
+import { BiBookContent } from "react-icons/bi";
 import { DashedLine } from "../../components/svg/DashedLine";
-
+import { DiamondDecoratorBottomDown } from "../../components/Decorators";
 export const Services = ({ ...props }) => {
   const services = [
     {
@@ -48,8 +48,8 @@ export const Services = ({ ...props }) => {
       borderLeft: { sm: "none", lg: `solid thin ${theme.toHex("gray.100")}` },
     },
     {
-      title: "Search Engine Optimization",
-      icon: BsGraphUp,
+      title: "Content Management",
+      icon: BiBookContent,
       text: "Figuring out how to explain your business can be hard, and with us you don't have too. Our inhouse team of SEO Copywriters will write all the content for you.",
       link: "#contact-form",
       borderBottom: { lg: "none" },
@@ -57,7 +57,7 @@ export const Services = ({ ...props }) => {
       borderRight: { sm: "none", lg: `solid thin ${theme.toHex("gray.100")}` },
     },
     {
-      title: "Analytics",
+      title: "Search Engine Optimization",
       icon: VscGraph,
       text: "More views means more customers. We will make sure your website reaches more eyes by utilizing the power of Google Analytics and modern SEO strategies.",
       link: "#contact-form",
@@ -83,26 +83,7 @@ export const Services = ({ ...props }) => {
       align="center"
       position="relative"
     >
-      <Box
-        position="absolute"
-        bottom="-5rem"
-        left="0"
-        transform="skewY(5deg)"
-        bg={theme.bg[colorMode]}
-        h="15rem"
-        w="50%"
-        zIndex="1"
-      />
-      <Box
-        position="absolute"
-        bottom="-5rem"
-        right="0"
-        transform="skewY(-5deg)"
-        bg={theme.bg[colorMode]}
-        h="15rem"
-        zIndex="1"
-        w="50%"
-      />
+      <DiamondDecoratorBottomDown bg={theme.bg[colorMode]} />
 
       <Flex direction="row" wrap="wrap" align="center" justify="center">
         <SimpleGrid columns={[1, 2, 2, 3]}>

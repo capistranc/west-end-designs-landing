@@ -15,14 +15,14 @@ import NextLink from "next/link";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { GiBigWave, GiCliffCrossing } from "react-icons/gi";
 
-import { DiamondDecorator } from "../../components/Decorators/Diamond";
+import { DiamondDecoratorTopDown } from "../../components/Decorators/Diamond";
 
 export const Intro = ({ ...props }) => {
   const { colorMode } = useColorMode();
 
   return (
     <Box position="relative" id="intro">
-      <DiamondDecorator bgColor={theme.bg[colorMode]} />
+      <DiamondDecoratorTopDown bgColor={theme.bg[colorMode]} />
       <Box
         align="center"
         color={theme.fg[colorMode]}

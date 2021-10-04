@@ -6,6 +6,7 @@ import {
   Image,
   Icon,
   SimpleGrid,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -14,6 +15,11 @@ import { MotionFlex, SlideListItem } from "../../components/Motion";
 import { FaCodepen } from "react-icons/fa";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { theme } from "../../theme/colors";
+import {
+  DiamondDecoratorBottomUp,
+  DiagonalDecoratorTopRight,
+  DiagonalDecoratorTopLeft,
+} from "../../components/Decorators/";
 
 export const Services2 = () => {
   const listData = [
@@ -43,6 +49,7 @@ export const Services2 = () => {
     },
   ];
 
+  const { colorMode } = useColorMode();
   return (
     <Box
       direction="column"
@@ -51,50 +58,12 @@ export const Services2 = () => {
       align="center"
       justify="center"
       position="relative"
-      backgroundColor={useColorModeValue("blue.400", "teal.800")}
-      color={useColorModeValue("white", "gray.100")}
+      backgroundColor={theme.bg2[colorMode]}
+      color={theme.fg2[colorMode]}
     >
-      <Box
-        position="absolute"
-        top="-10rem"
-        right="0"
-        zIndex="1"
-        transform="skewY(-5deg)"
-        bg={useColorModeValue("blue.50", "teal.900")}
-        h="10rem"
-        w="100%"
-      />
-      <Box
-        position="absolute"
-        top="-0rem"
-        right="0"
-        zIndex="1"
-        transform="skewY(-5deg)"
-        backgroundColor={useColorModeValue("blue.400", "teal.800")}
-        h="10rem"
-        w="100%"
-      />
-
-      <Box
-        position="absolute"
-        bottom="0rem"
-        right="0"
-        zIndex="1"
-        transform="skewY(5deg)"
-        backgroundColor={useColorModeValue("blue.400", "teal.800")}
-        h="10rem"
-        w="100%"
-      />
-      <Box
-        position="absolute"
-        bottom="0rem"
-        right="0"
-        zIndex="1"
-        transform="skewY(-5deg)"
-        backgroundColor={useColorModeValue("blue.400", "teal.800")}
-        h="10rem"
-        w="100%"
-      />
+      <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} />
+      <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} />
+      <DiamondDecoratorBottomUp bg={theme.bg2[colorMode]} />
 
       <Icon
         position="absolute"
@@ -103,20 +72,14 @@ export const Services2 = () => {
         // color="gray.300"
         transform="rotate(0.5turn)"
         opacity="0.1"
-        color={useColorModeValue("white", "gray300")}
+        color={useColorModeValue("white", "gray.300")}
         as={FaCodepen}
         top="10%"
         right="-5%"
       />
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-      />
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-      />
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-      />
+      <DashedLine strokeColors={theme.bg[colorMode]} />
+      <DashedLine strokeColors={theme.bg[colorMode]} />
+      <DashedLine strokeColors={theme.bg[colorMode]} />
 
       <Box p="1rem" px="1rem">
         <Heading fontSize="5xl" mb="1rem">
@@ -143,15 +106,9 @@ export const Services2 = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-      />
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-      />
-      <DashedLine
-        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
-      />
+      <DashedLine strokeColors={theme.bg[colorMode]} />
+      <DashedLine strokeColors={theme.bg[colorMode]} />
+      <DashedLine strokeColors={theme.bg[colorMode]} />
     </Box>
   );
 };

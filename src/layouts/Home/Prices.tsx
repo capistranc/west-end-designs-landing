@@ -68,7 +68,7 @@ function loadPrices() {
   );
 }
 
-import { DiagonalDecorator } from "../../components/Decorators/Diagonal";
+import { DiagonalDecoratorTopRightMinus } from "../../components/Decorators/Diagonal";
 export const Prices = () => {
   const { colorMode } = useColorMode();
   return (
@@ -80,7 +80,7 @@ export const Prices = () => {
       color={useColorModeValue("gray.700", "gray.100")}
       position="relative"
     >
-      <DiagonalDecorator backgroundColor={theme.bg2[colorMode]} />
+      <DiagonalDecoratorTopRightMinus backgroundColor={theme.bg2[colorMode]} />
 
       <DashedLine />
       <svg viewBox="0 0 100 100" height="20px" width="20px">
