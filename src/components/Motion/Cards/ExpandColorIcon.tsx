@@ -5,6 +5,7 @@ import { toHex } from "../../../theme/colors";
 import React, { useState } from "react";
 import NextLink from "next/link";
 import { useColorModeValue } from "@chakra-ui/color-mode";
+import { useBreakpointValue } from "@chakra-ui/media-query";
 
 export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
   const [isFocused, setFocus] = useState(false);
@@ -69,7 +70,11 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
         color={useColorModeValue(toHex("gray.900"), toHex("gray.200"))}
         {...props}
       >
-        <Box p="4" position="relative" align="left">
+        <Box
+          p="4"
+          position="relative"
+          align={useBreakpointValue({ base: "center", sm: "left" })}
+        >
           <MotionBox
             position="absolute"
             variants={iconVariant}
