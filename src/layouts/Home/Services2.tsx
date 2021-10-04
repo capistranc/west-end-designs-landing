@@ -75,6 +75,27 @@ export const Services2 = () => {
         w="100%"
       />
 
+      <Box
+        position="absolute"
+        bottom="-10rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(-5deg)"
+        bg={useColorModeValue("blue.50", "teal.900")}
+        h="10rem"
+        w="100%"
+      />
+      <Box
+        position="absolute"
+        bottom="-0rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(-5deg)"
+        backgroundColor={useColorModeValue("blue.400", "teal.800")}
+        h="10rem"
+        w="100%"
+      />
+
       <Icon
         position="absolute"
         overflow="hidden"
