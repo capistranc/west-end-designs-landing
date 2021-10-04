@@ -90,7 +90,7 @@ export const Services = ({ ...props }) => {
         transform="skewY(5deg)"
         bg={theme.bg[colorMode]}
         h="15rem"
-        w="100%"
+        w="50%"
         zIndex="1"
       />
       <Box
