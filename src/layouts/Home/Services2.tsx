@@ -87,7 +87,7 @@ export const Services2 = () => {
       />
       <Box
         position="absolute"
-        bottom="-0rem"
+        bottom="0rem"
         right="0"
         zIndex="1"
         transform="skewY(-5deg)"
@@ -133,7 +133,7 @@ export const Services2 = () => {
         flexDirection={["column-reverse", "column-reverse", "row", "row"]}
         justify="space-evenly"
         align="space-around"
-        mb="1em"
+        mb="6rem"
       >
         <Flex direction="column" align="center" justify="center">
           <SimpleGrid columns={[1, 2, 2, 2]} gap="1rem" mt="2rem">
