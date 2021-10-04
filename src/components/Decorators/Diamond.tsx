@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 
 export const DiamondDecoratorTopDown = ({ ...props }) => {
   return (
-    <Box {...props} bg="white">
+    <Box {...props}>
       <Box
         position="absolute"
         top="-5rem"
@@ -10,6 +10,7 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
         zIndex="1"
         transform="skewY(5deg)"
         bg={props.bg || props.bgColor}
+        {...props}
         h="10rem"
         w="100%"
       />
@@ -19,6 +20,7 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
         right="0"
         zIndex="1"
         bg={props.bg || props.bgColor}
+        {...props}
         h="10rem"
         w="100%"
       ></Box>
@@ -29,6 +31,7 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
         zIndex="1"
         transform="skewY(-5deg)"
         bg={props.bg || props.bgColor}
+        {...props}
         h="10rem"
         w="100%"
       />

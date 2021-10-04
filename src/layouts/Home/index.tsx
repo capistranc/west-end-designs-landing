@@ -28,7 +28,6 @@ import { Landing } from "./Landing";
 import { AboutUs } from "./AboutUs";
 import { Portfolio } from "./Portfolio";
 import { Parallax } from "../../components/Wrappers/Parallax";
-import { DiagonalDecorator } from "../../components/Decorators/Diagonal";
 const observerOptions = {
   root: null,
   rootMargin: "0px",
@@ -51,11 +50,7 @@ export const Home = () => {
 
   const { colorMode } = useColorMode();
 
-  let bgImages = [
-    `url('/images/${device || "mobile"}/cliffEdge.jpeg')`,
-    `url('/images/${device || "mobile"}/cliffStanding.jpeg')`,
-    `url('/images/${device || "mobile"}/cliffBottom.jpeg')`,
-  ];
+  let bgImages = [`url('/images/${device || "mobile"}/cliffEdge.jpeg')`];
 
   return (
     <>
@@ -92,6 +87,7 @@ export const Home = () => {
           mt="10rem"
           color={theme.fg[colorMode]}
           bg={theme.bg[colorMode]}
+          align="center"
         >
           <ContactForm position="relative" zIndex="5" />
         </Box>

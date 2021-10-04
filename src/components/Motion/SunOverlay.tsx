@@ -32,7 +32,7 @@ const overlayVariant = {
         bg: "rgba(25, 25, 112,1)",
         transition: {
           type: "spring",
-          // delay: 2,
+
           duration: 1,
         },
       };

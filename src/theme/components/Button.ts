@@ -20,7 +20,7 @@ export const Button = {
     solid: (props) => ({
       color: "white",
       borderRadius: 0,
-      bg: props.colorMode === "dark" ? "teal.700" : "teal.600",
+      bg: props.colorMode === "dark" ? "teal.700" : "teal.500",
     }),
   },
 };

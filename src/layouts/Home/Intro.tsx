@@ -40,10 +40,10 @@ export const Intro = ({ ...props }) => {
           </Heading>
           <Text maxWidth="45rem">
             Getting online is easy. Succeeding online is a different story.
-            You’ll need more than just a beautiful website to stand out these
-            days. Search Engine Optimzation, conversion-based web designs,
-            Google Analytics. Here at the West End we use every tool available
-            to guarantee your success.
+            Search Engine Optimzation, conversion-based web designs, Google
+            Analytics. Here at the West End we use every tool available to
+            guarantee your success. We are so confident in our designs, that we
+            offer mockups for our standard package free of charge.
           </Text>
         </Box>
 
