@@ -58,12 +58,11 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
         // overflow="hidden"
         variants={containerVariant}
         initial="rest"
-        animate="rest" //{isFocused ? "hover" : "rest"}
+        animate={isFocused ? "hover" : "rest"}
         onFocus={() => setFocus(true)}
-        whileHover="hover"
-        _hover={{ animate: "hover" }}
-        onHoverStart={() => setFocus(true)}
-        onHoverEnd={() => setFocus(false)}
+        // whileHover="hover"
+        onMouseEnter={() => setFocus(true)}
+        onMouseLeave={() => setFocus(false)}
         onBlur={() => setFocus(false)}
         p="4"
         width="100%"

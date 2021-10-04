@@ -133,7 +133,7 @@ export const Services2 = () => {
         flexDirection={["column-reverse", "column-reverse", "row", "row"]}
         justify="space-evenly"
         align="space-around"
-        mb="6rem"
+        mb="2rem"
       >
         <Flex direction="column" align="center" justify="center">
           <SimpleGrid columns={[1, 2, 2, 2]} gap="1rem" mt="2rem">
@@ -143,6 +143,12 @@ export const Services2 = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      />
+      <DashedLine
+        strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
+      />
       <DashedLine
         strokeColors={useColorModeValue("white", theme.toHex("teal.900"))}
       />
