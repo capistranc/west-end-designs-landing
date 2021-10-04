@@ -41,9 +41,9 @@ export const Intro = ({ ...props }) => {
           <Text maxWidth="45rem">
             Getting online is easy. Succeeding online is a different story.
             You’ll need more than just a beautiful website to stand out these
-            days. Online marketing solutions. Conversion-based web design
-            coupled with a lead generating marketing plan, your online success
-            is inevitable.
+            days. Search Engine Optimzation, conversion-based web designs,
+            Google Analytics. Here at the West End we use every tool available
+            to guarantee your success.
           </Text>
         </Box>
 

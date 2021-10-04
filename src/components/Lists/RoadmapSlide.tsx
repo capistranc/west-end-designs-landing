@@ -46,6 +46,7 @@ export const RoadmapSlide = ({
 
   const width = ["20em", "22em", "24em", "30em"];
 
+  const { colorMode } = useColorMode();
   return (
     <Flex
       direction={{
@@ -59,27 +60,14 @@ export const RoadmapSlide = ({
       <Header {...headerProps} orient={orient} width={width} />
 
       <Box position="relative">
-        <Box
-          position="absolute"
-          boxSize="11rem"
-          borderRadius="full"
-          borderTop="none"
-          // border="1rem solid"
-          borderColor={useColorModeValue(
-            theme.toHex("blue.300"),
-            theme.toHex("teal.900"),
-          )}
-        >
+        <Box position="absolute" boxSize="12rem">
           <svg viewBox="0 0 100 100" height="12rem" width="12rem">
             <path
               fill="none"
               d="M50,4
                 a46,46 0 1,1 0,92
                 a46,46 0 1,1 -0,-92"
-              stroke={useColorModeValue(
-                theme.toHex("blue.500"),
-                theme.toHex("teal.900"),
-              )}
+              stroke={theme.border2[colorMode]}
               strokeWidth="9px"
               strokeDasharray={`${(headerProps.step - 1) * 25 * 2.89026},2000`}
             />
@@ -91,7 +79,7 @@ export const RoadmapSlide = ({
           borderRadius="full"
           border="16px solid"
           p="1rem"
-          borderColor={useColorModeValue("blue.200", "teal.700")}
+          borderColor={theme.border1[colorMode]}
         />
       </Box>
 
