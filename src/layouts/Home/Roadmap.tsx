@@ -6,6 +6,7 @@ import {
   Button,
   useColorModeValue,
   useColorMode,
+  keyframes,
 } from "@chakra-ui/react";
 import { theme } from "../../theme/colors";
 
@@ -51,6 +52,10 @@ export const RoadmapSlide = ({
   };
 
   const width = ["20em", "22em", "24em", "30em"];
+  const percentAnim = keyframes`
+  0% {stroke-dasharray: 0, 100;}`;
+
+  const percentAnimation = `${percentAnim} 1s ease-out forwards`;
   return (
     <Flex
       direction={{
@@ -62,20 +67,40 @@ export const RoadmapSlide = ({
       {...props}
     >
       <Header {...headerProps} orient={orient} width={width} />
+
       <Box position="relative">
-        {/* <Box
+        <Box
           position="absolute"
           boxSize="11rem"
           borderRadius="full"
-          border="1rem solid"
           borderTop="none"
-          borderColor={useColorModeValue("blue.200", "teal.800")}
-        ></Box> */}
+          // border="1rem solid"
+          borderColor={useColorModeValue(
+            theme.toHex("blue.300"),
+            theme.toHex("teal.900"),
+          )}
+        >
+          <svg viewBox="0 0 100 100" height="12rem" width="12rem">
+            <path
+              fill="none"
+              d="M50,4
+              a46,46 0 1,1 0,92
+              a46,46 0 1,1 -0,-92"
+              stroke={useColorModeValue(
+                theme.toHex("blue.500"),
+                theme.toHex("teal.900"),
+              )}
+              strokeWidth="9px"
+              strokeDasharray="0,2000" //{`${(headerProps.step - 1) * 25 * 2.89026},2000`}
+              animation={percentAnimation}
+            />
+          </svg>
+        </Box>
         <Icon
           as={icon}
-          boxSize="11rem"
+          boxSize="12rem"
           borderRadius="full"
-          border="1rem solid"
+          border="16px solid"
           p="1rem"
           borderColor={useColorModeValue("blue.200", "teal.700")}
         />
@@ -123,7 +148,7 @@ export const Roadmap = ({ ...props }) => {
         w="100%"
       />
 
-      <DashedLine zIndex="10" />
+      <DashedLine />
       <Box position="relative" py="4" zIndex="10">
         <Button
           variant="solid"
@@ -138,7 +163,7 @@ export const Roadmap = ({ ...props }) => {
       </Box>
 
       <Box align="center" color="white" backgroundColor={theme.bg2[colorMode]}>
-        <DashedLine strokeColors={theme.bg[colorMode]} zIndex="10" />
+        <DashedLine strokeColors={theme.bg[colorMode]} />
         <DashedLine strokeColors={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide

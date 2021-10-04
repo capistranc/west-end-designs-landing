@@ -72,8 +72,8 @@ export const Home = () => {
             base: mobileHeight > 0 ? mobileHeight : "120vh",
             md: "120vh",
           }}
-          backgroundPosition={{ base: "-40px 0", md: "center" }}
-          backgroundSize={{ base: "140vh 110vh", md: "cover" }}
+          backgroundPosition={{ base: "-80px 0", md: "center" }}
+          backgroundSize={{ base: "130vh 110vh", md: "cover" }}
           id="section0"
         >
           <SunOverlay />
