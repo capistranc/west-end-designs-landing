@@ -60,7 +60,11 @@ function loadPrices() {
   ];
 
   return (
-    <Flex flexDirection={["column", "column", "row", "row"]} justify="center">
+    <Flex
+      flexDirection={["column", "column", "row", "row"]}
+      flexWrap="wrap"
+      justify="center"
+    >
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[0]} />
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[1]} />
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[2]} />

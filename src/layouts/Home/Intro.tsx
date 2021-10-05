@@ -38,12 +38,12 @@ export const Intro = ({ ...props }) => {
               West End Designs
             </Text>
           </Heading>
-          <Text maxWidth="45rem">
+          <Text maxWidth="48em">
             Getting online is easy. Succeeding online is a different story.
-            Search Engine Optimzation, conversion-based web designs, Google
-            Analytics. Here at the West End we use every tool available to
-            guarantee your success. We are so confident in our designs, that we
-            offer mockups for our standard package free of charge.
+            Search Engine Optimization, Google Analytics, Server-Side
+            Rendering... At West End we use every tool available to guarantee
+            your success. We are so confident in our designs, that your first
+            mockup for a standard website is free of charge.
           </Text>
         </Box>
 

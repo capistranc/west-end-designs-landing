@@ -12,11 +12,12 @@ export const CallWriteReview = ({ ...props }) => {
       justify="space-evenly"
       align="center"
       direction={["column", "column", "row", "row"]}
+      color={theme.fg2[colorMode]}
       {...props}
     >
       <Box my="8">
         <BorderedIconOffset icon={GiSmartphone} />
-        <Heading variant="h2" mb="2" color={theme.fg[colorMode]}>
+        <Heading variant="h2" mb="2">
           Call us
         </Heading>
         <Text>
@@ -31,7 +32,7 @@ export const CallWriteReview = ({ ...props }) => {
 
       <Box my="8">
         <BorderedIconOffset icon={IoIosMailUnread} />
-        <Heading variant="h2" mb="2" color={theme.fg[colorMode]}>
+        <Heading variant="h2" mb="2">
           Write Us
         </Heading>
         <Text>
@@ -50,7 +51,7 @@ export const CallWriteReview = ({ ...props }) => {
 
       <Box my="8">
         <BorderedIconOffset icon={IoIosMegaphone} />{" "}
-        <Heading variant="h2" mb="2" color={theme.fg[colorMode]}>
+        <Heading variant="h2" mb="2">
           Review Us
         </Heading>
         <Text>

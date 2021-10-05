@@ -48,8 +48,8 @@ export const PricingCard = ({
       >
         <Box
           d="block"
-          minW="17rem"
-          maxW={"330px"}
+          minW="18rem"
+          maxW="22rem"
           w={"full"}
           bg={useColorModeValue("white", "teal.800")}
           color={useColorModeValue("gray.800", "white")}

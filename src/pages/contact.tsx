@@ -87,16 +87,25 @@ export const ContactPage: NextPage = () => {
             justify="space-evenly"
             align="center"
             mt="8"
-            direction={["column", "column", "row-reverse", "row-reverse"]}
+            direction={["column-reverse", "column-reverse", "row", "row"]}
           >
+            <ContactForm
+              flex="1"
+              maxWidth="52rem"
+              minWidth={{ md: "28rem" }}
+              color={theme.fg[colorMode]}
+              bg={theme.bg4[colorMode]}
+            />
             <Box
-              maxWidth="20rem"
+              maxWidth="28rem"
               textAlign="left"
               my="12"
               align="center"
               // justify="center"
             >
-              <Heading variant="h2">24/7 Customer Support</Heading>
+              <Heading variant="h2" mb="4">
+                24/7 Customer Support
+              </Heading>
               <Text>
                 At West End Designs, we don't leave anyone hanging. You are
                 always one call or text away from reaching one of us directly.
@@ -106,13 +115,6 @@ export const ContactPage: NextPage = () => {
 
               <BorderedIconOffset m="2rem auto" icon={MdHeadsetMic} />
             </Box>
-            <ContactForm
-              flex="1"
-              d="inline-block"
-              maxWidth="52rem"
-              color={theme.fg[colorMode]}
-              bg={theme.bg4[colorMode]}
-            />
           </Flex>
         </Box>
       </Box>

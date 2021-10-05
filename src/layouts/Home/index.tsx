@@ -60,7 +60,7 @@ export const Home = () => {
         w="100%"
         color="white"
       />
-      <Box position="relative" as="main" color="white" zIndex="1">
+      <Box position="relative" as="main" zIndex="1">
         <Parallax
           bgImage={bgImages[0]}
           height={{
