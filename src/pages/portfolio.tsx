@@ -25,11 +25,7 @@ export const Portfolio: NextPage = () => {
 
   const bgImage = useColorModeValue(bgImageLight, bgImageDark);
   return (
-    <Layout
-      title="Portfolio"
-      description="Come see some of our happy clients"
-      mt="8"
-    >
+    <Layout title="Portfolio" description="Come see some of our happy clients">
       <Head>
         <title>Portfolio</title>
       </Head>

@@ -12,6 +12,7 @@ const overlayVariant = {
     rotateZ: colorMode === "light" ? -90 : 0,
     transition: {
       duration: 1,
+      delay: 1,
     },
   }),
   show: (colorMode) => {
@@ -33,8 +34,9 @@ const overlayVariant = {
         bg: "rgba(25, 25, 112,1)",
         transition: {
           type: "spring",
+          delay: 1,
 
-          duration: 1,
+          duration: 1.5,
         },
       };
     }
@@ -95,7 +97,7 @@ export const SunOverlay = () => {
   );
 
   return (
-    <AnimatePresence custom={colorMode} initial={true} exitBeforeEnter>
+    <>
       <Overlay key={colorMode} />
       <Overlay
         key={`${colorMode}2`}
@@ -105,6 +107,6 @@ export const SunOverlay = () => {
           "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8491771708683473) 50%, rgba(0,0,0,1) 100%)",
         )}
       />
-    </AnimatePresence>
+    </>
   );
 };
