@@ -106,7 +106,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           options={{ initialColorMode: "light", useSystemColorMode: false }}
         >
           <GlobalStyle>
-            <StickyNavHeader />
+            <StickyNavHeader/>
 
             <AnimatePresence
               exitBeforeEnter

@@ -15,6 +15,7 @@ import { theme } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 
+import { Layout } from "../Layout";
 import { ContactForm } from "../../components/Forms/ContactForm";
 import { SunOverlay } from "../../components/Motion/SunOverlay";
 import NextImage from "next/image";
@@ -53,7 +54,11 @@ export const Home = () => {
   let bgImages = [`url('/images/${device || "mobile"}/cliffEdge.jpeg')`];
 
   return (
-    <>
+    <Layout
+      pt="0"
+      title="West End Designs"
+      description="Welcome to the West End"
+    >
       <Box position="relative" as="main" zIndex="1">
         <Parallax
           bgImage={bgImages[0]}
@@ -97,6 +102,6 @@ export const Home = () => {
           /> */}
         </Box>
       </Box>
-    </>
+    </Layout>
   );
 };
