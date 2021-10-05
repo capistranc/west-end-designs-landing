@@ -6,7 +6,7 @@ import { Background } from "../layouts/Services/styledSectionComponent";
 import { StickyNavHeader } from "../components/Header";
 import { theme } from "../theme";
 import React, { useRef, useEffect, useState } from "react";
-import { FooterContent } from "../components/Footer";
+import { Footer } from "../components/Footer";
 
 import {
   Box,
@@ -51,14 +51,14 @@ export const ContactPage: NextPage = () => {
       color={theme.fg[colorMode]}
       position="relative"
     >
-      <StickyNavHeader id="sticky-nav-bar" position="fixed" color="white" />
-      <Box height={{ base: "25vh", md: "40vh" }} top="0" w="100%">
+      <Box height={{ base: "25vh", md: "50vh" }} top="0" w="100%">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
             <b className="thing">Contact Us</b>
           </Heading>
         </Banner>
       </Box>
+      <DashedLine position="absolute" top="-5rem" />
 
       <Box className="decorator" position="relative" align="center">
         <Box
@@ -74,9 +74,9 @@ export const ContactPage: NextPage = () => {
             bg={theme.bg2[colorMode]}
             color={theme.fg2[colorMode]}
           >
-            <DiamondDecoratorTopDown bg={theme.bg[colorMode]} />
+            <DiamondDecoratorTopDown zIndex="1" bg={theme.bg3[colorMode]} />
             <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
-            {/* <DashedLine /> */}
+
             <DashedLine />
             <CallWriteReview py="8rem" />
             <DashedLine />
@@ -118,11 +118,6 @@ export const ContactPage: NextPage = () => {
           </Flex>
         </Box>
       </Box>
-      <FooterContent
-        color={theme.fg2[colorMode]}
-        bg={theme.bg2[colorMode]}
-        width="100%"
-      />
     </Box>
   );
 };

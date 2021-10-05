@@ -11,4 +11,3 @@ export * from "./FooterHeading";
 export * from "./SocialMediaLinks";
 export * from "./Footer";
 export * from "./BlurryFooter";
-export { BlurryFooter as Footer } from "./BlurryFooter";

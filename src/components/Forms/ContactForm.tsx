@@ -114,7 +114,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           us a line
         </Heading>
 
-        <Stack direction={["row", "row", "row", "row"]}>
+        <Stack direction={["column", "row", "row", "row"]}>
           <FormControl isInvalid={errors.name}>
             <InLineLabel bg={props.bg || props.bgColor}> Name </InLineLabel>
             <Input
@@ -150,7 +150,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           </FormControl>
         </Stack>
 
-        <Stack direction={["row", "row", "row", "row"]}>
+        <Stack direction={["column", "row", "row", "row"]}>
           <FormControl isInvalid={errors.email}>
             <InLineLabel bg={props.bg}>Email</InLineLabel>
             <InputGroup>

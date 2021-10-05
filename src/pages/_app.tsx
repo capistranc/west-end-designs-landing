@@ -11,7 +11,6 @@ import Head from "next/head";
 import { Global, css } from "@emotion/react";
 import { prismLightTheme, prismDarkTheme } from "../theme/prism";
 import { theme } from "../theme";
-import TagManager from "react-gtm-module";
 
 import "@fontsource/raleway/";
 import "@fontsource/oswald/";
@@ -19,26 +18,25 @@ import "@fontsource/roboto/";
 import "@fontsource/roboto-condensed";
 import { AnimatePresence } from "framer-motion";
 import { DefaultSeo } from "next-seo";
-
+import { StickyNavHeader } from "../components/Header";
+import { Footer } from "../components/Footer";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const window: any;
 
-// export function reportWebVitals({
-//   id,
-//   name,
-//   label,
-//   value,
-// }: NextWebVitalsMetric): void {
-//   if (typeof window !== "undefined") {
-//     window.gtag("event", name, {
-//       event_category:
-//         label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
-//       value: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
-//       event_label: id, // id unique to current page load
-//       non_interaction: true, // avoids affecting bounce rate.
-//     });
-//   }
-// }
+export function reportWebVitals({
+  id,
+  name,
+  label,
+  value,
+}: NextWebVitalsMetric): void {
+  window.gtag("event", name, {
+    event_category:
+      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
+    value: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
+    event_label: id, // id unique to current page load
+    non_interaction: true, // avoids affecting bounce rate.
+  });
+}
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
 
@@ -80,9 +78,7 @@ const GlobalStyle = ({ children }) => {
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   const url = `https://westendwebdesigns.com${router.route}`;
-  useEffect(() => {
-    TagManager.initialize({ gtmId: "GTM-PT4WG68" });
-  }, []);
+  const { colorMode } = useColorMode();
 
   return (
     <>
@@ -110,6 +106,8 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           options={{ initialColorMode: "light", useSystemColorMode: false }}
         >
           <GlobalStyle>
+            <StickyNavHeader />
+
             <AnimatePresence
               exitBeforeEnter
               initial={false}
@@ -117,6 +115,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             >
               <Component {...pageProps} canonical={url} key={url} />
             </AnimatePresence>
+            <Footer />
           </GlobalStyle>
         </ColorModeProvider>
       </ChakraProvider>

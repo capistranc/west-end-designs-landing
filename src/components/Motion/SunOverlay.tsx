@@ -21,6 +21,7 @@ const overlayVariant = {
         scale: 1,
         rotateZ: 0,
         transition: {
+          delay: 1,
           duration: 0.8,
         },
       };

@@ -20,7 +20,7 @@ import { VscGraph } from "react-icons/vsc";
 import { BiBookContent } from "react-icons/bi";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { DiamondDecoratorBottomDown } from "../../components/Decorators";
-export const Services = ({ ...props }) => {
+export const SixTiles = ({ ...props }) => {
   const services = [
     {
       title: "Web Applications",

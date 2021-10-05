@@ -6,7 +6,7 @@ import { Background } from "../layouts/Services/styledSectionComponent";
 import { StickyNavHeader } from "../components/Header";
 import { theme } from "../theme/colors";
 import React, { useRef, useEffect, useState } from "react";
-import { FooterContent } from "../components/Footer";
+import { Footer } from "../components/Footer";
 import Image from "next/image";
 
 import {
@@ -36,11 +36,6 @@ export const About: NextPage = () => {
 
   return (
     <>
-      <StickyNavHeader
-        id="sticky-nav-bar"
-        position="fixed"
-        color={theme.fg[colorMode]}
-      />
       <Box height={{ base: "20rem", md: "30rem" }} top="0" w="100%" bg="white">
         <Banner h="100%" color="white">
           <Heading fontWeight="600" py="10" fontSize="4xl">
@@ -125,7 +120,6 @@ export const About: NextPage = () => {
           </Box>
         </SimpleGrid>
       </Box>
-      <FooterContent bgColor="gray.700" width="100%" color="white" />
     </>
   );
 };

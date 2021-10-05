@@ -1,9 +1,11 @@
 import * as React from "react";
+import { theme } from "../../theme";
 import {
   Box,
   Spacer,
   Link,
   SimpleGrid,
+  useColorMode,
   SimpleGridProps,
   Stack,
   StackDivider,
@@ -15,7 +17,8 @@ import { Text, TextProps } from "@chakra-ui/layout";
 
 import { links } from "./index";
 
-export const FooterContent = ({ ...props }) => {
+export const Footer = ({ ...props }) => {
+  const { colorMode } = useColorMode();
   return (
     <Stack
       align="center"
@@ -23,6 +26,9 @@ export const FooterContent = ({ ...props }) => {
       divider={<StackDivider />}
       py="12"
       px={{ base: "4", md: "8" }}
+      bg={theme.bg2[colorMode]}
+      color={theme.fg2[colorMode]}
+      width="100%"
       {...props}
     >
       <Stack

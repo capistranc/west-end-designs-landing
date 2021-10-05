@@ -13,7 +13,7 @@ import {
 import NextLink from "next/link";
 import { theme } from "../../theme/colors";
 import { StickyNavHeader } from "../../components/Header";
-import { FooterContent } from "../../components/Footer";
+import { Footer } from "../../components/Footer";
 
 import { ContactForm } from "../../components/Forms/ContactForm";
 import { SunOverlay } from "../../components/Motion/SunOverlay";
@@ -21,7 +21,7 @@ import NextImage from "next/image";
 import { GiBigWave } from "react-icons/gi";
 import { Intro } from "./Intro";
 import { Prices } from "./Prices";
-import { Services } from "./Services";
+import { SixTiles } from "./SixTiles";
 import { Roadmap } from "./Roadmap";
 import { Services2 } from "./Services2";
 import { Landing } from "./Landing";
@@ -54,12 +54,6 @@ export const Home = () => {
 
   return (
     <>
-      <StickyNavHeader
-        id="sticky-nav-bar"
-        position="fixed"
-        w="100%"
-        color="white"
-      />
       <Box position="relative" as="main" zIndex="1">
         <Parallax
           bgImage={bgImages[0]}
@@ -75,7 +69,7 @@ export const Home = () => {
           <Landing />
         </Parallax>
         <Intro />
-        <Services />
+        <SixTiles />
         <Roadmap />
 
         <Prices />
@@ -101,11 +95,6 @@ export const Home = () => {
             left="-4"
             // opacity="0.5"
           /> */}
-          <FooterContent
-            bg={theme.bg2[colorMode]}
-            color={theme.fg2[colorMode]}
-            width="100%"
-          />
         </Box>
       </Box>
     </>

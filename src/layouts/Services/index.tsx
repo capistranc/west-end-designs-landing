@@ -12,7 +12,6 @@ import {
 
 import { theme } from "../../theme/";
 import { StickyNavHeader } from "../../components/Header";
-import { FooterContent } from "../../components/Footer";
 
 export * from "./section1";
 export * from "./section2";
@@ -29,11 +28,6 @@ export const Services5 = ({ sections }) => {
   const { colorMode } = useColorMode();
   return (
     <>
-      <StickyNavHeader
-        id="sticky-nav-bar"
-        position="fixed"
-        color={theme.fg[colorMode]}
-      />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}
         <Box height={{ md: "150px" }} w="100%"></Box>
@@ -69,7 +63,6 @@ export const Services5 = ({ sections }) => {
           {sections[9]}
         </SimpleGrid>
         <Box height="30px" w="100%"></Box>
-        <FooterContent bgColor="gray.700" width="100%" color="white" />
       </Flex>
     </>
   );
