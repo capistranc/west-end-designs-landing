@@ -154,9 +154,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           <FormControl isInvalid={errors.email}>
             <InLineLabel bg={props.bg}>Email</InLineLabel>
             <InputGroup>
-              <InputLeftElement
-                children={<EmailIcon color={theme.fg2[colorMode]} />}
-              />
+              <InputLeftElement children={<EmailIcon color="gray.300" />} />
               <Input
                 id="email"
                 type="email"
