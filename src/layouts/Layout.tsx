@@ -37,6 +37,7 @@ export const Layout = ({
           initial="hidden"
           animate="enter"
           exit="exit"
+          custom={colorMode}
           variants={variants}
           transition={{ type: "linear" }}
         >

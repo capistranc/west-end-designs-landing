@@ -44,14 +44,12 @@ export const ContactPage: NextPage = () => {
             </Heading>
           </Banner>
         </Box>
-        <DashedLine position="absolute" top="-5rem" />
 
         <Box className="decorator" position="relative" align="center">
           <Box
             className="content"
             align="center"
             position="relative"
-            py="1rem"
             zIndex="10"
           >
             <Box
@@ -60,11 +58,12 @@ export const ContactPage: NextPage = () => {
               bg={theme.bg2[colorMode]}
               color={theme.fg2[colorMode]}
             >
-              <DiamondDecoratorTopDown zIndex="1" bg={theme.bg3[colorMode]} />
               <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
 
-              <DashedLine />
-              <CallWriteReview py="8rem" />
+              <DashedLine strokeColors={theme.bg[colorMode]} />
+              <CallWriteReview py="2rem" />
+
+              <DashedLine strokeColors={theme.bg[colorMode]} />
               <DashedLine />
               <DashedLine />
             </Box>
