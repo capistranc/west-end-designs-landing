@@ -4,7 +4,7 @@ import { useHasRendered } from "../../lib/hooks";
 import { Box } from "@chakra-ui/react";
 import { useRef } from "react";
 
-const shakeVariant = {
+const wobbleVariant = {
   hidden: {
     rotate: 20,
     scale: 1,
@@ -20,13 +20,13 @@ const shakeVariant = {
   },
 };
 
-export const Shake = ({ children, from = "left", ...props }) => {
+export const Wobble = ({ children, from = "left", ...props }) => {
   return (
     <OnRender>
       <MotionBox
         h="100%"
         w="100%"
-        variants={shakeVariant}
+        variants={wobbleVariant}
         initial="hidden"
         animate="show"
       >
@@ -39,7 +39,7 @@ export const Shake = ({ children, from = "left", ...props }) => {
 // export const Shake = ({ children, ...props }) => {
 //   return (
 //     <OnRender>
-//       <MotionBox variants={shakeVariant} initial="hidden" animate="show">
+//       <MotionBox variants={wobbleVariant} initial="hidden" animate="show">
 //         {children}
 //       </MotionBox>
 //     </OnRender>

@@ -1,9 +1,11 @@
 import * as React from "react";
+import { theme } from "../../theme";
 import {
   Box,
   Spacer,
   Link,
   SimpleGrid,
+  useColorMode,
   SimpleGridProps,
   Stack,
   StackDivider,
@@ -15,7 +17,8 @@ import { Text, TextProps } from "@chakra-ui/layout";
 
 import { links } from "./index";
 
-export const FooterContent = ({ ...props }) => {
+export const Footer = ({ ...props }) => {
+  const { colorMode } = useColorMode();
   return (
     <Stack
       align="center"
@@ -23,6 +26,9 @@ export const FooterContent = ({ ...props }) => {
       divider={<StackDivider />}
       py="12"
       px={{ base: "4", md: "8" }}
+      bg={theme.bg2[colorMode]}
+      color={theme.fg2[colorMode]}
+      width="100%"
       {...props}
     >
       <Stack
@@ -66,21 +72,25 @@ export const Copyright = (props: TextProps) => (
 );
 
 export const LinkGrid = (props: SimpleGridProps) => (
-  <SimpleGrid columns={2} {...props}>
+  <SimpleGrid columns={[1, 2, 2, 2]} {...props}>
     <Box minW="6em">
-      <FooterHeading mb="4">Product</FooterHeading>
+      <FooterHeading fontSize="xl" mb="4">
+        Code
+      </FooterHeading>
       <Stack>
-        <Link>How it works</Link>
-        <Link>Pricing</Link>
-        <Link>Use Cases</Link>
+        <Link>Mobile Designs</Link>
+        <Link>Web Applications</Link>
+        <Link>Full Stack Solutions</Link>
       </Stack>
     </Box>
     <Box minW="6em">
-      <FooterHeading mb="4">Legal</FooterHeading>
+      <FooterHeading fontSize="xl" mb="4">
+        Content
+      </FooterHeading>
       <Stack>
-        <Link>Privacy</Link>
-        <Link>Terms</Link>
-        <Link>License</Link>
+        <Link>Google Analytics</Link>
+        <Link>Content Management</Link>
+        <Link>Search Engine Optimization</Link>
       </Stack>
     </Box>
   </SimpleGrid>

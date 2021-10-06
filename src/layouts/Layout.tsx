@@ -1,30 +1,49 @@
-import React from "react";
+import React, { ReactNode } from "react";
+
 import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
 import { theme } from "../theme/colors";
 
-import { Footer } from "../components/Footer";
-import { BannerHeader, StickyNavHeader } from "../components/Header";
-import { Date, Logo } from "../components/";
+import { NextSeo } from "next-seo";
+import { MotionBox } from "../components/Motion";
 
-export const Layout = ({ children }) => {
+type Props = {
+  children: ReactNode;
+  title: string;
+  description: string;
+};
+
+const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+};
+
+export const Layout = ({
+  children,
+  title,
+  description,
+  ...props
+}: Props): JSX.Element => {
   const { colorMode } = useColorMode();
-
   return (
-    <>
-      <BannerHeader bg={theme.bg[colorMode]} color={theme.fg[colorMode]} />
-      <Flex
-        position="relative"
-        top="0"
-        as="main"
-        justifyContent="center"
-        align="center"
-        flexDirection="column"
-        bg={theme.bg[colorMode]}
-        color={theme.fg[colorMode]}
-      >
-        {children}
-      </Flex>
-      <Footer bg={theme.bg[colorMode]} color={theme.fg[colorMode]} />
-    </>
+    <Box>
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{ title, description }}
+      />
+      <Box position="relative" as="main" pt="3.5rem" {...props}>
+        <MotionBox
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          custom={colorMode}
+          variants={variants}
+          transition={{ type: "linear" }}
+        >
+          {children}
+        </MotionBox>
+      </Box>
+    </Box>
   );
 };

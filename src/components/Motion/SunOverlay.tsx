@@ -12,15 +12,18 @@ const overlayVariant = {
     rotateZ: colorMode === "light" ? -90 : 0,
     transition: {
       duration: 1,
+      delay: 1,
     },
   }),
-  show: (colorMode) => {
+
+  enter: (colorMode) => {
     if (colorMode === "light") {
       return {
         opacity: 0.7,
         scale: 1,
         rotateZ: 0,
         transition: {
+          delay: 1,
           duration: 0.8,
         },
       };
@@ -32,8 +35,8 @@ const overlayVariant = {
         bg: "rgba(25, 25, 112,1)",
         transition: {
           type: "spring",
-          // delay: 2,
-          duration: 1,
+          delay: 1,
+          duration: 1.5,
         },
       };
     }
@@ -82,7 +85,7 @@ export const SunOverlay = () => {
       custom={colorMode}
       opacity="0"
       initial="hidden"
-      animate="show"
+      animate="enter"
       exit="exit"
       bg="url('/images/sunOverlay.png')"
       background-repeat="no-repeat"
@@ -94,16 +97,20 @@ export const SunOverlay = () => {
   );
 
   return (
-    <AnimatePresence custom={colorMode} initial={true} exitBeforeEnter>
-      <Overlay key={colorMode} />
-      <Overlay
-        key={`${colorMode}2`}
-        sx={{ mixBlendMode: "overlay" }}
-        bg={useColorModeValue(
-          "transparent",
-          "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8491771708683473) 50%, rgba(0,0,0,1) 100%)",
-        )}
-      />
-    </AnimatePresence>
+    <>
+      <AnimatePresence custom={colorMode} initial={false} exitBeforeEnter>
+        <MotionBox key={colorMode}>
+          <Overlay />
+          <Overlay
+            key={`${colorMode}2`}
+            sx={{ mixBlendMode: "overlay" }}
+            bg={useColorModeValue(
+              "transparent",
+              "linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8491771708683473) 50%, rgba(0,0,0,1) 100%)",
+            )}
+          />
+        </MotionBox>
+      </AnimatePresence>
+    </>
   );
 };

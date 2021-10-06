@@ -12,6 +12,7 @@ import {
   Stack,
   FormControl,
   Box,
+  Text,
   useToast,
   HTMLChakraProps,
   FormErrorMessage,
@@ -49,7 +50,6 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
   } = useForm();
 
   const [isSending, setSending] = React.useState(false);
-  const { colorMode } = useColorMode();
 
   const toast = useToast();
   const onSubmit = async (data) => {
@@ -88,30 +88,35 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
     setSending(false);
   };
 
+  const { colorMode } = useColorMode();
+
   return (
     <chakra.form
       onSubmit={handleSubmit(onSubmit)}
       id="contact-form"
       display="block"
       color={theme.fg[colorMode]}
-      bg={theme.bg[colorMode]}
+      bg={theme.bg4[colorMode]}
+      boxShadow="0 0 29px 0 rgb(0 0 0 / 9%)"
+      border={"4px dashedArray 12,5"}
+      borderColor={theme.fg[colorMode]}
+      borderRadius="4px"
       p="4"
+      m="4"
+      maxWidth="36rem"
       {...props}
     >
-      <Box maxWidth="64rem" align="center" margin="1rem auto">
-        <Flex
-          justify="space-evenly"
-          align="center"
-          direction={["column", "column", "row", "row"]}
-          mb="4em"
-        >
-          <Heading p="4">Get in touch today!</Heading>
+      <Box align="center" margin="0 auto" p="4">
+        <Heading variant="h2" fontSize="4xl" textAlign="left" mb="2rem">
+          <Text d="inline" color={theme.heading[colorMode]}>
+            Drop
+          </Text>{" "}
+          us a line
+        </Heading>
 
-          <ContactInfo p="4" />
-        </Flex>
-        <Stack direction={["column", "column", "row", "row"]}>
+        <Stack direction={["column", "row", "row", "row"]}>
           <FormControl isInvalid={errors.name}>
-            <InLineLabel bg={props.bg}> Name </InLineLabel>
+            <InLineLabel bg={props.bg || props.bgColor}> Name </InLineLabel>
             <Input
               borderColor="gray.500"
               variant="outline"
@@ -145,7 +150,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           </FormControl>
         </Stack>
 
-        <Stack direction={["column", "column", "row", "row"]}>
+        <Stack direction={["column", "row", "row", "row"]}>
           <FormControl isInvalid={errors.email}>
             <InLineLabel bg={props.bg}>Email</InLineLabel>
             <InputGroup>
@@ -206,38 +211,37 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           </FormControl>
         </Stack>
 
-        <Flex w="100%">
-          <FormControl isInvalid={errors.question} isRequired>
-            <InLineLabel bg={props.bg}>
-              <QuestionIcon mx="1" />
-              Message
-            </InLineLabel>
+        <FormControl isInvalid={errors.question} isRequired>
+          <InLineLabel bg={props.bg}>
+            <QuestionIcon mx="1" />
+            Message
+          </InLineLabel>
 
-            <Textarea
-              p="4"
-              borderColor="gray.500"
-              minHeight="12rem"
-              type="question"
-              overflowY="scroll"
-              placeholder={`Hey man, so next week I was thinking you should come up to my house in Bodega and we can go running. And we can have some fun together, running. And maybe something more, but maybe just running.`}
-              {...register("question", {
-                required: `This field is required`,
-                minLength: {
-                  value: 30,
-                  message: "Minimum length should be 30",
-                },
-              })}
-            />
+          <Textarea
+            p="4"
+            borderColor="gray.500"
+            minHeight="12rem"
+            type="question"
+            overflowY="scroll"
+            placeholder={`Hey man, so next week I was thinking you should come up to my house in Bodega and we can go running. And we can have some fun together, running. And maybe something more, but maybe just running.`}
+            {...register("question", {
+              required: `This field is required`,
+              minLength: {
+                value: 30,
+                message: "Minimum length should be 30",
+              },
+            })}
+          />
 
-            <Box h="2em">
-              <FormErrorMessage d="inline">
-                {errors.question && (
-                  <AlertPop display="inline" title={errors.question.message} />
-                )}
-              </FormErrorMessage>
-            </Box>
-          </FormControl>
-        </Flex>
+          <Box h="2em">
+            <FormErrorMessage d="inline">
+              {errors.question && (
+                <AlertPop display="inline" title={errors.question.message} />
+              )}
+            </FormErrorMessage>
+          </Box>
+        </FormControl>
+
         <Button
           type="submit"
           width="60%"

@@ -10,3 +10,4 @@ export const links = [
 export * from "./StickyNavHeader";
 export * from "./BannerHeader";
 export * from "./WhiteStickyNavHeader";
+export * from "./Banner";

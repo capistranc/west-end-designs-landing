@@ -4,46 +4,19 @@ import React, { useRef, useEffect } from "react";
 import { links } from "./index";
 
 export const StickyNavHeader = ({ ...props }) => {
-  // let options = {
-  //   root: null, //The element that is used as the viewport for checking visibility of the target.
-  //   // Must be the ancestor of the target. Defaults to the browser viewport if not specified or null
-  //   rootMargin: "0px",
-  //   threshold: [0, 0.5],
-  // };
-  //
-  // const callback = (entries, observer) => {
-  //   entries.forEach((entry) => {
-  //     console.log(entry);
-  //     if (entry.isIntersecting) {
-  //       let elem = entry.target;
-  //
-  //       console.log("WHATS ON THIS ELEM", elem);
-  //     }
-  //   });
-  // };
-  //ß∂
-  // useEffect(() => {
-  //   let observer = new IntersectionObserver(callback, options);
-  //
-  //   observer.observe(ref.current);
-  // });
-
   return (
     <Box
-      position="sticky"
       top="0"
-      width="100%"
+      as="nav"
+      id="nav"
       zIndex="sticky"
+      position="fixed"
+      w="100%"
+      color="white"
       bgColor="rgba(0.4,0.4,0.4,0.4)"
-      // bg="linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.5) 100%)"
-      // sx={{ backdropFilter: "blur(1rem)" }}
       {...props}
     >
-      <NavBar
-        links={links}
-        color={props.color}
-        //   bgColor="transparent"
-      ></NavBar>
+      <NavBar links={links} color={props.color}></NavBar>
     </Box>
   );
 };

@@ -68,7 +68,7 @@ export const RoadmapSlide = ({
                 a46,46 0 1,1 0,92
                 a46,46 0 1,1 -0,-92"
               stroke={theme.border2[colorMode]}
-              strokeWidth="9px"
+              strokeWidth="8px"
               strokeDasharray={`${(headerProps.step - 1) * 25 * 2.89026},2000`}
             />
           </svg>

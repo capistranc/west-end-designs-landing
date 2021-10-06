@@ -11,8 +11,12 @@ import {
 } from "@chakra-ui/react";
 
 import { theme } from "../../theme/";
+<<<<<<< HEAD
 import { StickyNavHeader, WhiteStickyNavHeader } from "../../components/Header";
 import { FooterContent } from "../../components/Footer";
+=======
+import { StickyNavHeader } from "../../components/Header";
+>>>>>>> 2544b53e9307c177d9a0be807779028ba0c436d4
 
 export * from "./section1";
 export * from "./section2";
@@ -68,9 +72,14 @@ export const Services5 = ({ sections }) => {
           {sections[7]}
           {sections[8]}
           {sections[9]}
+<<<<<<< HEAD
         </SimpleGrid> */}
         {/* <Box height="30px" w="100%"></Box> */}
         <FooterContent bgColor="gray.700" width="100%" color="white" />
+=======
+        </SimpleGrid>
+        <Box height="30px" w="100%"></Box>
+>>>>>>> 2544b53e9307c177d9a0be807779028ba0c436d4
       </Flex>
     </>
   );

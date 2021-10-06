@@ -18,7 +18,7 @@ export const InLineLabel = ({ children, ...props }) => {
       borderRadius="full"
       fontWeight="bold"
       top="-0.75em"
-      bgColor={theme.bg[colorMode]}
+      bgColor={theme.bg4[colorMode]}
       {...props}
     >
       {children}

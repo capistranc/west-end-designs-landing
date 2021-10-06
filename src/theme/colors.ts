@@ -74,19 +74,30 @@ const colorSchemes = {
     light: toHex("blue.50"),
     dark: toHex("teal.900"),
   },
+  bg4: {
+    light: toHex("white"),
+    dark: toHex("teal.800"),
+  },
   border2: {
-    light: toHex("blue.500"),
-    dark: toHex("teal.900"),
+    light: toHex("blue.200"),
+    dark: toHex("teal.600"),
   },
   border1: {
-    light: toHex("blue.200"),
+    light: toHex("blue.500"),
     dark: toHex("teal.700"),
   },
-
   fg: { light: toHex("gray.700"), dark: toHex("gray.100") },
   fg2: {
     light: toHex("white"),
     dark: toHex("gray.100"),
+  },
+  heading: {
+    light: toHex("teal.600"),
+    dark: toHex("teal.600"),
+  },
+  heading2: {
+    light: toHex("teal.600"),
+    dark: toHex("teal.600"),
   },
   line: {
     light: toHex("teal.500"),

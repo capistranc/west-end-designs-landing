@@ -9,7 +9,7 @@ import NextLink from "next/link";
 import React, { useState, useEffect } from "react";
 import { PricingCard } from "../../components/Cards/PricingCard";
 import { DashedLine } from "../../components/svg/DashedLine";
-import { Shake } from "../../components/Motion/Shake";
+import { Wobble } from "../../components/Motion/Wobble";
 import { SlideIn } from "../../components/Motion/SlideIn";
 import { theme } from "../../theme";
 function loadPrices() {
@@ -18,9 +18,9 @@ function loadPrices() {
       title: "WEB STANDARD",
       price: `150`,
       listData: [
+        "First Mockup Free",
         "5 Page Website",
         "Unlimited Edits",
-        "Hosting Included",
         "Lifetime Updates",
       ],
     },
@@ -60,7 +60,11 @@ function loadPrices() {
   ];
 
   return (
-    <Flex flexDirection={["column", "column", "row", "row"]} justify="center">
+    <Flex
+      flexDirection={["column", "column", "row", "row"]}
+      flexWrap="wrap"
+      justify="center"
+    >
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[0]} />
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[1]} />
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[2]} />
@@ -94,7 +98,7 @@ export const Prices = () => {
 
       <DashedLine />
 
-      <Shake>
+      <Wobble>
         <Flex justify="center">
           <Heading
             as="h1"
@@ -107,7 +111,7 @@ export const Prices = () => {
             PRICING
           </Heading>
         </Flex>
-      </Shake>
+      </Wobble>
 
       {loadPrices()}
       <DashedLine />
