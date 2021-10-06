@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 import { theme } from "../../theme/";
-import { StickyNavHeader } from "../../components/Header";
+import { StickyNavHeader, WhiteStickyNavHeader } from "../../components/Header";
 import { FooterContent } from "../../components/Footer";
 
 export * from "./section1";
@@ -26,40 +26,41 @@ export * from "./section9";
 export * from "./section10";
 
 export const Services5 = ({ sections }) => {
-  const { colorMode } = useColorMode();
+  // const { colorMode } = useColorMode();
   return (
     <>
-      <StickyNavHeader
+      <WhiteStickyNavHeader
         id="sticky-nav-bar"
         position="fixed"
-        color={theme.fg[colorMode]}
+        // color={theme.fg[colorMode]}
+        color="gray.900"
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}
-        <Box height={{ md: "150px" }} w="100%"></Box>
+        {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
 
-        <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
+        {/* <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
           {sections[1]}
           {sections[2]}
-        </SimpleGrid>
-        <Box height={{ md: "150px" }} w="100%"></Box>
+        </SimpleGrid> */}
+        {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
 
-        <SimpleGrid
+        {/* <SimpleGrid
           display={{ md: "inline-flex" }}
           base={{ base: 2, md: 2 }}
           flexDirection={{ md: "row-reverse" }}
         >
           {sections[3]}
           {sections[4]}
-        </SimpleGrid>
-        <Box height={{ md: "150px" }} w="100%"></Box>
+        </SimpleGrid> */}
+        {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
 
-        <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
+        {/* <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
           {sections[5]}
           {sections[6]}
-        </SimpleGrid>
-        <Box height={{ md: "150px" }} w="100%"></Box>
-        <SimpleGrid
+        </SimpleGrid> */}
+        {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
+        {/* <SimpleGrid
           display={{ md: "inline-flex" }}
           base={{ base: 2, md: 2 }}
           justifyContent={{ md: "center" }}
@@ -67,8 +68,8 @@ export const Services5 = ({ sections }) => {
           {sections[7]}
           {sections[8]}
           {sections[9]}
-        </SimpleGrid>
-        <Box height="30px" w="100%"></Box>
+        </SimpleGrid> */}
+        {/* <Box height="30px" w="100%"></Box> */}
         <FooterContent bgColor="gray.700" width="100%" color="white" />
       </Flex>
     </>
