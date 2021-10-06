@@ -77,9 +77,9 @@ export const Services2 = () => {
         top="10%"
         right="-5%"
       />
-      <DashedLine strokeColors={theme.bg[colorMode]} />
-      <DashedLine strokeColors={theme.bg[colorMode]} />
-      <DashedLine strokeColors={theme.bg[colorMode]} />
+      <DashedLine strokeColor={theme.bg[colorMode]} />
+      <DashedLine strokeColor={theme.bg[colorMode]} />
+      <DashedLine strokeColor={theme.bg[colorMode]} />
 
       <Box p="1rem" px="1rem">
         <Heading fontSize="5xl" mb="1rem">
@@ -106,9 +106,9 @@ export const Services2 = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
-      <DashedLine strokeColors={theme.bg[colorMode]} />
-      <DashedLine strokeColors={theme.bg[colorMode]} />
-      <DashedLine strokeColors={theme.bg[colorMode]} />
+      <DashedLine strokeColor={theme.bg[colorMode]} />
+      <DashedLine strokeColor={theme.bg[colorMode]} />
+      <DashedLine strokeColor={theme.bg[colorMode]} />
     </Box>
   );
 };

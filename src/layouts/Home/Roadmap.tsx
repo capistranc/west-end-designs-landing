@@ -43,8 +43,8 @@ export const Roadmap = ({ ...props }) => {
       </Box>
 
       <Box align="center" color="white" backgroundColor={theme.bg2[colorMode]}>
-        <DashedLine strokeColors={theme.bg[colorMode]} />
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide
             py="4"
@@ -60,7 +60,7 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
 
         <SlideIn from="left">
           <RoadmapSlide
@@ -77,7 +77,7 @@ export const Roadmap = ({ ...props }) => {
             text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
           />
         </SlideIn>
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide
             icon={GiArchBridge}
@@ -93,7 +93,7 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="left">
           <RoadmapSlide
             icon={BiCodeAlt}
@@ -109,7 +109,7 @@ export const Roadmap = ({ ...props }) => {
             text="Once you sign off on the design and content, we code the website from scratch. Leveraging modern frameworks to statically generate your site for further SEO optimization."
           />
         </SlideIn>
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
 
         <SlideIn from="right">
           <RoadmapSlide
@@ -126,8 +126,8 @@ export const Roadmap = ({ ...props }) => {
           />
         </SlideIn>
 
-        <DashedLine strokeColors={theme.bg[colorMode]} />
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
       </Box>
     </Box>
   );

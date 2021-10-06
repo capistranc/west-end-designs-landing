@@ -60,10 +60,10 @@ export const ContactPage: NextPage = () => {
             >
               <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
 
-              <DashedLine strokeColors={theme.bg[colorMode]} />
+              <DashedLine strokeColor={theme.bg[colorMode]} />
               <CallWriteReview py="2rem" />
 
-              <DashedLine strokeColors={theme.bg[colorMode]} />
+              <DashedLine strokeColor={theme.bg[colorMode]} />
               <DashedLine />
               <DashedLine />
             </Box>

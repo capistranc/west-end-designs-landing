@@ -54,7 +54,7 @@ export const Portfolio = () => {
       align="center"
       justify="center"
     >
-      <DashedLine strokeColors="white" />
+      <DashedLine strokeColor="white" />
 
       <Flex justify="space-evenly" direction={{ base: "column", md: "row" }}>
         <SlideIn
@@ -150,7 +150,7 @@ export const Portfolio = () => {
           bottom="-1em"
         />
       </Box>
-      <DashedLine strokeColors="white" />
+      <DashedLine strokeColor="white" />
     </Box>
   );
 };
