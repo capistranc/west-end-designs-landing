@@ -3,20 +3,19 @@ import {
   Box,
   Flex,
   Text,
+  Center,
   Heading,
   Button,
   Spacer,
   useColorMode,
   SimpleGrid,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { theme } from "../../theme/";
-<<<<<<< HEAD
 import { StickyNavHeader, WhiteStickyNavHeader } from "../../components/Header";
-import { FooterContent } from "../../components/Footer";
-=======
-import { StickyNavHeader } from "../../components/Header";
->>>>>>> 2544b53e9307c177d9a0be807779028ba0c436d4
+import { Footer } from "../../components/Footer";
+import { SixTiles } from "../Home/SixTiles";
 
 export * from "./section1";
 export * from "./section2";
@@ -30,7 +29,7 @@ export * from "./section9";
 export * from "./section10";
 
 export const Services5 = ({ sections }) => {
-  // const { colorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <>
       <WhiteStickyNavHeader
@@ -41,6 +40,14 @@ export const Services5 = ({ sections }) => {
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
         {sections[0]}
+        <SixTiles />
+        <Box h="15rem" align="center">
+          <Center h="100%">
+            <Text color={theme.fg[colorMode]} fontSize="4xl">
+              How All These Services Work For You.
+            </Text>
+          </Center>
+        </Box>
         {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
 
         {/* <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
@@ -72,14 +79,11 @@ export const Services5 = ({ sections }) => {
           {sections[7]}
           {sections[8]}
           {sections[9]}
-<<<<<<< HEAD
         </SimpleGrid> */}
         {/* <Box height="30px" w="100%"></Box> */}
-        <FooterContent bgColor="gray.700" width="100%" color="white" />
-=======
-        </SimpleGrid>
-        <Box height="30px" w="100%"></Box>
->>>>>>> 2544b53e9307c177d9a0be807779028ba0c436d4
+        {/* <FooterContent bgColor="gray.700" width="100%" color="white" /> */}
+        {/* </SimpleGrid> */}
+        {/* <Box height="30px" w="100%"></Box> */}
       </Flex>
     </>
   );

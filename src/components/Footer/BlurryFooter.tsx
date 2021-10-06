@@ -1,5 +1,5 @@
 import { BlurryBackground } from "..";
-import { links, FooterContent } from "./";
+import { links, Footer } from "./";
 import { useColorModeValue } from "@chakra-ui/react";
 
 export const BlurryFooter = ({ ...props }) => {
@@ -13,7 +13,7 @@ export const BlurryFooter = ({ ...props }) => {
 
   return (
     <BlurryBackground bgImage={bgImage} color={color} mx="auto">
-      <FooterContent zIndex="1" links={links} />
+      <Footer zIndex="1" links={links} />
     </BlurryBackground>
   );
 };
