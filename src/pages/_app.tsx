@@ -115,7 +115,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
             >
               <Component {...pageProps} canonical={url} key={url} />
             </AnimatePresence>
-            <Footer />
+            {/* <Footer /> */}
           </GlobalStyle>
         </ColorModeProvider>
       </ChakraProvider>

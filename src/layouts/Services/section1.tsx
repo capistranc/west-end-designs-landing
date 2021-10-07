@@ -11,28 +11,13 @@ import {
   useColorMode,
   Button,
 } from "@chakra-ui/react";
-import { Background } from "./styledSectionComponent";
 import { theme } from "../../theme";
-// const Banner = ({ children, ...props }) => {
-//   const bgImage = "url('/images/cliffEdge2.jpeg')";
-//   return (
-//     <Background bgImage={bgImage}>
-//       <Flex justify="center" align="center" {...props} color="white">
-//         {children}
-//       </Flex>
-//     </Background>
-//   );
-// };
-export const section1 = ({ ...props }) => {
-  const { colorMode } = useColorMode();
 
+export const SectionOne = ({ ...props }) => {
+  const { colorMode } = useColorMode();
   return (
     <>
-      <Box
-        backgroundColor={theme.bg2[colorMode]}
-        height={{ base: "35rem", md: "25rem" }}
-        w="100%"
-      >
+      <Box backgroundColor={theme.bg2[colorMode]} height="100%" w="100%">
         <Flex
           height="100%"
           justify="center"

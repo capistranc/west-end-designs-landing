@@ -16,19 +16,11 @@ import { theme } from "../../theme/";
 import { StickyNavHeader, WhiteStickyNavHeader } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { SixTiles } from "../Home/SixTiles";
+import { SvgComp } from "./svgComp";
+import { HeadingAndBulletPoints } from "./headingwithbulletpoints";
+import { SectionOne } from "./section1";
 
-export * from "./section1";
-export * from "./section2";
-export * from "./section3";
-export * from "./section4";
-export * from "./section5";
-export * from "./section6";
-export * from "./section7";
-export * from "./section8";
-export * from "./section9";
-export * from "./section10";
-
-export const Services5 = ({ sections }) => {
+export const ServicesPage = ({}) => {
   const { colorMode } = useColorMode();
   return (
     <>
@@ -39,23 +31,55 @@ export const Services5 = ({ sections }) => {
         color="gray.900"
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
-        {sections[0]}
+        <Box height={{ base: "35rem", md: "25rem" }}>
+          <SectionOne />
+        </Box>
         <SixTiles />
-        <Box h="15rem" align="center">
+        <Box
+          h="20rem"
+          align="center"
+          backgroundColor={theme.bg[colorMode]}
+          pl={{ base: "1" }}
+          pr={{ base: "1" }}
+        >
           <Center h="100%">
             <Text color={theme.fg[colorMode]} fontSize="4xl">
               How All These Services Work For You.
             </Text>
           </Center>
         </Box>
-        {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
 
-        {/* <SimpleGrid display={{ md: "inline-flex" }} base={{ base: 2, md: 2 }}>
-          {sections[1]}
-          {sections[2]}
+        <SimpleGrid
+          display={{ md: "inline-flex" }}
+          color={theme.fg[colorMode]}
+          height={{ base: "50rem", md: "25rem" }}
+          margin="auto"
+          justifyContent={{ md: "center" }}
+        >
+          <HeadingAndBulletPoints
+            headingText="Custom designed websites that load fast and are made for mobile
+            browsing."
+            bulletPointOne="asdf"
+            bulletPointTwo="bsdf"
+            bulletPointThree="csdf"
+            bulletPointFour="dsdf"
+          />
+          <SvgComp
+            img="/images/guyStandingNextToGraph.svg"
+            altText="Guy standing next to graph"
+          />
+        </SimpleGrid>
+
+        {/* <SimpleGrid
+          display={{ md: "inline-flex" }}
+          color={theme.fg[colorMode]}
+          height={{ base: "50rem", md: "25rem" }}
+          margin="auto"
+          justifyContent={{ md: "center" }}
+        >
+          {sections[3]}
+          {sections[4]}
         </SimpleGrid> */}
-        {/* <Box height={{ md: "150px" }} w="100%"></Box> */}
-
         {/* <SimpleGrid
           display={{ md: "inline-flex" }}
           base={{ base: 2, md: 2 }}
@@ -81,9 +105,7 @@ export const Services5 = ({ sections }) => {
           {sections[9]}
         </SimpleGrid> */}
         {/* <Box height="30px" w="100%"></Box> */}
-        {/* <FooterContent bgColor="gray.700" width="100%" color="white" /> */}
         {/* </SimpleGrid> */}
-        {/* <Box height="30px" w="100%"></Box> */}
       </Flex>
     </>
   );
