@@ -8,7 +8,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-export const SvgComp = ({ img, altText }) => {
+export const SvgComp = ({ img, altText, ...props }) => {
   return (
     <>
       <Flex
@@ -17,9 +17,10 @@ export const SvgComp = ({ img, altText }) => {
         height={{ base: "50%", md: "100%" }}
         align="center"
         position="relative"
+        {...props}
       >
         <Image
-          width={{ base: "20rem", sm: "25rem", md: "30rem" }}
+          width={{ base: "20rem", sm: "25rem", md: "35rem" }}
           src={img}
           alt={altText}
           position="relative"

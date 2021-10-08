@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { theme } from "../../theme";
 
-export const SectionOne = ({ ...props }) => {
+export const BannerSectionServices = ({ ...props }) => {
   const { colorMode } = useColorMode();
   return (
     <>
