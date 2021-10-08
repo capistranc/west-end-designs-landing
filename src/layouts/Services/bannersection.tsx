@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import {
   Flex,
   Box,
@@ -26,7 +27,14 @@ export const BannerSectionServices = ({ ...props }) => {
         >
           <Stack spacing={8} align="center">
             <Box>
-              <Text fontSize="4xl"> A website built for your expansion.</Text>
+              <Text
+                fontSize="4xl"
+                textAlign={{ base: "center" }}
+                padding={{ base: "30px" }}
+              >
+                {" "}
+                A website built for your expansion.
+              </Text>
             </Box>
             <Box pl={8} pr={8} align="center">
               <Text fontSize="md">
@@ -46,7 +54,9 @@ export const BannerSectionServices = ({ ...props }) => {
                 variant="solid"
                 size="lg"
               >
-                CONNECT
+                <Link href="/contact">
+                  <a>CONNECT</a>
+                </Link>
               </Button>
             </Box>
           </Stack>

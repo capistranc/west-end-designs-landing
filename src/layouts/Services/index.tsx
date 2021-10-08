@@ -16,10 +16,11 @@ import {
 import { theme } from "../../theme/";
 import { StickyNavHeader, WhiteStickyNavHeader } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { SixTiles } from "../Home/SixTiles";
+import { ServicesSixTiles } from "./servicessixtiles";
 import { SvgComp } from "./svgComp";
 import { HeadingAndBulletPoints } from "./headingwithbulletpoints";
 import { BannerSectionServices } from "./bannersection";
+import { ServicesPrices } from "./servicesprices";
 
 export const ServicesPage = ({}) => {
   const { colorMode } = useColorMode();
@@ -32,10 +33,10 @@ export const ServicesPage = ({}) => {
         color="gray.900"
       />
       <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
-        <Box height={{ base: "35rem", md: "25rem" }}>
+        <Box height={{ base: "40rem", md: "25rem" }}>
           <BannerSectionServices />
         </Box>
-        <SixTiles />
+        <ServicesSixTiles />
         <Box
           h="20rem"
           align="center"
@@ -44,17 +45,21 @@ export const ServicesPage = ({}) => {
           pr={{ base: "1" }}
         >
           <Center h="100%">
-            <Text color={theme.fg[colorMode]} fontSize="4xl" fontWeight="bold">
+            <Text color={theme.fg[colorMode]} fontSize="5xl" fontWeight="bold">
               How All These Services Work For You.
             </Text>
           </Center>
         </Box>
-        <Box backgroundColor={theme.bg[colorMode]}>
+        <Box
+          backgroundColor={theme.bg[colorMode]}
+          height={{ base: "180rem", md: "200rem" }}
+        >
           <Flex
             display={{ base: "none", md: "flex" }}
             w="100%"
             h="20rem"
             mb={20}
+            id="website-design"
           >
             <Image
               minWidth="20%"
@@ -95,6 +100,7 @@ export const ServicesPage = ({}) => {
             w="100%"
             h="20rem"
             mb={20}
+            id="seo"
           >
             <Box width="50%"></Box>
 
@@ -120,8 +126,7 @@ export const ServicesPage = ({}) => {
               altText="Guy hitting check marks"
             />
             <HeadingAndBulletPoints
-              headingText="Custom designed websites that load fast and are made for mobile
-            browsing."
+              headingText="Search Engine Optimized content on your website."
               bulletPointOne="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
               bulletPointTwo="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
               bulletPointThree="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
@@ -133,6 +138,7 @@ export const ServicesPage = ({}) => {
             w="100%"
             h="20rem"
             mb={20}
+            id="unlimited-edits"
           >
             <Image
               minWidth="20%"
@@ -152,7 +158,6 @@ export const ServicesPage = ({}) => {
             margin="auto"
             justifyContent={{ md: "center" }}
             flexDirection={{ md: "row-reverse" }}
-            mb={20}
           >
             <SvgComp
               img="/images/undraw_Job_hunt_re_q203.svg"
@@ -160,7 +165,7 @@ export const ServicesPage = ({}) => {
               paddingTop={20}
             />
             <HeadingAndBulletPoints
-              headingText="Custom designed websites that load fast and are made for mobile
+              headingText="Unlimited edits and updating your Google Business Profile..Custom designed websites that load fast and are made for mobile
             browsing."
               bulletPointOne="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
               bulletPointTwo="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
@@ -170,17 +175,7 @@ export const ServicesPage = ({}) => {
           </SimpleGrid>
         </Box>
 
-        {/* <SimpleGrid
-          display={{ md: "inline-flex" }}
-          base={{ base: 2, md: 2 }}
-          justifyContent={{ md: "center" }}
-        >
-          {sections[7]}
-          {sections[8]}
-          {sections[9]}
-        </SimpleGrid> */}
-        {/* <Box height="30px" w="100%"></Box> */}
-        {/* </SimpleGrid> */}
+        <ServicesPrices />
       </Flex>
     </>
   );
