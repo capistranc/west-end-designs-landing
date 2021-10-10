@@ -95,8 +95,8 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           locale: "en_IE",
           url,
           description:
-            "The business website for West End Desgigns, a Web Development Company",
-          site_name: "West End Desgisn | westendwebdesigns.com",
+            "The business website for West End Designs, a Web Development Company",
+          site_name: "West End Designs | westendwebdesigns.com",
           images: [],
         }}
         canonical={url}

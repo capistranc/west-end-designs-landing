@@ -17,7 +17,7 @@ import { GiBigWave, GiCliffCrossing } from "react-icons/gi";
 
 import { DiamondDecoratorTopDown } from "../../components/Decorators/Diamond";
 
-export const Intro = ({ ...props }) => {
+export const Intro = () => {
   const { colorMode } = useColorMode();
 
   return (
