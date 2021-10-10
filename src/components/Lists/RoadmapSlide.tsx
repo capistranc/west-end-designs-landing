@@ -83,9 +83,9 @@ export const RoadmapSlide = ({
         />
       </Box>
 
-      <Text p="4" align="left" width={width}>
+      <Box p="4" align="left" width={width}>
         {text}
-      </Text>
+      </Box>
     </Flex>
   );
 };

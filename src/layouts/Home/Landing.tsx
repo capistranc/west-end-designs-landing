@@ -22,7 +22,11 @@ const AnimatedBanner = ({ text, ...props }) => {
   const [count, setCount] = useState(0);
   const [inTransition, setTransition] = useState(false);
 
-  return <Heading variant="banner-with-border">{bannerText}</Heading>;
+  return (
+    <Heading variant="banner-with-border" as="h5">
+      {bannerText}
+    </Heading>
+  );
 };
 
 const containerVariants = {
@@ -74,7 +78,13 @@ export const Landing = ({ ...props }) => {
           position="relative"
           {...props}
         >
-          <Heading fontFamily="Raleway" fontWeight="900" fontSize="3xl" py="10">
+          <Heading
+            fontFamily="Raleway"
+            fontWeight="900"
+            as="h5"
+            fontSize="3xl"
+            py="10"
+          >
             We help businesses
           </Heading>
 
