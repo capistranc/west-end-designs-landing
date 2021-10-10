@@ -5,7 +5,6 @@ import { MotionFlex, MotionBox } from "./index";
 import { hoverGrow } from "./variants";
 import { LoadingIcon } from "./LoadingIcon";
 
-
 export const HoverIconCard = ({ header, subText, CardIcon, ...props }) => {
   return (
     <MotionFlex
