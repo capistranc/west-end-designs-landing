@@ -15,6 +15,7 @@ const wobbleVariant = {
     rotate: 0,
     transition: {
       type: "spring",
+      delay: 0.5,
       damping: 2,
     },
   },
