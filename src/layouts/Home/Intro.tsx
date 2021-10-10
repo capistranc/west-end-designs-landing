@@ -34,16 +34,20 @@ export const Intro = () => {
         <Box my="4">
           <Heading variant="h2">
             Welcome to{" "}
-            <Text d="inline-block" color="teal.600">
+            <Heading d="inline-block" variant="h2" color="teal.600">
               West End Designs
-            </Text>
+            </Heading>
           </Heading>
           <Text maxWidth="48em">
             Getting online is easy. Succeeding online is a different story.
             Search Engine Optimization, Google Analytics, Server-Side
-            Rendering... At West End we use every tool available to guarantee
-            your success. We are so confident in our designs, that your first
-            mockup for a standard website is free of charge.
+            Rendering... At{" "}
+            <Text as="h1" d="inline-block">
+              West End Designs
+            </Text>{" "}
+            we use every tool available to guarantee your success. We are so
+            confident in our designs, that your first mockup for a standard
+            website is free of charge.
           </Text>
         </Box>
 

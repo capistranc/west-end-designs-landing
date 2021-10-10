@@ -22,11 +22,7 @@ const AnimatedBanner = ({ text, ...props }) => {
   const [count, setCount] = useState(0);
   const [inTransition, setTransition] = useState(false);
 
-  return (
-    <Heading as="h1" variant="banner-with-border">
-      {bannerText}
-    </Heading>
-  );
+  return <Heading variant="banner-with-border">{bannerText}</Heading>;
 };
 
 const containerVariants = {
