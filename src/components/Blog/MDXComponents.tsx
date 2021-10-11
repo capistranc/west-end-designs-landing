@@ -25,7 +25,7 @@ export const CustomLink = (props) => {
   if (isInternalLink && router) {
     const { route, query } = router;
 
-    const slug = query.slug.toString();
+    const slug = query.slug?.toString();
     const path = route.replace("[slug]", slug) + "/" + href;
 
     return (

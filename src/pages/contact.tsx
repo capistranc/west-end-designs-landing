@@ -53,12 +53,17 @@ export const ContactPage: NextPage = () => {
               my="0rem"
               bg={theme.bg2[colorMode]}
               color={theme.fg2[colorMode]}
+              pt="36"
             >
               <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
 
-              <DashedLine strokeColor={theme.bg[colorMode]} />
-              <DashedLine strokeColor={theme.bg[colorMode]} />
-              <CallWriteReview py="2rem" />
+              {/* <DashedLine strokeColor={theme.bg[colorMode]} />
+              <DashedLine strokeColor={theme.bg[colorMode]} /> */}
+              <CallWriteReview
+                py="2rem"
+                borderTop="5px dashed"
+                borderColor={theme.bg[colorMode]}
+              />
 
               <DashedLine strokeColor={theme.bg[colorMode]} />
               <Box mb="-4" zIndex="11" position="relative">
@@ -78,7 +83,7 @@ export const ContactPage: NextPage = () => {
             <Flex
               justify="space-evenly"
               align="center"
-              mt="8"
+              mt="20"
               direction={["column-reverse", "column-reverse", "row", "row"]}
             >
               <ContactForm

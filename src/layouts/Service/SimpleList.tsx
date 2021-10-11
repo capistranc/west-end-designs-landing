@@ -19,7 +19,8 @@ import {
   DiamondDecoratorBottomUp,
   DiagonalDecoratorTopRight,
   DiagonalDecoratorTopLeft,
-} from "../../components/Decorators/";
+  DiamondDecoratorBottomDown,
+} from "../../components/Decorators";
 
 export const Services2 = () => {
   const listData = [
@@ -60,10 +61,21 @@ export const Services2 = () => {
       position="relative"
       backgroundColor={theme.bg2[colorMode]}
       color={theme.fg2[colorMode]}
+      pb="15rem"
     >
       <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} />
       <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} />
-      <DiamondDecoratorBottomUp bg={theme.bg2[colorMode]} />
+      <DiamondDecoratorBottomDown bg={theme.bg2[colorMode]} />
+      <Box
+        // bg={theme.bg2[colorMode]}
+        position="absolute"
+        borderTop="2px dashed"
+        borderColor={theme.bg[colorMode]}
+        width="100%"
+        bottom="0"
+        height="10rem"
+        zIndex="11"
+      />
 
       <Icon
         position="absolute"
@@ -106,9 +118,6 @@ export const Services2 = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
-      <DashedLine strokeColor={theme.bg[colorMode]} />
-      <DashedLine strokeColor={theme.bg[colorMode]} />
-      <DashedLine strokeColor={theme.bg[colorMode]} />
     </Box>
   );
 };
