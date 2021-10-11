@@ -10,7 +10,7 @@ export default class MyDocument extends NextDocument {
         <Head>
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=GTM-PT4WG68`}
+            src={`https://www.googletagmanager.com/gtag/js?id=G-F4GXGE5JT6`}
           />
           <script
             async
@@ -20,7 +20,7 @@ export default class MyDocument extends NextDocument {
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
-                        gtag('config', 'GTM-PT4WG68', {
+                        gtag('config', 'G-F4GXGE5JT6', {
                             page_path: window.location.pathname,
                             debug_mode: true
                         });
