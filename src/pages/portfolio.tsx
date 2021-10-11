@@ -16,6 +16,7 @@ import {
 import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
+
   return (
     <Layout title="Portfolio" description="Come see some of our happy clients">
       <Head>

@@ -31,7 +31,7 @@ export function Background({ children, bgImage, ...props }) {
 }
 
 export const Banner = ({ children, ...props }) => {
-  const bgImage = "url('/images/cliffEdge2.jpeg')";
+  const bgImage = "url('/images/cliffEdge.jpeg')";
   return (
     <Background bgImage={bgImage}>
       <Flex justify="center" align="center" {...props} color="white">

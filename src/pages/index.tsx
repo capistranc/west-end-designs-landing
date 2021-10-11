@@ -122,8 +122,6 @@ export default function Index() {
         >
           <ContactForm position="relative" zIndex="5" />
         </Box>
-
-        <Box position="relative"></Box>
       </Box>
     </Layout>
   );

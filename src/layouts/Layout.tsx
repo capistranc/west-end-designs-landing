@@ -32,7 +32,13 @@ export const Layout = ({
         description={description}
         openGraph={{ title, description }}
       />
-      <Box position="relative" as="main" pt="3.5rem" {...props}>
+      <Box
+        position="relative"
+        as="main"
+        pt="3.5rem"
+        minHeight="82.9vh"
+        {...props}
+      >
         <MotionBox
           initial="hidden"
           animate="enter"

@@ -22,6 +22,7 @@ export default class MyDocument extends NextDocument {
                         gtag('js', new Date());
                         gtag('config', 'GTM-PT4WG68', {
                             page_path: window.location.pathname,
+                            debug_mode: true
                         });
                         `,
             }}

@@ -22,6 +22,9 @@ export const Footer = ({ ...props }) => {
   return (
     <Stack
       align="center"
+      // position="absolute"
+      // pt="50"
+      // bottom="0"
       spacing="10"
       divider={<StackDivider />}
       py="12"
