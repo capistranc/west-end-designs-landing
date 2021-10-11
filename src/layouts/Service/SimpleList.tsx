@@ -69,7 +69,7 @@ export const Services2 = () => {
       <Box
         // bg={theme.bg2[colorMode]}
         position="absolute"
-        borderTop="2px dashed"
+        borderTop="5px dashed"
         borderColor={theme.bg[colorMode]}
         width="100%"
         bottom="0"
