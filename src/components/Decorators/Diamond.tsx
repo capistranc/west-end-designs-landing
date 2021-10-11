@@ -8,7 +8,7 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
         top="-5rem"
         right="0"
         zIndex="1"
-        transform="skewY(5deg)"
+        transform="skewY(4deg)"
         bg={props.bg || props.bgColor}
         {...props}
         h="10rem"
@@ -29,7 +29,7 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
         top="-5rem"
         right="0"
         zIndex="1"
-        transform="skewY(-5deg)"
+        transform="skewY(-4deg)"
         bg={props.bg || props.bgColor}
         {...props}
         h="10rem"
@@ -45,7 +45,7 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
         position="absolute"
         bottom="-5rem"
         left="0"
-        transform="skewY(5deg)"
+        transform="skewY(4deg)"
         h="15rem"
         w="50%"
         zIndex="1"
@@ -55,7 +55,7 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
         position="absolute"
         bottom="-5rem"
         right="0"
-        transform="skewY(-5deg)"
+        transform="skewY(-4deg)"
         h="15rem"
         zIndex="1"
         w="50%"
@@ -73,7 +73,7 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
         bottom="0rem"
         right="0"
         zIndex="1"
-        transform="skewY(5deg)"
+        transform="skewY(4deg)"
         bg={props.bg || props.bgColor}
         h="10rem"
         w="100%"
@@ -83,7 +83,7 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
         bottom="0rem"
         right="0"
         zIndex="1"
-        transform="skewY(-5deg)"
+        transform="skewY(-4deg)"
         bg={props.bg || props.bgColor}
         h="10rem"
         w="100%"
