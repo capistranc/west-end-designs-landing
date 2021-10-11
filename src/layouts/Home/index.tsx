@@ -29,11 +29,6 @@ import { Landing } from "./Landing";
 import { AboutUs } from "./AboutUs";
 import { Portfolio } from "./Portfolio";
 import { Parallax } from "../../components/Wrappers/Parallax";
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.8,
-};
 
 export const Home = () => {
   let mobileHeight = 0;
@@ -55,9 +50,8 @@ export const Home = () => {
 
   return (
     <Layout
-      pt="0"
       title="West End Designs"
-      description="Welcome to the West End"
+      description="Welcome to West End Designs: A Web Development company specializing in Mobile First web designs, SEO Optimization, and Full Stack Applications. Our websites are coded from scratch leveraging modern frameworks to statically render each web site. Contact us to have your website built today."
     >
       <Box position="relative" as="main" zIndex="1">
         <Parallax
@@ -91,16 +85,7 @@ export const Home = () => {
           <ContactForm position="relative" zIndex="5" />
         </Box>
 
-        <Box position="relative">
-          {/* <Icon
-            as={GiBigWave}
-            position="absolute"
-            boxSize="16rem"
-            bottom="-4"
-            left="-4"
-            // opacity="0.5"
-          /> */}
-        </Box>
+        <Box position="relative"></Box>
       </Box>
     </Layout>
   );

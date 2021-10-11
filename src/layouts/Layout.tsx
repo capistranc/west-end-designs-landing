@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import { useColorMode, Button, Flex, Box } from "@chakra-ui/react";
+import { useColorMode, Button, Flex, Box, BoxProps } from "@chakra-ui/react";
 import { theme } from "../theme/colors";
 
 import { NextSeo } from "next-seo";
@@ -10,7 +10,7 @@ type Props = {
   children: ReactNode;
   title: string;
   description: string;
-};
+} & BoxProps;
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },

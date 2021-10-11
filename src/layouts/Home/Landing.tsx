@@ -81,7 +81,7 @@ export const Landing = ({ ...props }) => {
           <Heading
             fontFamily="Raleway"
             fontWeight="900"
-            as="h5"
+            as="h3"
             fontSize="3xl"
             py="10"
           >

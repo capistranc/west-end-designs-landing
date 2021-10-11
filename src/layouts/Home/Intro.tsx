@@ -32,13 +32,13 @@ export const Intro = () => {
         <DashedLine />
 
         <Box my="4">
-          <Heading variant="h2">
+          <Heading variant="h2" as="div">
             Welcome to{" "}
-            <Heading d="inline-block" variant="h2" color="teal.600">
+            <Heading d="inline-block" variant="h2" as="h1" color="teal.600">
               West End Designs
             </Heading>
           </Heading>
-          <Text maxWidth="48em">
+          <Text maxWidth="48em" as="div">
             Getting online is easy. Succeeding online is a different story.
             Search Engine Optimization, Google Analytics, Server-Side
             Rendering... At{" "}

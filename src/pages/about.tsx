@@ -35,8 +35,8 @@ export const About: NextPage = () => {
 
   return (
     <Layout
-      title="About Us"
-      description="Learn about the team at West End Designs"
+      title="Hey! nice to meet you"
+      description="Chris and Mike started West End Designs to help small and medium sized businesses compete in todays modern world of rapidly advancing technology."
     >
       <Box height={{ base: "20rem", md: "30rem" }} top="0" w="100%" bg="white">
         <Banner h="100%" color="white">

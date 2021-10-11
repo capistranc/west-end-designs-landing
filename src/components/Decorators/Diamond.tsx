@@ -88,6 +88,16 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
         h="10rem"
         w="100%"
       />
+      <Box
+        position="absolute"
+        bottom="0rem"
+        right="0"
+        zIndex="1"
+        bg={props.bg || props.bgColor}
+        {...props}
+        h="10rem"
+        w="100%"
+      ></Box>
     </>
   );
 };

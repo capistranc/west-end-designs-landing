@@ -95,7 +95,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           locale: "en_IE",
           url,
           description:
-            "The business website for West End Designs, a Web Development Company",
+            "Welcome to West End Designs: A Web Development company specializing in Mobile First web designs, SEO Optimization, and Full Stack Applications. Our websites are coded from scratch leveraging modern frameworks to statically render each web site. Contact us to have your website built today.",
           site_name: "West End Designs | westendwebdesigns.com",
           images: [],
         }}

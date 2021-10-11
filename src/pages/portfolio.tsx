@@ -16,14 +16,6 @@ import {
 import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
-  const bgImageLight =
-    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)) , url('/images/catalina.jpg')";
-  const bgImageDark =
-    "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('/images/catalina.jpg')";
-
-  //   console.log(getPosts());
-
-  const bgImage = useColorModeValue(bgImageLight, bgImageDark);
   return (
     <Layout title="Portfolio" description="Come see some of our happy clients">
       <Head>
