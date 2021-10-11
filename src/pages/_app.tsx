@@ -18,7 +18,7 @@ import "@fontsource/roboto/";
 import "@fontsource/roboto-condensed";
 import { AnimatePresence } from "framer-motion";
 import { DefaultSeo } from "next-seo";
-import { StickyNavHeader } from "../components/Header";
+import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const window: any;
@@ -106,7 +106,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           options={{ initialColorMode: "light", useSystemColorMode: false }}
         >
           <GlobalStyle>
-            <StickyNavHeader />
+            <Header active={router.route} />
 
             <AnimatePresence
               exitBeforeEnter
