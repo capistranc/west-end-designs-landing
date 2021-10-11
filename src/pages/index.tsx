@@ -113,6 +113,7 @@ export default function Index() {
         <Box
           position="relative"
           mt="10rem"
+          pt="4rem"
           color={theme.fg[colorMode]}
           bg={theme.bg[colorMode]}
           align="center"
