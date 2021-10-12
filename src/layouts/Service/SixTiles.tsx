@@ -72,7 +72,7 @@ export const SixTiles = ({ data, ...props }: Props): JSX.Element => {
                 key={i}
                 {...service}
                 {...styling[i]}
-                maxWidth="24rem"
+                maxWidth="28rem"
                 color={theme.fg[colorMode]}
               />
             );
