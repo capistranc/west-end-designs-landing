@@ -42,8 +42,8 @@ export const Footer = ({ ...props }) => {
       >
         <Box flex="1">
           <Logo />
-          <Link href="mailto:capistranc@gmail.com">
-            WestEndDesigns@gmail.com
+          <Link href="mailto:contact@westendwebdesigns.com">
+            contact@westendwebdesigns.com
           </Link>
           <Spacer />
           <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
@@ -81,9 +81,9 @@ export const LinkGrid = (props: SimpleGridProps) => (
         Code
       </FooterHeading>
       <Stack>
-        <Link>Mobile Designs</Link>
-        <Link>Web Applications</Link>
-        <Link>Full Stack Solutions</Link>
+        <Link as="h1">Mobile Designs</Link>
+        <Link as="h1">Web Applications</Link>
+        <Link as="h1">Full Stack Solutions</Link>
       </Stack>
     </Box>
     <Box minW="6em">
@@ -91,9 +91,9 @@ export const LinkGrid = (props: SimpleGridProps) => (
         Content
       </FooterHeading>
       <Stack>
-        <Link>Google Analytics</Link>
-        <Link>Content Management</Link>
-        <Link>Search Engine Optimization</Link>
+        <Link as="h1">Google Analytics</Link>
+        <Link as="h1">Content Management</Link>
+        <Link as="h1">Search Engine Optimization</Link>
       </Stack>
     </Box>
   </SimpleGrid>

@@ -59,7 +59,7 @@ export const Roadmap = ({ ...props }) => {
             text={
               <>
                 The{" "}
-                <Text as="h1" d="inline-block">
+                <Text as="h1" d="inline">
                   {" "}
                   West End Designs{" "}
                 </Text>{" "}
