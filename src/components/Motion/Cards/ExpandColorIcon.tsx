@@ -1,5 +1,5 @@
-import { MotionBox } from "..";
-import { Icon, Box, Text } from "@chakra-ui/react";
+import { MotionBox, MotionButton } from "..";
+import { Icon, Box, Text, Button } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
 import { toHex } from "../../../theme/colors";
 import React, { useState } from "react";
@@ -55,7 +55,7 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
     <>
       <MotionBox
         // as="button"
-        // overflow="hidden"
+        overflow="hidden"
         variants={containerVariant}
         initial="rest"
         animate={isFocused ? "hover" : "rest"}
@@ -90,13 +90,13 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
             </Text>
             <Text>{text}</Text>
 
-            <Box h="1.5rem" w="100%">
+            <Box h="2rem" w="100%">
               {isFocused && (
-                <NextLink href={link}>
-                  <MotionBox variants={arrowVariant}>
+                <MotionButton variants={arrowVariant} bg="transparent">
+                  <NextLink href={link}>
                     <Icon as={FaArrowRight} boxSize="1.5rem" />
-                  </MotionBox>
-                </NextLink>
+                  </NextLink>
+                </MotionButton>
               )}
             </Box>
           </MotionBox>

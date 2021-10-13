@@ -17,7 +17,7 @@ import { GiBigWave, GiCliffCrossing } from "react-icons/gi";
 
 import { DiamondDecoratorTopDown } from "../../components/Decorators/Diamond";
 
-export const Intro = ({ ...props }) => {
+export const Intro = () => {
   const { colorMode } = useColorMode();
 
   return (
@@ -32,18 +32,22 @@ export const Intro = ({ ...props }) => {
         <DashedLine />
 
         <Box my="4">
-          <Heading variant="h2">
+          <Heading variant="h2" as="div">
             Welcome to{" "}
-            <Text d="inline-block" color="teal.600">
+            <Heading d="inline-block" variant="h2" as="h1" color="teal.600">
               West End Designs
-            </Text>
+            </Heading>
           </Heading>
-          <Text maxWidth="48em">
+          <Text maxWidth="48em" as="div">
             Getting online is easy. Succeeding online is a different story.
             Search Engine Optimization, Google Analytics, Server-Side
-            Rendering... At West End we use every tool available to guarantee
-            your success. We are so confident in our designs, that your first
-            mockup for a standard website is free of charge.
+            Rendering... At{" "}
+            <Text as="h1" d="inline-block">
+              West End Designs
+            </Text>{" "}
+            we use every tool available to guarantee your success. We are so
+            confident in our designs, that your first mockup for a standard
+            website is free of charge.
           </Text>
         </Box>
 

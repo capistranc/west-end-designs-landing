@@ -6,9 +6,11 @@ import {
   Text,
   Stack,
   Button,
+  useColorMode,
   useDisclosure,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { theme } from "../../theme";
 import { Collapse } from "@chakra-ui/react";
 
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
@@ -16,23 +18,40 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { Logo } from "../Logo";
 import { DarkModeSwitch } from "../Buttons/DarkModeSwitch";
 
-export const NavBar = ({ links, ...props }) => {
-  // const { colorMode } = useColorMode();
+export const NavBar = ({
+  links,
+  active = null,
+  variant = "default",
+  ...props
+}) => {
   const { isOpen, onToggle } = useDisclosure();
+  const { colorMode } = useColorMode();
 
-  const variant = useBreakpointValue({ base: "hamburger", md: "standard" });
+  const deviceType = useBreakpointValue({ base: "mobile", md: "desktop" });
 
   function renderLinks() {
-    if (variant === "standard") {
-      return <MenuLinks links={links} isOpen={isOpen} {...props} />;
+    if (deviceType === "desktop") {
+      return (
+        <MenuLinks links={links} active={active} isOpen={isOpen} {...props} />
+      );
     } else {
       return (
         <>
           <MenuToggle toggle={onToggle} isOpen={isOpen} {...props} />
 
-          <Box display="block" flexBasis="100%">
+          <Box
+            display="block"
+            flexBasis="100%"
+            background={theme.bg[colorMode]}
+            color={theme.fg[colorMode]}
+          >
             <Collapse in={isOpen} animateOpacity>
-              <MenuLinks links={links} isOpen={isOpen} {...props} />
+              <MenuLinks
+                links={links}
+                isOpen={isOpen}
+                active={active}
+                {...props}
+              />
             </Collapse>
           </Box>
         </>
@@ -41,30 +60,25 @@ export const NavBar = ({ links, ...props }) => {
   }
 
   return (
-    <NavBarContainer {...props}>
-      <Logo />
-      {renderLinks()}
-    </NavBarContainer>
-  );
-};
-
-export const NavBarContainer = ({ children, ...props }) => {
-  return (
     <Flex
       as="nav"
       align="center"
-      justify="space-between"
       wrap="wrap"
       w="100%"
       p="2"
-      {...props}
+      background={isOpen && theme.bg[colorMode]}
+      color={isOpen && theme.fg[colorMode]}
+      justify={variant == "noLogo" && !isOpen ? "right" : "space-between"}
     >
-      {children}
+      {variant != "noLogo" && <Logo />}
+      {isOpen && variant == "noLogo" && <Logo />}
+
+      {renderLinks()}
     </Flex>
   );
 };
 
-export const MenuToggle = ({ toggle, isOpen, ...props }) => {
+export const MenuToggle = ({ toggle, isOpen, ...props }: any) => {
   return (
     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
       {isOpen ? <CloseIcon /> : <HamburgerIcon w={6} h={6} />}
@@ -72,12 +86,18 @@ export const MenuToggle = ({ toggle, isOpen, ...props }) => {
   );
 };
 
-export const MenuLinks = ({ links, isOpen, ...props }) => {
+export const MenuLinks = ({ links, isOpen, active = null, ...props }) => {
   const MenuItem = ({ children, to = "/", ...props }) => {
     return (
       <NextLink href={to} passHref>
         <Button as="a" variant="ghost" {...props}>
-          <Text display="block">{children}</Text>
+          <Text
+            display="block"
+            borderBottom={to === active && "1px solid"}
+            // borderColor={theme.fg[colorMode]}
+          >
+            {children}
+          </Text>
         </Button>
       </NextLink>
     );

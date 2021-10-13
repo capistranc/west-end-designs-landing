@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Layout } from "../layouts/Layout";
 import { Date } from "../components/Date";
 import { getSortedPostsData } from "../lib/blog";
@@ -16,20 +15,13 @@ import {
 import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
-  const bgImageLight =
-    "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.30)) , url('/images/catalina.jpg')";
-  const bgImageDark =
-    "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)) , url('/images/catalina.jpg')";
+  async function clickFn() {
+    console.log(await getPosts());
+  }
 
-  //   console.log(getPosts());
-
-  const bgImage = useColorModeValue(bgImageLight, bgImageDark);
   return (
     <Layout title="Portfolio" description="Come see some of our happy clients">
-      <Head>
-        <title>Portfolio</title>
-      </Head>
-      <Button> CLICK FOR ISNTAGRAM STUFF </Button>
+      <Button onClick={clickFn}> CLICK FOR ISNTAGRAM STUFF </Button>
     </Layout>
   );
 };

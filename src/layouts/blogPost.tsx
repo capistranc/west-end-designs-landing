@@ -11,33 +11,29 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-
+import { theme } from "../theme";
 import { Layout } from "./Layout";
 
 export default function BlogLayout({ children, frontMatter }) {
   const { colorMode } = useColorMode();
-  const textColor = {
-    light: "gray.700",
-    dark: "gray.400",
-  };
+
   const router = useRouter();
   const slug = router.asPath.replace("/blog", "");
 
   const postTitle = `${slug} - Blog - West End`;
 
   return (
-    <Layout title={postTitle}>
-      <Head>
-        <title>{postTitle}</title>
-      </Head>
+    <Layout title={postTitle} description=" ">
       <Stack
         as="article"
         spacing={8}
         justifyContent="center"
         alignItems="flex-start"
         m="0 auto 4rem auto"
+        mt="20"
         maxWidth="1000px"
         w="100%"
+        color={theme.fg[colorMode]}
         px={2}
       >
         <Flex
@@ -65,18 +61,17 @@ export default function BlogLayout({ children, frontMatter }) {
                 src="../images/portrait.jpeg"
                 mr={2}
               />
-              <Text fontSize="sm" color={textColor[colorMode]}>
+              <Text fontSize="sm">
                 {frontMatter.by}
                 {"Chris Capistran / "}
               </Text>
             </Flex>
-            <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
+            <Text fontSize="sm" minWidth="100px" mt={[2, 0]}>
               {frontMatter.readingTime.text}
             </Text>
           </Flex>
         </Flex>
         {children}
-        {/* <StickyContactUs /> */}
       </Stack>
     </Layout>
   );

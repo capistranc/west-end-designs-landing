@@ -12,7 +12,7 @@ const overlayVariant = {
     rotateZ: colorMode === "light" ? -90 : 0,
     transition: {
       duration: 1,
-      delay: 1,
+      delay: 0.5,
     },
   }),
 
@@ -23,7 +23,7 @@ const overlayVariant = {
         scale: 1,
         rotateZ: 0,
         transition: {
-          delay: 1,
+          delay: 0.5,
           duration: 0.8,
         },
       };
@@ -35,7 +35,7 @@ const overlayVariant = {
         bg: "rgba(25, 25, 112,1)",
         transition: {
           type: "spring",
-          delay: 1,
+          delay: 0.5,
           duration: 1.5,
         },
       };

@@ -43,8 +43,8 @@ export const Roadmap = ({ ...props }) => {
       </Box>
 
       <Box align="center" color="white" backgroundColor={theme.bg2[colorMode]}>
-        <DashedLine strokeColors={theme.bg[colorMode]} />
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide
             py="4"
@@ -56,11 +56,21 @@ export const Roadmap = ({ ...props }) => {
                 color: "teal.50",
               },
             }}
-            text="We sit down and gather information about your business, your needs, and your goals."
+            text={
+              <>
+                The{" "}
+                <Text as="h1" d="inline">
+                  {" "}
+                  West End Designs{" "}
+                </Text>{" "}
+                team sits down and gather information about your business, your
+                needs, and your goals."
+              </>
+            }
           />
         </SlideIn>
 
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
 
         <SlideIn from="left">
           <RoadmapSlide
@@ -74,10 +84,22 @@ export const Roadmap = ({ ...props }) => {
                 color: "teal.200",
               },
             }}
-            text="We define your competition and target audience. Discover what is working in your online industry, then design your website accordingly."
+            text={
+              <>
+                We define your competition and target audience. Discover what is
+                working in your online industry, then build your{" "}
+                <Text as="h1" d="inline">
+                  SEO Optimized
+                </Text>{" "}
+                <Text as="h1" d="inline">
+                  web design
+                </Text>{" "}
+                accordingly.
+              </>
+            }
           />
         </SlideIn>
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="right">
           <RoadmapSlide
             icon={GiArchBridge}
@@ -89,11 +111,24 @@ export const Roadmap = ({ ...props }) => {
                 color: "teal.500",
               },
             }}
-            text="We create a mockup of the web sites design and have our copy writers begin to write up SEO optimized content. We give you 2 free revisions to make sure we can find a design you are happy with."
+            text={
+              <>
+                We create a mockup of the{" "}
+                <Text as="h1" d="inline">
+                  web design{" "}
+                </Text>
+                and have our copy writers begin to write up{" "}
+                <Text as="h1" d="inline">
+                  SEO optimized content{" "}
+                </Text>
+                . We give you 2 free revisions to make sure we can find a design
+                you are happy with.
+              </>
+            }
           />
         </SlideIn>
 
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="left">
           <RoadmapSlide
             icon={BiCodeAlt}
@@ -106,10 +141,27 @@ export const Roadmap = ({ ...props }) => {
                 color: "blue.500",
               },
             }}
-            text="Once you sign off on the design and content, we code the website from scratch. Leveraging modern frameworks to statically generate your site for further SEO optimization."
+            text={
+              <>
+                Once you sign off on the{" "}
+                <Text as="h1" d="inline">
+                  Web Design{" "}
+                </Text>
+                and content, we code the website from scratch. Leveraging modern
+                frameworks to create a{" "}
+                <Text as="h1" d="inline">
+                  statically generated website{" "}
+                </Text>{" "}
+                for further{" "}
+                <Text as="h1" d="inline">
+                  SEO optimization
+                </Text>
+                .
+              </>
+            }
           />
         </SlideIn>
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
 
         <SlideIn from="right">
           <RoadmapSlide
@@ -122,12 +174,25 @@ export const Roadmap = ({ ...props }) => {
                 color: "blue.600",
               },
             }}
-            text="We don't leave you hanging once your website is launched. Lifetime updates are included with our service. Give us a call and we'll respond right away."
+            text={
+              <>
+                At{" "}
+                <Text as="h1" d="inline">
+                  West End Designs
+                </Text>
+                , we don't leave you hanging once your website is launched.
+                <Text as="h1" d="inline">
+                  Lifetime updates
+                </Text>{" "}
+                are included with our service. Give us a call and we'll respond
+                right away.
+              </>
+            }
           />
         </SlideIn>
 
-        <DashedLine strokeColors={theme.bg[colorMode]} />
-        <DashedLine strokeColors={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
       </Box>
     </Box>
   );

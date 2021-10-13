@@ -1,6 +1,6 @@
 import { useColorModeValue } from "@chakra-ui/react";
 
-export function toHex(colorStr: string) {
+export function toHex(colorStr: string): string {
   if (colorStr === "white") return "#FFFFFF";
   if (colorStr === "black") return "#000000";
   if (colorStr.startsWith("#")) return colorStr;

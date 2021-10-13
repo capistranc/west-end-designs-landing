@@ -14,6 +14,7 @@ import {
   Button,
   Spacer,
   useColorMode,
+  useColorModeValue,
   SimpleGrid,
   Icon,
 } from "@chakra-ui/react";
@@ -31,20 +32,15 @@ export const ContactPage: NextPage = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Layout title="Contact Us" description="Contact Form">
+    <Layout
+      title="Drop us as line and get in touch"
+      description="At West End Designs, we don't leave anyone hanging. You are always one call or text away from reaching one of us directly. Send us an email and we promise to get back to you as soon as humanly possible."
+    >
       <Box
         bg={theme.bg[colorMode]}
         color={theme.fg[colorMode]}
         position="relative"
       >
-        <Box height={{ base: "25vh", md: "50vh" }} top="0" w="100%">
-          <Banner h="100%" color="white">
-            <Heading fontWeight="600" py="10" fontSize="4xl">
-              <b className="thing">Contact Us</b>
-            </Heading>
-          </Banner>
-        </Box>
-
         <Box className="decorator" position="relative" align="center">
           <Box
             className="content"
@@ -57,13 +53,29 @@ export const ContactPage: NextPage = () => {
               my="0rem"
               bg={theme.bg2[colorMode]}
               color={theme.fg2[colorMode]}
+              pt="36"
             >
               <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
 
-              <DashedLine strokeColors={theme.bg[colorMode]} />
-              <CallWriteReview py="2rem" />
+              {/* <DashedLine strokeColor={theme.bg[colorMode]} />
+              <DashedLine strokeColor={theme.bg[colorMode]} /> */}
+              <CallWriteReview
+                py="2rem"
+                borderTop="5px dashed"
+                borderColor={theme.bg[colorMode]}
+              />
 
-              <DashedLine strokeColors={theme.bg[colorMode]} />
+              <DashedLine strokeColor={theme.bg[colorMode]} />
+              <Box mb="-4" zIndex="11" position="relative">
+                <svg viewBox="0 0 100 100" height="25px" width="25px">
+                  <circle
+                    cx="50"
+                    fill={useColorModeValue(theme.toHex("teal.500"), "white")}
+                    cy="50"
+                    r="50"
+                  />{" "}
+                </svg>
+              </Box>
               <DashedLine />
               <DashedLine />
             </Box>
@@ -71,7 +83,7 @@ export const ContactPage: NextPage = () => {
             <Flex
               justify="space-evenly"
               align="center"
-              mt="8"
+              mt="20"
               direction={["column-reverse", "column-reverse", "row", "row"]}
             >
               <ContactForm
@@ -91,11 +103,15 @@ export const ContactPage: NextPage = () => {
                 <Heading variant="h2" mb="4">
                   24/7 Customer Support
                 </Heading>
-                <Text>
-                  At West End Designs, we don't leave anyone hanging. You are
-                  always one call or text away from reaching one of us directly.
-                  Send us an email and we promise to get back to you as soon as
-                  humanly possible.
+                <Text as="div">
+                  At{" "}
+                  <Text as="h1" d="inline">
+                    {" "}
+                    West End Designs{" "}
+                  </Text>
+                  , we don't leave anyone hanging. You are always one call or
+                  text away from reaching one of us directly. Send us an email
+                  and we promise to get back to you as soon as humanly possible.
                 </Text>
 
                 <BorderedIconOffset m="2rem auto" icon={MdHeadsetMic} />

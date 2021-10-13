@@ -7,7 +7,13 @@ export const links = [
   { path: "/contact", label: "Contact Us" },
 ];
 
-export * from "./StickyNavHeader";
+import { StickyNavHeader } from "./StickyNavHeader";
+import { MorphingNavBar } from "./MorphingNavBar";
+
 export * from "./BannerHeader";
 export * from "./WhiteStickyNavHeader";
 export * from "./Banner";
+
+export const Header = ({ active = null }) => {
+  return <MorphingNavBar active={active} links={links} />;
+};

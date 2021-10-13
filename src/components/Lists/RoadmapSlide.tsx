@@ -8,6 +8,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { theme } from "../../theme/colors";
+import { PercentBorder } from "../Icons/PercentBorder";
 
 export const RoadmapSlide = ({
   headerProps,
@@ -59,33 +60,11 @@ export const RoadmapSlide = ({
     >
       <Header {...headerProps} orient={orient} width={width} />
 
-      <Box position="relative">
-        <Box position="absolute" boxSize="12rem">
-          <svg viewBox="0 0 100 100" height="12rem" width="12rem">
-            <path
-              fill="none"
-              d="M50,4
-                a46,46 0 1,1 0,92
-                a46,46 0 1,1 -0,-92"
-              stroke={theme.border2[colorMode]}
-              strokeWidth="8px"
-              strokeDasharray={`${(headerProps.step - 1) * 25 * 2.89026},2000`}
-            />
-          </svg>
-        </Box>
-        <Icon
-          as={icon}
-          boxSize="12rem"
-          borderRadius="full"
-          border="16px solid"
-          p="1rem"
-          borderColor={theme.border1[colorMode]}
-        />
-      </Box>
+      <PercentBorder percent={(headerProps.step - 1) * 25} icon={icon} />
 
-      <Text p="4" align="left" width={width}>
+      <Box p="4" align="left" width={width}>
         {text}
-      </Text>
+      </Box>
     </Flex>
   );
 };

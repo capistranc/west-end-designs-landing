@@ -8,7 +8,7 @@ export const DiagonalDecoratorTopRightMinus = ({ ...props }) => {
       top="-10rem"
       right="0"
       zIndex="1"
-      transform="skewY(5deg)"
+      transform="skewY(4deg)"
       h="10rem"
       w="100%"
       {...props}
@@ -22,7 +22,7 @@ export const DiagonalDecoratorBottomLeftMinus = ({ ...props }) => {
       position="absolute"
       bottom="-10rem"
       right="0"
-      transform="skewY(5deg)"
+      transform="skewY(4deg)"
       h="10rem"
       zIndex="1"
       w="100%"
@@ -38,7 +38,7 @@ export const DiagonalDecoratorTopLeft = ({ ...props }) => {
       top="-10rem"
       right="0"
       zIndex="1"
-      transform="skewY(-5deg)"
+      transform="skewY(-4deg)"
       h="10rem"
       w="100%"
       {...props}
@@ -53,7 +53,7 @@ export const DiagonalDecoratorTopRight = ({ ...props }) => {
       top="-0rem"
       right="0"
       zIndex="1"
-      transform="skewY(-5deg)"
+      transform="skewY(-4deg)"
       h="10rem"
       w="100%"
       {...props}

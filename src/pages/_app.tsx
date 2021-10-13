@@ -18,7 +18,7 @@ import "@fontsource/roboto/";
 import "@fontsource/roboto-condensed";
 import { AnimatePresence } from "framer-motion";
 import { DefaultSeo } from "next-seo";
-import { StickyNavHeader } from "../components/Header";
+import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const window: any;
@@ -66,6 +66,8 @@ const GlobalStyle = ({ children }) => {
             height: 100%;
             width: 100%;
             overflow: hidden;
+            min-height: 100vh;
+            position: relative;
 
             background: ${theme.bg[colorMode]};
           }
@@ -95,8 +97,8 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           locale: "en_IE",
           url,
           description:
-            "The business website for West End Desgigns, a Web Development Company",
-          site_name: "West End Desgisn | westendwebdesigns.com",
+            "Welcome to West End Designs: A Web Development company specializing in Mobile First web designs, SEO Optimization, and Full Stack Applications. Our websites are coded from scratch leveraging modern frameworks to statically render each web site. Contact us to have your website built today.",
+          site_name: "West End Designs | westendwebdesigns.com",
           images: [],
         }}
         canonical={url}
@@ -106,7 +108,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           options={{ initialColorMode: "light", useSystemColorMode: false }}
         >
           <GlobalStyle>
-            <StickyNavHeader />
+            <Header active={router.route} />
 
             <AnimatePresence
               exitBeforeEnter

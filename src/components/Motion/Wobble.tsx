@@ -3,7 +3,7 @@ import { OnRender } from "../Wrappers/OnRender";
 import { useHasRendered } from "../../lib/hooks";
 import { Box } from "@chakra-ui/react";
 import { useRef } from "react";
-
+import { AnimatePresence } from "framer-motion";
 const wobbleVariant = {
   hidden: {
     rotate: 20,
@@ -15,6 +15,7 @@ const wobbleVariant = {
     rotate: 0,
     transition: {
       type: "spring",
+      delay: 0.3,
       damping: 2,
     },
   },
@@ -23,15 +24,17 @@ const wobbleVariant = {
 export const Wobble = ({ children, from = "left", ...props }) => {
   return (
     <OnRender>
-      <MotionBox
-        h="100%"
-        w="100%"
-        variants={wobbleVariant}
-        initial="hidden"
-        animate="show"
-      >
-        {children}
-      </MotionBox>
+      <AnimatePresence>
+        <MotionBox
+          h="100%"
+          w="100%"
+          variants={wobbleVariant}
+          initial="hidden"
+          animate="show"
+        >
+          {children}
+        </MotionBox>
+      </AnimatePresence>
     </OnRender>
   );
 };
