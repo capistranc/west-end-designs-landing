@@ -42,7 +42,7 @@ export default function Blog({ posts }) {
           justifyContent="center"
           alignItems="flex-start"
           m="0 auto 4rem auto"
-          mt="20rem"
+          mt="8rem"
           maxWidth="1000px"
           minWidth="100px"
         >
