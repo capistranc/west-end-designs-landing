@@ -1,7 +1,10 @@
+import { theme } from "..";
+
 export const Heading = {
   // 1. We can update the base styles
-  baseStyle: {
+  baseStyle: (props) => {
     // fontWeight: "bold", // Normally, it is "semibold"
+    color: theme.fg[props.colorMode];
   },
   // 2. We can add a new button size or extend existing
   sizes: {

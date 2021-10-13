@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Layout } from "../layouts/Layout";
 import { Date } from "../components/Date";
 import { getSortedPostsData } from "../lib/blog";
@@ -16,13 +15,13 @@ import {
 import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
+  async function clickFn() {
+    console.log(await getPosts());
+  }
 
   return (
     <Layout title="Portfolio" description="Come see some of our happy clients">
-      <Head>
-        <title>Portfolio</title>
-      </Head>
-      <Button> CLICK FOR ISNTAGRAM STUFF </Button>
+      <Button onClick={clickFn}> CLICK FOR ISNTAGRAM STUFF </Button>
     </Layout>
   );
 };

@@ -74,7 +74,9 @@ export const PricingCard = ({
               <Text fontSize={"6xl"} fontWeight={800}>
                 {price}
               </Text>
-              <Text color={"gray.500"}>/{unit}</Text>
+              <Text color={useColorModeValue("gray.700", "gray.200")}>
+                /{unit}
+              </Text>
             </Stack>
           </Stack>
 
