@@ -60,7 +60,7 @@ const growVariants = {
 
 export const Landing = ({ ...props }) => {
   return (
-    <Box position="relative" align="center">
+    <Box position="relative" align="center" className="header-sentinel">
       <AnimatePresence>
         <MotionFlex
           variants={containerVariants}

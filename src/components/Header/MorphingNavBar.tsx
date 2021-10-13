@@ -1,6 +1,7 @@
 import { NavBar } from "./NavBar";
-import { Flex, Box, Heading, Text } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text, useColorMode } from "@chakra-ui/react";
 import React, { useRef, useEffect, useState } from "react";
+import { theme } from "../../theme";
 
 export const MorphingNavBar = ({ links, active = null, ...props }) => {
   const [isVisible, setVisible] = useState(false);
@@ -22,14 +23,14 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
     }, 500); //Added a delay to give DOM time to render before looking for sentinel
 
     return () => {
-      // if (sentinels) {
-      //   for (let i = 0; i < sentinels.length; i++) {
-      //     observer.unobserve(sentinels[i]);
-      //   }
-      // }
       return clearTimeout(delay);
     };
   });
+
+  const { colorMode } = useColorMode();
+
+  const bg = theme.bg[colorMode];
+  const fg = theme.fg[colorMode];
 
   return (
     <Box>
@@ -40,8 +41,10 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
         zIndex="sticky"
         w="100%"
         position={isVisible ? "absolute" : "fixed"}
-        color={isVisible ? "white" : "black"}
-        bg={isVisible ? "transparent" : "white"}
+        color={isVisible ? "white" : fg}
+        bg={isVisible ? "rgba(0.1,.1,0.1,0.1)" : bg}
+        // bg={isVisible ? "transparent" : bg}
+        boxShadow={!isVisible && "md"}
         {...props}
       >
         <NavBar

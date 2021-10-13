@@ -89,7 +89,7 @@ export default function Index() {
       title="Welcome to West End Designs: A Web Development Company"
       description="Welcome to West End Designs: A Web Development company specializing in Mobile First web designs, SEO Optimization, and Full Stack Applications. Our websites are coded from scratch leveraging modern frameworks to statically render each web site. Contact us to have your website built today."
     >
-      <Box position="relative" as="main" zIndex="1">
+      <Box position="relative" as="main" mt="-3.5rem" zIndex="1">
         <Parallax
           bgImage={bgImages[0]}
           height={{

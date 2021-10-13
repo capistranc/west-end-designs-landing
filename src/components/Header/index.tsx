@@ -14,5 +14,5 @@ export * from "./BannerHeader";
 export * from "./Banner";
 
 export const Header = ({ active = null }) => {
-  return <StickyNavHeader active={active} links={links} />;
+  return <MorphingNavBar active={active} links={links} />;
 };
