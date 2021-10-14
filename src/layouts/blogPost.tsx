@@ -23,7 +23,7 @@ export default function BlogLayout({ children, frontMatter }) {
   const postTitle = `${slug} - Blog - West End`;
 
   return (
-    <Layout title={postTitle} description=" ">
+    <Layout title={postTitle} description="">
       <Stack
         as="article"
         spacing={8}

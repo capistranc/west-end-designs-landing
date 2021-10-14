@@ -45,6 +45,7 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
         bg={isVisible ? "rgba(0.1,.1,0.1,0.1)" : bg}
         // bg={isVisible ? "transparent" : bg}
         boxShadow={!isVisible && "md"}
+        
         {...props}
       >
         <NavBar

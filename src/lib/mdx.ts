@@ -49,7 +49,7 @@ export async function getAllFilesFrontMatter(type) {
   return files.reduce((allPosts, postSlug) => {
     const source = fs.readFileSync(
       path.join(root, "data", type, postSlug),
-      "utf8"
+      "utf8",
     );
     const { data } = matter(source);
 

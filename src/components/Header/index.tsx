@@ -11,7 +11,7 @@ import { StickyNavHeader } from "./StickyNavHeader";
 import { MorphingNavBar } from "./MorphingNavBar";
 
 export * from "./BannerHeader";
-export * from "./WhiteStickyNavHeader";
+
 export * from "./Banner";
 
 export const Header = ({ active = null }) => {
