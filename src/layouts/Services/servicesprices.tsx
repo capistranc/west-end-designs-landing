@@ -74,7 +74,7 @@ function loadPrices() {
 }
 
 import { DiagonalDecoratorTopRightMinus } from "../../components/Decorators/Diagonal";
-export const ServicesPrices = () => {
+export const ServicesPrices = ({ ...props }) => {
   const { colorMode } = useColorMode();
   return (
     <Box
@@ -86,6 +86,7 @@ export const ServicesPrices = () => {
       bg={useColorModeValue("blue.50", "teal.900")}
       color={useColorModeValue("gray.700", "gray.100")}
       position="relative"
+      {...props}
     >
       {/* <DiagonalDecoratorTopRightMinus backgroundColor={theme.bg2[colorMode]} /> */}
 

@@ -32,7 +32,7 @@ export const serviceData = [
   {
     title: "Web Applications",
     icon: HiOutlineDesktopComputer,
-    text: `First impressions are important. We all know this. By having a professionaly made website your customers will be confident in your business.`,
+    text: `First impressions are important. We all know this. If you have a professionaly made website your customers will be confident in your business.`,
     link: "#contact-form",
   },
   {

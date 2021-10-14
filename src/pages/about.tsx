@@ -26,10 +26,15 @@ import {
   Heading,
   Button,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const About: NextPage = ({}) => {
   const { colorMode } = useColorMode();
+  const banner = useColorModeValue(
+    "url(/images/about.jpeg)",
+    "linear-gradient(30deg, rgba(25, 25, 50,0.3), rgba(25, 25, 80,0.8)), url(/images/about.jpeg)",
+  );
 
   return (
     <>
@@ -37,6 +42,24 @@ const About: NextPage = ({}) => {
         title="Hey! nice to meet you"
         description="Chris and Mike started West End Designs to help small and medium sized businesses compete in todays modern world of rapidly advancing technology."
       >
+        <Flex
+          className="header-sentinel"
+          mt="-3.5rem"
+          direction="column"
+          bg={banner}
+          bgPosition="50% 60%"
+          align="center"
+          justify="center"
+          minHeight="40vh"
+        >
+          <Heading color={theme.fg2[colorMode]} variant="h2" fontSize="5xl">
+            About Us
+          </Heading>
+          <Text fontSize="md" color={theme.fg2[colorMode]}>
+            West End Designs
+          </Text>
+        </Flex>
+
         <Flex top="0" as="main" flexDirection="column" backgroundColor="white">
           <Box height={{ base: "40rem", md: "25rem" }}>
             <BannerSectionAbout />

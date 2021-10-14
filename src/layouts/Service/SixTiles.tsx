@@ -60,6 +60,7 @@ export const SixTiles = ({ data, ...props }: Props): JSX.Element => {
       color={theme.fg[colorMode]}
       align="center"
       position="relative"
+      {...props}
     >
       <DiamondDecoratorBottomDown bg={theme.bg[colorMode]} />
 

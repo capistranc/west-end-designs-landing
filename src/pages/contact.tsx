@@ -53,12 +53,30 @@ export const ContactPage: NextPage = () => {
               my="0rem"
               bg={theme.bg2[colorMode]}
               color={theme.fg2[colorMode]}
-              pt="36"
+              pt="24"
             >
+              <Box align="left" p="4">
+                <Heading
+                  color={theme.heading[colorMode]}
+                  variant="h2"
+                  as="div"
+                  fontSize="5xl"
+                  d="inline"
+                >
+                  Connect{" "}
+                </Heading>
+                <Heading
+                  color={theme.fg2[colorMode]}
+                  variant="h2"
+                  as="div"
+                  fontSize="5xl"
+                  d="inline"
+                >
+                  up with us today
+                </Heading>
+              </Box>
               <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
 
-              {/* <DashedLine strokeColor={theme.bg[colorMode]} />
-              <DashedLine strokeColor={theme.bg[colorMode]} /> */}
               <CallWriteReview
                 py="2rem"
                 borderTop="5px dashed"

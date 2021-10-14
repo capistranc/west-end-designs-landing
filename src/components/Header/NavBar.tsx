@@ -22,6 +22,7 @@ export const NavBar = ({
   links,
   active = null,
   variant = "default",
+
   ...props
 }) => {
   const { isOpen, onToggle } = useDisclosure();

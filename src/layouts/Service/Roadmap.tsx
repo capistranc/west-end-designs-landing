@@ -64,7 +64,7 @@ export const Roadmap = ({ ...props }) => {
                   West End Designs{" "}
                 </Text>{" "}
                 team sits down and gather information about your business, your
-                needs, and your goals."
+                needs, and your goals.
               </>
             }
           />

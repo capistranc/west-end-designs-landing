@@ -85,6 +85,7 @@ export const ServicesSixTiles = ({ ...props }) => {
       color={theme.fg[colorMode]}
       align="center"
       position="relative"
+      {...props}
     >
       {/* <DiamondDecoratorBottomDown bg={theme.bg[colorMode]} /> */}
 
