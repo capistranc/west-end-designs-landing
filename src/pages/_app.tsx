@@ -79,7 +79,7 @@ const GlobalStyle = ({ children }) => {
 };
 
 const App = ({ Component, pageProps, router }: AppProps) => {
-  const url = `https://westendwebdesigns.com${router.route}`;
+  const url = `https://www.westendwebdesigns.com${router.route}`;
   const { colorMode } = useColorMode();
 
   return (
