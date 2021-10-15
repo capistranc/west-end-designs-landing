@@ -62,8 +62,6 @@ export const SixTiles = ({ data, ...props }: Props): JSX.Element => {
       position="relative"
       {...props}
     >
-      <DiamondDecoratorBottomDown bg={theme.bg[colorMode]} />
-
       <Flex direction="row" wrap="wrap" align="center" justify="center">
         <SimpleGrid columns={[1, 2, 2, 3]}>
           {data.map((service, i) => {

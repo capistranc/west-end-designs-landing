@@ -14,7 +14,10 @@ import { GiMagnifyingGlass, GiArchBridge, GiCrosshair } from "react-icons/gi";
 import { MdHeadsetMic } from "react-icons/md";
 import { BiCodeAlt, BiWalk } from "react-icons/bi";
 import { SlideIn } from "../../components/Motion/SlideIn";
-import { DiagonalDecoratorBottomLeftMinus } from "../../components/Decorators";
+import {
+  DiagonalDecoratorBottomLeftMinus,
+  DiamondDecoratorTopDown,
+} from "../../components/Decorators";
 
 export const Roadmap = ({ ...props }) => {
   const { colorMode } = useColorMode();
@@ -29,7 +32,7 @@ export const Roadmap = ({ ...props }) => {
       <DiagonalDecoratorBottomLeftMinus bg={theme.bg3[colorMode]} />
 
       <DashedLine />
-      <Box position="relative" py="4" zIndex="10">
+      <Box position="relative" py="4" zIndex="10" mt="-3rem">
         <Button
           variant="solid"
           fontSize="1.5rem"
@@ -43,6 +46,7 @@ export const Roadmap = ({ ...props }) => {
       </Box>
 
       <Box align="center" color="white" backgroundColor={theme.bg2[colorMode]}>
+        <DiamondDecoratorTopDown bg={theme.bg[colorMode]} />
         <DashedLine strokeColor={theme.bg[colorMode]} />
         <DashedLine strokeColor={theme.bg[colorMode]} />
         <SlideIn from="right">
