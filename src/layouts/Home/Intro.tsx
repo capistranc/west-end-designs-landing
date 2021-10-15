@@ -17,7 +17,34 @@ import { GiBigWave, GiCliffCrossing } from "react-icons/gi";
 
 import { DiamondDecoratorTopDown } from "../../components/Decorators/Diamond";
 
-export const Intro = () => {
+const introData = [
+  {
+    titleBegin: "Welcome to",
+    titleEnd: "West End Designs",
+    text: (
+      <>
+        Getting online is easy. Succeeding online is a different story. Search
+        Engine Optimization, Google Analytics, Server-Side Rendering... At{" "}
+        <Text as="h1" d="inline-block">
+          West End Designs
+        </Text>{" "}
+        we use every tool available to guarantee your success. We are so
+        confident in our designs, that your first mockup for a standard website
+        is free of charge.
+      </>
+    ),
+    buttonText: "CONNECT NOW",
+    buttonLink: "#contact-form",
+  },
+];
+export const Intro = ({
+  titleBegin,
+  titleEnd,
+  buttonText = "CONNECT NOW",
+  buttonLink = "#contact-form",
+  children,
+  ...props
+}) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -33,21 +60,13 @@ export const Intro = () => {
 
         <Box my="4">
           <Heading variant="h2" as="div">
-            Welcome to{" "}
+            {titleBegin || introData[0].titleBegin}
             <Heading d="inline-block" variant="h2" as="h1" color="teal.600">
-              West End Designs
+              {titleEnd || introData[0].titleEnd}
             </Heading>
           </Heading>
           <Text maxWidth="48em" as="div">
-            Getting online is easy. Succeeding online is a different story.
-            Search Engine Optimization, Google Analytics, Server-Side
-            Rendering... At{" "}
-            <Text as="h1" d="inline-block">
-              West End Designs
-            </Text>{" "}
-            we use every tool available to guarantee your success. We are so
-            confident in our designs, that your first mockup for a standard
-            website is free of charge.
+            {children || introData[0].text}
           </Text>
         </Box>
 
@@ -59,7 +78,7 @@ export const Intro = () => {
           // bg="teal.500"
           // color="white"
         >
-          <NextLink href="#contact-form">CONNECT NOW</NextLink>
+          <NextLink href={buttonLink}>{buttonText}</NextLink>
         </Button>
 
         <DashedLine height="6rem" />

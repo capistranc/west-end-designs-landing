@@ -85,7 +85,7 @@ const About: NextPage = ({}) => {
       title: "Co-Founder",
       bio: `Chris Capistran is the Lead Developer and Co-founder of West End Designs.
       He is passionate about Mathematics and Philosophy, originally graduating from UCLA with a degree in Mathematics and Computer Science.
-      Engineering came to Chris naturally, as he would later pivot into the field Software post-graduation. After working as a full stack engineer
+      Engineering came to Chris naturally, as he would later pivot into the field of Software post-graduation. After working as a full stack engineer
       at several tech companies large and small, he decided to develop a speciality in Front-End development and SEO Optimization in order to serve members
       of his local business community.`,
       image: "/images/chris.png",
@@ -254,6 +254,7 @@ const About: NextPage = ({}) => {
             maxWidth="80rem"
             pb="4rem"
           >
+            <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} top="-5rem" />
             <SocialMediaBio
               direction={["column", "column", "row-reverse", "row-reverse"]}
               color={theme.fg[colorMode]}

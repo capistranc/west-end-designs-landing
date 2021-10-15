@@ -98,8 +98,7 @@ export const ServicesPage = ({}) => {
                 paddingBottom={20}
               />
               <HeadingAndBulletPoints
-                headingText="Custom designed websites that load fast and are made for mobile
-            browsing."
+                headingText="Custom designed websites that load fast and are made for mobile browsing."
                 bulletPointOne="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 bulletPointTwo="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                 bulletPointThree="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
@@ -131,8 +130,6 @@ export const ServicesPage = ({}) => {
                 maxWidth="40%"
                 src="/images/rightSvgLines.svg"
                 alt="Lines point to the right."
-                // pr={20}
-                // mb={20}
                 mr="auto"
               />
             </Flex>
