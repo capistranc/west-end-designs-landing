@@ -22,5 +22,15 @@ export const Button = {
       borderRadius: 0,
       bg: props.colorMode === "dark" ? "teal.700" : "teal.500",
     }),
+    bb: {
+      color: "white",
+      borderRadius: 0,
+      bg: "#000000",
+    },
+    bw: {
+      color: "black",
+      borderRadius: 0,
+      bg: "#FFFFFF",
+    },
   },
 };

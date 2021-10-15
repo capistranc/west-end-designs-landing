@@ -50,9 +50,9 @@ export const Line = ({ horizontal = false, strokeColor = null, ...props }) => {
     "rgba(255,255,255,0.8",
   );
   return (
-    <svg viewBox="0 0 100 100" height="2rem" {...props}>
+    <svg viewBox="0 0 100 100" height="1rem" {...props}>
       <path
-        strokeWidth="3"
+        strokeWidth="5"
         stroke={strokeColor || defaultStroke}
         d={horizontal ? `M0 50 h 100` : `M50 0 v 100`}
       />

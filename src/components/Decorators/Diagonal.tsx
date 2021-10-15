@@ -31,6 +31,21 @@ export const DiagonalDecoratorBottomLeftMinus = ({ ...props }) => {
   );
 };
 
+export const DiagonalDecoratorBottomRight = ({ ...props }) => {
+  return (
+    <Box
+      position="absolute"
+      bottom="-5rem"
+      right="0"
+      transform="skewY(-4deg)"
+      h="10rem"
+      zIndex="1"
+      w="100%"
+      {...props}
+    />
+  );
+};
+
 export const DiagonalDecoratorTopLeft = ({ ...props }) => {
   return (
     <Box

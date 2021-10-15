@@ -65,7 +65,7 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
   );
 };
 
-export const DiamondDecoratorBottomUp = ({ ...props }) => {
+export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
   return (
     <>
       <Box
@@ -91,6 +91,43 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
       <Box
         position="absolute"
         bottom="0rem"
+        right="0"
+        zIndex="1"
+        bg={props.bg || props.bgColor}
+        {...props}
+        h="10rem"
+        w="100%"
+      ></Box>
+    </>
+  );
+};
+
+export const DiamondDecoratorBottomUp = ({ ...props }) => {
+  return (
+    <>
+      <Box
+        position="absolute"
+        bottom="0rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(4deg)"
+        bg={props.bg || props.bgColor}
+        h="10rem"
+        w="100%"
+      />
+      <Box
+        position="absolute"
+        bottom="0rem"
+        right="0"
+        zIndex="1"
+        transform="skewY(-4deg)"
+        bg={props.bg || props.bgColor}
+        h="10rem"
+        w="100%"
+      />
+      <Box
+        position="absolute"
+        bottom="-5rem"
         right="0"
         zIndex="1"
         bg={props.bg || props.bgColor}

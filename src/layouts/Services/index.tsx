@@ -25,7 +25,7 @@ import {
   DiagonalDecoratorTopLeft,
   DiagonalDecoratorTopRight,
   DiamondDecoratorTopDown,
-  DiamondDecoratorBottomUp,
+  DiamondDecoratorBottomBowTie,
 } from "../../components/Decorators";
 
 export const ServicesPage = ({}) => {
@@ -40,7 +40,7 @@ export const ServicesPage = ({}) => {
         <Box position="relative" mt="20">
           <DiamondDecoratorTopDown bg={theme.bg2[colorMode]} />
           <ServicesSixTiles pt="40" />
-          <DiamondDecoratorBottomUp bg={theme.bg2[colorMode]} />
+          <DiamondDecoratorBottomBowTie bg={theme.bg2[colorMode]} />
         </Box>
         <Box
           h="40rem"
@@ -57,14 +57,13 @@ export const ServicesPage = ({}) => {
               How All These Services Work For You.
             </Text>
           </Center>
-          <DiamondDecoratorBottomUp bg={theme.bg2[colorMode]} />
+          <DiamondDecoratorBottomBowTie bg={theme.bg2[colorMode]} />
         </Box>
         <Box
           backgroundColor={theme.bg[colorMode]}
           height={{ base: "180rem", md: "200rem" }}
         >
-          <Box position="relative" mt="20">
-            <DiagonalDecoratorTopLeft bg={theme.bg[colorMode]} />
+          <Box position="relative" mt="">
             <Flex
               display={{ base: "none", md: "flex" }}
               w="100%"

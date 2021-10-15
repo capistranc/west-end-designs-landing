@@ -28,6 +28,7 @@ import { BorderedIconOffset } from "../components/Icons/BorderedIconOffset";
 import { CallWriteReview } from "../layouts/Contact/CallWriteReview";
 import { DashedLine } from "../components/svg/DashedLine";
 
+import { FormSupport } from "../layouts/Contact/FormSupport";
 export const ContactPage: NextPage = () => {
   const { colorMode } = useColorMode();
 
@@ -98,43 +99,10 @@ export const ContactPage: NextPage = () => {
               <DashedLine />
             </Box>
 
-            <Flex
-              justify="space-evenly"
-              align="center"
-              mt="20"
-              direction={["column-reverse", "column-reverse", "row", "row"]}
-            >
-              <ContactForm
-                flex="1"
-                maxWidth="52rem"
-                minWidth={{ md: "28rem" }}
-                color={theme.fg[colorMode]}
-                bg={theme.bg4[colorMode]}
-              />
-              <Box
-                maxWidth="28rem"
-                textAlign="left"
-                my="12"
-                align="center"
-                // justify="center"
-              >
-                <Heading variant="h2" mb="4">
-                  24/7 Customer Support
-                </Heading>
-                <Text as="div">
-                  At{" "}
-                  <Text as="h1" d="inline">
-                    {" "}
-                    West End Designs{" "}
-                  </Text>
-                  , we don't leave anyone hanging. You are always one call or
-                  text away from reaching one of us directly. Send us an email
-                  and we promise to get back to you as soon as humanly possible.
-                </Text>
-
-                <BorderedIconOffset m="2rem auto" icon={MdHeadsetMic} />
-              </Box>
-            </Flex>
+            <FormSupport
+              color={theme.fg[colorMode]}
+              bg={theme.bg4[colorMode]}
+            />
           </Box>
         </Box>
       </Box>

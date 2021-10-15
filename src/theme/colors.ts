@@ -111,6 +111,14 @@ const colorSchemes = {
     light: toHex("white"),
     dark: toHex("black"),
   },
+  icon: {
+    light: toHex("teal.600"),
+    dark: toHex("teal.600"),
+  },
+  // grays: {
+  //   light: toHex("gray.100"),
+  //   dark:toHex("teal.600")
+  // }
 };
 
 const scheme = {
