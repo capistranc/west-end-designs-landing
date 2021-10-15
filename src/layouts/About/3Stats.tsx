@@ -2,23 +2,28 @@ import { Flex, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { theme } from "../../theme";
 import { AnimatedNumberCard } from "../../components/Cards/AnimatedNumberCard";
 import { ThemeContext } from "@emotion/react";
-import { OnRender } from "../../components/Wrappers/OnRender";
+import { useHasRendered } from "../../lib/hooks";
+import { useRef } from "react";
 
 export const ThreeStats = ({ statsData, ...props }) => {
   const { colorMode } = useColorMode();
+  const ref = useRef();
+  const hasRendered = useHasRendered(ref);
+  const borderColor = { light: "transparent", dark: theme.border1[colorMode] };
 
   return (
-    <OnRender>
-      <Flex
-        color={theme.fg[colorMode]}
-        align="center"
-        justify="space-evenly"
-        direction={["column", "column", "row", "row"]}
-        wrap="wrap"
-        bg={theme.bg2[colorMode]}
-        {...props}
-      >
-        {statsData.map((data, i) => {
+    <Flex
+      color={theme.fg[colorMode]}
+      align="center"
+      justify="space-evenly"
+      direction={["column", "column", "row", "row"]}
+      wrap="wrap"
+      bg={theme.bg2[colorMode]}
+      ref={ref}
+      {...props}
+    >
+      {hasRendered &&
+        statsData.map((data, i) => {
           return (
             <AnimatedNumberCard
               key={i}
@@ -29,10 +34,7 @@ export const ThreeStats = ({ statsData, ...props }) => {
               {...data}
               boxShadow="md"
               border="2px solid"
-              borderColor={useColorModeValue(
-                "transparent",
-                theme.border1[colorMode],
-              )}
+              borderColor={borderColor[colorMode]}
               minWidth={["16rem", "18rem", "20rem", "22rem"]}
               color={theme.fg[colorMode]}
               bg={theme.bg[colorMode]}
@@ -40,7 +42,6 @@ export const ThreeStats = ({ statsData, ...props }) => {
             />
           );
         })}
-      </Flex>
-    </OnRender>
+    </Flex>
   );
 };

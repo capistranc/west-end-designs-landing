@@ -82,55 +82,48 @@ const About: NextPage = ({}) => {
   const bioData = [
     {
       name: "Chris Capistran",
-      title: "Co-Founder/Lead Developer",
-      bio: `Chris Capistran We focus on search engine optimization. It's one of the
-      least understood and least transparent aspects of great marketing, and
-      we see that as an opportunity. We're excited to simplify SEO for
-      everyone through our software, education, and community.`,
+      title: "Co-Founder",
+      bio: `Chris Capistran is the Lead Developer and Co-founder of West End Designs.
+      He is passionate about Mathematics and Philosophy, originally graduating from UCLA with a degree in Mathematics and Computer Science.
+      Engineering came to Chris naturally, as he would later pivot into the field Software post-graduation. After working as a full stack engineer
+      at several tech companies large and small, he decided to develop a speciality in Front-End development and SEO Optimization in order to serve members
+      of his local business community.`,
       image: "/images/chris.png",
       linkData: [
         {
           icon: FaGithub,
-          link: "#",
+          link: "https://github.com/capistranc/",
         },
         {
           icon: FaLinkedin,
-          link: "#",
+          link: "https://www.linkedin.com/in/capistranc/",
         },
         {
           icon: FaInstagram,
-          link: "#",
+          link: "https://www.instagram.com/hit_mon_cap/",
         },
         {
           icon: FaCode,
-          link: "#",
+          link: "https://chriscapistran.info",
         },
       ],
     },
     {
       name: "Michael Esfahani",
-      title: "Co-Founder/Developer",
-      bio: `Michael Esfahani We focus on search engine optimization. It's one of the
-      least understood and least transparent aspects of great marketing, and
-      we see that as an opportunity. We're excited to simplify SEO for
-      everyone through our software, education, and community.`,
+      title: "Co-Founder",
+      bio: `Michael Esfahani is a Developer and Co-founder of West End Designs.
+      Michael's deep passion for technology and innovation led him into career in software development. 
+      Michael has experience working in Client Services, which included work in software implementation. 
+      He has also worked in Web Design and Web Development. Before entering a career path in software, Michael held a career in Marine Biology.`,
       image: "/images/michael.jpeg",
       linkData: [
         {
           icon: FaGithub,
-          link: "#",
+          link: "https://github.com/esfahanimichael",
         },
         {
           icon: FaLinkedin,
-          link: "#",
-        },
-        {
-          icon: FaInstagram,
-          link: "#",
-        },
-        {
-          icon: FaCode,
-          link: "#",
+          link: "https://www.linkedin.com/in/esfahanimichael/",
         },
       ],
     },
@@ -207,9 +200,9 @@ const About: NextPage = ({}) => {
                       spacing="2"
                       alignItems="center"
                     >
-                      {serviceData.map(({ title }) => {
+                      {serviceData.map(({ title }, i) => {
                         return (
-                          <ListItem>
+                          <ListItem key={i}>
                             <ListIcon
                               as={CheckIcon}
                               color={theme.icon[colorMode]}
@@ -259,6 +252,7 @@ const About: NextPage = ({}) => {
             position="relative"
             pt="10rem"
             maxWidth="80rem"
+            pb="4rem"
           >
             <SocialMediaBio
               direction={["column", "column", "row-reverse", "row-reverse"]}

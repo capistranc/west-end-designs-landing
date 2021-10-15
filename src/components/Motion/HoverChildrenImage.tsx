@@ -113,7 +113,7 @@ export const HoverChildrenImage = ({
                 h="100%"
                 w="100%"
                 sx={{
-                  "mix-blend-mode": "color",
+                  mixBlendMode: "color",
                 }}
               />
             </Box>

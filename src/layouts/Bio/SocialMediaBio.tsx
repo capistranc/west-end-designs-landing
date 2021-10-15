@@ -1,4 +1,4 @@
-import { Flex, Text, Icon, FlexProps, Box } from "@chakra-ui/react";
+import { Flex, Text, Icon, FlexProps, Box, Button } from "@chakra-ui/react";
 import { HoverChildrenImage } from "../../components/Motion/HoverChildrenImage";
 import NextLink from "next/link";
 // import { BsChatLeftQuote } from "react-icons";
@@ -30,15 +30,16 @@ export const SocialMediaBio = ({
       <Flex justify="space-evenly" align="center">
         {data.map(({ icon, link }, i) => {
           return (
-            <NextLink key={i} href={link}>
-              <Icon
-                as={icon}
-                color={props.color}
-                boxSize="2rem"
-                p="1"
-                borderRadius="md"
-                _hover={{ bg: "rgba(1,1,1,0.4)" }}
-              />
+            <NextLink key={i} href={link} passHref>
+              <Button bg="transparent">
+                <Icon
+                  as={icon}
+                  color={props.color}
+                  boxSize="2rem"
+                  p="1"
+                  borderRadius="md"
+                />
+              </Button>
             </NextLink>
           );
         })}
@@ -62,7 +63,7 @@ export const SocialMediaBio = ({
       <HoverChildrenImage name={name} title={title} image={image}>
         {subText}
       </HoverChildrenImage>
-      <Box>
+      <Box my="4">
         {/* <Icon
           left="0"
           boxSize="2em"
