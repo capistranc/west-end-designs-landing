@@ -10,9 +10,9 @@ export const DarkModeSwitch = ({ ...props }) => {
       aria-label="Toggle dark mode"
       icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
       onClick={toggleColorMode}
-      color={theme.fg[colorMode]}
       bg="transparent"
       {...props}
+      color={theme.fg[colorMode]}
     />
   );
 };
