@@ -9,52 +9,47 @@
 
 <url>
   <loc>https://www.westendwebdesigns.com/</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.westendwebdesigns.com/about</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.westendwebdesigns.com/services</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.westendwebdesigns.com/portfolio</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.westendwebdesigns.com/blog</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.westendwebdesigns.com/contact</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.westendwebdesigns.com/blog/another-post</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <loc>https://www.westendwebdesigns.com/blog/framer-figma</loc>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.westendwebdesigns.com/blog/test-post</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <loc>https://www.westendwebdesigns.com/blog/forOf-forIn</loc>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.westendwebdesigns.com/blog/80-20-of-SEO</loc>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.westendwebdesigns.com/blog/ssg-ssr</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.westendwebdesigns.com/blog/pre-rendering</loc>
-  <lastmod>2021-10-10T22:53:02+00:00</lastmod>
+  <lastmod>2021-10-15T22:10:37+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
