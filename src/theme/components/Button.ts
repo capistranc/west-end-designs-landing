@@ -26,7 +26,7 @@ export const Button = {
       borderRadius: 0,
       bg: props.colorMode === "dark" ? "teal.700" : "teal.500",
     }),
-    btoW: (props) => ({
+    btow: (props) => ({
       color: props.colorMode == "light" ? "white" : "black",
       bg: props.colorMode == "light" ? "black" : "white",
       borderRadius: 0,

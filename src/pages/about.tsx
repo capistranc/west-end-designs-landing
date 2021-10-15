@@ -222,7 +222,7 @@ const About: NextPage = ({}) => {
             <DashedLine />
 
             <Button position="relative" zIndex="10" variant="btow">
-              Free Consultation
+              FREE CONSULT
             </Button>
           </Box>
           <Box
