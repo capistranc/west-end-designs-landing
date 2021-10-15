@@ -104,7 +104,7 @@ export const ServicesSixTiles = ({ ...props }) => {
           })}
         </SimpleGrid>
       </Flex>
-      <CustomColorDashedLine />
+      {/* <CustomColorDashedLine /> */}
       <CustomColorDashedLine />
       <CustomColorDashedLine />
     </Box>
