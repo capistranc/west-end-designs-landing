@@ -78,6 +78,10 @@ const colorSchemes = {
     light: toHex("white"),
     dark: toHex("teal.800"),
   },
+  bg5: {
+    light: toHex("blue.50"),
+    dark: toHex("teal.800"),
+  },
   border2: {
     light: toHex("blue.200"),
     dark: toHex("teal.600"),

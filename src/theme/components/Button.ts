@@ -1,7 +1,11 @@
+import { theme } from "..";
 export const Button = {
   // 1. We can update the base styles
   baseStyle: (props) => ({
     // fontWeight: "bold", // Normally, it is "semibold"
+    _hover: {
+      bgColor: theme.border1[props.colorMode],
+    },
   }),
   // 2. We can add a new button size or extend existing
   sizes: {
