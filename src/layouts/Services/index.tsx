@@ -107,7 +107,12 @@ export const ServicesPage = ({}) => {
               />
             </SimpleGrid>
           </Box>
-          <Box position="relative" pb="12rem" bg={theme.bg2[colorMode]}>
+          <Box
+            position="relative"
+            pb="12rem"
+            bg={theme.bg2[colorMode]}
+            color={theme.fg2[colorMode]}
+          >
             <DiagonalDecoratorTopLeft bg={theme.bg[colorMode]} />
             <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} />
             <Flex
@@ -133,7 +138,6 @@ export const ServicesPage = ({}) => {
             </Flex>
             <SimpleGrid
               display={{ md: "inline-flex" }}
-              color={theme.fg[colorMode]}
               // height={{ base: "50rem", md: "35rem" }}
               margin="auto"
               justifyContent={{ md: "center" }}
