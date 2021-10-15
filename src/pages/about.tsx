@@ -243,7 +243,7 @@ const About: NextPage = ({}) => {
             <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} />
             <DiagonalDecoratorTopRight bg={theme.bg3[colorMode]} />
             <DiagonalDecoratorBottomRight bg={theme.bg2[colorMode]} />
-            <SocialMediaBio {...bioData[0]} />
+            <SocialMediaBio {...bioData[0]} color={theme.fg2[colorMode]} />
           </Box>
 
           <Box
@@ -256,6 +256,7 @@ const About: NextPage = ({}) => {
           >
             <SocialMediaBio
               direction={["column", "column", "row-reverse", "row-reverse"]}
+              color={theme.fg[colorMode]}
               {...bioData[1]}
             />
           </Box>

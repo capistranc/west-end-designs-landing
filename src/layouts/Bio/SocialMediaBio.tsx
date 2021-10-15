@@ -31,7 +31,7 @@ export const SocialMediaBio = ({
         {data.map(({ icon, link }, i) => {
           return (
             <NextLink key={i} href={link} passHref>
-              <Button bg="transparent">
+              <Button bg="transparent" color>
                 <Icon
                   as={icon}
                   color={props.color}
