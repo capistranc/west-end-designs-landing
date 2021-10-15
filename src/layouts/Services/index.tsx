@@ -158,6 +158,7 @@ export const ServicesPage = ({}) => {
           <Box
             position="relative"
             bg={theme.bg[colorMode]}
+            color={theme.fg[colorMode]}
             pt="12rem"
             zIndex="10"
           >
@@ -208,12 +209,7 @@ export const ServicesPage = ({}) => {
           </Box>
         </Box>
 
-        <Box
-          position="relative"
-          bg={theme.bg2[colorMode]}
-          pt="12rem"
-          mt="12rem"
-        >
+        <Box position="relative" bg={theme.bg2[colorMode]} pt="15rem">
           <DiagonalDecoratorTopLeft bg={theme.bg[colorMode]} />
           <DiagonalDecoratorTopRight bg={theme.bg[colorMode]} />
           <ServicesPrices bg={theme.bg2[colorMode]} />

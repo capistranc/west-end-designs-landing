@@ -56,19 +56,19 @@ export const HeadingAndBulletPoints = ({
           </Text>
           <List spacing={3} pt={10} m={0} pl={20}>
             <ListItem fontSize="l">
-              <ListIcon as={MdCheckCircle} color={theme.line[colorMode]} />
+              <ListIcon as={MdCheckCircle} />
               {bulletPointOne}
             </ListItem>
             <ListItem fontSize="l">
-              <ListIcon as={MdCheckCircle} color={theme.line[colorMode]} />
+              <ListIcon as={MdCheckCircle} />
               {bulletPointTwo}
             </ListItem>
             <ListItem fontSize="l">
-              <ListIcon as={MdCheckCircle} color={theme.line[colorMode]} />
+              <ListIcon as={MdCheckCircle} />
               {bulletPointThree}
             </ListItem>
             <ListItem fontSize="l">
-              <ListIcon as={MdCheckCircle} color={theme.line[colorMode]} />
+              <ListIcon as={MdCheckCircle} />
               {bulletPointFour}
             </ListItem>
           </List>
