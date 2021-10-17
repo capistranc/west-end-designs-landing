@@ -1,17 +1,7 @@
 import { Parallax } from "../components/Wrappers/Parallax";
 import { Layout } from "../layouts";
 import { useEffect } from "react";
-import {
-  Box,
-  Flex,
-  Stack,
-  Link,
-  useColorMode,
-  Icon,
-  useMediaQuery,
-  useColorModeValue,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, useColorMode, Text, useBreakpointValue } from "@chakra-ui/react";
 
 import { Intro } from "../layouts/Home/Intro";
 import { Prices } from "../layouts/Service/Prices";
@@ -66,6 +56,25 @@ export const serviceData = [
     link: "#contact-form",
   },
 ];
+const introData = {
+  titleBegin: "Welcome to",
+  titleEnd: "West End Designs",
+  text: (
+    <>
+      Getting online is easy. Succeeding online is a different story. Search
+      Engine Optimization, Google Analytics, Server-Side Rendering... At{" "}
+      <Text as="h1" d="inline-block">
+        West End Designs
+      </Text>{" "}
+      we use every tool available to guarantee your success. We are so confident
+      in our designs, that your first mockup for a standard website is free of
+      charge.
+    </>
+  ),
+  buttonText: "CONNECT NOW",
+  buttonLink: "/contact",
+};
+
 export default function Index() {
   let mobileHeight = 0;
 
@@ -102,7 +111,7 @@ export default function Index() {
           <SunOverlay />
           <Landing />
         </Parallax>
-        <Intro />
+        <Intro {...introData} />
         <SixTiles data={serviceData} />
         <Roadmap />
 

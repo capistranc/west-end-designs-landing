@@ -3,15 +3,7 @@ import { Date } from "../components/Date";
 import { getSortedPostsData } from "../lib/blog";
 import NextLink from "next/link";
 import { NextPage } from "next";
-import {
-  Box,
-  Heading,
-  Link,
-  Stack,
-  Button,
-  StackDivider,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
@@ -21,7 +13,7 @@ export const Portfolio: NextPage = () => {
 
   return (
     <Layout title="Portfolio" description="Come see some of our happy clients">
-      <Button onClick={clickFn}> CLICK FOR ISNTAGRAM STUFF </Button>
+      <Button onClick={clickFn}> EAT FROM ME </Button>
     </Layout>
   );
 };

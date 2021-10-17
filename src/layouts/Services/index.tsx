@@ -99,10 +99,10 @@ export const ServicesPage = ({}) => {
               />
               <HeadingAndBulletPoints
                 headingText="Custom designed websites that load fast and are made for mobile browsing."
-                bulletPointOne="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointTwo="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointThree="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointFour="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                bulletPointOne="Mobile-First-Optimized for the Best Experience."
+                bulletPointTwo="Statically rendered so page loads quickly regardless of the device."
+                bulletPointThree="Images optimized for quicker load times and lower bandwith."
+                bulletPointFour={`Fully Responsive For Mobile, Tablet, \& Desktop.`}
               />
             </SimpleGrid>
           </Box>
@@ -145,10 +145,10 @@ export const ServicesPage = ({}) => {
               />
               <HeadingAndBulletPoints
                 headingText="Search Engine Optimized content on your website."
-                bulletPointOne="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointTwo="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointThree="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointFour="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                bulletPointOne={`Clean & Organized Code Structure For Web Crawlers.`}
+                bulletPointFour="Content written by professional SEO specialists."
+                bulletPointTwo={`Keyword-Centered Content & Blogs.`}
+                bulletPointThree="Website up to data with Google's search guidelines for ranking."
               />
             </SimpleGrid>
           </Box>
@@ -195,12 +195,11 @@ export const ServicesPage = ({}) => {
                 paddingTop={20}
               />
               <HeadingAndBulletPoints
-                headingText="Unlimited edits and updating your Google Business Profile..Custom designed websites that load fast and are made for mobile
-            browsing."
-                bulletPointOne="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointTwo="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointThree="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                bulletPointFour="When we create your website, we Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                headingText="Unlimited edits and updating for your Business Profiles."
+                bulletPointOne={`Optimize and manage your Google, Bing, & Yahoo Business Profile.`}
+                bulletPointTwo="Latest version of Google Analytics hooked up to your website."
+                bulletPointThree="Maintain ownership of all your profiles."
+                bulletPointFour="Maintain profile to match Googles current Algorithm."
               />
             </SimpleGrid>
           </Box>

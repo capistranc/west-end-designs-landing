@@ -16,14 +16,6 @@ import {
 import { MdCheckCircle } from "react-icons/md";
 import { theme } from "../../theme/";
 
-// export const CreateBulletPoints = ({bulletpointss}) => {
-// return (
-// for(var i=0; i < bulletpointss.length; i++){
-
-// }
-// )
-// };
-
 export const HeadingAndBulletPoints = ({
   headingText,
   bulletPointOne,
@@ -38,7 +30,7 @@ export const HeadingAndBulletPoints = ({
     <>
       <Box
         display={{ lg: "inline" }}
-        w={{ base: "100%", md: "50%" }}
+        maxWidth={{ base: "100%", md: "50%" }}
         height={{ base: "50%", md: "100%" }}
         // bg="blue"
         pl={4}
