@@ -64,6 +64,7 @@ const introData = {
       Getting online is easy. Succeeding online is a different story. Search
       Engine Optimization, Google Analytics, Server-Side Rendering... At{" "}
       <Text as="h1" d="inline-block">
+        {" "}
         West End Designs
       </Text>{" "}
       we use every tool available to guarantee your success. We are so confident

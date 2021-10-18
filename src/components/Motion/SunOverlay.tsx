@@ -23,7 +23,7 @@ const overlayVariant = {
         scale: 1,
         rotateZ: 0,
         transition: {
-          delay: 0.5,
+          delay: 0.75,
           duration: 0.8,
         },
       };
@@ -35,7 +35,7 @@ const overlayVariant = {
         bg: "rgba(25, 25, 112,1)",
         transition: {
           type: "spring",
-          delay: 0.5,
+          delay: 0.75,
           duration: 1.5,
         },
       };

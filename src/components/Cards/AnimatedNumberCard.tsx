@@ -1,48 +1,50 @@
 import { Box, Icon, Text, Flex, useColorMode } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { IoMdReturnRight } from "react-icons/io";
 import { theme } from "../../theme";
 
 export const AnimateNumber = ({
   id,
   to,
-  from = "0",
+  from = 0,
   speed = undefined,
   duration = 2000,
   variant = null,
   ...props
 }) => {
+  const [value, setValue] = useState(0);
+
   useEffect(() => {
-    const animate = () => {
-      const continueVariant = () => {
-        counter.innerText = "" + Math.ceil(data + 1);
-        setTimeout(animate, Math.random() * 8000);
+    if (value >= to && variant != "continue") return;
+
+    const add = () => {
+      const increment = () => {
+        let increment = speed
+          ? to / speed
+          : (to / (duration / 50)) * Math.random();
+
+        setValue(Math.min(Math.ceil(value + increment), to));
       };
-
-      const counter = document.getElementById(id || "counter");
-      const value = +counter.getAttribute("to");
-      const data = +counter.innerText;
-      let increment = speed
-        ? value / speed
-        : (value / (duration / 100)) * Math.random();
-
-      if (data < value) {
-        counter.innerText = "" + Math.ceil(data + increment);
-        setTimeout(animate, 100);
-      } else {
-        counter.innerText = "" + value;
-
-        if (variant === "continue") {
-          continueVariant();
-        }
-      }
+      return setTimeout(increment, 50);
     };
 
-    animate();
-  });
+    const continuousVariant = () => {
+      return setTimeout(() => {
+        setValue(value + 1);
+      }, Math.random() * 6000);
+    };
+
+    const timerId =
+      value >= to && variant == "continue" ? continuousVariant() : add();
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [value]);
 
   return (
     <Box id={id || "counter"} to={to} {...props} textStyle="h2">
-      {from}
+      {value}
     </Box>
   );
 };
@@ -78,20 +80,9 @@ export const AnimatedNumberCard = ({
         variant={variant}
         d="inline"
       />
-      <Text
-        d="inline"
-        // color={theme.fg[colorMode]}
-      >
-        {" "}
-        +{" "}
-      </Text>
+      <Text d="inline"> + </Text>
 
-      <Text
-        fontSize="md"
-        fontWeight="bold"
-        textStyle="h1"
-        // color={theme.fg[colorMode]}
-      >
+      <Text fontSize="md" fontWeight="bold" textStyle="h1">
         {" "}
         {unit}
       </Text>
