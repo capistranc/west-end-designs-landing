@@ -33,7 +33,10 @@ export default function Blog({ posts }) {
   const { colorMode } = useColorMode();
   return (
     <>
-      <Layout title="West End Designs Blog" description="My Blog">
+      <Layout
+        title="West End Designs Blog"
+        description="Official blog of West End Designs where we write/document about the common SEO and Web Development practices we have accrued over the years."
+      >
         <Stack
           color={theme.fg[colorMode]}
           bg={theme.bg[colorMode]}
