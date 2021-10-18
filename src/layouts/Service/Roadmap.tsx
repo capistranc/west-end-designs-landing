@@ -18,6 +18,7 @@ import {
   DiagonalDecoratorBottomLeftMinus,
   DiamondDecoratorTopDown,
 } from "../../components/Decorators";
+import NextLink from "next/link";
 
 export const Roadmap = ({ ...props }) => {
   const { colorMode } = useColorMode();
@@ -33,16 +34,18 @@ export const Roadmap = ({ ...props }) => {
 
       <DashedLine />
       <Box position="relative" py="4" zIndex="10" mt="-3rem">
-        <Button
-          variant="solid"
-          fontSize="1.5rem"
-          height="4rem"
-          color={theme.wb[colorMode]}
-          bg={theme.bw[colorMode]}
-        >
-          {" "}
-          GET STARTED NOW{" "}
-        </Button>
+        <NextLink href="/contact" passHref>
+          <Button
+            variant="solid"
+            fontSize="1.5rem"
+            height="4rem"
+            color={theme.wb[colorMode]}
+            bg={theme.bw[colorMode]}
+          >
+            {" "}
+            GET STARTED NOW{" "}
+          </Button>
+        </NextLink>
       </Box>
 
       <Box align="center" color="white" backgroundColor={theme.bg2[colorMode]}>
