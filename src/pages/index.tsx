@@ -57,7 +57,7 @@ export const serviceData = [
   },
 ];
 const introData = {
-  titleBegin: "Welcome to",
+  titleBegin: "Welcome to ",
   titleEnd: "West End Designs",
   text: (
     <>
