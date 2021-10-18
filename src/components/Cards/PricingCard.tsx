@@ -17,7 +17,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
-
+import NextLink from "next/link";
 export const PricingCard = ({
   title,
   price,
@@ -85,22 +85,24 @@ export const PricingCard = ({
               {renderList(listData)}
             </List>
 
-            <Button
-              mt={10}
-              w={"full"}
-              bg={"blue.600"}
-              color={"white"}
-              rounded={"none"}
-              // boxShadow={"0 5px 20px 0px rgb(70 130 180 / 43%)"}
-              _hover={{
-                bg: "blue.700",
-              }}
-              _focus={{
-                bg: "blue.700",
-              }}
-            >
-              <Link href="/contact"> {buttonText}</Link>
-            </Button>
+            <NextLink href="/contact" passHref>
+              <Button
+                mt={10}
+                w={"full"}
+                bg={"blue.600"}
+                color={"white"}
+                rounded={"none"}
+                // boxShadow={"0 5px 20px 0px rgb(70 130 180 / 43%)"}
+                _hover={{
+                  bg: "blue.700",
+                }}
+                _focus={{
+                  bg: "blue.700",
+                }}
+              >
+                <Link href="/contact"> {buttonText}</Link>
+              </Button>
+            </NextLink>
           </Box>
         </Box>
       </Box>

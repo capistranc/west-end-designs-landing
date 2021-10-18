@@ -2,11 +2,12 @@ import { theme } from "..";
 
 export const Link = {
   // 1. We can update the base styles
-  baseStyle: (props) => {
+  baseStyle: (props) => ({
     // fontWeight: "bold", // Normally, it is "semibold"
-    as: "h1";
-    display: "inline";
-  },
+    // as: "h1",
+    // display: "inline",
+    // _hover: {},
+  }),
   // 2. We can add a new button size or extend existing
   sizes: {
     // xl: {

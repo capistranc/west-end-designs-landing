@@ -21,17 +21,6 @@ import {
 import { theme } from "../../theme";
 import emailJS from "emailjs-com";
 
-const ContactInfo = (props) => (
-  <Box {...props}>
-    <Logo />
-    <Link href="mailto:contact@westendwebdesigns.com">
-      contact@WestEndWebDesigns.com
-    </Link>
-    <Spacer />
-    <Link href="tel:714-932-9998">(949) 735 - 5619</Link>
-  </Box>
-);
-
 import { Logo } from "..";
 
 import { EmailIcon, PhoneIcon, QuestionIcon } from "@chakra-ui/icons";

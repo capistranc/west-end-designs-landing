@@ -121,7 +121,7 @@ export const Landing = ({ ...props }) => {
               bg="black"
               color="white"
             >
-              <NextLink href="#contact-form" passHref>
+              <NextLink href="/contact" passHref>
                 <Link>CONNECT WITH US</Link>
               </NextLink>
             </MotionButton>

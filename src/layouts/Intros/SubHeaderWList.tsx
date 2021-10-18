@@ -47,9 +47,9 @@ export const SubHeaderWList = ({ ...props }) => {
         businesses around the world compete in the world of technology. With the
         goal of working as we travel and traveling as we work, we aim to bring
         the style of the{" "}
-        <Link color={theme.heading[colorMode]} fontWeight="600">
+        <Text color={theme.heading[colorMode]} fontWeight="600" d="inline">
           West End
-        </Link>{" "}
+        </Text>{" "}
         every where we go.
       </Text>
 

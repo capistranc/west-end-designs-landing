@@ -10,6 +10,7 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 import { SocialMediaLinks, FooterHeading } from "./index";
 import { Logo } from "../Logo";
@@ -81,9 +82,15 @@ export const LinkGrid = (props: SimpleGridProps) => (
         Code
       </FooterHeading>
       <Stack>
-        <Link as="h1">Mobile Designs</Link>
-        <Link as="h1">Web Applications</Link>
-        <Link as="h1">Full Stack Solutions</Link>
+        <NextLink href="/services">
+          <Link as="h1">Mobile Designs</Link>
+        </NextLink>
+        <NextLink href="/services">
+          <Link as="h1">Web Applications</Link>
+        </NextLink>
+        <NextLink href="/services">
+          <Link as="h1">Full Stack Solutions</Link>
+        </NextLink>
       </Stack>
     </Box>
     <Box minW="6em">
@@ -91,9 +98,15 @@ export const LinkGrid = (props: SimpleGridProps) => (
         Content
       </FooterHeading>
       <Stack>
-        <Link as="h1">Google Analytics</Link>
-        <Link as="h1">Content Management</Link>
-        <Link as="h1">Search Engine Optimization</Link>
+        <NextLink href="/services">
+          <Link as="h1">Google Analytics</Link>
+        </NextLink>
+        <NextLink href="/services">
+          <Link as="h1">Content Management</Link>
+        </NextLink>
+        <NextLink href="/services">
+          <Link as="h1">Search Engine Optimization</Link>
+        </NextLink>
       </Stack>
     </Box>
   </SimpleGrid>
