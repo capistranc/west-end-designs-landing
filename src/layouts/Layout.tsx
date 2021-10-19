@@ -37,7 +37,6 @@ export const Layout = ({
         as="main"
         pt="3.5rem"
         minHeight="82.9vh"
-        align="center"
         {...props}
       >
         <MotionBox

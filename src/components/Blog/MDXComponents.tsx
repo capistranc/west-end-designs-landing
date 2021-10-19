@@ -134,6 +134,6 @@ export const MDXComponents = {
   p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
   ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
-  li: (props) => <Box as="li" pb={1} {...props} />,
+  li: (props) => <Box as="li" textAlign="left" pb={1} {...props} />,
   blockquote: Quote,
 };

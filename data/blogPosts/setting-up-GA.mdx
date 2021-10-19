@@ -1,0 +1,75 @@
+---
+title: "How to set up Basic SEO"
+publishedAt: "2021-10-19"
+author: Chris Capistran
+date: "2021-10-19"
+summary: "A brief overview of how to set p Google Analytics. GA vs tag manager"
+---
+
+## Outline
+
+- [Setup GA on Google](#set-up)
+
+- [Hook GA into NextJS](#hook-ga-into-nextjs)
+
+- [Adding Meta Tags](#add-meta-tags)
+
+- [Google Search Console](#google-search-console)
+
+- [Adding a sitemap](#add-sitemap)
+
+- [Google Tags](#google-tags)
+
+## Set Up
+
+So to begin create a new google analytics account for the website. It is going to ask you for an
+account name and a property name.
+I use:
+
+Account Name: ${Name of Website} Property Name: Basic.
+
+Once you've created your google analytics account and insert the url of your website you should arrive at a page that has
+a stream URL and a MeasurementID
+
+GA-Measurement ID looks something like this G-FHQWHGADS123
+
+Copy the Measurement ID because we are going to need it to hook into our Website.
+
+## Hook GA into NextJS
+
+Google provides you with the code to insert into your website. If you are creating your website with vanilla
+HTML and JS you would just stick this script at the top of your Headers.
+
+If you are using NextJS you are going to want to stick this at the top of your headers in your \_document file.
+
+This insures that GA is hooked up to every page in NextJS, before the NextJS \_app even renders.
+
+```javascript:gtag.js
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FHQWHGADS123"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H6QG2RFBMD');
+</script>
+
+```
+
+If you are using our Web-Skeleton Boilerplate we already have this tag injected into the top of the \_\_document.tsx
+All you have to do is add into your local.env like so:
+
+```
+GA_ID='G-FHQWHGADS123'
+```
+
+## Google Search Console
+
+## Adding a sitemap
+
+## Google Tags
+
+What's the difference between google tags and Google Analytics? Well Google Analytics
+is a type of tag, one of many. And Google Tags is a Tag Manager, used for managing
+many different metrics. Google Analytics 4 is one such bundle of metrics.
