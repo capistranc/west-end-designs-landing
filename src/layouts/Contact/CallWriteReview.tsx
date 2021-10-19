@@ -1,4 +1,4 @@
-import { Flex, Heading, Box, Text, useColorMode } from "@chakra-ui/react";
+import { Flex, Heading, Box, Text, useColorMode, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BorderedIconOffset } from "../../components/Icons/BorderedIconOffset";
 import { theme } from "../../theme";
@@ -22,11 +22,15 @@ export const CallWriteReview = ({ ...props }) => {
         </Heading>
         <Text>
           <b>Chris:</b>{" "}
-          <NextLink href="tel:194975519"> +1 (949) 735 - 5619</NextLink>
+          <NextLink href="tel:194975519">
+            <Link>+1 (949) 735 - 5619</Link>
+          </NextLink>
         </Text>
         <Text>
           <b>Michael:</b>{" "}
-          <NextLink href="tel:17149329998"> +1 (714) 932 - 9998</NextLink>
+          <NextLink href="tel:17149329998">
+            <Link>+1 (714) 932 - 9998</Link>
+          </NextLink>
         </Text>
       </Box>
 
@@ -38,13 +42,13 @@ export const CallWriteReview = ({ ...props }) => {
         <Text>
           <b>Chris:</b>{" "}
           <NextLink href="mailto:chris@westendwebdesigns.com">
-            chris@westendwebdesigns.com
+            <Link>chris@westendwebdesigns.com</Link>
           </NextLink>
         </Text>
         <Text>
           <b>Michael:</b>{" "}
           <NextLink href="michael@westendwebdesigns.com">
-            michael@westendwebdesigns.com
+            <Link>michael@westendwebdesigns.com</Link>
           </NextLink>
         </Text>
       </Box>
@@ -54,12 +58,12 @@ export const CallWriteReview = ({ ...props }) => {
         <Heading variant="h2" mb="2">
           Review Us
         </Heading>
-        <Text>
-          <NextLink href="https://g.page/r/CUa9tZRAK7RGEAE">
+        <NextLink href="https://g.page/r/CUa9tZRAK7RGEAE">
+          <Link>
             {" "}
             <b>Google</b>{" "}
-          </NextLink>
-        </Text>
+          </Link>
+        </NextLink>
         <Text>
           {/* <b>Yelp</b>{" "} */}
           {/* <NextLink href="tel:17149329998"> +1 (714) 932 - 9998</NextLink> */}
