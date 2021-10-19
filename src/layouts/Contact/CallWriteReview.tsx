@@ -47,7 +47,7 @@ export const CallWriteReview = ({ ...props }) => {
         </Text>
         <Text>
           <b>Michael:</b>{" "}
-          <NextLink href="michael@westendwebdesigns.com">
+          <NextLink href="mailto:michael@westendwebdesigns.com">
             <Link>michael@westendwebdesigns.com</Link>
           </NextLink>
         </Text>
