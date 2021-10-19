@@ -22,13 +22,13 @@ export const CallWriteReview = ({ ...props }) => {
         </Heading>
         <Text>
           <b>Chris:</b>{" "}
-          <NextLink href="tel:194975519">
+          <NextLink href="tel:194975519" passHref>
             <Link>+1 (949) 735 - 5619</Link>
           </NextLink>
         </Text>
         <Text>
           <b>Michael:</b>{" "}
-          <NextLink href="tel:17149329998">
+          <NextLink href="tel:17149329998" passHref>
             <Link>+1 (714) 932 - 9998</Link>
           </NextLink>
         </Text>
@@ -41,13 +41,13 @@ export const CallWriteReview = ({ ...props }) => {
         </Heading>
         <Text>
           <b>Chris:</b>{" "}
-          <NextLink href="mailto:chris@westendwebdesigns.com">
+          <NextLink href="mailto:chris@westendwebdesigns.com" passHref>
             <Link>chris@westendwebdesigns.com</Link>
           </NextLink>
         </Text>
         <Text>
           <b>Michael:</b>{" "}
-          <NextLink href="mailto:michael@westendwebdesigns.com">
+          <NextLink href="mailto:michael@westendwebdesigns.com" passHref>
             <Link>michael@westendwebdesigns.com</Link>
           </NextLink>
         </Text>
@@ -58,7 +58,7 @@ export const CallWriteReview = ({ ...props }) => {
         <Heading variant="h2" mb="2">
           Review Us
         </Heading>
-        <NextLink href="https://g.page/r/CUa9tZRAK7RGEAE">
+        <NextLink href="https://g.page/r/CUa9tZRAK7RGEAE" passHref>
           <Link>
             {" "}
             <b>Google</b>{" "}
@@ -66,7 +66,7 @@ export const CallWriteReview = ({ ...props }) => {
         </NextLink>
         <Text>
           {/* <b>Yelp</b>{" "} */}
-          {/* <NextLink href="tel:17149329998"> +1 (714) 932 - 9998</NextLink> */}
+          {/* <NextLink href="tel:17149329998" passHref> +1 (714) 932 - 9998</NextLink> */}
         </Text>
       </Box>
     </Flex>

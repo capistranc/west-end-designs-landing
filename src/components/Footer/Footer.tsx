@@ -82,13 +82,13 @@ export const LinkGrid = (props: SimpleGridProps) => (
         Code
       </FooterHeading>
       <Stack>
-        <NextLink href="/services">
+        <NextLink href="/services" passHref>
           <Link as="h1">Mobile Designs</Link>
         </NextLink>
-        <NextLink href="/services">
+        <NextLink href="/services" passHref>
           <Link as="h1">Web Applications</Link>
         </NextLink>
-        <NextLink href="/services">
+        <NextLink href="/services" passHref>
           <Link as="h1">Full Stack Solutions</Link>
         </NextLink>
       </Stack>
@@ -98,13 +98,13 @@ export const LinkGrid = (props: SimpleGridProps) => (
         Content
       </FooterHeading>
       <Stack>
-        <NextLink href="/services">
+        <NextLink href="/services" passHref>
           <Link as="h1">Google Analytics</Link>
         </NextLink>
-        <NextLink href="/services">
+        <NextLink href="/services" passHref>
           <Link as="h1">Content Management</Link>
         </NextLink>
-        <NextLink href="/services">
+        <NextLink href="/services" passHref>
           <Link as="h1">Search Engine Optimization</Link>
         </NextLink>
       </Stack>
