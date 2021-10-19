@@ -55,12 +55,14 @@ export const CallWriteReview = ({ ...props }) => {
           Review Us
         </Heading>
         <Text>
-          <b>Google</b>{" "}
-          <NextLink href="tel:194975519"> +1 (949) 735 - 5619</NextLink>
+          <NextLink href="https://g.page/r/CUa9tZRAK7RGEAE">
+            {" "}
+            <b>Google</b>{" "}
+          </NextLink>
         </Text>
         <Text>
-          <b>Yelp</b>{" "}
-          <NextLink href="tel:17149329998"> +1 (714) 932 - 9998</NextLink>
+          {/* <b>Yelp</b>{" "} */}
+          {/* <NextLink href="tel:17149329998"> +1 (714) 932 - 9998</NextLink> */}
         </Text>
       </Box>
     </Flex>

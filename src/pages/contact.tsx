@@ -73,7 +73,7 @@ export const ContactPage: NextPage = () => {
                   fontSize="5xl"
                   d="inline"
                 >
-                  up with us today
+                  with us today
                 </Heading>
               </Box>
               <DiamondDecoratorBottomUp bg={theme.bg[colorMode]} />
