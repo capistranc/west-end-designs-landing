@@ -102,7 +102,7 @@ export const Landing = ({ ...props }) => {
           <Flex flexDirection={["column", "column", "row", "row"]}>
             <MotionButton
               variants={slideFrom("left", { duration: 0.2 })}
-              px="5px"
+              width="9em"
               borderRadius="0px"
               variant="solid"
               bg="white"
@@ -112,17 +112,17 @@ export const Landing = ({ ...props }) => {
                 <Link>LEARN MORE</Link>
               </NextLink>
             </MotionButton>
-            <Spacer px="2" />
+            <Spacer px="4" />
             <MotionButton
               variants={slideFrom("right", { duration: 0.2 })}
-              px="5px"
+              width="9em"
               borderRadius="0px"
               variant="solid"
               bg="black"
               color="white"
             >
               <NextLink href="/contact" passHref>
-                <Link>CONNECT WITH US</Link>
+                <Link>CONNECT NOW</Link>
               </NextLink>
             </MotionButton>
           </Flex>

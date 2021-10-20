@@ -3,7 +3,7 @@ title: "How to set up Basic SEO"
 publishedAt: "2021-10-19"
 author: Chris Capistran
 date: "2021-10-19"
-summary: "A brief overview of how to set p Google Analytics. GA vs tag manager"
+summary: "A brief overview of how to set up Google Analytics. GA vs tag manager"
 ---
 
 ## Outline
@@ -12,28 +12,33 @@ summary: "A brief overview of how to set p Google Analytics. GA vs tag manager"
 
 - [Hook GA into NextJS](#hook-ga-into-nextjs)
 
-- [Adding Meta Tags](#add-meta-tags)
-
 - [Google Search Console](#google-search-console)
 
-- [Adding a sitemap](#add-sitemap)
+- [Adding a sitemap](#adding-a-sitemap)
 
 - [Google Tags](#google-tags)
 
 ## Set Up
 
-So to begin create a new google analytics account for the website. It is going to ask you for an
+Ideally you have already setup the DNS on your website and have `https://` set up on your website. You want
+this done before you start building a sitemap and telling google to index your website. You don't want to
+repeat the sitemap building and index just for the addition of https. It can take upto 24 hours
+for DNS changes to propogate.
+
+So to begin: create a new google analytics account for your website. It is going to ask you for an
 account name and a property name.
 I use:
 
-Account Name: ${Name of Website} Property Name: Basic.
+```
+Account Name: name-of-website
+Property Name: basic
+```
 
-Once you've created your google analytics account and insert the url of your website you should arrive at a page that has
-a stream URL and a MeasurementID
+Once you've created your google analytics account and inserted the url of your website
+you should arrive at a page that has a stream URL and a MeasurementID
 
-GA-Measurement ID looks something like this G-FHQWHGADS123
-
-Copy the Measurement ID because we are going to need it to hook into our Website.
+GA-Measurement ID looks something like this `G-FHQWHGADS123`. Copy the Measurement ID because we are going
+to need it to hook into our Website.
 
 ## Hook GA into NextJS
 
@@ -52,24 +57,49 @@ This insures that GA is hooked up to every page in NextJS, before the NextJS \_a
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-H6QG2RFBMD');
+  gtag('config', 'G-FHQWHGADS123');
 </script>
 
 ```
 
 If you are using our Web-Skeleton Boilerplate we already have this tag injected into the top of the \_\_document.tsx
-All you have to do is add into your local.env like so:
+All you have to do is add into your .env.local like so.
 
-```
+```javascript:.env.local
 GA_ID='G-FHQWHGADS123'
 ```
 
+Don't forget to set up your environment variables on Netlify/Vercel/your choice of hosting service.
+
 ## Google Search Console
 
+Google Search Console is where you go to check if your webpages are being indexed or not. Generally Google
+will eventually index all of the pages of your website naturally via web crawlers, however if they haven't
+indexed your website you can tell them to do so manually.
+
 ## Adding a sitemap
+
+If you want to jump start the process I recommend
+adding a sitemap to your website. [You can have your sitemap generated externally](https://www.xml-sitemaps.com/)
+or generate your own. You should make sure that the Canonical URLS you define in your website match the URLS
+in the sitemap.
+
+There is a bit of an art to sitemaps as well. For NextJS Applications I generally keep the sitemap.xml in the
+`/public` folder, along with the robots.txt
+
+### Canonical URLS
+
+Canonical URLs are what tells google which URL is the source of a page. I.E. `http://` vs `https://`.
+Or `blog/post?setting-up-ga` vs `blog/setting-up-ga`.
+
+You can pick whichever you like, just make sure they match with your sitemap.
 
 ## Google Tags
 
 What's the difference between google tags and Google Analytics? Well Google Analytics
 is a type of tag, one of many. And Google Tags is a Tag Manager, used for managing
 many different metrics. Google Analytics 4 is one such bundle of metrics.
+
+I refuse to get into it with Google Tags right now, it is a deep rabbit hole.
+[Simo Ahava currently maintains the golden standard of GTM and Web Core Vitals](https://www.simoahava.com/custom-templates/core-web-vitals/)
+If you are so incined, his website has a 50+ page long manuscript of how to do GTM properly.
