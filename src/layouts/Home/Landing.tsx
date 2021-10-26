@@ -103,7 +103,7 @@ export const Landing = ({ ...props }) => {
             <MotionButton
               variants={slideFrom("left", { duration: 0.2 })}
               width="9em"
-              borderRadius="0px"
+              borderRadius="4px"
               variant="solid"
               bg="white"
               color="black"
@@ -116,7 +116,7 @@ export const Landing = ({ ...props }) => {
             <MotionButton
               variants={slideFrom("right", { duration: 0.2 })}
               width="9em"
-              borderRadius="0px"
+              borderRadius="4px"
               variant="solid"
               bg="black"
               color="white"

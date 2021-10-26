@@ -70,7 +70,7 @@ export const Intro = ({
         </Box>
 
         <DashedLine height="6rem" />
-        <Button variant="solid" borderRadius="0" my="4">
+        <Button variant="solid" my="4">
           <NextLink href={buttonLink}>{buttonText}</NextLink>
         </Button>
 

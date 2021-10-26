@@ -18,27 +18,27 @@ export const Button = {
   // 3. We can add a new visual variant
   variants: {
     square: {
-      borderRadius: "0px",
+      borderRadius: "4px",
     },
     // 4. We can override existing variants
     solid: (props) => ({
       color: "white",
-      borderRadius: 0,
+      borderRadius: 4,
       bg: props.colorMode === "dark" ? "teal.700" : "teal.500",
     }),
     btow: (props) => ({
       color: props.colorMode == "light" ? "white" : "black",
       bg: props.colorMode == "light" ? "black" : "white",
-      borderRadius: 0,
+      borderRadius: 4,
     }),
     bb: {
       color: "white",
-      borderRadius: 0,
+      borderRadius: 4,
       bg: "#000000",
     },
     bw: {
       color: "black",
-      borderRadius: 0,
+      borderRadius: 4,
       bg: "#FFFFFF",
     },
   },

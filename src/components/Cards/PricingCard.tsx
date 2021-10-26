@@ -91,7 +91,6 @@ export const PricingCard = ({
                 w={"full"}
                 bg={"blue.600"}
                 color={"white"}
-                rounded={"none"}
                 // boxShadow={"0 5px 20px 0px rgb(70 130 180 / 43%)"}
                 _hover={{
                   bg: "blue.700",
