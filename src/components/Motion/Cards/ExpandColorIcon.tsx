@@ -90,15 +90,15 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
             </Text>
             <Text>{text}</Text>
 
-            <Box h="2rem" w="100%">
+            <Button h="2rem" w="50%" bg="transparent" alignItems="left">
               {isFocused && (
-                <MotionButton variants={arrowVariant} bg="transparent">
+                <MotionBox variants={arrowVariant} bg="transparent">
                   <NextLink href={link}>
                     <Icon as={FaArrowRight} boxSize="1.5rem" />
                   </NextLink>
-                </MotionButton>
+                </MotionBox>
               )}
-            </Box>
+            </Button>
           </MotionBox>
         </Box>
       </MotionBox>

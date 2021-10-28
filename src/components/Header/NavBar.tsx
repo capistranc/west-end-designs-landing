@@ -48,6 +48,7 @@ export const NavBar = ({
           >
             <Collapse in={isOpen} animateOpacity>
               <MenuLinks
+                toggle={onToggle}
                 links={links}
                 isOpen={isOpen}
                 active={active}
@@ -87,11 +88,17 @@ export const MenuToggle = ({ toggle, isOpen, ...props }: any) => {
   );
 };
 
-export const MenuLinks = ({ links, isOpen, active = null, ...props }) => {
+export const MenuLinks = ({
+  links,
+  isOpen,
+  toggle = null,
+  active = null,
+  ...props
+}) => {
   const MenuItem = ({ children, to = "/", ...props }) => {
     return (
       <NextLink href={to} passHref>
-        <Button as="a" variant="ghost" {...props}>
+        <Button as="a" variant="ghost" onClick={toggle} {...props}>
           <Text
             display="block"
             borderBottom={to === active && "1px solid"}
