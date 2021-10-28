@@ -91,7 +91,7 @@ export const MenuToggle = ({ toggle, isOpen, ...props }: any) => {
 export const MenuLinks = ({
   links,
   isOpen,
-  toggle = null,
+  toggle = () => {},
   active = null,
   ...props
 }) => {
@@ -134,7 +134,7 @@ export const MenuLinks = ({
             );
           })}
 
-          <DarkModeSwitch {...props} />
+          <DarkModeSwitch toggle={toggle} {...props} />
         </Stack>
       </Box>
     </>

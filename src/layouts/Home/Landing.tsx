@@ -14,6 +14,7 @@ import { AnimatePresence } from "framer-motion";
 import { MotionFlex, MotionText, MotionButton } from "../../components/Motion";
 import { slideFrom } from "../../components/Motion/variants";
 import { DashedLine } from "../../components/svg/DashedLine";
+import { useHasRendered } from "../../lib/hooks";
 
 const AnimatedBanner = ({ text, ...props }) => {
   const texts = ["CONNECT", "INSPIRE", "CREATE"];

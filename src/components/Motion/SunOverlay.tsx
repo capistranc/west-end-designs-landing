@@ -1,53 +1,8 @@
 import { MotionBox } from "./index";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
-
-const overlayVariant = {
-  hidden: (colorMode) => ({
-    bg: "rgba(0,0,0,0)",
-    opacity: 0,
-    x: 0,
-    y: 0,
-    scale: colorMode === "light" ? 5 : 1,
-    rotateZ: colorMode === "light" ? -90 : 0,
-    transition: {
-      duration: 1,
-      delay: 0.5,
-    },
-  }),
-
-  enter: (colorMode) => {
-    if (colorMode === "light") {
-      return {
-        opacity: 0.7,
-        scale: 1,
-        rotateZ: 0,
-        transition: {
-          delay: 0.75,
-          duration: 0.8,
-        },
-      };
-    } else if (colorMode === "dark") {
-      return {
-        opacity: 0.5,
-        scale: 1.1,
-        rotateZ: 0,
-        bg: "rgba(25, 25, 112,1)",
-        transition: {
-          type: "spring",
-          delay: 0.75,
-          duration: 1.5,
-        },
-      };
-    }
-  },
-  exit: {
-    opacity: 0,
-    scale: 5,
-    rotateZ: 90,
-    transition: { type: "tween", duration: 0.3 },
-  },
-};
+import { useRef } from "react";
+import { useHasRendered } from "../../lib/hooks";
 
 const overlayProps = {
   light: {
@@ -67,6 +22,53 @@ const overlayProps = {
 
 export const SunOverlay = () => {
   const { colorMode } = useColorMode();
+
+  const overlayVariant = {
+    hidden: (colorMode) => ({
+      bg: "rgba(0,0,0,0)",
+      opacity: 0,
+      x: 0,
+      y: 0,
+      scale: colorMode === "light" ? 5 : 1,
+      rotateZ: colorMode === "light" ? -90 : 0,
+      transition: {
+        duration: 1,
+        delay: 0.5,
+      },
+    }),
+
+    enter: (colorMode) => {
+      if (colorMode === "light") {
+        return {
+          opacity: 0.7,
+          scale: 1,
+          rotateZ: 0,
+          transition: {
+            delay: 0.75,
+            duration: 0.8,
+          },
+        };
+      } else if (colorMode === "dark") {
+        return {
+          opacity: 0.5,
+          scale: 1.1,
+          rotateZ: 0,
+          bg: "rgba(25, 25, 112,1)",
+          transition: {
+            type: "spring",
+            delay: 0.75,
+            duration: 1.5,
+          },
+        };
+      }
+    },
+    exit: {
+      opacity: 0,
+      scale: 5,
+      rotateZ: 90,
+      transition: { type: "tween", duration: 0.3 },
+    },
+  };
 
   const Overlay = ({ ...props }) => (
     <MotionBox

@@ -8,7 +8,7 @@ import { getPosts } from "../lib/instagram";
 
 export const Portfolio: NextPage = () => {
   async function clickFn() {
-    console.log(await getPosts());
+    // console.log(await getPosts());
   }
 
   return (
