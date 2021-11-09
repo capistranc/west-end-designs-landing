@@ -6,13 +6,6 @@ date: "2021-10-06"
 summary: "SEO game is rapidly changing and it's hard to tell which aspects of SEO truly matter the most."
 ---
 
-```javascript:hey.js
-let stack = []
-let visited = []
-
-while (let i )
-```
-
 There appears to be some universal properties of life that hold true for all domains.
 The Pareto Principal, colloquially known as the 80-20 rule is one of them.
 The SEO game is no different, 20% of the work accounts for 80% of the results and no amount of
@@ -26,11 +19,9 @@ as well as touch on which techniques have fallen out of favour.
 
 - [Meta Tags](#meta-tags)
 
-- [Google Analytics](#google-analytics)
+- [Google Search Console](#google-search-console)
 
-- [Semantic HTML](#heading)
-
-- [Keywords](#finishing-up)
+- [Semantic HTML and keywords](#heading)
 
 ## Google Business
 
@@ -53,4 +44,45 @@ location and distance to determine whose business gets shown on google.
 
 ## Meta Tags
 
-Meta Tags are
+In traditional HTML the meta tag will look something like this:
+
+```html: metatags.html
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta property="og:description" content="Welcome to West End Designs: A Web Development company ..">
+    <meta property="og:site_name" content="West End Designs | westendwebdesigns.com">
+    <meta property="og:title" content="/first-website - Blog - West End">
+    <meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow">
+    <title>/first-website - Blog - West End - West End Designs</title>
+</head>
+```
+
+It is important for mobile-responsive designs that you include viewport meta-tags, as this will tell the DOM how to handle different devices. This is crucial just for the design
+and UX of the users.
+
+In terms of SEO, including meta-tags is crucial. You know when someone sends you a link to a web-page on a messenging services like fb chat, instagram, whatsapp etc.
+It has a quick preview of the title of the page, as well as a short description. This is the same preview you see in a google search.
+hese titles and descriptions are all set in the metatags. You could have information in the meta-tags that is stored no where else on the website, and that text might end up being the most important text for improving click-through. Often times people will read a quick description of the
+page to see if it has useful information available to them.
+
+Adding [Open Graph](https://ogp.me/) metatags is also a crucial step for making your web-pages social-media friendly.
+the prefix `og` stands for OpenGraph, and it basically tells social media websites how to parse your website to create a preview.
+
+## Google Search Console
+
+While this is not technically SEO, it is important tool to learn how to use for SEO. Google Search Console is imperative for testing the SEO Optimization of your website. It will tell you Whether
+your webpages are actually indexed, which pages are not.
+
+It is the head-quarter where you figure out what needs to be done to fix your website. I go more in depth in my blog post [How to setup basic SEO](/setting-up-GA), where I go step by step how to
+tell google to index your website.
+
+## Semantic HTML
+
+This is one of the first SEO techniques that you've probably heard of, that has become unfavored. According to Google, they no longer check for amount of key-word popups for any given topic. The difference
+between using a H1 tag and H2 tag matters far less then the click-through behavior of user's using your website. So I think it still makes sense to make sure your links have text that are related to keywords.
+It is still good practice to maintain header tags in a hierarchical manner. However to be completely honest, I think it is more valuabe to focus on inserting the correct keywords in your meta tags and links
+then it is to having them in the correct header.
+
+I might write up a whole nother blog post about keywords in the future. However of note: including specificity is important. I mentioned this earlier but Location is a really quick and easy way to add
+specificity to you search terms.
