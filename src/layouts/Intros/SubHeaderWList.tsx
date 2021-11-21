@@ -41,7 +41,7 @@ export const SubHeaderWList = ({ ...props }) => {
       <Text fontWeight="bold" color={theme.heading2[colorMode]}>
         - Our mission -
       </Text>
-      <Text position="relative" margin="auto" mt="1em" as="div">
+      <Text position="relative" margin="auto" mt="1em" mx="2" as="div">
         After years of working for large companies in the tech industry, we
         decided that we could use all that we have learned to help local
         businesses around the world compete in the world of technology. With the

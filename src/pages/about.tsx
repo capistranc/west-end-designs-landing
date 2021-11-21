@@ -141,6 +141,7 @@ const About: NextPage = ({}) => {
           position="relative"
           className="header-sentinel"
           mt="-3.5rem"
+          mx="1"
           direction="column"
           bg={banner}
           bgPosition="50% 60%"
