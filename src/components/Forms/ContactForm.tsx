@@ -10,11 +10,11 @@ import {
   Spacer,
   Textarea,
   Stack,
-  FormControl,
   Box,
   Text,
   useToast,
   HTMLChakraProps,
+  FormControl,
   FormErrorMessage,
   useColorMode,
 } from "@chakra-ui/react";
@@ -42,6 +42,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
 
   const toast = useToast();
   const onSubmit = async (data) => {
+    console.log(data);
     setSending(true);
     try {
       const result = await emailJS.send(
@@ -66,6 +67,9 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
         });
       }
     } catch (e) {
+      console.log("WHAT HAPPENED", e);
+
+      console.log("userId", process.env.EmailJS_ID);
       toast({
         title: `Failed to send: ${e.status}`,
         status: "error",
