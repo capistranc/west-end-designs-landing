@@ -100,11 +100,10 @@ export const Landing = ({ ...props }) => {
           >
             with clients
           </MotionText>
-          <Flex flexDirection={["column", "column", "row", "row"]}>
+          <Flex flexDirection={["column", "column", "row", "row"]} my="2">
             <MotionButton
               variants={slideFrom("left", { duration: 0.2 })}
               width="9em"
-              borderRadius="4px"
               variant="solid"
               bg="white"
               color="black"
@@ -113,11 +112,10 @@ export const Landing = ({ ...props }) => {
                 <Link>LEARN MORE</Link>
               </NextLink>
             </MotionButton>
-            <Spacer px="4" />
+            <Spacer mx="4" my="2" />
             <MotionButton
               variants={slideFrom("right", { duration: 0.2 })}
               width="9em"
-              borderRadius="4px"
               variant="solid"
               bg="black"
               color="white"
