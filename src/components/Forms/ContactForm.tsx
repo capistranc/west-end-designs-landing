@@ -240,7 +240,6 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
           type="submit"
           width="60%"
           variant="solid"
-          borderRadius="0"
           isLoading={isSubmitting}
           loadingText="Sending..."
         >
