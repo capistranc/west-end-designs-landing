@@ -144,6 +144,7 @@ const About: NextPage = ({}) => {
           direction="column"
           bg={banner}
           bgPosition="50% 60%"
+          backgroundSize="cover"
           align="center"
           justify="center"
           minHeight="50vh"
