@@ -29,6 +29,8 @@ import { useForm } from "react-hook-form";
 import React from "react";
 import { AlertPop } from "../Popups/AlertPop";
 
+require("dotenv").config();
+
 emailJS.init(process.env.EmailJS_ID);
 
 export const ContactForm = (props: HTMLChakraProps<"form">) => {
@@ -48,7 +50,7 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
       const result = await emailJS.send(
         "contact_service",
         "contact_form",
-        data,
+        data
       );
 
       if (result.status === 200) {
