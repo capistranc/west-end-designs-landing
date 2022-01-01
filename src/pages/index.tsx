@@ -1,4 +1,5 @@
 import { Parallax } from "../components/Wrappers/Parallax";
+
 import { Layout } from "../layouts";
 import { useEffect } from "react";
 import { Box, useColorMode, Text, useBreakpointValue } from "@chakra-ui/react";
