@@ -29,8 +29,6 @@ import { useForm } from "react-hook-form";
 import React from "react";
 import { AlertPop } from "../Popups/AlertPop";
 
-require("dotenv").config();
-
 emailJS.init(process.env.EmailJS_ID);
 
 export const ContactForm = (props: HTMLChakraProps<"form">) => {
