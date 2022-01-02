@@ -1,9 +1,13 @@
 import fs from "fs";
 import matter from "gray-matter";
 import mdxPrism from "mdx-prism";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeParse from "rehype-parse";
+import rehypePrism from "@mapbox/rehype-prism";
 import path from "path";
 import readingTime from "reading-time";
-import renderToString from "next-mdx-remote/render-to-string";
+import { serialize } from "next-mdx-remote/serialize";
 
 import { MDXComponents } from "../components/Blog/MDXComponents";
 
@@ -19,27 +23,35 @@ export async function getFileBySlug(type, slug) {
     : fs.readFileSync(path.join(root, "data", `${type}.mdx`), "utf8");
 
   const { data, content } = matter(source);
-  const mdxSource = await renderToString(content, {
-    components: MDXComponents,
-    mdxOptions: {
-      remarkPlugins: [
-        require("remark-autolink-headings"),
-        require("remark-slug"),
-        require("remark-code-titles"),
-      ],
-      rehypePlugins: [mdxPrism],
-    },
-  });
 
-  return {
-    mdxSource,
-    frontMatter: {
-      wordCount: content.split(/\s+/gu).length,
-      readingTime: readingTime(content),
-      slug: slug || null,
-      ...data,
-    },
-  };
+  console.log("matter:", typeof content);
+
+  try {
+    const mdxSource = await serialize(content, {
+      mdxOptions: {
+        remarkPlugins: [remarkParse],
+        // rehypePlugins: [rehypePrism],
+        //     require("rehype-slug"),
+        //     require("rehype-autolink-headings"),
+        //     require("rehype-code-titles")
+        //   ],
+      },
+    });
+
+    console.log("mdxSOURCE:", mdxSource);
+
+    return {
+      mdxSource,
+      frontMatter: {
+        wordCount: content.split(/\s+/gu).length,
+        readingTime: readingTime(content),
+        slug: slug || null,
+        ...data,
+      },
+    };
+  } catch (e) {
+    console.log("FAILED TO PARSE MDX: ", e);
+  }
 }
 
 export async function getAllFilesFrontMatter(type) {
@@ -48,7 +60,7 @@ export async function getAllFilesFrontMatter(type) {
   return files.reduce((allPosts, postSlug) => {
     const source = fs.readFileSync(
       path.join(root, "data", type, postSlug),
-      "utf8",
+      "utf8"
     );
     const { data } = matter(source);
 
