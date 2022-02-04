@@ -6,12 +6,12 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          top: "-5rem",
+          top: "-6rem",
           right: "0",
 
           transform: "skewY(4deg)",
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -20,11 +20,11 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          top: "-5rem",
+          top: "-6rem",
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -33,12 +33,12 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          top: "-5rem",
+          top: "-6rem",
           right: "0",
 
           transform: "skewY(-4deg)",
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -53,7 +53,7 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          bottom: "-5rem",
+          bottom: "-6rem",
           left: "0",
           transform: "skewY(4deg)",
           h: "15rem",
@@ -66,7 +66,7 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          bottom: "-5rem",
+          bottom: "-6rem",
           right: "0",
           transform: "skewY(-4deg)",
           h: "15rem",
@@ -91,7 +91,7 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
 
           transform: "skewY(4deg)",
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -105,7 +105,7 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
 
           transform: "skewY(-4deg)",
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -118,7 +118,7 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -139,7 +139,7 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
 
           transform: "skewY(4deg)",
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -153,7 +153,7 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
 
           transform: "skewY(-4deg)",
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,
@@ -162,11 +162,11 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          bottom: "-5rem",
+          bottom: "-6rem",
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: "10rem",
+          h: "12rem",
           w: "100%",
           content: `""`,
           ...props,

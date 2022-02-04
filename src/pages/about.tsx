@@ -78,7 +78,7 @@ const About: NextPage = ({}) => {
   const { colorMode } = useColorMode();
   const banner = useColorModeValue(
     "url(/images/about.jpeg)",
-    "linear-gradient(30deg, rgba(25, 25, 50,0.3), rgba(25, 25, 80,0.8)), url(/images/about.jpeg)",
+    "linear-gradient(30deg, rgba(25, 25, 50,0.3), rgba(25, 25, 80,0.8)), url(/images/about.jpeg)"
   );
 
   const bioData = [
@@ -159,19 +159,19 @@ const About: NextPage = ({}) => {
             bg={theme.bg[colorMode]}
             bottom="-12rem"
           />
-          <DashedLine position="absolute" bottom="-5rem" />
+          <DashedLine position="absolute" bottom="-6rem" />
         </Flex>
 
         <Box
           color={theme.fg[colorMode]}
           bg={theme.bg[colorMode]}
-          mt="5rem"
+          mt="6rem"
           position="relative"
           align="center"
         >
           <DashedLine />
           <DashedLine />
-          <Box position="relative" pb="10rem" align="center">
+          <Box position="relative" pb="12rem" align="center">
             <SubHeaderWList />
             <DiamondDecoratorBottomUp bg={theme.bg3[colorMode]} />
             <DashedLine />
@@ -194,7 +194,7 @@ const About: NextPage = ({}) => {
             bg={theme.bg2[colorMode]}
             color={theme.fg2[colorMode]}
             position="relative"
-            pt="15rem"
+            pt="18rem"
           >
             <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} />
             <DiagonalDecoratorTopRight bg={theme.bg3[colorMode]} />
@@ -206,11 +206,11 @@ const About: NextPage = ({}) => {
             bg={theme.bg[colorMode]}
             color={theme.fg[colorMode]}
             position="relative"
-            pt="10rem"
+            pt="12rem"
             maxWidth="80rem"
             pb="4rem"
           >
-            <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} top="-5rem" />
+            <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} top="-6rem" />
             <SocialMediaBio
               direction={["column", "column", "row-reverse", "row-reverse"]}
               color={theme.fg[colorMode]}

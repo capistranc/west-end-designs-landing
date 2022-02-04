@@ -1,14 +1,7 @@
 import { Flex, Box, SimpleGrid, useColorMode } from "@chakra-ui/react";
 import { ExpandColorIcon } from "../../components/Motion/Cards/ExpandColorIcon";
 import { theme } from "../../theme/colors";
-import { HiOutlineDesktopComputer } from "react-icons/hi";
-import { GiSmartphone } from "react-icons/gi";
-import { FaLaptopCode } from "react-icons/fa";
-import { ImStack } from "react-icons/im";
-import { VscGraph } from "react-icons/vsc";
-import { BiBookContent } from "react-icons/bi";
 import { DashedLine } from "../../components/svg/DashedLine";
-import { DiamondDecoratorBottomDown } from "../../components/Decorators";
 import { IconType } from "react-icons";
 
 type ServiceData = {

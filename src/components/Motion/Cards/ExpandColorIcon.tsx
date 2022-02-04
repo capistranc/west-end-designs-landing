@@ -8,6 +8,7 @@ import { useColorModeValue } from "@chakra-ui/color-mode";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 
 export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
+  console.log(link);
   const [isFocused, setFocus] = useState(false);
   const containerVariant = {
     rest: {
@@ -90,15 +91,15 @@ export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
             </Text>
             <Text>{text}</Text>
 
-            <Button h="2rem" w="50%" bg="transparent" alignItems="left">
-              {isFocused && (
-                <MotionBox variants={arrowVariant} bg="transparent">
-                  <NextLink href={link}>
+            <NextLink href={link}>
+              <Button h="2rem" w="50%" bg="transparent" alignItems="left">
+                {isFocused && (
+                  <MotionBox variants={arrowVariant} bg="transparent">
                     <Icon as={FaArrowRight} boxSize="1.5rem" />
-                  </NextLink>
-                </MotionBox>
-              )}
-            </Button>
+                  </MotionBox>
+                )}
+              </Button>
+            </NextLink>
           </MotionBox>
         </Box>
       </MotionBox>

@@ -200,6 +200,7 @@ export const Roadmap = ({ ...props }) => {
 
         <DashedLine strokeColor={theme.bg[colorMode]} />
         <DashedLine strokeColor={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg[colorMode]} />
       </Box>
     </Box>
   );
