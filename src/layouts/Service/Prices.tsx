@@ -47,14 +47,14 @@ function loadPrices() {
       ],
     },
     {
-      title: "ONE-TIME CONTRACT",
+      title: "Website Setup",
       unit: "page",
       price: `200`,
       listData: [
         "No Monthly Fee",
         "$150/hr for updates",
-        "You pay for hosting",
-        "You own the code",
+        "You own your code",
+        "Pick your CMS, Wordpress, HTML",
       ],
     },
   ];

@@ -23,37 +23,37 @@ export const serviceData = [
     title: "Web Applications",
     icon: HiOutlineDesktopComputer,
     text: `First impressions are important. We all know this. If you have a professionaly made website your customers will be confident in your business.`,
-    link: "#contact-form",
+    link: "/contact",
   },
   {
     title: "Mobile Designs",
     icon: GiSmartphone,
     text: "Whether you are using the latest iPhone or an old flip phone, our websites load fast. Our statically rendered website designs guarantee this.",
-    link: "#contact-form",
+    link: "/contact",
   },
   {
     title: "Full Stack Solutions",
     icon: ImStack,
     text: "If you have an existing codebase or business problem that could use a technology upgrade, contact us for a consult and we can develop an application for you.",
-    link: "#contact-form",
+    link: "/contact",
   },
   {
     title: "Development",
     icon: FaLaptopCode,
     text: "Have peace of mind knowing that experts are building your website, so that you don't have to. Our websites are made to run flawlesly on mobile devices, tablets, and PC.",
-    link: "#contact-form",
+    link: "/contact",
   },
   {
     title: "Content Management",
     icon: BiBookContent,
     text: "Figuring out how to explain your business can be hard, and with us you don't have too. Our inhouse team of SEO Copywriters will write all the content for you.",
-    link: "#contact-form",
+    link: "/contact",
   },
   {
     title: "Search Engine Optimization",
     icon: VscGraph,
     text: "More views means more customers. We will make sure your website reaches more eyes by utilizing the power of Google Analytics and modern SEO strategies.",
-    link: "#contact-form",
+    link: "/contact",
   },
 ];
 const introData = {
