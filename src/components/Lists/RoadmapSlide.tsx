@@ -7,7 +7,6 @@ import {
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
-import { theme } from "../../theme/colors";
 import { PercentBorder } from "../Icons/PercentBorder";
 
 export const RoadmapSlide = ({

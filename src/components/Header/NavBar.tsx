@@ -70,7 +70,7 @@ export const NavBar = ({
       p="2"
       background={isOpen && theme.bg[colorMode]}
       color={isOpen && theme.fg[colorMode]}
-      justify={variant == "noLogo" && !isOpen ? "right" : "space-between"}
+      justify={variant == "noLogo" && !isOpen ? "flex-end" : "space-between"}
     >
       {variant != "noLogo" && <Logo />}
       {isOpen && variant == "noLogo" && <Logo />}

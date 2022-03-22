@@ -5,11 +5,21 @@ import { theme } from "../../theme";
 
 export const MorphingNavBar = ({ links, active = null, ...props }) => {
   const [isVisible, setVisible] = useState(false);
+  const [thisColor, setColor] = useState("white");
+  const [thisBackground, setBackground] = useState("rgba(0.1,0.1,0.1,0.1");
+  const [thisShadow, setShadow] = useState("none");
+
+  const { colorMode } = useColorMode();
+  const bg = theme.bg[colorMode];
+  const fg = theme.fg[colorMode];
 
   useEffect(() => {
     let sentinels;
     const observer = new IntersectionObserver(([entry]) => {
       setVisible(entry.isIntersecting);
+      setColor(entry.isIntersecting ? "white" : fg);
+      setBackground(entry.isIntersecting ? "rgba(0.1,0.1,0.1,0.1" : bg);
+      setShadow(entry.isIntersecting ? "none" : "md");
     });
 
     const delay = setTimeout(() => {
@@ -27,11 +37,6 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
     };
   });
 
-  const { colorMode } = useColorMode();
-
-  const bg = theme.bg[colorMode];
-  const fg = theme.fg[colorMode];
-
   return (
     <Box>
       <Box
@@ -41,10 +46,9 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
         zIndex="sticky"
         w="100%"
         position={isVisible ? "absolute" : "fixed"}
-        color={isVisible ? "white" : fg}
-        bg={isVisible ? "rgba(0.1,.1,0.1,0.1)" : bg}
-        // bg={isVisible ? "transparent" : bg}
-        boxShadow={!isVisible && "md"}
+        color={thisColor}
+        bg={thisBackground}
+        boxShadow={thisShadow}
         {...props}
       >
         <NavBar links={links} color={props.color} active={active}></NavBar>
