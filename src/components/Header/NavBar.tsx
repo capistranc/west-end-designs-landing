@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 import {
   Box,
@@ -26,11 +26,15 @@ export const NavBar = ({
 }) => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode } = useColorMode();
+  const [device, setDevice] = useState("desktop");
 
   const deviceType = useBreakpointValue({ base: "mobile", md: "desktop" });
+  useEffect(() => {
+    setDevice(deviceType);
+  });
 
   function renderLinks() {
-    if (deviceType === "desktop") {
+    if (device === "desktop") {
       return (
         <MenuLinks links={links} active={active} isOpen={isOpen} {...props} />
       );
@@ -68,11 +72,9 @@ export const NavBar = ({
       p="2"
       background={isOpen && theme.bg[colorMode]}
       color={isOpen && theme.fg[colorMode]}
-      justify="right"
-      // justify={variant == "noLogo" && !isOpen ? "space-between" : "right"}
+      justify={variant == "noLogo" && !isOpen ? "flex-end" : "space-between"}
     >
-      {/* {variant != "noLogo" && <Logo />} */}
-      {/* {isOpen && variant != "noLogo" && <Logo />} */}
+      {variant != "noLogo" && <Logo />}
 
       {renderLinks()}
     </Flex>
@@ -113,8 +115,8 @@ export const MenuLinks = ({
   return (
     <>
       <Box
-        display={{ base: isOpen ? "block" : "none", md: "block" }}
-        flexBasis={{ base: "100%", md: "100%" }}
+        display={{ base: "block", md: "block" }}
+        // flexBasis={{ base: "100%", md: "100%" }}
         align="center"
       >
         <Flex
@@ -149,14 +151,8 @@ export const MenuLinks = ({
                 </MenuItem>
               );
             })}
+            <DarkModeSwitch toggle={toggle} />
           </Stack>
-
-          <NextLink href="https://bettermun.com">
-            <Button variant="demoNav" my={{ base: 4, md: 0 }}>
-              {" "}
-              Try Demo
-            </Button>
-          </NextLink>
         </Flex>
       </Box>
     </>

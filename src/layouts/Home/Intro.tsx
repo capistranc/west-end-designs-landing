@@ -57,7 +57,7 @@ export const Intro = ({
       >
         <DashedLine />
 
-        <Box my="4">
+        <Box my="4" position="relative">
           <Heading variant="h2" as="div">
             {titleBegin || introData.titleBegin}
             <Heading d="inline-block" variant="h2" as="h1" color="teal.600">

@@ -33,7 +33,7 @@ export const Roadmap = ({ ...props }) => {
       <DiagonalDecoratorBottomLeftMinus bg={theme.bg3[colorMode]} />
 
       <DashedLine />
-      <Box position="relative" py="4" zIndex="10" mt="-3rem">
+      <Box position="relative" py="4" zIndex="10" mt="-2rem">
         <NextLink href="/contact" passHref>
           <Button
             variant="solid"
@@ -42,8 +42,7 @@ export const Roadmap = ({ ...props }) => {
             color={theme.wb[colorMode]}
             bg={theme.bw[colorMode]}
           >
-            {" "}
-            GET STARTED NOW{" "}
+            GET STARTED NOW
           </Button>
         </NextLink>
       </Box>

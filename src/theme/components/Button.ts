@@ -4,7 +4,7 @@ export const Button = {
   baseStyle: (props) => ({
     // fontWeight: "bold", // Normally, it is "semibold"
     _hover: {
-      bgColor: theme.border1[props.colorMode],
+      bg: theme.border2[props.colorMode],
     },
   }),
   // 2. We can add a new button size or extend existing
@@ -25,6 +25,13 @@ export const Button = {
       color: "white",
       borderRadius: 4,
       bg: props.colorMode === "dark" ? "teal.700" : "teal.500",
+      _hover: {
+        bg:
+          props.colorMode === "dark"
+            ? theme.border1["light"]
+            : theme.border1["dark"],
+        color: "white",
+      },
     }),
     btow: (props) => ({
       color: props.colorMode == "light" ? "white" : "black",

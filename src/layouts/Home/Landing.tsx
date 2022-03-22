@@ -15,6 +15,7 @@ import { MotionFlex, MotionText, MotionButton } from "../../components/Motion";
 import { slideFrom } from "../../components/Motion/variants";
 import { DashedLine } from "../../components/svg/DashedLine";
 import { useHasRendered } from "../../lib/hooks";
+import { DiamondDecoratorBottomDown } from "../../components/Decorators";
 
 const AnimatedBanner = ({ text, ...props }) => {
   const texts = ["CONNECT", "INSPIRE", "CREATE"];
@@ -61,7 +62,7 @@ const growVariants = {
 
 export const Landing = ({ ...props }) => {
   return (
-    <Box position="relative" align="center" className="header-sentinel">
+    <Box position="relative" align="center">
       <AnimatePresence>
         <MotionFlex
           variants={containerVariants}
@@ -75,7 +76,7 @@ export const Landing = ({ ...props }) => {
           align="center"
           justify="center"
           color="white"
-          zIndex="2"
+          // zIndex="2"
           position="relative"
           {...props}
         >

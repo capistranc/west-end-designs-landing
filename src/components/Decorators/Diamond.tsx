@@ -2,17 +2,17 @@ import { Box } from "@chakra-ui/react";
 
 export const DiamondDecoratorTopDown = ({ ...props }) => {
   return (
-    <Box {...props}>
+    <Box className="DiamonDecoratorTopDown" {...props}>
       <Box
         _before={{
           position: "absolute",
           top: { base: "-6rem", xxl: "-8rem" },
           right: "0",
 
-          transform: "skewY(6deg)",
+          transform: "skewY(5deg)",
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -24,8 +24,8 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -36,10 +36,10 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
           top: { base: "-6rem", xxl: "-8rem" },
           right: "0",
 
-          transform: "skewY(-6deg)",
+          transform: "skewY(-5deg)",
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -49,15 +49,15 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
 };
 export const DiamondDecoratorBottomDown = ({ ...props }) => {
   return (
-    <>
+    <Box className="DiamondDecoratorBottomDown" height="15rem">
       <Box
         _before={{
           position: "absolute",
           bottom: { base: "-6rem", xxl: "-8rem" },
           left: "0",
-          transform: "skewY(6deg)",
-          h: "15rem",
-          w: "50%",
+          transform: "skewY(5deg)",
+          height: "15rem",
+          width: "50%",
 
           content: `""`,
           ...props,
@@ -68,15 +68,15 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
           position: "absolute",
           bottom: { base: "-6rem", xxl: "-8rem" },
           right: "0",
-          transform: "skewY(-6deg)",
-          h: "15rem",
+          transform: "skewY(-5deg)",
+          height: "15rem",
 
-          w: "50%",
+          width: "50%",
           content: `""`,
           ...props,
         }}
       />
-    </>
+    </Box>
   );
 };
 
@@ -89,10 +89,10 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(6deg)",
+          transform: "skewY(5deg)",
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -103,10 +103,10 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(-6deg)",
+          transform: "skewY(-5deg)",
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -118,8 +118,8 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -137,10 +137,10 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(6deg)",
+          transform: "skewY(5deg)",
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -151,10 +151,10 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(-6deg)",
+          transform: "skewY(-5deg)",
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
@@ -166,8 +166,8 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: { base: "12rem", xxl: "16rem" },
-          w: "100%",
+          height: { base: "12rem", xxl: "16rem" },
+          width: "100%",
           content: `""`,
           ...props,
         }}
