@@ -44,6 +44,7 @@ export const PricingCard = ({
         py={6}
         ml={{ md: "2" }}
         mr={{ md: "2" }}
+        position="relative"
         {...props}
       >
         <Box

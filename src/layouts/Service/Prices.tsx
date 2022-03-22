@@ -64,6 +64,7 @@ function loadPrices() {
       flexDirection={["column", "column", "row", "row"]}
       flexWrap="wrap"
       justify="center"
+      position="relative"
     >
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[0]} />
       <PricingCard p={{ md: "8" }} m={{ md: "4" }} {...priceCards[1]} />
@@ -72,7 +73,10 @@ function loadPrices() {
   );
 }
 
-import { DiagonalDecoratorTopRightMinus } from "../../components/Decorators/Diagonal";
+import {
+  DiagonalDecoratorTopRightMinus,
+  DiagonalDecoratorBottomLeft,
+} from "../../components/Decorators/Diagonal";
 export const Prices = () => {
   const { colorMode } = useColorMode();
   return (
@@ -84,8 +88,6 @@ export const Prices = () => {
       color={useColorModeValue("gray.700", "gray.100")}
       position="relative"
     >
-      <DiagonalDecoratorTopRightMinus backgroundColor={theme.bg2[colorMode]} />
-
       <DashedLine />
       <svg viewBox="0 0 100 100" height="20px" width="20px">
         <circle
@@ -117,6 +119,7 @@ export const Prices = () => {
       <DashedLine />
       <DashedLine />
       <DashedLine />
+      <DiagonalDecoratorBottomLeft bg={theme.bg2[colorMode]} />
     </Box>
   );
 };

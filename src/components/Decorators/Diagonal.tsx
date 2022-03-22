@@ -36,7 +36,23 @@ export const DiagonalDecoratorBottomLeftMinus = ({ ...props }) => {
     />
   );
 };
+export const DiagonalDecoratorBottomLeft = ({ ...props }) => {
+  return (
+    <Box
+      _before={{
+        position: "absolute",
+        bottom: { base: "-12rem", xxl: "-20rem" },
+        right: "0",
+        transform: "skewY(-4deg)",
+        h: { base: "12rem", xxl: "20rem" },
 
+        w: "100%",
+        content: `""`,
+        ...props,
+      }}
+    />
+  );
+};
 export const DiagonalDecoratorBottomRight = ({ ...props }) => {
   return (
     <Box
@@ -45,6 +61,24 @@ export const DiagonalDecoratorBottomRight = ({ ...props }) => {
         bottom: { base: "-6rem", xxl: "-10rem" },
         right: "0",
         transform: "skewY(-4deg)",
+        h: { base: "12rem", xxl: "20rem" },
+
+        w: "100%",
+        content: `""`,
+        ...props,
+      }}
+    />
+  );
+};
+
+export const DiagonalDecoratorBottomRightMinus = ({ ...props }) => {
+  return (
+    <Box
+      _before={{
+        position: "absolute",
+        bottom: { base: "-6rem", xxl: "-10rem" },
+        right: "0",
+        transform: "skewY(4deg)",
         h: { base: "12rem", xxl: "20rem" },
 
         w: "100%",

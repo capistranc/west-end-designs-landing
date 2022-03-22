@@ -49,6 +49,7 @@ export const RoadmapSlide = ({
   const { colorMode } = useColorMode();
   return (
     <Flex
+      position="relative"
       direction={{
         base: "column",
         md: orient == "left" ? "row" : "row-reverse",
