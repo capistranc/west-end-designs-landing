@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NextLink from "next/link";
 import {
   Box,
@@ -22,16 +22,19 @@ export const NavBar = ({
   links,
   active = null,
   variant = "default",
-
   ...props
 }) => {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode } = useColorMode();
+  const [device, setDevice] = useState("desktop");
 
   const deviceType = useBreakpointValue({ base: "mobile", md: "desktop" });
+  useEffect(() => {
+    setDevice(deviceType);
+  });
 
   function renderLinks() {
-    if (deviceType === "desktop") {
+    if (device === "desktop") {
       return (
         <MenuLinks links={links} active={active} isOpen={isOpen} {...props} />
       );
@@ -48,7 +51,6 @@ export const NavBar = ({
           >
             <Collapse in={isOpen} animateOpacity>
               <MenuLinks
-                toggle={onToggle}
                 links={links}
                 isOpen={isOpen}
                 active={active}
@@ -73,7 +75,6 @@ export const NavBar = ({
       justify={variant == "noLogo" && !isOpen ? "flex-end" : "space-between"}
     >
       {variant != "noLogo" && <Logo />}
-      {isOpen && variant == "noLogo" && <Logo />}
 
       {renderLinks()}
     </Flex>
@@ -114,28 +115,45 @@ export const MenuLinks = ({
   return (
     <>
       <Box
-        display={{ base: isOpen ? "block" : "none", md: "block" }}
-        flexBasis={{ base: "100%", md: "auto" }}
+        display={{ base: "block", md: "block" }}
+        // flexBasis={{ base: "100%", md: "100%" }}
+        align="center"
       >
-        <Stack
-          maxHeight="80vh"
-          align="center"
-          justify={["center", "space-between", "flex-end", "flex-end"]}
+        <Flex
+          w="100%"
           direction={["column", "column", "row", "row"]}
-          spacing="4"
-          pt={[4, 4, 0, 0]}
-          wrap="wrap"
+          align="center"
+          justify={[
+            "center",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
         >
-          {links.map((link) => {
-            return (
-              <MenuItem key={link.label} to={link.path} {...props}>
-                {link.label}
-              </MenuItem>
-            );
-          })}
-
-          <DarkModeSwitch toggle={toggle} {...props} />
-        </Stack>
+          <Stack
+            maxHeight="80vh"
+            align="center"
+            justify={[
+              "center",
+              "space-between",
+              "space-between",
+              "space-between",
+            ]}
+            direction={["column", "column", "row", "row"]}
+            spacing="4"
+            pt={[4, 4, 0, 0]}
+            wrap="wrap"
+          >
+            {links.map((link) => {
+              return (
+                <MenuItem key={link.label} to={link.path} {...props}>
+                  {link.label}
+                </MenuItem>
+              );
+            })}
+            <DarkModeSwitch toggle={toggle} />
+          </Stack>
+        </Flex>
       </Box>
     </>
   );

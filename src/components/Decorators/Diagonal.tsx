@@ -6,11 +6,11 @@ export const DiagonalDecoratorTopRightMinus = ({ ...props }) => {
     <Box
       _before={{
         position: "absolute",
-        top: "-12rem",
+        top: { base: "-12rem", xxl: "-20rem" },
         right: "0",
 
         transform: "skewY(4deg)",
-        h: "12rem",
+        h: { base: "12rem", xxl: "20rem" },
         w: "100%",
         content: `""`,
         ...props,
@@ -24,10 +24,44 @@ export const DiagonalDecoratorBottomLeftMinus = ({ ...props }) => {
     <Box
       _before={{
         position: "absolute",
-        bottom: "-12rem",
+        bottom: { base: "-12rem", xxl: "-20rem" },
         right: "0",
         transform: "skewY(4deg)",
-        h: "12rem",
+        h: { base: "12rem", xxl: "20rem" },
+
+        w: "100%",
+        content: `""`,
+        ...props,
+      }}
+    />
+  );
+};
+export const DiagonalDecoratorBottomLeft = ({ ...props }) => {
+  return (
+    <Box
+      _before={{
+        position: "absolute",
+        bottom: { base: "-12rem", xxl: "-20rem" },
+        right: "0",
+        transform: "skewY(-4deg)",
+        h: { base: "12rem", xxl: "20rem" },
+
+        w: "100%",
+        content: `""`,
+        ...props,
+      }}
+    />
+  );
+};
+export const DiagonalDecoratorBottomRight = ({ ...props }) => {
+  return (
+    <Box
+      _before={{
+        position: "absolute",
+        bottom: { base: "-6rem", xxl: "-10rem" },
+        right: "0",
+        transform: "skewY(-4deg)",
+        h: { base: "12rem", xxl: "20rem" },
 
         w: "100%",
         content: `""`,
@@ -37,15 +71,15 @@ export const DiagonalDecoratorBottomLeftMinus = ({ ...props }) => {
   );
 };
 
-export const DiagonalDecoratorBottomRight = ({ ...props }) => {
+export const DiagonalDecoratorBottomRightMinus = ({ ...props }) => {
   return (
     <Box
       _before={{
         position: "absolute",
-        bottom: "-6rem",
+        bottom: { base: "-6rem", xxl: "-10rem" },
         right: "0",
-        transform: "skewY(-4deg)",
-        h: "12rem",
+        transform: "skewY(4deg)",
+        h: { base: "12rem", xxl: "20rem" },
 
         w: "100%",
         content: `""`,
@@ -60,11 +94,11 @@ export const DiagonalDecoratorTopLeft = ({ ...props }) => {
     <Box
       _before={{
         position: "absolute",
-        top: "-12rem",
+        top: { base: "-12rem", xxl: "-20rem" },
         right: "0",
 
         transform: "skewY(-4deg)",
-        h: "12rem",
+        h: { base: "12rem", xxl: "20rem" },
         w: "100%",
         content: `""`,
         ...props,
@@ -82,7 +116,7 @@ export const DiagonalDecoratorTopRight = ({ ...props }) => {
         right: "0",
 
         transform: "skewY(-4deg)",
-        h: "12rem",
+        h: { base: "12rem", xxl: "20rem" },
         w: "100%",
         content: `""`,
         ...props,

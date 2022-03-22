@@ -108,6 +108,7 @@ export default function Index() {
           }}
           backgroundPosition={{ base: "-80px 0", md: "center" }}
           backgroundSize={{ base: "130vh 110vh", md: "cover" }}
+          className="header-sentinel"
         >
           <SunOverlay />
           <Landing />

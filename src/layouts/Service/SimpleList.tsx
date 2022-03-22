@@ -63,7 +63,7 @@ export const Services2 = () => {
       color={theme.fg2[colorMode]}
       pb="15rem"
     >
-      <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} />
+      {/* <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} /> */}
       <DiagonalDecoratorTopRight bg={theme.bg2[colorMode]} />
       <DiamondDecoratorBottomDown bg={theme.bg2[colorMode]} />
       <Box

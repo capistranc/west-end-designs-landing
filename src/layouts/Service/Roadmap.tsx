@@ -16,6 +16,7 @@ import { BiCodeAlt, BiWalk } from "react-icons/bi";
 import { SlideIn } from "../../components/Motion/SlideIn";
 import {
   DiagonalDecoratorBottomLeftMinus,
+  DiagonalDecoratorBottomRightMinus,
   DiamondDecoratorTopDown,
 } from "../../components/Decorators";
 import NextLink from "next/link";
@@ -31,9 +32,10 @@ export const Roadmap = ({ ...props }) => {
       backgroundColor={theme.bg2[colorMode]}
     >
       <DiagonalDecoratorBottomLeftMinus bg={theme.bg3[colorMode]} />
+      <DiagonalDecoratorBottomRightMinus bg={theme.bg3[colorMode]} />
 
       <DashedLine />
-      <Box position="relative" py="4" zIndex="10" mt="-3rem">
+      <Box position="relative" py="4" zIndex="10" mt="-2rem">
         <NextLink href="/contact" passHref>
           <Button
             variant="solid"
@@ -42,8 +44,7 @@ export const Roadmap = ({ ...props }) => {
             color={theme.wb[colorMode]}
             bg={theme.bw[colorMode]}
           >
-            {" "}
-            GET STARTED NOW{" "}
+            GET STARTED NOW
           </Button>
         </NextLink>
       </Box>
@@ -201,6 +202,8 @@ export const Roadmap = ({ ...props }) => {
         <DashedLine strokeColor={theme.bg[colorMode]} />
         <DashedLine strokeColor={theme.bg[colorMode]} />
         <DashedLine strokeColor={theme.bg[colorMode]} />
+        <DashedLine strokeColor={theme.bg2[colorMode]} />
+        <DashedLine strokeColor={theme.bg2[colorMode]} />
       </Box>
     </Box>
   );

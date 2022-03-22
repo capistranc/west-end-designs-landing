@@ -90,12 +90,12 @@ export const ContactForm = (props: HTMLChakraProps<"form">) => {
       display="block"
       color={theme.fg[colorMode]}
       bg={theme.bg4[colorMode]}
-      boxShadow="0 0 29px 0 rgb(0 0 0 / 9%)"
+      boxShadow="xl"
       border={"4px dashedArray 12,5"}
       borderColor={theme.fg[colorMode]}
       borderRadius="4px"
-      p="4"
-      m="4"
+      p="8"
+      m="8"
       maxWidth="36rem"
       {...props}
     >
