@@ -6,12 +6,12 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          top: "-6rem",
+          top: { base: "-6rem", xxl: "-8rem" },
           right: "0",
 
-          transform: "skewY(4deg)",
+          transform: "skewY(6deg)",
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -20,11 +20,11 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          top: "-6rem",
+          top: { base: "-6rem", xxl: "-8rem" },
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -33,12 +33,12 @@ export const DiamondDecoratorTopDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          top: "-6rem",
+          top: { base: "-6rem", xxl: "-8rem" },
           right: "0",
 
-          transform: "skewY(-4deg)",
+          transform: "skewY(-6deg)",
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -53,9 +53,9 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          bottom: "-6rem",
+          bottom: { base: "-6rem", xxl: "-8rem" },
           left: "0",
-          transform: "skewY(4deg)",
+          transform: "skewY(6deg)",
           h: "15rem",
           w: "50%",
 
@@ -66,9 +66,9 @@ export const DiamondDecoratorBottomDown = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          bottom: "-6rem",
+          bottom: { base: "-6rem", xxl: "-8rem" },
           right: "0",
-          transform: "skewY(-4deg)",
+          transform: "skewY(-6deg)",
           h: "15rem",
 
           w: "50%",
@@ -89,9 +89,9 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(4deg)",
+          transform: "skewY(6deg)",
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -103,9 +103,9 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(-4deg)",
+          transform: "skewY(-6deg)",
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -118,7 +118,7 @@ export const DiamondDecoratorBottomBowTie = ({ ...props }) => {
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -137,9 +137,9 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(4deg)",
+          transform: "skewY(6deg)",
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -151,9 +151,9 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
           bottom: "0rem",
           right: "0",
 
-          transform: "skewY(-4deg)",
+          transform: "skewY(-6deg)",
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,
@@ -162,11 +162,11 @@ export const DiamondDecoratorBottomUp = ({ ...props }) => {
       <Box
         _before={{
           position: "absolute",
-          bottom: "-6rem",
+          bottom: { base: "-6rem", xxl: "-8rem" },
           right: "0",
 
           bg: props.bg || props.bgColor,
-          h: "12rem",
+          h: { base: "12rem", xxl: "16rem" },
           w: "100%",
           content: `""`,
           ...props,

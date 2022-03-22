@@ -22,7 +22,6 @@ export const NavBar = ({
   links,
   active = null,
   variant = "default",
-
   ...props
 }) => {
   const { isOpen, onToggle } = useDisclosure();
@@ -48,7 +47,6 @@ export const NavBar = ({
           >
             <Collapse in={isOpen} animateOpacity>
               <MenuLinks
-                toggle={onToggle}
                 links={links}
                 isOpen={isOpen}
                 active={active}
@@ -70,10 +68,11 @@ export const NavBar = ({
       p="2"
       background={isOpen && theme.bg[colorMode]}
       color={isOpen && theme.fg[colorMode]}
-      justify={variant == "noLogo" && !isOpen ? "right" : "space-between"}
+      justify="right"
+      // justify={variant == "noLogo" && !isOpen ? "space-between" : "right"}
     >
-      {variant != "noLogo" && <Logo />}
-      {isOpen && variant == "noLogo" && <Logo />}
+      {/* {variant != "noLogo" && <Logo />} */}
+      {/* {isOpen && variant != "noLogo" && <Logo />} */}
 
       {renderLinks()}
     </Flex>
@@ -115,27 +114,50 @@ export const MenuLinks = ({
     <>
       <Box
         display={{ base: isOpen ? "block" : "none", md: "block" }}
-        flexBasis={{ base: "100%", md: "auto" }}
+        flexBasis={{ base: "100%", md: "100%" }}
+        align="center"
       >
-        <Stack
-          maxHeight="80vh"
-          align="center"
-          justify={["center", "space-between", "flex-end", "flex-end"]}
+        <Flex
+          w="100%"
           direction={["column", "column", "row", "row"]}
-          spacing="4"
-          pt={[4, 4, 0, 0]}
-          wrap="wrap"
+          align="center"
+          justify={[
+            "center",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
         >
-          {links.map((link) => {
-            return (
-              <MenuItem key={link.label} to={link.path} {...props}>
-                {link.label}
-              </MenuItem>
-            );
-          })}
+          <Stack
+            maxHeight="80vh"
+            align="center"
+            justify={[
+              "center",
+              "space-between",
+              "space-between",
+              "space-between",
+            ]}
+            direction={["column", "column", "row", "row"]}
+            spacing="4"
+            pt={[4, 4, 0, 0]}
+            wrap="wrap"
+          >
+            {links.map((link) => {
+              return (
+                <MenuItem key={link.label} to={link.path} {...props}>
+                  {link.label}
+                </MenuItem>
+              );
+            })}
+          </Stack>
 
-          <DarkModeSwitch toggle={toggle} {...props} />
-        </Stack>
+          <NextLink href="https://bettermun.com">
+            <Button variant="demoNav" my={{ base: 4, md: 0 }}>
+              {" "}
+              Try Demo
+            </Button>
+          </NextLink>
+        </Flex>
       </Box>
     </>
   );

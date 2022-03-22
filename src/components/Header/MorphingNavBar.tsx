@@ -1,7 +1,6 @@
 import { NavBar } from "./NavBar";
-import { Flex, Box, Heading, Text, useColorMode } from "@chakra-ui/react";
+import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 import React, { useRef, useEffect, useState } from "react";
-import { theme } from "../../theme";
 
 export const MorphingNavBar = ({ links, active = null, ...props }) => {
   const [isVisible, setVisible] = useState(false);
@@ -27,11 +26,6 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
     };
   });
 
-  const { colorMode } = useColorMode();
-
-  const bg = theme.bg[colorMode];
-  const fg = theme.fg[colorMode];
-
   return (
     <Box>
       <Box
@@ -41,13 +35,18 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
         zIndex="sticky"
         w="100%"
         position={isVisible ? "absolute" : "fixed"}
-        color={isVisible ? "white" : fg}
-        bg={isVisible ? "rgba(0.1,.1,0.1,0.1)" : bg}
-        // bg={isVisible ? "transparent" : bg}
-        boxShadow={!isVisible && "md"}
+        color={isVisible ? "white" : "black"}
+        bg={isVisible ? "transparent" : "white"}
+        boxShadow={isVisible ? "none" : "2xl"}
         {...props}
       >
-        <NavBar links={links} color={props.color} active={active}></NavBar>
+        <NavBar
+          links={links}
+          color={props.color}
+          variant="noLogo"
+          // variant={isVisible ? "noLogo" : "default"}
+          active={active}
+        ></NavBar>
       </Box>
     </Box>
   );
