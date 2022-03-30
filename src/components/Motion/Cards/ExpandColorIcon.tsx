@@ -8,7 +8,6 @@ import { useColorModeValue } from "@chakra-ui/color-mode";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 
 export const ExpandColorIcon = ({ title, text, icon, link, ...props }) => {
-  console.log(link);
   const [isFocused, setFocus] = useState(false);
   const containerVariant = {
     rest: {
