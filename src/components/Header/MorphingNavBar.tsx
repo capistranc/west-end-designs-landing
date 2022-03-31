@@ -20,7 +20,6 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
   const { colorMode } = useColorMode();
 
   function setStyle(sentinelPresent) {
-    console.log(sentinelPresent);
     setPresent(sentinelPresent);
     setBackground(sentinelPresent ? "rgba(0.1,0.1,0.1,0.1)" : "white");
     setColor(sentinelPresent ? "white" : "black");
@@ -38,7 +37,6 @@ export const MorphingNavBar = ({ links, active = null, ...props }) => {
       sentinels = document.getElementsByClassName("header-sentinel");
 
       if (!sentinels.length) {
-        console.log("FALSE");
         setStyle(false);
         return;
       }
