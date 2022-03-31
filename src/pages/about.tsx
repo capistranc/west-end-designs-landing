@@ -177,7 +177,7 @@ const About: NextPage = ({}) => {
             <DashedLine />
             <DashedLine />
 
-            <Button position="relative" zIndex="10" variant="btow">
+            <Button position="relative" zIndex="10" variant="btow" mb="5rem'">
               FREE CONSULT
             </Button>
           </Box>
@@ -186,6 +186,7 @@ const About: NextPage = ({}) => {
             color={theme.fg2[colorMode]}
             position="relative"
             zIndex="10"
+            // py="4rem"
           >
             <ThreeStats bg={theme.bg3[colorMode]} statsData={statsData} p="4" />
           </Box>
@@ -194,7 +195,7 @@ const About: NextPage = ({}) => {
             bg={theme.bg2[colorMode]}
             color={theme.fg2[colorMode]}
             position="relative"
-            pt="18rem"
+            pt="24rem"
           >
             <DiagonalDecoratorTopLeft bg={theme.bg3[colorMode]} />
             <DiagonalDecoratorTopRight bg={theme.bg3[colorMode]} />

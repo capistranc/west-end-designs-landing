@@ -64,7 +64,7 @@ export const DiagonalDecoratorTopLeft = ({ ...props }) => {
         right: "0",
 
         transform: "skewY(-4deg)",
-        h: "12rem",
+        h: "12.1rem",
         w: "100%",
         content: `""`,
         ...props,
